@@ -1,9 +1,12 @@
-name: Daily data ingestion
+name: Daily update
 
-# Keeps the Premier League dataset current without manual intervention.
+# Keeps results, model and forecasts current without manual intervention.
 on:
   schedule:
-    # 06:00 UTC daily — after European matchdays have finished and been settled.
+    # 21:30 UTC — 4:30pm in Colombia, shortly after the last Premier League
+    # match of the day has finished and the result has settled.
+    - cron: "30 21 * * *"
+    # 06:00 UTC — catches late kick-offs, midweek fixtures and rescheduled games.
     - cron: "0 6 * * *"
   workflow_dispatch: # allows manual runs from the Actions tab
 
@@ -11,9 +14,15 @@ on:
 permissions:
   contents: write
 
+# A second run starting while the first is mid-commit would race on the same
+# files, so queue them instead.
+concurrency:
+  group: data-update
+  cancel-in-progress: false
+
 jobs:
-  ingest:
-    name: Fetch latest matches
+  update:
+    name: Fetch results and refresh forecasts
     runs-on: ubuntu-latest
 
     steps:
@@ -31,17 +40,20 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Fetch current season
+      - name: Fetch latest results
         env:
           FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
         run: python src/ingestion/fetch_matches.py
+
+      - name: Retrain model and refresh forecasts
+        run: python src/models/train_and_forecast.py
 
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data/processed/
+          git add data/processed/ data/predictions/
 
           # Exit cleanly when nothing changed — a no-op run is not a failure.
           if git diff --staged --quiet; then
@@ -49,5 +61,5 @@ jobs:
             exit 0
           fi
 
-          git commit -m "data: refresh Premier League matches ($(date -u +'%Y-%m-%d'))"
+          git commit -m "data: refresh results and forecasts ($(date -u +'%Y-%m-%d %H:%M UTC'))"
           git push

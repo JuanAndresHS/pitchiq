@@ -4,24 +4,29 @@
   Premier League palette. The three outcome colours are the league's own
   accents, which happens to solve a design problem: three possible results
   need three distinguishable colours, and this avoids a traffic-light scheme.
+
+  The surfaces sit a few steps lighter than the league's #37003C so the page
+  reads as purple rather than as near-black, while the neon accents keep more
+  than enough contrast against them.
 */
 @theme {
-  --color-pitch-void: #220026;
-  --color-pitch-deep: #37003c;
-  --color-pitch-raised: #430a49;
-  --color-pitch-line: #55215c;
-  --color-pitch-line-soft: #4a1450;
+  --color-pitch-void: #33013a;
+  --color-pitch-deep: #4a0b52;
+  --color-pitch-raised: #5b1a64;
+  --color-pitch-line: #7a3b83;
+  --color-pitch-line-soft: #68276f;
 
   --color-pitch-text: #ffffff;
-  --color-pitch-dim: #c4a3cb;
-  --color-pitch-faint: #8c6494;
+  --color-pitch-dim: #ddc2e2;
+  --color-pitch-faint: #b28cb9;
 
   --color-outcome-home: #00ff85;
   --color-outcome-draw: #04f5ff;
-  --color-outcome-away: #e90052;
+  --color-outcome-away: #ff2e74;
 
   --color-ink-home: #00341b;
   --color-ink-draw: #003a3d;
+  --color-ink-away: #4a0018;
 
   --font-display: var(--font-barlow-condensed), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;

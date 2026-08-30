@@ -317,13 +317,21 @@ export async function getNextMatchday(): Promise<{
   };
 }
 
-/** Scores stored forecasts against results that have since come in. */
+/** Scores logged forecasts against results that have since come in. */
 export async function getTrackRecord(): Promise<{
   evaluated: number;
   correct: number;
   accuracy: number | null;
 }> {
-  const [matches, forecasts] = await Promise.all([getMatches(), getForecasts()]);
+  const empty = { evaluated: 0, correct: 0, accuracy: null };
+
+  const file = path.join(PREDICTIONS, "prediction_log.csv");
+  if (!existsSync(file)) return empty;
+
+  const [text, matches] = await Promise.all([
+    readFile(file, "utf8"),
+    getMatches(),
+  ]);
 
   const results = new Map(
     matches
@@ -334,11 +342,15 @@ export async function getTrackRecord(): Promise<{
   let evaluated = 0;
   let correct = 0;
 
-  for (const f of forecasts) {
-    const actual = results.get(f.matchId);
+  for (const row of parseCsv(text)) {
+    const matchId = num(row.match_id);
+    if (matchId === null) continue;
+
+    const actual = results.get(matchId);
     if (!actual) continue;
+
     evaluated++;
-    if (actual === f.prediction) correct++;
+    if (actual === row.prediction) correct++;
   }
 
   return {
@@ -383,4 +395,127 @@ export function shortName(team: string): string {
     .replace(" Hotspur", "")
     .replace(" Wanderers", "")
     .replace(" United", " Utd");
+}
+// --- Fixture appeal ----------------------------------------------------------
+
+/**
+ * Final league position for every team in every completed season.
+ *
+ * A season counts as complete at 300+ matches, which excludes the season in
+ * progress without hardcoding a date.
+ */
+async function getFinalPositions(): Promise<Map<number, Map<string, number>>> {
+  const matches = await getMatches();
+  const seasons = [...new Set(matches.map((m) => m.season))].sort();
+  const result = new Map<number, Map<string, number>>();
+
+  for (const season of seasons) {
+    const played = matches.filter(
+      (m) => m.season === season && m.status === "FINISHED",
+    );
+    if (played.length < 300) continue;
+
+    const table = await getStandings(season);
+    result.set(season, new Map(table.map((row) => [row.team, row.position])));
+  }
+
+  return result;
+}
+
+/**
+ * How big a club is, on a 0–1 scale where 1 is a title contender.
+ *
+ * Blends where a team sits now with where it has finished in previous seasons.
+ * The current season is weighted by how much of it has been played: after three
+ * matchdays the table is mostly noise, so history carries the estimate until
+ * enough games have accumulated to trust it.
+ */
+async function getTeamStature(): Promise<Map<string, number>> {
+  const [current, history] = await Promise.all([
+    getStandings(),
+    getFinalPositions(),
+  ]);
+
+  // Position 1 → 1.0, position 20 → 0.0. Teams absent from a season (promoted
+  // or relegated) score just below the bottom of that table rather than being
+  // dropped, so their absence counts as weakness rather than as no data.
+  const toScore = (position: number, size: number) =>
+    size <= 1 ? 0.5 : 1 - (position - 1) / (size - 1);
+
+  const matchesPlayed = current.length
+    ? Math.max(...current.map((r) => r.played))
+    : 0;
+  const currentWeight = Math.min(matchesPlayed / 10, 1) * 0.5;
+
+  const currentScores = new Map(
+    current.map((row) => [row.team, toScore(row.position, current.length)]),
+  );
+
+  const stature = new Map<string, number>();
+  const teams = new Set([
+    ...currentScores.keys(),
+    ...[...history.values()].flatMap((m) => [...m.keys()]),
+  ]);
+
+  for (const team of teams) {
+    const past: number[] = [];
+
+    for (const table of history.values()) {
+      const position = table.get(team);
+      past.push(
+        position !== undefined
+          ? toScore(position, table.size)
+          : 0.05, // absent from the division that season
+      );
+    }
+
+    const historyScore =
+      past.length > 0 ? past.reduce((a, b) => a + b, 0) / past.length : 0.5;
+
+    const currentScore = currentScores.get(team) ?? historyScore;
+
+    stature.set(
+      team,
+      currentWeight * currentScore + (1 - currentWeight) * historyScore,
+    );
+  }
+
+  return stature;
+}
+
+/**
+ * Pick the most appealing fixture from a set.
+ *
+ * Two things make a match worth watching: both sides being good, and the two
+ * being closely matched. A first-versus-last game scores badly on the second
+ * even though it scores well on the first, which is the intended behaviour —
+ * the point is to surface a genuine contest, not a likely thrashing.
+ */
+export async function getFeaturedFixture(
+  fixtures: Forecast[],
+): Promise<Forecast | null> {
+  if (fixtures.length === 0) return null;
+
+  const stature = await getTeamStature();
+  const fallback = 0.3; // a team with no record at all
+
+  let best = fixtures[0];
+  let bestScore = -Infinity;
+
+  for (const fixture of fixtures) {
+    const home = stature.get(fixture.homeTeam) ?? fallback;
+    const away = stature.get(fixture.awayTeam) ?? fallback;
+
+    const quality = (home + away) / 2;
+    const balance = 1 - Math.abs(home - away);
+
+    const score = 0.65 * quality + 0.35 * balance;
+
+    if (score > bestScore) {
+      bestScore = score;
+      best = fixture;
+    }
+  }
+
+  return best;
 }
