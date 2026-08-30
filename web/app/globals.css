@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/*
+  Premier League palette. The three outcome colours are the league's own
+  accents, which happens to solve a design problem: three possible results
+  need three distinguishable colours, and this avoids a traffic-light scheme.
+*/
+@theme {
+  --color-pitch-void: #220026;
+  --color-pitch-deep: #37003c;
+  --color-pitch-raised: #430a49;
+  --color-pitch-line: #55215c;
+  --color-pitch-line-soft: #4a1450;
+
+  --color-pitch-text: #ffffff;
+  --color-pitch-dim: #c4a3cb;
+  --color-pitch-faint: #8c6494;
+
+  --color-outcome-home: #00ff85;
+  --color-outcome-draw: #04f5ff;
+  --color-outcome-away: #e90052;
+
+  --color-ink-home: #00341b;
+  --color-ink-draw: #003a3d;
+
+  --font-display: var(--font-barlow-condensed), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  background-color: var(--color-pitch-void);
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Numeric columns line up only with tabular figures. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: var(--color-outcome-draw);
+  color: var(--color-pitch-deep);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-outcome-draw);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
