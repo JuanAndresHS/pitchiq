@@ -1,4 +1,4 @@
-import FixtureList from "@/components/FixtureList";
+import Chat from "@/components/Chat";import FixtureList from "@/components/FixtureList";
 import StandingsTable from "@/components/StandingsTable";
 import {
   getNextMatchday,
@@ -120,7 +120,7 @@ export default async function Home() {
             </span>
           </div>
         </section>
-
+<Chat />
         <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
           <section>
             <SectionHeading
