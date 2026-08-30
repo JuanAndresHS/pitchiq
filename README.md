@@ -144,7 +144,7 @@ python src/ingestion/fetch_matches.py
 - [x] Project scaffolding and environment setup
 - [x] Daily ingestion pipeline (football-data.org)
 - [x] Automated scheduling via GitHub Actions
-- [ ] Exploratory data analysis
+- [x] Exploratory data analysis
 - [ ] Match outcome prediction model
 - [ ] Expected goals (xG) model
 - [ ] Elo rating system
