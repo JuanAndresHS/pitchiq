@@ -142,8 +142,8 @@ python src/ingestion/fetch_matches.py
 ## Roadmap
 
 - [x] Project scaffolding and environment setup
-- [ ] Daily ingestion pipeline (football-data.org)
-- [ ] Automated scheduling via GitHub Actions
+- [x] Daily ingestion pipeline (football-data.org)
+- [x] Automated scheduling via GitHub Actions
 - [ ] Exploratory data analysis
 - [ ] Match outcome prediction model
 - [ ] Expected goals (xG) model
