@@ -133,10 +133,10 @@ export async function POST(request: Request) {
         const output = await executeTool(name, args);
 
         results.push({
-          type: "function_result",
+          type: "function_result" as const,
           name,
           call_id: (call as { id: string }).id,
-          result: [{ type: "text", text: JSON.stringify(output) }],
+          result: [{ type: "text" as const, text: JSON.stringify(output) }],
         });
       }
 

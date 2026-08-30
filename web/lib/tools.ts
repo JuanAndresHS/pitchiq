@@ -378,7 +378,7 @@ const REGISTRY: Record<string, (args: any) => Promise<ToolResult>> = {
 
 export const TOOL_SCHEMAS = [
   {
-    type: "function",
+    type: "function" as const,
     name: "get_standings",
     description:
       "Get the Premier League table for a season, computed from finished matches. Use for questions about positions, points, or who is top.",
@@ -394,7 +394,7 @@ export const TOOL_SCHEMAS = [
     },
   },
   {
-    type: "function",
+    type: "function" as const,
     name: "get_team_form",
     description:
       "Get a team's recent results and form. Use for questions about how a team has been playing lately, streaks, or recent performance.",
@@ -411,7 +411,7 @@ export const TOOL_SCHEMAS = [
     },
   },
   {
-    type: "function",
+    type: "function" as const,
     name: "get_match_prediction",
     description:
       "Get the model's probabilistic forecast for a specific upcoming fixture, including win/draw/loss probabilities and expected goals.",
@@ -425,7 +425,7 @@ export const TOOL_SCHEMAS = [
     },
   },
   {
-    type: "function",
+    type: "function" as const,
     name: "get_upcoming_fixtures",
     description:
       "List scheduled fixtures with their forecasts. Use for questions about what is coming up, optionally filtered to one team.",
@@ -438,7 +438,7 @@ export const TOOL_SCHEMAS = [
     },
   },
   {
-    type: "function",
+    type: "function" as const,
     name: "get_team_ratings",
     description:
       "Get model-estimated attack and defense strength for teams. Use when comparing how strong teams are, independent of current league position.",
@@ -450,7 +450,7 @@ export const TOOL_SCHEMAS = [
     },
   },
   {
-    type: "function",
+    type: "function" as const,
     name: "get_head_to_head",
     description: "Get historical results between two specific teams.",
     parameters: {
@@ -464,7 +464,7 @@ export const TOOL_SCHEMAS = [
     },
   },
   {
-    type: "function",
+    type: "function" as const,
     name: "evaluate_model_accuracy",
     description:
       "Check how the model's past predictions performed against real results. Use when asked how accurate or reliable the model is.",
