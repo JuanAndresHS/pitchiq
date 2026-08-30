@@ -224,3 +224,6 @@ data/raw/*
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# the Python template's lib/ rule also catches the Next.js data layer
+!web/lib/
