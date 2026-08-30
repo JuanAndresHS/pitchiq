@@ -10,8 +10,9 @@ Predictive models and a conversational agent that answers football questions in 
 [![Gemini](https://img.shields.io/badge/Gemini-API-4285F4?logo=googlegemini&logoColor=white)](https://ai.google.dev/)
 [![Next.js](https://img.shields.io/badge/Next.js-15-000000?logo=next.js&logoColor=white)](https://nextjs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Status](https://img.shields.io/badge/status-in%20development-blue)]()
+[![Live](https://img.shields.io/badge/demo-live-00FF85?labelColor=37003C)](https://pitchiq-theta.vercel.app)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Juan%20Andr%C3%A9s%20Hurtado-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/juan-andres-hurtado/)
+**[Open the live demo →](https://pitchiq-theta.vercel.app)**
 
 </div>
 
