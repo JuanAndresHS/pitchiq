@@ -41,7 +41,7 @@ PREDICTIONS_DIR = PROJECT_ROOT / "data" / "predictions"
 
 MAX_GOALS = 10
 DEFAULT_XI = 0.002  # time decay; ~347 day half-life
-DEFAULT_ALPHA = 8.0  # ridge penalty; selected on a held-out season
+DEFAULT_ALPHA = 3.0  # ridge penalty; selected on a held-out season
 
 logging.basicConfig(
     level=logging.INFO,
