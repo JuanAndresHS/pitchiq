@@ -661,3 +661,70 @@ export async function getRecentResults(): Promise<{
 
   return { matchday, results, scored, correct };
 }
+
+/**
+ * ADD to the end of web/lib/data.ts
+ */
+
+export type PerformanceGap = {
+  team: string;
+  tablePosition: number;
+  modelRank: number;
+  /** Positive when the model rates a team higher than the table does. */
+  gap: number;
+  points: number;
+  played: number;
+};
+
+/**
+ * Where the table and the model disagree.
+ *
+ * League position reflects what happened; the model's rating reflects how a
+ * team has actually played, stripped of the luck in individual results. A side
+ * sitting 17th with a top-half rating has been unlucky and is a reasonable bet
+ * to climb — that disagreement is the most forward-looking thing the model
+ * produces, and it is invisible in a standings table.
+ *
+ * Only teams in the current standings are ranked, so relegated sides carrying
+ * ratings from earlier seasons do not distort the comparison.
+ */
+export async function getPerformanceGaps(
+  limit = 6,
+): Promise<PerformanceGap[]> {
+  const [standings, ratings] = await Promise.all([
+    getStandings(),
+    getTeamRatings(),
+  ]);
+
+  if (standings.length === 0 || ratings.length === 0) return [];
+
+  const active = new Set(standings.map((row) => row.team));
+
+  const modelRank = new Map(
+    ratings
+      .filter((r) => active.has(r.team))
+      .sort((a, b) => b.overall - a.overall)
+      .map((r, i) => [r.team, i + 1]),
+  );
+
+  const gaps: PerformanceGap[] = [];
+
+  for (const row of standings) {
+    const rank = modelRank.get(row.team);
+    if (rank === undefined) continue;
+
+    gaps.push({
+      team: row.team,
+      tablePosition: row.position,
+      modelRank: rank,
+      gap: row.position - rank,
+      points: row.points,
+      played: row.played,
+    });
+  }
+
+  return gaps
+    .sort((a, b) => Math.abs(b.gap) - Math.abs(a.gap))
+    .slice(0, limit)
+    .sort((a, b) => b.gap - a.gap);
+}

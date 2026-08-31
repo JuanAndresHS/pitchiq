@@ -1,12 +1,14 @@
 import Chat from "@/components/Chat";
 import FeaturedForecast from "@/components/FeaturedForecast";
 import FixtureList from "@/components/FixtureList";
+import PerformanceGaps from "@/components/PerformanceGaps";
 import ResultsList from "@/components/ResultsList";
 import StandingsTable from "@/components/StandingsTable";
 import { MODEL_METRICS } from "@/lib/model-metrics";
 import {
   getFeaturedFixture,
   getNextMatchday,
+  getPerformanceGaps,
   getRecentResults,
   getStandings,
   getSummary,
@@ -57,7 +59,7 @@ function Metric({
 }
 
 export default async function Home() {
-  const [summary, standings, nextMatchday, ratings, track, recent] =
+  const [summary, standings, nextMatchday, ratings, track, recent, gaps] =
     await Promise.all([
       getSummary(),
       getStandings(),
@@ -65,6 +67,7 @@ export default async function Home() {
       getTeamRatings(),
       getTrackRecord(),
       getRecentResults(),
+      getPerformanceGaps(6),
     ]);
 
   const seasonLabel = summary.season
@@ -78,7 +81,7 @@ export default async function Home() {
   );
 
   const pct = (value: number) => `${(value * 100).toFixed(1)}%`;
-  const topRated = ratings.slice(0, 6);
+  const topRated = ratings.slice(0, 8);
 
   return (
     <div className="bg-pitch-deep mx-auto min-h-screen max-w-5xl">
@@ -209,37 +212,44 @@ export default async function Home() {
               <StandingsTable rows={standings} />
             </Section>
 
-            <Section title="Strongest sides" meta="Model rating">
-              {topRated.length === 0 ? (
-                <p className="text-pitch-dim py-8 text-sm">
-                  No ratings yet. Run the model notebook to generate them.
+            <div className="space-y-10">
+              <Section title="Strongest sides" meta="Model rating">
+                {topRated.length === 0 ? (
+                  <p className="text-pitch-dim py-8 text-sm">
+                    No ratings yet. Run the model to generate them.
+                  </p>
+                ) : (
+                  <ol className="divide-pitch-line-soft divide-y">
+                    {topRated.map((rating, i) => (
+                      <li
+                        key={rating.team}
+                        className="flex items-baseline justify-between gap-3 py-2.5"
+                      >
+                        <span className="text-pitch-faint tnum w-5 text-sm">
+                          {i + 1}
+                        </span>
+                        <span className="font-display flex-1 truncate text-base">
+                          {rating.team.replace(/\s+FC$/, "")}
+                        </span>
+                        <span className="tnum text-outcome-draw text-sm">
+                          {rating.overall > 0 ? "+" : ""}
+                          {rating.overall.toFixed(2)}
+                        </span>
+                      </li>
+                    ))}
+                  </ol>
+                )}
+                <p className="text-pitch-faint mt-3 text-xs leading-relaxed">
+                  Combined attack and defense strength estimated by the model.
+                  Zero is league average, so this is independent of current
+                  position.
                 </p>
-              ) : (
-                <ol className="divide-pitch-line-soft divide-y">
-                  {topRated.map((rating, i) => (
-                    <li
-                      key={rating.team}
-                      className="flex items-baseline justify-between gap-3 py-2.5"
-                    >
-                      <span className="text-pitch-faint tnum w-5 text-sm">
-                        {i + 1}
-                      </span>
-                      <span className="font-display flex-1 truncate text-base">
-                        {rating.team.replace(/\s+FC$/, "")}
-                      </span>
-                      <span className="tnum text-outcome-draw text-sm">
-                        {rating.overall > 0 ? "+" : ""}
-                        {rating.overall.toFixed(2)}
-                      </span>
-                    </li>
-                  ))}
-                </ol>
-              )}
-              <p className="text-pitch-faint mt-3 text-xs leading-relaxed">
-                Combined attack and defense strength estimated by the model. Zero
-                is league average, so this is independent of current position.
-              </p>
-            </Section>
+              </Section>
+
+              <Section title="Table vs model" meta="Position gap">
+                <PerformanceGaps gaps={gaps} />
+              </Section>
+            </div>
           </div>
 
           <Section id="model" title="How it works" meta="Data to forecast">
