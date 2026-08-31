@@ -12,7 +12,7 @@ Predictive models and a conversational agent that answers football questions in 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Live](https://img.shields.io/badge/demo-live-00FF85?labelColor=37003C)](https://pitchiq-theta.vercel.app)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Juan%20Andr%C3%A9s%20Hurtado-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/juan-andres-hurtado/)
-**[Open the live demo →]([https://pitchiq-theta.vercel.app](https://pitchiq-premierleague.vercel.app/))**
+**[Open the live demo →](https://pitchiq-premierleague.vercel.app/))**
 
 </div>
 
