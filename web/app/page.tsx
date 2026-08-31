@@ -1,11 +1,13 @@
 import Chat from "@/components/Chat";
 import FeaturedForecast from "@/components/FeaturedForecast";
 import FixtureList from "@/components/FixtureList";
+import ResultsList from "@/components/ResultsList";
 import StandingsTable from "@/components/StandingsTable";
 import { MODEL_METRICS } from "@/lib/model-metrics";
 import {
   getFeaturedFixture,
   getNextMatchday,
+  getRecentResults,
   getStandings,
   getSummary,
   getTeamRatings,
@@ -55,13 +57,15 @@ function Metric({
 }
 
 export default async function Home() {
-  const [summary, standings, nextMatchday, ratings, track] = await Promise.all([
-    getSummary(),
-    getStandings(),
-    getNextMatchday(),
-    getTeamRatings(),
-    getTrackRecord(),
-  ]);
+  const [summary, standings, nextMatchday, ratings, track, recent] =
+    await Promise.all([
+      getSummary(),
+      getStandings(),
+      getNextMatchday(),
+      getTeamRatings(),
+      getTrackRecord(),
+      getRecentResults(),
+    ]);
 
   const seasonLabel = summary.season
     ? `${summary.season}/${String((summary.season + 1) % 100).padStart(2, "0")}`
@@ -89,6 +93,9 @@ export default async function Home() {
             </a>
             <a href="#fixtures" className="hover:text-pitch-text">
               Fixtures
+            </a>
+            <a href="#results" className="hover:text-pitch-text">
+              Results
             </a>
             <a href="#model" className="hover:text-pitch-text">
               How it works
@@ -138,32 +145,59 @@ export default async function Home() {
             </div>
           </section>
 
-          <Section
-            id="fixtures"
-            title={
-              nextMatchday.matchday
-                ? `Rest of matchday ${nextMatchday.matchday}`
-                : "Next fixtures"
-            }
-            meta="Model forecast"
-          >
-            <FixtureList fixtures={rest} />
+          {rest.length > 0 && (
+            <Section
+              id="fixtures"
+              title={
+                nextMatchday.matchday
+                  ? `Rest of matchday ${nextMatchday.matchday}`
+                  : "Next fixtures"
+              }
+              meta="Model forecast"
+            >
+              <FixtureList fixtures={rest} />
 
-            <div className="text-pitch-faint mt-5 flex flex-wrap gap-4 text-xs">
-              <span className="flex items-center gap-2">
-                <span className="bg-outcome-home size-2 rounded-xs" />
-                Home win
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="bg-outcome-draw size-2 rounded-xs" />
-                Draw
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="bg-outcome-away size-2 rounded-xs" />
-                Away win
-              </span>
-            </div>
-          </Section>
+              <div className="text-pitch-faint mt-5 flex flex-wrap gap-4 text-xs">
+                <span className="flex items-center gap-2">
+                  <span className="bg-outcome-home size-2 rounded-xs" />
+                  Home win
+                </span>
+                <span className="flex items-center gap-2">
+                  <span className="bg-outcome-draw size-2 rounded-xs" />
+                  Draw
+                </span>
+                <span className="flex items-center gap-2">
+                  <span className="bg-outcome-away size-2 rounded-xs" />
+                  Away win
+                </span>
+              </div>
+            </Section>
+          )}
+
+          {recent.results.length > 0 && (
+            <Section
+              id="results"
+              title={
+                recent.matchday
+                  ? `Matchday ${recent.matchday} results`
+                  : "Recent results"
+              }
+              meta={
+                recent.scored > 0
+                  ? `${recent.correct} of ${recent.scored} called`
+                  : undefined
+              }
+            >
+              <ResultsList results={recent.results} />
+
+              <p className="text-pitch-faint mt-4 max-w-2xl text-xs leading-relaxed">
+                Each forecast was logged before kick-off and is scored here
+                against what happened. A model that says 60% should be wrong four
+                times in ten — so the number that matters is the probability it
+                gave the actual outcome, not the tally of hits.
+              </p>
+            </Section>
+          )}
 
           <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr]">
             <Section
@@ -216,9 +250,9 @@ export default async function Home() {
                     Ingest
                   </h3>
                   <p>
-                    A scheduled job pulls results from football-data.org every
-                    morning, validates them, and commits the clean data. The
-                    dataset grows without anyone touching it.
+                    A scheduled job pulls results from football-data.org twice a
+                    day, validates them, and commits the clean data. The dataset
+                    grows without anyone touching it.
                   </p>
                 </div>
                 <div>

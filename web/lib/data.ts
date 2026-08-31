@@ -519,3 +519,145 @@ export async function getFeaturedFixture(
 
   return best;
 }
+
+export type ScoredResult = {
+  matchId: number;
+  date: string;
+  matchday: number;
+  homeTeam: string;
+  awayTeam: string;
+  homeGoals: number;
+  awayGoals: number;
+  result: "H" | "D" | "A";
+  /** What the model called before kick-off, if it had logged a forecast. */
+  predicted: "H" | "D" | "A" | null;
+  /** Probability the model assigned to what actually happened. */
+  probabilityOfActual: number | null;
+  hit: boolean | null;
+};
+
+type LoggedForecast = {
+  predicted: "H" | "D" | "A";
+  pHome: number;
+  pDraw: number;
+  pAway: number;
+};
+
+/**
+ * The append-only forecast log, keyed by match.
+ *
+ * Separate from getForecasts(): that file only holds unplayed fixtures and is
+ * rewritten every run, so a match disappears from it the moment it kicks off.
+ * The log keeps the call that stood beforehand, which is the only version
+ * worth grading.
+ */
+async function getPredictionLog(): Promise<Map<number, LoggedForecast>> {
+  const file = path.join(PREDICTIONS, "prediction_log.csv");
+  if (!existsSync(file)) return new Map();
+
+  const text = await readFile(file, "utf8");
+  const log = new Map<number, LoggedForecast>();
+
+  for (const row of parseCsv(text)) {
+    const matchId = num(row.match_id);
+    const predicted = row.prediction as LoggedForecast["predicted"];
+    if (matchId === null || !["H", "D", "A"].includes(predicted)) continue;
+
+    log.set(matchId, {
+      predicted,
+      pHome: num(row.p_home_win) ?? 0,
+      pDraw: num(row.p_draw) ?? 0,
+      pAway: num(row.p_away_win) ?? 0,
+    });
+  }
+
+  return log;
+}
+
+/**
+ * Finished matches from the matchday currently in play, each paired with the
+ * forecast that stood before it.
+ *
+ * Falls back to the most recently completed matchday when the current one has
+ * not started yet, so the section is never empty mid-season.
+ */
+export async function getRecentResults(): Promise<{
+  matchday: number | null;
+  results: ScoredResult[];
+  scored: number;
+  correct: number;
+}> {
+  const [matches, forecasts, log] = await Promise.all([
+    getMatches(),
+    getForecasts(),
+    getPredictionLog(),
+  ]);
+
+  const played = matches.filter(
+    (m) =>
+      m.status === "FINISHED" &&
+      m.result !== null &&
+      m.homeGoals !== null &&
+      m.awayGoals !== null,
+  );
+
+  if (played.length === 0) {
+    return { matchday: null, results: [], scored: 0, correct: 0 };
+  }
+
+  const currentSeason = Math.max(...played.map((m) => m.season));
+  const seasonPlayed = played.filter((m) => m.season === currentSeason);
+
+  // Prefer the matchday in progress; if none of it has been played, show the
+  // last completed one.
+  const inPlay = forecasts[0]?.matchday ?? null;
+  const hasResults =
+    inPlay !== null && seasonPlayed.some((m) => m.matchday === inPlay);
+
+  const matchday = hasResults
+    ? inPlay
+    : Math.max(...seasonPlayed.map((m) => m.matchday));
+
+  const selected = seasonPlayed
+    .filter((m) => m.matchday === matchday)
+    .sort((a, b) => b.date.localeCompare(a.date));
+
+  let scored = 0;
+  let correct = 0;
+
+  const results: ScoredResult[] = selected.map((m) => {
+    const forecast = log.get(m.matchId);
+    const result = m.result as "H" | "D" | "A";
+
+    let probabilityOfActual: number | null = null;
+    let hit: boolean | null = null;
+
+    if (forecast) {
+      probabilityOfActual =
+        result === "H"
+          ? forecast.pHome
+          : result === "D"
+            ? forecast.pDraw
+            : forecast.pAway;
+      hit = forecast.predicted === result;
+      scored++;
+      if (hit) correct++;
+    }
+
+    return {
+      matchId: m.matchId,
+      date: m.date,
+      matchday: m.matchday,
+      homeTeam: m.homeTeam,
+      awayTeam: m.awayTeam,
+      homeGoals: m.homeGoals as number,
+      awayGoals: m.awayGoals as number,
+      result,
+      predicted: forecast?.predicted ?? null,
+      probabilityOfActual,
+      hit,
+    };
+  });
+
+  return { matchday, results, scored, correct };
+}
