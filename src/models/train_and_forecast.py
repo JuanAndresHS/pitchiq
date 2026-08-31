@@ -1,11 +1,13 @@
 """
 PitchIQ — Train the Dixon-Coles model and forecast upcoming fixtures.
 
-Extracted from notebooks/02_outcome_model.ipynb so the pipeline can retrain
-without a human opening Jupyter. The notebook remains the place where the model
-is explained and evaluated; this is the place where it runs.
+Runs once per league. Each competition gets its own fit: attack and defense
+parameters are only comparable within a league, since a +0.5 attack rating in
+the Bundesliga does not mean the same thing as a +0.5 in LaLiga. Cross-league
+comparison needs matches that connect them, which domestic fixtures never
+provide.
 
-Outputs three files in data/predictions/:
+Outputs, per league, in data/predictions/<slug>/:
 
   team_ratings.csv         current attack/defense parameters
   upcoming_forecasts.csv   forecasts for every unplayed fixture, refreshed
@@ -18,7 +20,8 @@ record into an unfalsifiable claim. Once a match_id appears in the log its row
 is never rewritten.
 
 Usage:
-    python src/models/train_and_forecast.py
+    python src/models/train_and_forecast.py                 # every league
+    python src/models/train_and_forecast.py --league PD SA
     python src/models/train_and_forecast.py --alpha 5 --xi 0.003
 """
 
@@ -36,12 +39,16 @@ from scipy import stats
 from scipy.optimize import minimize
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(PROJECT_ROOT / "src"))
+
+from leagues import League, all_codes, get_league  # noqa: E402
+
 PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
 PREDICTIONS_DIR = PROJECT_ROOT / "data" / "predictions"
 
 MAX_GOALS = 10
 DEFAULT_XI = 0.002  # time decay; ~347 day half-life
-DEFAULT_ALPHA = 3.0  # ridge penalty; selected on a held-out season
+MIN_MATCHES = 100  # below this a fit is not worth trusting
 
 logging.basicConfig(
     level=logging.INFO,
@@ -54,10 +61,13 @@ logger = logging.getLogger("pitchiq.model")
 # --- Load --------------------------------------------------------------------
 
 
-def load_matches() -> pd.DataFrame:
-    files = sorted(PROCESSED_DIR.glob("pl_matches_*.csv"))
+def load_matches(league: League) -> pd.DataFrame:
+    """Every ingested match for one league, across all seasons."""
+    files = sorted(PROCESSED_DIR.glob(f"{league.slug}_matches_*.csv"))
     if not files:
-        raise FileNotFoundError(f"No match files in {PROCESSED_DIR}")
+        raise FileNotFoundError(
+            f"No match files for {league.name} in {PROCESSED_DIR}"
+        )
 
     df = pd.concat([pd.read_csv(f) for f in files], ignore_index=True)
     df["utc_date"] = pd.to_datetime(df["utc_date"], utc=True)
@@ -99,8 +109,7 @@ def fit_dixon_coles(played: pd.DataFrame, xi: float, alpha: float):
     towards league average until real evidence accumulates.
 
     alpha was selected by held-out validation rather than by eye: log-loss and
-    ranked probability score both improve up to roughly 8 and degrade beyond it,
-    so this shrinks overfitting *and* forecasts better.
+    ranked probability score both improve up to roughly 3 and degrade beyond it.
     """
     teams = sorted(set(played["home_team"]) | set(played["away_team"]))
     index = {team: i for i, team in enumerate(teams)}
@@ -191,7 +200,9 @@ def predict(model: dict, home_team: str, away_team: str) -> tuple[float, float]:
 # --- Outputs -----------------------------------------------------------------
 
 
-def build_forecasts(model: dict, upcoming: pd.DataFrame) -> pd.DataFrame:
+def build_forecasts(
+    model: dict, upcoming: pd.DataFrame, league: League
+) -> pd.DataFrame:
     rows = []
 
     for match in upcoming.itertuples():
@@ -203,6 +214,7 @@ def build_forecasts(model: dict, upcoming: pd.DataFrame) -> pd.DataFrame:
         rows.append(
             {
                 "match_id": match.match_id,
+                "league": league.slug,
                 "date": match.utc_date.date().isoformat(),
                 "matchday": match.matchday,
                 "home_team": match.home_team,
@@ -223,14 +235,14 @@ def build_forecasts(model: dict, upcoming: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows).sort_values("date").reset_index(drop=True)
 
 
-def update_prediction_log(forecasts: pd.DataFrame) -> int:
+def update_prediction_log(forecasts: pd.DataFrame, out_dir: Path) -> int:
     """Record forecasts for matches not already logged. Never rewrites a row.
 
     A forecast is only meaningful evidence if it was fixed before the match was
     played. Re-forecasting a match after the fact and then scoring it would be
     marking your own homework.
     """
-    path = PREDICTIONS_DIR / "prediction_log.csv"
+    path = out_dir / "prediction_log.csv"
 
     if path.exists():
         existing = pd.read_csv(path)
@@ -242,7 +254,7 @@ def update_prediction_log(forecasts: pd.DataFrame) -> int:
     fresh = forecasts[~forecasts["match_id"].isin(known)].copy()
 
     if fresh.empty:
-        logger.info("Prediction log unchanged (%s entries).", len(known))
+        logger.info("  Prediction log unchanged (%s entries).", len(known))
         return 0
 
     fresh["forecast_made_at"] = datetime.now(timezone.utc).date().isoformat()
@@ -254,92 +266,84 @@ def update_prediction_log(forecasts: pd.DataFrame) -> int:
     )
     combined.to_csv(path, index=False)
 
-    logger.info("Logged %s new forecast(s); %s total.", len(fresh), len(combined))
+    logger.info("  Logged %s new forecast(s); %s total.", len(fresh), len(combined))
     return len(fresh)
 
 
-def report_track_record(played: pd.DataFrame) -> None:
+def report_track_record(played: pd.DataFrame, out_dir: Path) -> None:
     """Score logged forecasts against results that have since come in."""
-    path = PREDICTIONS_DIR / "prediction_log.csv"
+    path = out_dir / "prediction_log.csv"
     if not path.exists():
         return
 
     log = pd.read_csv(path)
-    results = played[["match_id", "result"]]
-    scored = log.merge(results, on="match_id", how="inner")
+    scored = log.merge(played[["match_id", "result"]], on="match_id", how="inner")
 
     if scored.empty:
-        logger.info("Track record: no logged forecasts have been played yet.")
+        logger.info("  Track record: nothing logged has been played yet.")
         return
 
     correct = (scored["prediction"] == scored["result"]).sum()
     logger.info(
-        "Track record: %s/%s correct (%.1f%%) over %s scored matches.",
+        "  Track record: %s/%s correct (%.1f%%).",
         correct,
         len(scored),
         correct / len(scored) * 100,
-        len(scored),
     )
 
 
-# --- Entrypoint --------------------------------------------------------------
+# --- Per-league run ----------------------------------------------------------
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(description="Train and forecast.")
-    parser.add_argument(
-        "--xi",
-        type=float,
-        default=DEFAULT_XI,
-        help="Time decay rate. Higher discounts older matches faster.",
-    )
-    parser.add_argument(
-        "--alpha",
-        type=float,
-        default=DEFAULT_ALPHA,
-        help="Ridge penalty on team parameters. Higher shrinks ratings towards "
-        "league average, which matters most for teams with few matches.",
-    )
-    args = parser.parse_args()
+def run_league(league: League, xi: float, alpha: float | None) -> bool:
+    """Fit and forecast one league.
+
+    alpha defaults to the value tuned for this competition; passing one on the
+    command line overrides it for every league, which is what you want when
+    experimenting but not in the pipeline.
+    """
+    penalty = league.alpha if alpha is None else alpha
+    logger.info("--- %s (alpha=%s) ---", league.name, penalty)
 
     try:
-        df = load_matches()
+        df = load_matches(league)
     except FileNotFoundError as exc:
-        logger.error("%s", exc)
-        return 1
+        logger.warning("  %s", exc)
+        return False
 
     played = df[df["status"] == "FINISHED"].copy()
     upcoming = df[df["status"] != "FINISHED"].copy()
 
-    if len(played) < 100:
-        logger.error("Only %s finished matches — too few to fit.", len(played))
-        return 1
+    if len(played) < MIN_MATCHES:
+        logger.warning(
+            "  Only %s finished matches — need at least %s to fit.",
+            len(played),
+            MIN_MATCHES,
+        )
+        return False
 
     logger.info(
-        "Fitting on %s matches across %s seasons (xi=%s, alpha=%s).",
+        "  Fitting on %s matches across %s seasons.",
         len(played),
         played["season"].nunique(),
-        args.xi,
-        args.alpha,
     )
 
-    model = fit_dixon_coles(played, args.xi, args.alpha)
+    model = fit_dixon_coles(played, xi, penalty)
 
     logger.info(
-        "Home advantage %.3f (%.3fx) | rho %.4f | %s teams",
+        "  Home advantage %.3f (%.3fx) | rho %+.4f | %s teams",
         model["home_advantage"],
         np.exp(model["home_advantage"]),
         model["rho"],
         len(model["teams"]),
     )
 
-    PREDICTIONS_DIR.mkdir(parents=True, exist_ok=True)
+    out_dir = PREDICTIONS_DIR / league.slug
+    out_dir.mkdir(parents=True, exist_ok=True)
 
     # Match counts travel with the ratings so downstream consumers can tell a
     # settled rating from one built on three games.
-    appearances = pd.concat(
-        [played["home_team"], played["away_team"]]
-    ).value_counts()
+    appearances = pd.concat([played["home_team"], played["away_team"]]).value_counts()
 
     ratings = (
         pd.DataFrame(
@@ -356,28 +360,74 @@ def main() -> int:
         .sort_values("overall", ascending=False)
         .round(4)
     )
-    ratings.to_csv(PREDICTIONS_DIR / "team_ratings.csv", index=False)
+    ratings.to_csv(out_dir / "team_ratings.csv", index=False)
 
     strongest = ratings.iloc[0]
     logger.info(
-        "Saved ratings for %s teams. Strongest: %s (%.2f, %s matches).",
-        len(ratings),
+        "  Ratings saved. Strongest: %s (%+.2f, %s matches).",
         strongest["team"],
         strongest["overall"],
         strongest["matches"],
     )
 
     if upcoming.empty:
-        logger.warning("No upcoming fixtures to forecast.")
+        logger.warning("  No upcoming fixtures to forecast.")
     else:
-        forecasts = build_forecasts(model, upcoming)
-        forecasts.to_csv(PREDICTIONS_DIR / "upcoming_forecasts.csv", index=False)
-        logger.info("Saved %s forecasts.", len(forecasts))
-        update_prediction_log(forecasts)
+        forecasts = build_forecasts(model, upcoming, league)
+        forecasts.to_csv(out_dir / "upcoming_forecasts.csv", index=False)
+        logger.info("  Saved %s forecasts.", len(forecasts))
+        update_prediction_log(forecasts, out_dir)
 
-    report_track_record(played)
-    logger.info("Done.")
-    return 0
+    report_track_record(played, out_dir)
+    return True
+
+
+# --- Entrypoint --------------------------------------------------------------
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Train and forecast.")
+    parser.add_argument(
+        "--league",
+        nargs="+",
+        default=all_codes(),
+        metavar="CODE",
+        help=f"Which leagues to model. Default: all ({', '.join(all_codes())}).",
+    )
+    parser.add_argument(
+        "--xi",
+        type=float,
+        default=DEFAULT_XI,
+        help="Time decay rate. Higher discounts older matches faster.",
+    )
+    parser.add_argument(
+        "--alpha",
+        type=float,
+        default=None,
+        help="Override the per-league ridge penalty for every league.",
+    )
+    args = parser.parse_args()
+
+    try:
+        leagues = [get_league(code) for code in args.league]
+    except ValueError as exc:
+        logger.error("%s", exc)
+        return 1
+
+    logger.info(
+        "Parameters: xi=%s, alpha=%s",
+        args.xi,
+        "per-league" if args.alpha is None else args.alpha,
+    )
+
+    succeeded = [lg.name for lg in leagues if run_league(lg, args.xi, args.alpha)]
+    failed = [lg.name for lg in leagues if lg.name not in succeeded]
+
+    logger.info("Done. %s modelled, %s skipped.", len(succeeded), len(failed))
+    if failed:
+        logger.warning("Skipped: %s", ", ".join(failed))
+
+    return 0 if succeeded else 1
 
 
 if __name__ == "__main__":

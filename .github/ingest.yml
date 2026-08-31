@@ -1,10 +1,11 @@
 name: Daily update
 
-# Keeps results, model and forecasts current without manual intervention.
+# Keeps results, models and forecasts current across every league without
+# manual intervention.
 on:
   schedule:
-    # 21:30 UTC — 4:30pm in Colombia, shortly after the last Premier League
-    # match of the day has finished and the result has settled.
+    # 21:30 UTC — after the last European match of the day has finished and the
+    # result has settled.
     - cron: "30 21 * * *"
     # 06:00 UTC — catches late kick-offs, midweek fixtures and rescheduled games.
     - cron: "0 6 * * *"
@@ -24,6 +25,10 @@ jobs:
   update:
     name: Fetch results and refresh forecasts
     runs-on: ubuntu-latest
+    # Five leagues, throttled to stay inside the API's rate limit, plus five
+    # model fits. Well under this, but the ceiling stops a hung run burning
+    # minutes.
+    timeout-minutes: 15
 
     steps:
       - name: Check out repository
@@ -45,7 +50,7 @@ jobs:
           FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
         run: python src/ingestion/fetch_matches.py
 
-      - name: Retrain model and refresh forecasts
+      - name: Retrain models and refresh forecasts
         run: python src/models/train_and_forecast.py
 
       - name: Commit updated data

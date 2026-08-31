@@ -2,8 +2,8 @@
 PitchIQ — Evaluate the forecasting model.
 
 Fits on earlier seasons, scores against the most recent complete one, and
-compares the result to a naive baseline. Also sweeps the ridge penalty so the
-chosen value is defensible rather than guessed.
+compares the result to a naive baseline. Runs per league, so each competition
+gets its own honest number rather than an average that hides variation.
 
 The split is strictly chronological. A random split would let the model learn
 from matches that happened after the ones it predicts, which in football is a
@@ -11,8 +11,9 @@ serious leak: transfers, injuries and managerial changes all mean later matches
 carry information about earlier ones.
 
 Usage:
-    python src/models/evaluate.py
-    python src/models/evaluate.py --sweep     # tune alpha and report the curve
+    python src/models/evaluate.py                    # every league
+    python src/models/evaluate.py --league PD
+    python src/models/evaluate.py --sweep            # tune alpha per league
 """
 
 from __future__ import annotations
@@ -23,11 +24,13 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from scipy import stats
 
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(PROJECT_ROOT / "src"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from leagues import League, all_codes, get_league  # noqa: E402
 from train_and_forecast import (  # noqa: E402
-    DEFAULT_ALPHA,
     DEFAULT_XI,
     fit_dixon_coles,
     load_matches,
@@ -36,6 +39,7 @@ from train_and_forecast import (  # noqa: E402
 )
 
 OUTCOMES = {"H": 0, "D": 1, "A": 2}
+SWEEP_VALUES = [0.0, 1.0, 2.0, 3.0, 5.0, 8.0, 12.0, 20.0]
 
 
 # --- Metrics -----------------------------------------------------------------
@@ -66,17 +70,15 @@ def accuracy(probs: np.ndarray, y: np.ndarray) -> float:
 # --- Evaluation --------------------------------------------------------------
 
 
-def forecast_set(model: dict, test: pd.DataFrame) -> np.ndarray:
-    rows = []
-    for match in test.itertuples():
-        lam, mu = predict(model, match.home_team, match.away_team)
-        rows.append(outcome_probs(lam, mu, model["rho"]))
-    return np.array(rows)
-
-
 def evaluate(train: pd.DataFrame, test: pd.DataFrame, xi: float, alpha: float):
     model = fit_dixon_coles(train, xi, alpha)
-    probs = forecast_set(model, test)
+
+    probs = np.array(
+        [
+            outcome_probs(*predict(model, m.home_team, m.away_team), model["rho"])
+            for m in test.itertuples()
+        ]
+    )
     y = test["result"].map(OUTCOMES).to_numpy()
 
     return {
@@ -97,103 +99,172 @@ def baseline_metrics(train: pd.DataFrame, test: pd.DataFrame):
     y = test["result"].map(OUTCOMES).to_numpy()
 
     return {
-        # The baseline's pick is always the most common outcome, not argmax of a
-        # tied row, so accuracy is measured against that fixed choice.
+        # The baseline's pick is the most common outcome, not argmax of a tied
+        # row, so accuracy is measured against that fixed choice.
         "accuracy": float(np.mean(y == int(np.argmax(rates)))),
         "log_loss": log_loss(probs, y),
         "rps": ranked_probability_score(probs, y),
-        "rates": rates,
     }
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(description="Evaluate the model.")
-    parser.add_argument("--xi", type=float, default=DEFAULT_XI)
-    parser.add_argument("--alpha", type=float, default=DEFAULT_ALPHA)
-    parser.add_argument(
-        "--sweep",
-        action="store_true",
-        help="Try a range of ridge penalties and report the curve.",
-    )
-    args = parser.parse_args()
-
-    df = load_matches()
+def split(league: League):
+    """Train on every complete season but the last; test on the last."""
+    df = load_matches(league)
     played = df[df["status"] == "FINISHED"].copy()
 
     counts = played.groupby("season").size()
-    complete = sorted(counts[counts >= 300].index)
+    # A season counts as complete once most of it has been played. The
+    # threshold scales with league size: 18-team divisions play 306 matches.
+    minimum = (league.teams - 1) * league.teams * 0.8
+    complete = sorted(counts[counts >= minimum].index)
 
     if len(complete) < 2:
-        print(f"Need at least two complete seasons; found {len(complete)}.")
-        return 1
+        return None, None, None
 
     test_season = complete[-1]
-    train_seasons = complete[:-1]
-
-    train = played[played["season"].isin(train_seasons)].copy()
+    train = played[played["season"].isin(complete[:-1])].copy()
     test = played[played["season"] == test_season].copy()
 
     assert train["utc_date"].max() < test["utc_date"].min(), "temporal leak"
 
-    print(f"Train  {train_seasons} — {len(train):,} matches")
+    return train, test, test_season
+
+
+# --- Per-league run ----------------------------------------------------------
+
+
+def run_league(league: League, xi: float, alpha: float | None, sweep: bool):
+    print(f"\n{'=' * 62}")
+    print(f"{league.name} ({league.country})")
+    print("=" * 62)
+
+    try:
+        train, test, test_season = split(league)
+    except FileNotFoundError as exc:
+        print(f"  {exc}")
+        return None
+
+    if train is None:
+        print("  Not enough complete seasons to evaluate.")
+        return None
+
+    print(f"Train  {[int(s) for s in sorted(train['season'].unique())]} — {len(train):,} matches")
     print(f"Test   [{test_season}] — {len(test):,} matches")
-    print(f"Params xi={args.xi}, alpha={args.alpha}\n")
 
-    base = baseline_metrics(train, test)
+    chosen = league.alpha if alpha is None else alpha
 
-    if args.sweep:
-        print("Ridge penalty sweep")
-        print(f"{'alpha':>7} {'accuracy':>10} {'log-loss':>10} {'RPS':>9}")
+    if sweep:
+        print(f"\n{'alpha':>7} {'accuracy':>10} {'log-loss':>10} {'RPS':>9}")
         print("-" * 39)
 
-        best_alpha, best_rps = None, float("inf")
-        for alpha in [0.0, 1.0, 2.0, 3.0, 5.0, 8.0, 12.0, 20.0]:
-            m = evaluate(train, test, args.xi, alpha)
-            marker = ""
-            if m["rps"] < best_rps:
-                best_rps, best_alpha = m["rps"], alpha
+        best_rps = float("inf")
+        for value in SWEEP_VALUES:
+            m = evaluate(train, test, xi, value)
             print(
-                f"{alpha:7.1f} {m['accuracy']:10.3f} {m['log_loss']:10.4f} "
-                f"{m['rps']:9.4f}{marker}"
+                f"{value:7.1f} {m['accuracy']:10.3f} {m['log_loss']:10.4f} {m['rps']:9.4f}"
             )
+            if m["rps"] < best_rps:
+                best_rps, chosen = m["rps"], value
 
-        print(f"\nBest alpha by RPS: {best_alpha}")
-        args.alpha = best_alpha
-        print()
+        print(f"\nBest alpha by RPS: {chosen}")
 
-    model = evaluate(train, test, args.xi, args.alpha)
-
+    model = evaluate(train, test, xi, chosen)
+    base = baseline_metrics(train, test)
     improvement = (base["rps"] - model["rps"]) / base["rps"] * 100
 
-    print("=" * 58)
-    print(f"{'':<20}{'baseline':>12}{'model':>12}")
-    print("-" * 58)
-    print(f"{'Accuracy':<20}{base['accuracy']:>11.1%}{model['accuracy']:>12.1%}")
-    print(f"{'Log-loss':<20}{base['log_loss']:>12.4f}{model['log_loss']:>12.4f}")
-    print(f"{'RPS':<20}{base['rps']:>12.4f}{model['rps']:>12.4f}")
-    print("-" * 58)
-    print(f"{'RPS improvement':<20}{improvement:>23.1f}%")
-    print(f"{'Home advantage':<20}{model['home_advantage']:>22.3f}x")
-    print(f"{'Rho':<20}{model['rho']:>23.4f}")
-    print("=" * 58)
+    print(f"\n{'':<18}{'baseline':>12}{'model':>12}")
+    print("-" * 42)
+    print(f"{'Accuracy':<18}{base['accuracy']:>11.1%}{model['accuracy']:>12.1%}")
+    print(f"{'Log-loss':<18}{base['log_loss']:>12.4f}{model['log_loss']:>12.4f}")
+    print(f"{'RPS':<18}{base['rps']:>12.4f}{model['rps']:>12.4f}")
+    print("-" * 42)
+    print(f"{'RPS improvement':<18}{improvement:>23.1f}%")
+    print(f"{'Home advantage':<18}{model['home_advantage']:>22.3f}x")
+    print(f"{'Rho':<18}{model['rho']:>23.4f}")
 
-    season_label = f"{test_season}/{str((test_season + 1) % 100).zfill(2)}"
+    return {
+        "league": league,
+        "alpha": chosen,
+        "test_season": test_season,
+        "test_matches": len(test),
+        "train_matches": len(train),
+        "model": model,
+        "baseline": base,
+        "improvement": improvement,
+    }
+
+
+# --- Entrypoint --------------------------------------------------------------
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Evaluate the model.")
+    parser.add_argument("--league", nargs="+", default=all_codes(), metavar="CODE")
+    parser.add_argument("--xi", type=float, default=DEFAULT_XI)
+    parser.add_argument("--alpha", type=float, default=None)
+    parser.add_argument(
+        "--sweep",
+        action="store_true",
+        help="Try a range of ridge penalties per league and report the curve.",
+    )
+    args = parser.parse_args()
+
+    try:
+        leagues = [get_league(code) for code in args.league]
+    except ValueError as exc:
+        print(exc)
+        return 1
+
+    results = [
+        r
+        for r in (run_league(lg, args.xi, args.alpha, args.sweep) for lg in leagues)
+        if r is not None
+    ]
+
+    if not results:
+        print("\nNothing evaluated.")
+        return 1
+
+    # Cross-league summary — the useful view once there is more than one.
+    print(f"\n\n{'=' * 74}")
+    print("SUMMARY")
+    print("=" * 74)
+    print(
+        f"{'League':<18}{'alpha':>7}{'acc':>9}{'base':>8}"
+        f"{'log-loss':>11}{'RPS gain':>11}{'home adv':>10}"
+    )
+    print("-" * 74)
+
+    for r in results:
+        print(
+            f"{r['league'].name:<18}{r['alpha']:>7.1f}"
+            f"{r['model']['accuracy']:>9.1%}{r['baseline']['accuracy']:>8.1%}"
+            f"{r['model']['log_loss']:>11.4f}{r['improvement']:>10.1f}%"
+            f"{r['model']['home_advantage']:>9.2f}x"
+        )
+
+    print("-" * 74)
+
+    weighted = sum(r["model"]["accuracy"] * r["test_matches"] for r in results) / sum(
+        r["test_matches"] for r in results
+    )
+    print(f"{'Weighted accuracy':<18}{weighted:>16.1%}")
+    print("=" * 74)
 
     print("\nPaste into web/lib/model-metrics.ts:\n")
-    print(f'  testSeason: "{season_label}",')
-    print(f"  testMatches: {len(test)},")
-    print(f"  trainMatches: {len(train)},")
-    print()
-    print(
-        f"  accuracy: {{ baseline: {base['accuracy']:.3f}, "
-        f"model: {model['accuracy']:.3f} }},"
-    )
-    print(
-        f"  logLoss: {{ baseline: {base['log_loss']:.4f}, "
-        f"model: {model['log_loss']:.4f} }},"
-    )
-    print(f"  rpsImprovement: {improvement / 100:.3f},")
-    print(f"  homeAdvantage: {model['home_advantage']:.3f},")
+    print("export const LEAGUE_METRICS = {")
+    for r in results:
+        m, b = r["model"], r["baseline"]
+        print(f'  {r["league"].slug}: {{')
+        print(f'    testSeason: "{r["test_season"]}/{str((r["test_season"] + 1) % 100).zfill(2)}",')
+        print(f"    testMatches: {r['test_matches']},")
+        print(f"    accuracy: {{ baseline: {b['accuracy']:.3f}, model: {m['accuracy']:.3f} }},")
+        print(f"    logLoss: {{ baseline: {b['log_loss']:.4f}, model: {m['log_loss']:.4f} }},")
+        print(f"    rpsImprovement: {r['improvement'] / 100:.3f},")
+        print(f"    homeAdvantage: {m['home_advantage']:.3f},")
+        print(f"    alpha: {r['alpha']},")
+        print("  },")
+    print("} as const;")
 
     return 0
 
