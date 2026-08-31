@@ -44,17 +44,41 @@ Football generates an enormous amount of data, but most of it stays locked behin
 
 ## Results
 
-The model was evaluated on a held-out season it never saw during training.
+Evaluated on the 2025/26 season, held out entirely from training. The model
+never saw a single match from it.
 
-| Metric | Baseline | Dixon–Coles |
+| Metric | Baseline | Dixon–Coles | 
 |---|---|---|
-| Accuracy | 42.6% | **46.8%** |
-| Log-loss | 1.0852 | **1.0300** |
-| RPS improvement | — | **7.9%** |
+| Accuracy | 42.6% | **47.9%** |
+| Log-loss | 1.0852 | **1.0286** |
+| RPS improvement | — | **8.2%** |
 
-The baseline is "always predict a home win." Accuracy is the least interesting number here: football is genuinely high-variance, and professional bookmakers with far richer data operate in a similar range. The meaningful gain is in **log-loss and ranked probability score**, which measure whether the stated probabilities are honest rather than whether the top pick happened to be right.
+The baseline is "always predict a home win." Accuracy is the least interesting
+number here: football is genuinely high-variance, and professional bookmakers
+with far richer data operate in a similar range. The meaningful gain is in
+**log-loss and ranked probability score**, which measure whether the stated
+probabilities are honest rather than whether the top pick happened to land.
 
-One exploratory finding drove the model choice: goal counts in the dataset are statistically consistent with a Poisson distribution (χ² goodness-of-fit, p = 0.31 home / p = 0.46 away). That makes Poisson regression a justified starting point rather than an arbitrary one.
+**Three findings shaped the model:**
+
+**Goals are Poisson.** A chi-square goodness-of-fit test could not reject the
+Poisson hypothesis for either home or away goals (p = 0.31 / p = 0.46), with
+mean and variance within 4% of each other. That makes Poisson regression a
+justified starting point rather than an arbitrary one.
+
+**Regularization matters more for credibility than for accuracy.** A ridge
+penalty on team parameters, tuned by held-out validation, improves RPS only
+marginally — but without it a newly promoted side with two matches played
+topped the strength ratings. With little data the likelihood barely constrains
+a team's parameters, so the optimiser fits those two results exactly. The
+penalty pulls them back to league average until real evidence accumulates.
+
+**The low-score correction runs the other way.** Dixon and Coles found in 1997
+that 0–0 and 1–1 occur more often than independence predicts. In this dataset
+the fitted rho is slightly negative (−0.018), pointing the opposite direction.
+The magnitude is small enough that it is probably noise at 760 training
+matches, but it is worth stating rather than quietly assuming the original
+paper's sign.
 
 ---
 
@@ -109,6 +133,15 @@ One exploratory finding drove the model choice: goal counts in the dataset are s
 - **Versioned data artifacts.** Processed data and forecasts are committed by the pipeline, making every prediction reproducible and auditable after the fact.
 
 - **Three recent seasons, not ten.** Training depth is limited by what the free API tier exposes, but the constraint aligns with the domain: squads and managers turn over, so older seasons contribute more noise than signal.
+
+  - **Append-only prediction log.** Forecasts are recorded before kick-off and
+  never rewritten. Overwriting them each run would erase the evidence needed to
+  score them afterwards, turning a live track record into an unfalsifiable
+  claim. The log makes every prediction auditable through Git history.
+
+- **Regularised fit.** A ridge penalty on attack and defense parameters,
+  selected by validation rather than by eye, keeps teams with few matches from
+  receiving extreme ratings the data cannot support.
 
 ---
 
@@ -185,10 +218,12 @@ Run the notebooks in order to reproduce the analysis and regenerate forecasts:
 - [x] Exploratory data analysis
 - [x] Match outcome model (Poisson GLM + Dixon–Coles)
 - [x] Conversational agent with function calling
-- [ ] Next.js dashboard
-- [ ] Vercel deployment
-- [ ] Prediction accuracy tracking over a live season
+- [x] Next.js dashboard
+- [x] Vercel deployment
+- [x] Automated retraining and append-only prediction log
+- [ ] Live accuracy tracked across a full season
 - [ ] Expected goals (xG) model from event-level data
+- [ ] Squad availability as a model input
 
 ---
 
@@ -202,7 +237,7 @@ pitchiq/
 ├── data/
 │   ├── raw/               # Source data (gitignored)
 │   ├── processed/         # Clean, versioned match data
-│   └── predictions/       # Model forecasts and team ratings
+│   └── predictions/       # ratings, forecasts, and the append-only log
 ├── notebooks/
 │   ├── 01_exploratory_analysis.ipynb
 │   └── 02_outcome_model.ipynb
@@ -210,9 +245,11 @@ pitchiq/
 │   ├── ingestion/
 │   │   └── fetch_matches.py
 │   ├── models/
+│   │   ├── train_and_forecast.py   # fits the model, writes forecasts
+│   │   └── evaluate.py             # held-out evaluation and alpha sweep
 │   └── agent/
-│       ├── tools.py           # Data tools exposed to the agent
-│       └── gemini_agent.py    # Gemini function-calling loop
+│       ├── tools.py
+│       └── gemini_agent.py
 ├── requirements.txt
 └── README.md
 ```
