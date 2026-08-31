@@ -1,12 +1,17 @@
 /**
  * Chat endpoint.
  *
- * Runs the Gemini tool-calling loop on the server, so the API key never
- * reaches the browser and the tools can read the CSVs from the filesystem.
+ * Runs the Gemini tool-calling loop on the server, so the API key never reaches
+ * the browser and the tools can read the CSVs from the filesystem.
  *
  * The Interactions API keeps conversation state server-side at Google, so the
  * client only has to send the previous interaction id rather than the whole
  * history.
+ *
+ * Note on limits: a single question costs several API requests — one to choose
+ * a tool, one to read the result, more if it chains. On the free tier that adds
+ * up fast, so the tool loop is kept short and quota errors are surfaced
+ * honestly rather than as a generic failure.
  */
 
 import { GoogleGenAI } from "@google/genai";
@@ -14,10 +19,13 @@ import { NextResponse } from "next/server";
 import { TOOL_SCHEMAS, executeTool } from "@/lib/tools";
 
 export const runtime = "nodejs";
-export const maxDuration = 30;
+export const maxDuration = 60; // Vercel Hobby caps at 60s
 
-const MODEL = process.env.GEMINI_MODEL ?? "gemini-3.5-flash";
-const MAX_TOOL_ROUNDS = 6;
+const MODEL = process.env.GEMINI_MODEL ?? "gemini-3.5-flash-lite";
+
+// Three rounds is enough for "compare two teams" (two parallel tool calls, then
+// an answer). Allowing more mostly buys pathological chains that time out.
+const MAX_TOOL_ROUNDS = 3;
 
 const SYSTEM_PROMPT = `You are PitchIQ, an analytics assistant for the Premier League.
 
@@ -30,21 +38,23 @@ Rules you follow strictly:
    did not get it from a tool in this conversation, you do not know it. Call a
    tool or say you cannot answer.
 
-2. Prefer several tool calls over guessing. Comparing two teams usually means
-   calling get_team_form twice, and often get_head_to_head as well.
+2. Call every tool you need in one go rather than one at a time. Comparing two
+   teams means requesting both forms together, not sequentially.
 
-3. Report probabilities as probabilities. "Arsenal are 62% to win" is right;
+3. Answer as soon as you have enough. Do not keep querying for extra colour.
+
+4. Report probabilities as probabilities. "Arsenal are 62% to win" is right;
    "Arsenal will win" is wrong. The model produces distributions, not certainties.
 
-4. Be honest about the model's limits when they matter. It knows goals, teams
+5. Be honest about the model's limits when they matter. It knows goals, teams
    and dates. It does not know about injuries, suspensions, transfers,
    managerial changes or European fixture congestion. If a question depends on
    those, say so.
 
-5. Newly promoted teams have little data behind their ratings. Flag that when
+6. Newly promoted teams have little data behind their ratings. Flag that when
    their forecasts come up.
 
-6. Write like a knowledgeable analyst talking to someone who follows football:
+7. Write like a knowledgeable analyst talking to someone who follows football:
    direct, specific, no hedging filler. Lead with the answer, then the evidence.
    Two or three sentences is usually enough. Plain text only, no markdown.`;
 
@@ -52,6 +62,34 @@ type ChatRequest = {
   message?: unknown;
   previousInteractionId?: unknown;
 };
+
+/** Pull a usable message out of whatever shape the SDK threw. */
+function describeError(error: unknown): { status: number; message: string } {
+  const status =
+    typeof error === "object" && error !== null && "status" in error
+      ? Number((error as { status: unknown }).status)
+      : 0;
+
+  if (status === 429) {
+    return {
+      status: 429,
+      message:
+        "The free tier's request limit was hit. Wait about a minute and ask again.",
+    };
+  }
+
+  if (status === 403 || status === 401) {
+    return {
+      status: 503,
+      message: "The assistant is not configured correctly. Check the API key.",
+    };
+  }
+
+  return {
+    status: 502,
+    message: "The assistant is unavailable right now. Try again in a moment.",
+  };
+}
 
 export async function POST(request: Request) {
   const apiKey = process.env.GEMINI_API_KEY;
@@ -148,17 +186,17 @@ export async function POST(request: Request) {
       });
     }
 
+    // Out of rounds but the model may still have written something usable.
     return NextResponse.json({
       reply:
+        interaction.output_text ||
         "That took more steps than expected. Try asking something more specific.",
       interactionId: interaction.id,
       toolsUsed,
     });
   } catch (error) {
     console.error("[chat]", error);
-    return NextResponse.json(
-      { error: "The assistant is unavailable right now. Try again in a moment." },
-      { status: 502 },
-    );
+    const { status, message: text } = describeError(error);
+    return NextResponse.json({ error: text }, { status });
   }
 }
