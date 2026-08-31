@@ -63,11 +63,13 @@ export default function PerformanceGaps({
       </ul>
 
       <p className="text-pitch-faint mt-3 text-xs leading-relaxed">
-        League position on the left, model rank on the right. Green means a team
-        has played better than its points suggest and has room to climb; red
-        means the table currently flatters it. Early in a season these gaps are
-        wide, because a handful of results say less than a rating built on four
-        years of matches.
+        League position on the left, model rank on the right. The rating is built
+        from four seasons of results, so it reflects a squad&apos;s accumulated
+        strength rather than these two matches. Green means the model rates a
+        team above where it sits — historically it is better than this, and
+        likely to climb. Red means the table currently flatters it. The gaps are
+        widest early on, when a handful of results carry almost no weight against
+        four years of evidence.
       </p>
     </div>
   );
