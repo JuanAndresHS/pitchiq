@@ -89,6 +89,23 @@ export type ScoredResult = {
   hit: boolean | null;
 };
 
+export type ModelParams = {
+  league: string;
+  leagueName: string;
+  homeAdvantage: number;
+  rho: number;
+  xi: number;
+  alpha: number;
+  teams: number;
+  matchesFitted: number;
+  seasons: number;
+  goalsPerMatch: number;
+  homeWinRate: number;
+  drawRate: number;
+  awayWinRate: number;
+  fittedAt: string;
+};
+
 export type PerformanceGap = {
   team: string;
   tablePosition: number;
@@ -245,6 +262,43 @@ export async function getTeamRatings(league: string): Promise<TeamRating[]> {
       matches: num(r.matches) ?? 0,
     }))
     .sort((a, b) => b.overall - a.overall);
+}
+
+/**
+ * The parameters the model actually estimated, written by the training script.
+ *
+ * Read from disk rather than hardcoded so the site can never drift from the
+ * model. Home advantage and rho describe the competition rather than any squad,
+ * which is why — unlike team ratings — they are meaningful to compare across
+ * leagues.
+ */
+export async function getModelParams(
+  league: string,
+): Promise<ModelParams | null> {
+  const file = path.join(PREDICTIONS, league, "model_params.json");
+  if (!existsSync(file)) return null;
+
+  try {
+    const raw = JSON.parse(await readFile(file, "utf8"));
+    return {
+      league: raw.league,
+      leagueName: raw.league_name,
+      homeAdvantage: raw.home_advantage,
+      rho: raw.rho,
+      xi: raw.xi,
+      alpha: raw.alpha,
+      teams: raw.teams,
+      matchesFitted: raw.matches_fitted,
+      seasons: raw.seasons,
+      goalsPerMatch: raw.goals_per_match,
+      homeWinRate: raw.home_win_rate,
+      drawRate: raw.draw_rate,
+      awayWinRate: raw.away_win_rate,
+      fittedAt: raw.fitted_at,
+    };
+  } catch {
+    return null;
+  }
 }
 
 type LoggedForecast = {

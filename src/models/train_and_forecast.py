@@ -28,6 +28,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import logging
 import sys
 from datetime import datetime, timezone
@@ -361,6 +362,32 @@ def run_league(league: League, xi: float, alpha: float | None) -> bool:
         .round(4)
     )
     ratings.to_csv(out_dir / "team_ratings.csv", index=False)
+
+    # The fitted parameters, so downstream consumers read what the model
+    # actually estimated rather than a number copied into a config by hand.
+    # Home advantage and rho are the two that carry meaning on their own, and
+    # unlike team ratings they *are* comparable across leagues: both describe
+    # the competition, not a squad.
+    params = {
+        "league": league.slug,
+        "league_name": league.name,
+        "home_advantage": round(float(np.exp(model["home_advantage"])), 4),
+        "home_advantage_log": round(model["home_advantage"], 4),
+        "rho": round(model["rho"], 4),
+        "xi": xi,
+        "alpha": penalty,
+        "teams": len(model["teams"]),
+        "matches_fitted": int(len(played)),
+        "seasons": int(played["season"].nunique()),
+        "goals_per_match": round(
+            float((played["home_goals"] + played["away_goals"]).mean()), 3
+        ),
+        "home_win_rate": round(float((played["result"] == "H").mean()), 4),
+        "draw_rate": round(float((played["result"] == "D").mean()), 4),
+        "away_win_rate": round(float((played["result"] == "A").mean()), 4),
+        "fitted_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    }
+    (out_dir / "model_params.json").write_text(json.dumps(params, indent=2))
 
     strongest = ratings.iloc[0]
     logger.info(

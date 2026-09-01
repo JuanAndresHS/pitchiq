@@ -13,6 +13,7 @@
 import {
   getForecasts,
   getMatches,
+  getModelParams,
   getStandings,
   getTeamRatings,
   getTrackRecord,
@@ -497,6 +498,48 @@ async function evaluateModelAccuracyTool(
   };
 }
 
+async function compareLeaguesTool(): Promise<ToolResult> {
+  const rows = [];
+
+  for (const league of LEAGUES) {
+    const params = await getModelParams(league.slug);
+    if (!params) continue;
+
+    rows.push({
+      league: league.name,
+      country: league.country,
+      home_advantage: params.homeAdvantage,
+      home_win_rate: params.homeWinRate,
+      draw_rate: params.drawRate,
+      away_win_rate: params.awayWinRate,
+      goals_per_match: params.goalsPerMatch,
+      rho: params.rho,
+      teams: params.teams,
+      matches_fitted: params.matchesFitted,
+    });
+  }
+
+  if (rows.length === 0) return { error: "No fitted models available." };
+
+  const byHome = [...rows].sort((a, b) => b.home_advantage - a.home_advantage);
+  const byGoals = [...rows].sort((a, b) => b.goals_per_match - a.goals_per_match);
+
+  return {
+    leagues: rows,
+    highlights: {
+      strongest_home_advantage: byHome[0].league,
+      weakest_home_advantage: byHome[byHome.length - 1].league,
+      most_goals: byGoals[0].league,
+      fewest_goals: byGoals[byGoals.length - 1].league,
+    },
+    notes: [
+      "home_advantage is the multiplier on a team's goal rate when playing at home. It describes the competition rather than any squad, so comparing it across leagues is valid.",
+      "rho is the Dixon-Coles correction for low-scoring matches. Dixon and Coles (1997) found it positive in English data; a negative value points the other way.",
+      "Team attack and defense ratings are NOT comparable across leagues and are not included here.",
+    ],
+  };
+}
+
 // --- Registry and schemas ----------------------------------------------------
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -511,6 +554,7 @@ const REGISTRY: Record<
   get_team_ratings: getTeamRatingsTool,
   get_head_to_head: getHeadToHeadTool,
   evaluate_model_accuracy: evaluateModelAccuracyTool,
+  compare_leagues: compareLeaguesTool,
 };
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
@@ -609,6 +653,13 @@ export const TOOL_SCHEMAS = [
       },
       required: ["team_a", "team_b"],
     },
+  },
+  {
+    type: "function" as const,
+    name: "compare_leagues",
+    description:
+      "Compare the five leagues against each other: home advantage, goals per match, outcome rates, and fitted model parameters. Use for any question that spans competitions — which league has the strongest home advantage, which is highest scoring, where draws are most common. Takes no arguments and always covers all five.",
+    parameters: { type: "object", properties: {} },
   },
   {
     type: "function" as const,
