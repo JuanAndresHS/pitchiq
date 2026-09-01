@@ -1,357 +1,250 @@
+import Link from "next/link";
+import type { Metadata } from "next";
+
 import Chat from "@/components/Chat";
-import FeaturedForecast from "@/components/FeaturedForecast";
-import FixtureList from "@/components/FixtureList";
-import PerformanceGaps from "@/components/PerformanceGaps";
-import ResultsList from "@/components/ResultsList";
-import StandingsTable from "@/components/StandingsTable";
-import { MODEL_METRICS } from "@/lib/model-metrics";
+
+import { LEAGUES, type League } from "@/lib/leagues";
+import { LEAGUE_METRICS, OVERALL_ACCURACY } from "@/lib/model-metrics";
 import {
-  getFeaturedFixture,
-  getNextMatchday,
-  getPerformanceGaps,
-  getRecentResults,
-  getStandings,
+  getForecasts,
   getSummary,
   getTeamRatings,
   getTrackRecord,
+  shortName,
 } from "@/lib/data";
 
 export const revalidate = 3600;
 
-function Section({
-  id,
-  title,
-  meta,
-  children,
-}: {
-  id?: string;
-  title: string;
-  meta?: string;
-  children: React.ReactNode;
-}) {
+export const metadata: Metadata = {
+  title: "PitchIQ — Football forecasts for Europe's five biggest leagues",
+  description:
+    "Probabilistic match forecasts for the Premier League, LaLiga, Serie A, Bundesliga and Ligue 1, from Dixon-Coles models updated daily.",
+};
+
+type Card = {
+  league: League;
+  matches: number;
+  openForecasts: number;
+  strongest: string | null;
+  nextFixture: { home: string; away: string; pHome: number; pDraw: number; pAway: number } | null;
+  track: { evaluated: number; correct: number };
+};
+
+async function buildCard(league: League): Promise<Card> {
+  const [summary, ratings, forecasts, track] = await Promise.all([
+    getSummary(league.slug),
+    getTeamRatings(league.slug),
+    getForecasts(league.slug),
+    getTrackRecord(league.slug),
+  ]);
+
+  const next = forecasts[0] ?? null;
+
+  return {
+    league,
+    matches: summary.matchesAnalysed,
+    openForecasts: summary.forecastsOpen,
+    strongest: ratings[0] ? shortName(ratings[0].team) : null,
+    nextFixture: next
+      ? {
+          home: shortName(next.homeTeam),
+          away: shortName(next.awayTeam),
+          pHome: next.pHome,
+          pDraw: next.pDraw,
+          pAway: next.pAway,
+        }
+      : null,
+    track: { evaluated: track.evaluated, correct: track.correct },
+  };
+}
+
+function LeagueCard({ card }: { card: Card }) {
+  const { league, nextFixture } = card;
+  const metrics = LEAGUE_METRICS[league.slug];
+
   return (
-    <section id={id} className="scroll-mt-8">
-      <div className="border-pitch-line mb-4 flex items-baseline justify-between gap-4 border-b pb-2">
-        <h2 className="font-display text-xl leading-none">{title}</h2>
-        {meta && <span className="text-pitch-faint text-xs">{meta}</span>}
+    // The card carries its own palette scope, so every token inside resolves to
+    // that league's colours without a single conditional class.
+    <Link
+      href={`/${league.route}`}
+      data-league={league.slug}
+      className="bg-pitch-deep border-pitch-line hover:border-outcome-draw group block rounded-xl border p-6 transition-colors"
+    >
+      <div className="mb-1 flex items-baseline justify-between gap-3">
+        <h2 className="font-display text-2xl leading-none">{league.name}</h2>
+        <span className="text-pitch-faint text-[11px] tracking-wider">
+          {league.code}
+        </span>
       </div>
-      {children}
-    </section>
+
+      <p className="text-pitch-dim mb-5 text-sm leading-snug">
+        {league.tagline}
+      </p>
+
+      {nextFixture && (
+        <div className="mb-5">
+          <p className="text-pitch-faint mb-2 text-xs">Next up</p>
+          <p className="font-display mb-2 truncate text-base">
+            {nextFixture.home}
+            <span className="text-pitch-faint px-2 text-sm">v</span>
+            {nextFixture.away}
+          </p>
+          <div
+            className="flex h-2 overflow-hidden rounded-full"
+            role="img"
+            aria-label={`${Math.round(nextFixture.pHome * 100)} percent home win, ${Math.round(nextFixture.pDraw * 100)} percent draw, ${Math.round(nextFixture.pAway * 100)} percent away win`}
+          >
+            <span
+              className="bg-outcome-home"
+              style={{ width: `${nextFixture.pHome * 100}%` }}
+            />
+            <span
+              className="bg-outcome-draw"
+              style={{ width: `${nextFixture.pDraw * 100}%` }}
+            />
+            <span
+              className="bg-outcome-away"
+              style={{ width: `${nextFixture.pAway * 100}%` }}
+            />
+          </div>
+        </div>
+      )}
+
+      <dl className="text-pitch-faint grid grid-cols-3 gap-3 text-xs">
+        <div>
+          <dt>Matches</dt>
+          <dd className="text-pitch-text tnum font-display mt-0.5 text-lg leading-none">
+            {card.matches.toLocaleString("en-GB")}
+          </dd>
+        </div>
+        <div>
+          <dt>Accuracy</dt>
+          <dd className="text-pitch-text tnum font-display mt-0.5 text-lg leading-none">
+            {metrics ? `${(metrics.accuracy.model * 100).toFixed(0)}%` : "—"}
+          </dd>
+        </div>
+        <div>
+          <dt>{card.track.evaluated > 0 ? "Called" : "Open"}</dt>
+          <dd className="text-pitch-text tnum font-display mt-0.5 text-lg leading-none">
+            {card.track.evaluated > 0
+              ? `${card.track.correct}/${card.track.evaluated}`
+              : card.openForecasts}
+          </dd>
+        </div>
+      </dl>
+
+      <p className="text-outcome-draw mt-5 text-sm opacity-0 transition-opacity group-hover:opacity-100">
+        Open {league.shortName} →
+      </p>
+    </Link>
   );
 }
 
-function Metric({
-  label,
-  value,
-  note,
-}: {
-  label: string;
-  value: string;
-  note?: string;
-}) {
-  return (
-    <div className="bg-pitch-raised rounded-lg px-4 py-3.5">
-      <p className="text-pitch-faint text-xs">{label}</p>
-      <p className="font-display tnum mt-1.5 text-2xl leading-none">{value}</p>
-      {note && <p className="text-pitch-faint mt-1.5 text-xs">{note}</p>}
-    </div>
-  );
-}
+export default async function HomePage() {
+  const cards = await Promise.all(LEAGUES.map(buildCard));
 
-export default async function Home() {
-  const [summary, standings, nextMatchday, ratings, track, recent, gaps] =
-    await Promise.all([
-      getSummary(),
-      getStandings(),
-      getNextMatchday(),
-      getTeamRatings(),
-      getTrackRecord(),
-      getRecentResults(),
-      getPerformanceGaps(6),
-    ]);
-
-  const seasonLabel = summary.season
-    ? `${summary.season}/${String((summary.season + 1) % 100).padStart(2, "0")}`
-    : "—";
-
-  const featured = await getFeaturedFixture(nextMatchday.fixtures);
-
-  const rest = nextMatchday.fixtures.filter(
-    (f) => f.matchId !== featured?.matchId,
-  );
-
-  const pct = (value: number) => `${(value * 100).toFixed(1)}%`;
-  const topRated = ratings.slice(0, 8);
+  const totalMatches = cards.reduce((sum, c) => sum + c.matches, 0);
+  const totalOpen = cards.reduce((sum, c) => sum + c.openForecasts, 0);
 
   return (
-    <div className="bg-pitch-deep mx-auto min-h-screen max-w-5xl">
-      <header className="border-pitch-line border-b px-6 pt-12 pb-9">
-        <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
+    <div data-league="home" className="bg-pitch-deep min-h-screen">
+      <div className="mx-auto max-w-5xl px-6">
+        <header className="border-pitch-line border-b pt-16 pb-10">
           <h1 className="font-display text-6xl leading-[0.85] tracking-tight sm:text-8xl">
             PitchIQ
           </h1>
-          <nav className="text-pitch-faint flex gap-4 pb-1 text-xs">
-            <a href="#ask" className="hover:text-pitch-text">
-              Ask
-            </a>
-            <a href="#fixtures" className="hover:text-pitch-text">
-              Fixtures
-            </a>
-            <a href="#results" className="hover:text-pitch-text">
-              Results
-            </a>
-            <a href="#model" className="hover:text-pitch-text">
-              How it works
-            </a>
-          </nav>
-        </div>
 
-        <p className="text-pitch-dim mt-5 max-w-xl leading-relaxed">
-          Probabilistic forecasts for the Premier League, from a Dixon–Coles
-          model fit on {summary.matchesAnalysed.toLocaleString("en-GB")} matches.
-          Every fixture is a distribution, not a prediction.
-        </p>
-      </header>
+          <p className="text-pitch-dim mt-6 max-w-2xl text-lg leading-relaxed">
+            Probabilistic match forecasts for Europe&apos;s five biggest
+            leagues. Every fixture is a distribution, not a prediction — and
+            every forecast is logged before kick-off so it can be scored
+            afterwards.
+          </p>
 
-      <main>
-        <div className="border-pitch-line border-b px-6 py-10">
-          <FeaturedForecast fixture={featured} />
-        </div>
+          <dl className="text-pitch-faint mt-8 flex flex-wrap gap-x-10 gap-y-4 text-xs">
+            <div>
+              <dt>Leagues covered</dt>
+              <dd className="font-display text-pitch-text tnum mt-1 text-2xl leading-none">
+                {LEAGUES.length}
+              </dd>
+            </div>
+            <div>
+              <dt>Matches analysed</dt>
+              <dd className="font-display text-pitch-text tnum mt-1 text-2xl leading-none">
+                {totalMatches.toLocaleString("en-GB")}
+              </dd>
+            </div>
+            <div>
+              <dt>Open forecasts</dt>
+              <dd className="font-display text-pitch-text tnum mt-1 text-2xl leading-none">
+                {totalOpen.toLocaleString("en-GB")}
+              </dd>
+            </div>
+            <div>
+              <dt>Weighted accuracy</dt>
+              <dd className="font-display text-pitch-text tnum mt-1 text-2xl leading-none">
+                {(OVERALL_ACCURACY * 100).toFixed(1)}%
+              </dd>
+            </div>
+          </dl>
+        </header>
 
-        <div className="space-y-14 px-6 py-10">
+        <main className="py-10">
+          {/* The assistant leads: it is what separates this from a stats site,
+              and burying it under the grid hides the most interesting part. */}
           <Chat />
 
-          <section>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-              <Metric label="Season" value={seasonLabel} />
-              <Metric
-                label="Matches analysed"
-                value={summary.matchesAnalysed.toLocaleString("en-GB")}
-              />
-              <Metric
-                label="Goals per match"
-                value={summary.goalsPerMatch.toFixed(2)}
-              />
-              <Metric
-                label={track.evaluated > 0 ? "Live accuracy" : "Open forecasts"}
-                value={
-                  track.accuracy !== null
-                    ? `${Math.round(track.accuracy * 100)}%`
-                    : summary.forecastsOpen.toLocaleString("en-GB")
-                }
-                note={
-                  track.evaluated > 0
-                    ? `${track.correct} of ${track.evaluated} scored`
-                    : undefined
-                }
-              />
-            </div>
-          </section>
-
-          {rest.length > 0 && (
-            <Section
-              id="fixtures"
-              title={
-                nextMatchday.matchday
-                  ? `Rest of matchday ${nextMatchday.matchday}`
-                  : "Next fixtures"
-              }
-              meta="Model forecast"
-            >
-              <FixtureList fixtures={rest} />
-
-              <div className="text-pitch-faint mt-5 flex flex-wrap gap-4 text-xs">
-                <span className="flex items-center gap-2">
-                  <span className="bg-outcome-home size-2 rounded-xs" />
-                  Home win
-                </span>
-                <span className="flex items-center gap-2">
-                  <span className="bg-outcome-draw size-2 rounded-xs" />
-                  Draw
-                </span>
-                <span className="flex items-center gap-2">
-                  <span className="bg-outcome-away size-2 rounded-xs" />
-                  Away win
-                </span>
-              </div>
-            </Section>
-          )}
-
-          {recent.results.length > 0 && (
-            <Section
-              id="results"
-              title={
-                recent.matchday
-                  ? `Matchday ${recent.matchday} results`
-                  : "Recent results"
-              }
-              meta={
-                recent.scored > 0
-                  ? `${recent.correct} of ${recent.scored} called`
-                  : undefined
-              }
-            >
-              <ResultsList results={recent.results} />
-
-              <p className="text-pitch-faint mt-4 max-w-2xl text-xs leading-relaxed">
-                Each forecast was logged before kick-off and is scored here
-                against what happened. A model that says 60% should be wrong four
-                times in ten — so the number that matters is the probability it
-                gave the actual outcome, not the tally of hits.
-              </p>
-            </Section>
-          )}
-
-          <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr]">
-            <Section
-              title="Table"
-              meta={
-                summary.lastUpdated ? `Updated ${summary.lastUpdated}` : undefined
-              }
-            >
-              <StandingsTable rows={standings} />
-            </Section>
-
-            <div className="space-y-10">
-              <Section title="Strongest sides" meta="Model rating">
-                {topRated.length === 0 ? (
-                  <p className="text-pitch-dim py-8 text-sm">
-                    No ratings yet. Run the model to generate them.
-                  </p>
-                ) : (
-                  <ol className="divide-pitch-line-soft divide-y">
-                    {topRated.map((rating, i) => (
-                      <li
-                        key={rating.team}
-                        className="flex items-baseline justify-between gap-3 py-2.5"
-                      >
-                        <span className="text-pitch-faint tnum w-5 text-sm">
-                          {i + 1}
-                        </span>
-                        <span className="font-display flex-1 truncate text-base">
-                          {rating.team.replace(/\s+FC$/, "")}
-                        </span>
-                        <span className="tnum text-outcome-draw text-sm">
-                          {rating.overall > 0 ? "+" : ""}
-                          {rating.overall.toFixed(2)}
-                        </span>
-                      </li>
-                    ))}
-                  </ol>
-                )}
-                <p className="text-pitch-faint mt-3 text-xs leading-relaxed">
-                  Combined attack and defense strength estimated by the model.
-                  Zero is league average, so this is independent of current
-                  position.
-                </p>
-              </Section>
-
-              <Section title="Table vs model" meta="Position gap">
-                <PerformanceGaps gaps={gaps} />
-              </Section>
-            </div>
+          <h2 className="font-display mt-14 mb-4 text-xl leading-none">
+            Choose a league
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {cards.map((card) => (
+              <LeagueCard key={card.league.slug} card={card} />
+            ))}
           </div>
 
-          <Section id="model" title="How it works" meta="Data to forecast">
-            <div className="text-pitch-dim space-y-6 text-sm leading-relaxed">
-              <div className="grid gap-6 sm:grid-cols-3">
-                <div>
-                  <h3 className="text-pitch-text font-display mb-1.5 text-base">
-                    Ingest
-                  </h3>
-                  <p>
-                    A scheduled job pulls results from football-data.org twice a
-                    day, validates them, and commits the clean data. The dataset
-                    grows without anyone touching it.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-pitch-text font-display mb-1.5 text-base">
-                    Model
-                  </h3>
-                  <p>
-                    Goal counts turn out to be statistically consistent with a
-                    Poisson distribution, which makes Dixon–Coles a justified
-                    choice rather than an arbitrary one. Each team gets an attack
-                    and a defense parameter; home advantage is a shared term.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-pitch-text font-display mb-1.5 text-base">
-                    Answer
-                  </h3>
-                  <p>
-                    The assistant above has tools that query this data directly.
-                    It cannot recall a standing or invent a probability — it has
-                    to ask, which is what keeps a fluent wrong answer from
-                    reaching you.
-                  </p>
-                </div>
-              </div>
+          <section className="border-pitch-line mt-14 border-t pt-8">
+            <h2 className="font-display mb-4 text-xl leading-none">
+              How it works
+            </h2>
 
-              <div>
-                <h3 className="text-pitch-text font-display mt-8 mb-3 text-base">
-                  Does it actually work
-                </h3>
-
-                <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-                  <Metric
-                    label="Accuracy"
-                    value={pct(MODEL_METRICS.accuracy.model)}
-                    note={`baseline ${pct(MODEL_METRICS.accuracy.baseline)}`}
-                  />
-                  <Metric
-                    label="Log-loss"
-                    value={MODEL_METRICS.logLoss.model.toFixed(3)}
-                    note={`baseline ${MODEL_METRICS.logLoss.baseline.toFixed(3)}`}
-                  />
-                  <Metric
-                    label="RPS gain"
-                    value={`${(MODEL_METRICS.rpsImprovement * 100).toFixed(1)}%`}
-                    note="over baseline"
-                  />
-                  <Metric
-                    label="Home advantage"
-                    value={`${MODEL_METRICS.homeAdvantage.toFixed(2)}×`}
-                    note="goal rate"
-                  />
-                </div>
-
-                <p className="mt-4 max-w-2xl">
-                  Measured on the {MODEL_METRICS.testSeason} season, held out
-                  entirely from training. The baseline is always predicting a
-                  home win. Accuracy is the least interesting number here —
-                  football is genuinely high-variance, and bookmakers with far
-                  richer data operate in a similar range. The meaningful gain is
-                  in log-loss and ranked probability score, which measure whether
-                  the stated probabilities are honest rather than whether the top
-                  pick happened to land.
-                </p>
-              </div>
+            <div className="text-pitch-dim grid gap-6 text-sm leading-relaxed sm:grid-cols-3">
+              <p>
+                A scheduled job pulls results for all five leagues twice a day,
+                validates them, and retrains each model. Nobody touches it.
+              </p>
+              <p>
+                Each league is fit separately with a Dixon–Coles model, because
+                attack and defense ratings are only comparable within a
+                competition — there are no matches connecting them.
+              </p>
+              <p>
+                Every league page carries an assistant with tools that query the
+                data directly. It cannot recall a standing or invent a
+                probability; it has to ask.
+              </p>
             </div>
-          </Section>
-        </div>
-      </main>
+          </section>
+        </main>
 
-      <footer className="border-pitch-line text-pitch-faint border-t px-6 py-8 text-xs leading-relaxed">
-        <p className="max-w-2xl">
-          The model knows goals, teams and dates. It does not know about
-          injuries, suspensions, transfers or European fixture congestion, and
-          newly promoted sides carry the least reliable ratings. These limits are
-          stated rather than buried, because a forecasting system that overstates
-          its reach is worse than one that is clear about where it stops.
-        </p>
-        <p className="mt-4">
-          Data from football-data.org. An independent project, not affiliated
-          with the Premier League.{" "}
-          <a
-            href="https://github.com/JuanAndresHS/pitchiq"
-            className="text-pitch-dim underline underline-offset-2"
-          >
-            Source on GitHub
-          </a>
-        </p>
-      </footer>
+        <footer className="border-pitch-line text-pitch-faint border-t py-8 text-xs leading-relaxed">
+          <p className="max-w-2xl">
+            The models know goals, teams and dates. They do not know about
+            injuries, suspensions, transfers or European fixture congestion, and
+            newly promoted sides carry the least reliable ratings.
+          </p>
+          <p className="mt-4">
+            Data from football-data.org. An independent project, not affiliated
+            with any league or club.{" "}
+            <a
+              href="https://github.com/JuanAndresHS/pitchiq"
+              className="text-pitch-dim underline underline-offset-2"
+            >
+              Source on GitHub
+            </a>
+          </p>
+        </footer>
+      </div>
     </div>
   );
 }

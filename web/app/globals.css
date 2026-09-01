@@ -1,13 +1,19 @@
 @import "tailwindcss";
 
 /*
-  Premier League palette. The three outcome colours are the league's own
-  accents, which happens to solve a design problem: three possible results
-  need three distinguishable colours, and this avoids a traffic-light scheme.
+  Each league gets its own palette, drawn from how the competition presents
+  itself: Premier League purple, LaLiga crimson, Serie A azzurri blue,
+  Bundesliga red-black, Ligue 1 indigo.
 
-  The surfaces sit a few steps lighter than the league's #37003C so the page
-  reads as purple rather than as near-black, while the neon accents keep more
-  than enough contrast against them.
+  The defaults below are the Premier League set. Every other palette overrides
+  the same variables inside a [data-league="..."] scope, and because Tailwind 4
+  compiles utilities down to var() references, `bg-pitch-deep` picks up whichever
+  value is in scope without a single conditional class.
+
+  What never changes is the meaning of the three outcome colours: the first is
+  always a home win, the second a draw, the third an away win. Hue shifts to suit
+  each background, but a reader who learns the order on one league keeps it on
+  the next.
 */
 @theme {
   --color-pitch-void: #33013a;
@@ -32,8 +38,154 @@
   --font-body: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
 }
 
+/*
+  Premier League. The same values as the @theme defaults, repeated as a scope so
+  a card can opt into this palette while sitting inside another one — on the
+  index every card wears its own league's colours.
+*/
+[data-league="pl"] {
+  --color-pitch-void: #33013a;
+  --color-pitch-deep: #4a0b52;
+  --color-pitch-raised: #5b1a64;
+  --color-pitch-line: #7a3b83;
+  --color-pitch-line-soft: #68276f;
+  --color-pitch-dim: #ddc2e2;
+  --color-pitch-faint: #b28cb9;
+
+  --color-outcome-home: #00ff85;
+  --color-outcome-draw: #04f5ff;
+  --color-outcome-away: #ff2e74;
+
+  --color-ink-home: #00341b;
+  --color-ink-draw: #003a3d;
+  --color-ink-away: #4a0018;
+}
+
+/*
+  Premier League. These repeat the @theme defaults on purpose: a card nested
+  inside another palette (the league grid on the index) needs an explicit rule
+  to reset to, or it inherits whatever scope encloses it.
+*/
+[data-league="pl"] {
+  --color-pitch-void: #33013a;
+  --color-pitch-deep: #4a0b52;
+  --color-pitch-raised: #5b1a64;
+  --color-pitch-line: #7a3b83;
+  --color-pitch-line-soft: #68276f;
+  --color-pitch-dim: #ddc2e2;
+  --color-pitch-faint: #b28cb9;
+
+  --color-outcome-home: #00ff85;
+  --color-outcome-draw: #04f5ff;
+  --color-outcome-away: #ff2e74;
+
+  --color-ink-home: #00341b;
+  --color-ink-draw: #003a3d;
+  --color-ink-away: #4a0018;
+}
+
+/* LaLiga — crimson, with gold and violet accents that survive a red ground. */
+[data-league="pd"] {
+  --color-pitch-void: #2b0710;
+  --color-pitch-deep: #4a0f1e;
+  --color-pitch-raised: #5e1b2b;
+  --color-pitch-line: #85354a;
+  --color-pitch-line-soft: #722740;
+  --color-pitch-dim: #f2cdd5;
+  --color-pitch-faint: #c4919f;
+
+  --color-outcome-home: #ffcf4d;
+  --color-outcome-draw: #7ae7ff;
+  --color-outcome-away: #c4a0ff;
+
+  --color-ink-home: #3b2a00;
+  --color-ink-draw: #00323d;
+  --color-ink-away: #23094f;
+}
+
+/* Serie A — the azzurri navy Italian football is known by. */
+[data-league="sa"] {
+  --color-pitch-void: #06192b;
+  --color-pitch-deep: #0d2b45;
+  --color-pitch-raised: #163c5c;
+  --color-pitch-line: #2f5f85;
+  --color-pitch-line-soft: #234e73;
+  --color-pitch-dim: #c8ddef;
+  --color-pitch-faint: #8fb0ca;
+
+  --color-outcome-home: #4ade80;
+  --color-outcome-draw: #fbbf24;
+  --color-outcome-away: #f472b6;
+
+  --color-ink-home: #06301a;
+  --color-ink-draw: #3d2b00;
+  --color-ink-away: #4a0a2a;
+}
+
+/* Bundesliga — the league's red over near-black, with German yellow on top. */
+[data-league="bl1"] {
+  --color-pitch-void: #1a0d0d;
+  --color-pitch-deep: #2e1414;
+  --color-pitch-raised: #3f1c1c;
+  --color-pitch-line: #6b3433;
+  --color-pitch-line-soft: #542828;
+  --color-pitch-dim: #f2d2d2;
+  --color-pitch-faint: #c39898;
+
+  --color-outcome-home: #facc15;
+  --color-outcome-draw: #67e8f9;
+  --color-outcome-away: #c084fc;
+
+  --color-ink-home: #3b3200;
+  --color-ink-draw: #063540;
+  --color-ink-away: #2b0b4a;
+}
+
+/* Ligue 1 — deep indigo, kept distinct from Serie A's navy. */
+[data-league="fl1"] {
+  --color-pitch-void: #10102e;
+  --color-pitch-deep: #1c1c4a;
+  --color-pitch-raised: #292963;
+  --color-pitch-line: #4a4a96;
+  --color-pitch-line-soft: #3a3a7e;
+  --color-pitch-dim: #d0d0f2;
+  --color-pitch-faint: #9b9bc8;
+
+  --color-outcome-home: #34d399;
+  --color-outcome-draw: #22d3ee;
+  --color-outcome-away: #fb923c;
+
+  --color-ink-home: #01332a;
+  --color-ink-draw: #04333a;
+  --color-ink-away: #3d1a00;
+}
+
+/*
+  The index belongs to no competition, so it wears a neutral graphite. The
+  league cards on it carry their own palettes, which turns the page into a
+  gallery rather than a menu.
+*/
+[data-league="home"] {
+  --color-pitch-void: #17151c;
+  --color-pitch-deep: #201d29;
+  --color-pitch-raised: #2c2836;
+  --color-pitch-line: #494256;
+  --color-pitch-line-soft: #3a3446;
+  --color-pitch-dim: #d8d2e2;
+  --color-pitch-faint: #a49cb4;
+
+  --color-outcome-home: #00ff85;
+  --color-outcome-draw: #04f5ff;
+  --color-outcome-away: #ff2e74;
+}
+
+/*
+  The page wrapper paints its own void colour, so html only needs a neutral
+  ground for the moment before hydration. Leaving the Premier purple here made
+  every other league sit on a purple margin.
+*/
 html {
-  background-color: var(--color-pitch-void);
+  background-color: #17151c;
   color-scheme: dark;
 }
 

@@ -17,6 +17,7 @@
 import { GoogleGenAI } from "@google/genai";
 import { NextResponse } from "next/server";
 import { TOOL_SCHEMAS, executeTool } from "@/lib/tools";
+import { DEFAULT_LEAGUE, LEAGUES, resolveLeague } from "@/lib/leagues";
 
 export const runtime = "nodejs";
 export const maxDuration = 60; // Vercel Hobby caps at 60s
@@ -27,10 +28,20 @@ const MODEL = process.env.GEMINI_MODEL ?? "gemini-3.5-flash-lite";
 // an answer). Allowing more mostly buys pathological chains that time out.
 const MAX_TOOL_ROUNDS = 3;
 
-const SYSTEM_PROMPT = `You are PitchIQ, an analytics assistant for the Premier League.
+function systemPrompt(leagueName: string | null): string {
+  const context = leagueName
+    ? `The user is currently viewing the ${leagueName}, so questions without a
+named competition are about that one.`
+    : `The user is on the index page and has not chosen a league, so ask which
+one they mean when a question is ambiguous, or answer across several when that
+is more useful.`;
 
-You have tools that query a real match database and a Dixon-Coles forecasting
-model built on four seasons of data. Use them.
+  return `You are PitchIQ, an analytics assistant for European football.
+
+You cover five leagues: ${LEAGUES.map((l) => l.name).join(", ")}. ${context}
+
+You have tools that query a real match database and Dixon-Coles forecasting
+models fit separately for each league. Use them.
 
 Rules you follow strictly:
 
@@ -44,22 +55,24 @@ Rules you follow strictly:
 3. Answer as soon as you have enough. Do not keep querying for extra colour.
 
 4. Report probabilities as probabilities. "Arsenal are 62% to win" is right;
-   "Arsenal will win" is wrong. The model produces distributions, not certainties.
+   "Arsenal will win" is wrong. The models produce distributions, not certainties.
 
-5. Be honest about the model's limits when they matter. It knows goals, teams
-   and dates. It does not know about injuries, suspensions, transfers,
-   managerial changes or European fixture congestion. If a question depends on
-   those, say so.
+5. Ratings are only comparable within a league. Never claim one league's team is
+   stronger than another's on the basis of ratings — there are no matches
+   connecting them, so the comparison has no basis.
 
-6. Newly promoted teams have little data behind their ratings. Flag that when
-   their forecasts come up.
+6. Be honest about what the models miss: injuries, suspensions, transfers,
+   managerial changes and European fixture congestion are all invisible to them.
+   Newly promoted teams have little data behind their ratings.
 
 7. Write like a knowledgeable analyst talking to someone who follows football:
    direct, specific, no hedging filler. Lead with the answer, then the evidence.
    Two or three sentences is usually enough. Plain text only, no markdown.`;
+}
 
 type ChatRequest = {
   message?: unknown;
+  league?: unknown;
   previousInteractionId?: unknown;
 };
 
@@ -114,6 +127,14 @@ export async function POST(request: Request) {
       ? body.previousInteractionId
       : null;
 
+  // No league means the index page. Tools still need a starting point for team
+  // lookups, so they fall back to the default while the prompt makes clear
+  // nothing has been chosen.
+  const league = resolveLeague(
+    typeof body.league === "string" ? body.league : null,
+  );
+  const toolContext = (league ?? DEFAULT_LEAGUE).slug;
+
   if (!message) {
     return NextResponse.json({ error: "Ask a question first." }, { status: 400 });
   }
@@ -131,7 +152,7 @@ export async function POST(request: Request) {
   // carries the context.
   const input = previousId
     ? message
-    : `${SYSTEM_PROMPT}\n\n---\n\nUser question: ${message}`;
+    : `${systemPrompt(league?.name ?? null)}\n\n---\n\nUser question: ${message}`;
 
   try {
     let interaction = await client.interactions.create({
@@ -168,7 +189,7 @@ export async function POST(request: Request) {
         const name = (call as { name: string }).name;
         toolsUsed.push(name);
 
-        const output = await executeTool(name, args);
+        const output = await executeTool(name, args, toolContext);
 
         results.push({
           type: "function_result" as const,
@@ -186,7 +207,6 @@ export async function POST(request: Request) {
       });
     }
 
-    // Out of rounds but the model may still have written something usable.
     return NextResponse.json({
       reply:
         interaction.output_text ||

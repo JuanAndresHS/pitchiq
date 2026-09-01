@@ -5,8 +5,9 @@
  * can obtain facts — it cannot recall a standing or invent a forecast, it has
  * to ask the data.
  *
- * Most of the work is already done by lib/data.ts; this layer adds team-name
- * resolution, argument shaping, and the schema the model sees.
+ * Every tool takes an optional league. The page the visitor is on supplies a
+ * default, so "who is top of the table?" works without them naming a
+ * competition, while "how is Bayern doing?" can cross over on its own.
  */
 
 import {
@@ -17,29 +18,43 @@ import {
   getTrackRecord,
   type Match,
 } from "./data";
+import { LEAGUES, resolveLeague, type League } from "./leagues";
 
 type ToolResult = Record<string, unknown>;
 
-// --- Team name resolution ----------------------------------------------------
+// --- League and team resolution ----------------------------------------------
 
 const ALIASES: Record<string, string> = {
+  // England
   spurs: "Tottenham Hotspur FC",
   "man city": "Manchester City FC",
   "man utd": "Manchester United FC",
   "man united": "Manchester United FC",
-  united: "Manchester United FC",
-  city: "Manchester City FC",
   wolves: "Wolverhampton Wanderers FC",
   brighton: "Brighton & Hove Albion FC",
   forest: "Nottingham Forest FC",
   palace: "Crystal Palace FC",
   villa: "Aston Villa FC",
-  hammers: "West Ham United FC",
   gunners: "Arsenal FC",
-  reds: "Liverpool FC",
-  blues: "Chelsea FC",
-  toffees: "Everton FC",
-  cherries: "AFC Bournemouth",
+  // Spain
+  barca: "FC Barcelona",
+  barça: "FC Barcelona",
+  atleti: "Club Atlético de Madrid",
+  atletico: "Club Atlético de Madrid",
+  madrid: "Real Madrid CF",
+  // Italy
+  inter: "FC Internazionale Milano",
+  juve: "Juventus FC",
+  milan: "AC Milan",
+  // Germany
+  bayern: "FC Bayern München",
+  dortmund: "Borussia Dortmund",
+  bvb: "Borussia Dortmund",
+  gladbach: "Borussia Mönchengladbach",
+  // France
+  psg: "Paris Saint-Germain FC",
+  om: "Olympique de Marseille",
+  ol: "Olympique Lyonnais",
 };
 
 /** Levenshtein distance, used only as a last resort for typos. */
@@ -64,8 +79,8 @@ function distance(a: string, b: string): number {
   return prev[b.length];
 }
 
-async function allTeams(): Promise<string[]> {
-  const matches = await getMatches();
+async function teamsIn(slug: string): Promise<string[]> {
+  const matches = await getMatches(slug);
   const names = new Set<string>();
   for (const m of matches) {
     names.add(m.homeTeam);
@@ -75,26 +90,49 @@ async function allTeams(): Promise<string[]> {
 }
 
 /**
- * Map a loosely typed name onto the canonical one. People write "Arsenal",
- * "man city" or "Chelse" — handling that here rather than in the prompt means
- * it works identically no matter which model is driving.
+ * Find a team, searching the current league first and then the others.
+ *
+ * Searching beyond the current league is deliberate: someone reading the LaLiga
+ * page may still ask about Bayern, and answering is better than a not-found.
  */
-async function resolveTeam(input: string): Promise<string | null> {
-  const teams = await allTeams();
+async function findTeam(
+  input: string,
+  preferred: string,
+): Promise<{ team: string; league: string } | null> {
   const query = input.trim().toLowerCase();
   if (!query) return null;
 
-  const exact = teams.find((t) => t.toLowerCase() === query);
-  if (exact) return exact;
-
-  const partial = teams.filter((t) => t.toLowerCase().includes(query));
-  if (partial.length === 1) return partial[0];
+  const order = [preferred, ...LEAGUES.map((l) => l.slug).filter((s) => s !== preferred)];
 
   const alias = ALIASES[query];
-  if (alias && teams.includes(alias)) return alias;
 
+  for (const pass of ["exact", "alias", "partial"] as const) {
+    for (const slug of order) {
+      const teams = await teamsIn(slug);
+
+      if (pass === "exact") {
+        const hit = teams.find((t) => t.toLowerCase() === query);
+        if (hit) return { team: hit, league: slug };
+      }
+
+      if (pass === "alias" && alias) {
+        const hit = teams.find((t) => t === alias);
+        if (hit) return { team: hit, league: slug };
+      }
+
+      if (pass === "partial") {
+        const hits = teams.filter((t) => t.toLowerCase().includes(query));
+        if (hits.length === 1) return { team: hits[0], league: slug };
+      }
+    }
+  }
+
+  // Fuzzy fallback, current league only — matching a typo across five leagues
+  // produces more confusion than help.
+  const teams = await teamsIn(preferred);
   let best: string | null = null;
   let bestScore = Infinity;
+
   for (const team of teams) {
     const score = distance(query, team.toLowerCase());
     if (score < bestScore) {
@@ -103,11 +141,34 @@ async function resolveTeam(input: string): Promise<string | null> {
     }
   }
 
-  return bestScore <= Math.max(3, query.length * 0.4) ? best : null;
+  return best && bestScore <= Math.max(3, query.length * 0.4)
+    ? { team: best, league: preferred }
+    : null;
 }
 
-async function notFound(name: string): Promise<ToolResult> {
-  return { error: `Team '${name}' not found.`, available_teams: await allTeams() };
+function leagueName(slug: string): string {
+  return LEAGUES.find((l) => l.slug === slug)?.name ?? slug;
+}
+
+/** The league a tool should act on: the one named, else the page's. */
+function targetLeague(named: string | undefined, fallback: string): League | null {
+  if (!named) return LEAGUES.find((l) => l.slug === fallback) ?? null;
+  return resolveLeague(named);
+}
+
+async function teamNotFound(name: string, slug: string): Promise<ToolResult> {
+  return {
+    error: `Team '${name}' not found in any covered league.`,
+    searched: LEAGUES.map((l) => l.name),
+    teams_in_current_league: await teamsIn(slug),
+  };
+}
+
+function leagueNotFound(name: string): ToolResult {
+  return {
+    error: `League '${name}' is not covered.`,
+    available_leagues: LEAGUES.map((l) => l.name),
+  };
 }
 
 const clamp = (value: unknown, fallback: number, min: number, max: number) => {
@@ -118,11 +179,18 @@ const clamp = (value: unknown, fallback: number, min: number, max: number) => {
 
 // --- Tools -------------------------------------------------------------------
 
-async function getStandingsTool(args: { season?: number }): Promise<ToolResult> {
-  const table = await getStandings(args.season);
-  if (table.length === 0) return { error: "No finished matches for that season." };
+async function getStandingsTool(
+  args: { league?: string; season?: number },
+  context: string,
+): Promise<ToolResult> {
+  const league = targetLeague(args.league, context);
+  if (!league) return leagueNotFound(args.league!);
+
+  const table = await getStandings(league.slug, args.season);
+  if (table.length === 0) return { error: `No finished matches for ${league.name}.` };
 
   return {
+    league: league.name,
     matches_played: table.reduce((sum, r) => sum + r.played, 0) / 2,
     table: table.map((r) => ({
       position: r.position,
@@ -138,32 +206,33 @@ async function getStandingsTool(args: { season?: number }): Promise<ToolResult> 
   };
 }
 
-async function getTeamFormTool(args: {
-  team: string;
-  last_n?: number;
-}): Promise<ToolResult> {
-  const team = await resolveTeam(args.team);
-  if (!team) return notFound(args.team);
+async function getTeamFormTool(
+  args: { team: string; last_n?: number },
+  context: string,
+): Promise<ToolResult> {
+  const found = await findTeam(args.team, context);
+  if (!found) return teamNotFound(args.team, context);
 
   const lastN = clamp(args.last_n, 5, 1, 20);
-  const matches = await getMatches();
+  const matches = await getMatches(found.league);
 
   const played = matches
     .filter(
       (m: Match) =>
-        m.status === "FINISHED" && (m.homeTeam === team || m.awayTeam === team),
+        m.status === "FINISHED" &&
+        (m.homeTeam === found.team || m.awayTeam === found.team),
     )
     .slice(-lastN)
     .reverse();
 
-  if (played.length === 0) return { error: `No finished matches for ${team}.` };
+  if (played.length === 0) return { error: `No finished matches for ${found.team}.` };
 
   let points = 0;
   let scored = 0;
   let conceded = 0;
 
   const history = played.map((m) => {
-    const isHome = m.homeTeam === team;
+    const isHome = m.homeTeam === found.team;
     const forGoals = (isHome ? m.homeGoals : m.awayGoals) ?? 0;
     const againstGoals = (isHome ? m.awayGoals : m.homeGoals) ?? 0;
 
@@ -184,7 +253,8 @@ async function getTeamFormTool(args: {
   });
 
   return {
-    team,
+    team: found.team,
+    league: leagueName(found.league),
     matches_analysed: history.length,
     form_string: history.map((h) => h.outcome).join(""),
     points_taken: points,
@@ -195,29 +265,37 @@ async function getTeamFormTool(args: {
   };
 }
 
-async function getMatchPredictionTool(args: {
-  home_team: string;
-  away_team: string;
-}): Promise<ToolResult> {
-  const home = await resolveTeam(args.home_team);
-  if (!home) return notFound(args.home_team);
-  const away = await resolveTeam(args.away_team);
-  if (!away) return notFound(args.away_team);
+async function getMatchPredictionTool(
+  args: { home_team: string; away_team: string },
+  context: string,
+): Promise<ToolResult> {
+  const home = await findTeam(args.home_team, context);
+  if (!home) return teamNotFound(args.home_team, context);
+  const away = await findTeam(args.away_team, context);
+  if (!away) return teamNotFound(args.away_team, context);
 
-  const forecasts = await getForecasts();
+  if (home.league !== away.league) {
+    return {
+      error: `${home.team} and ${away.team} play in different leagues.`,
+      note: "Only domestic fixtures are modelled. Cross-league matches would need European results to calibrate against, which this dataset does not include.",
+    };
+  }
+
+  const forecasts = await getForecasts(home.league);
   const match = forecasts.find(
-    (f) => f.homeTeam === home && f.awayTeam === away,
+    (f) => f.homeTeam === home.team && f.awayTeam === away.team,
   );
 
   if (!match) {
     return {
-      error: `No upcoming fixture found for ${home} vs ${away}.`,
+      error: `No upcoming fixture found for ${home.team} vs ${away.team}.`,
       hint: "It may already have been played, or may not be scheduled.",
     };
   }
 
   return {
-    fixture: `${home} vs ${away}`,
+    league: leagueName(home.league),
+    fixture: `${home.team} vs ${away.team}`,
     date: match.date,
     matchday: match.matchday,
     expected_goals: { home: match.xgHome, away: match.xgAway },
@@ -232,26 +310,38 @@ async function getMatchPredictionTool(args: {
   };
 }
 
-async function getUpcomingFixturesTool(args: {
-  team?: string;
-  limit?: number;
-}): Promise<ToolResult> {
+async function getUpcomingFixturesTool(
+  args: { team?: string; league?: string; limit?: number },
+  context: string,
+): Promise<ToolResult> {
   const limit = clamp(args.limit, 10, 1, 20);
-  let forecasts = await getForecasts();
-  let resolved: string | null = null;
+
+  let slug = context;
+  let teamName: string | null = null;
 
   if (args.team) {
-    resolved = await resolveTeam(args.team);
-    if (!resolved) return notFound(args.team);
+    const found = await findTeam(args.team, context);
+    if (!found) return teamNotFound(args.team, context);
+    slug = found.league;
+    teamName = found.team;
+  } else if (args.league) {
+    const league = resolveLeague(args.league);
+    if (!league) return leagueNotFound(args.league);
+    slug = league.slug;
+  }
+
+  let forecasts = await getForecasts(slug);
+  if (teamName) {
     forecasts = forecasts.filter(
-      (f) => f.homeTeam === resolved || f.awayTeam === resolved,
+      (f) => f.homeTeam === teamName || f.awayTeam === teamName,
     );
   }
 
   if (forecasts.length === 0) return { error: "No upcoming fixtures found." };
 
   return {
-    team_filter: resolved,
+    league: leagueName(slug),
+    team_filter: teamName,
     count: Math.min(forecasts.length, limit),
     fixtures: forecasts.slice(0, limit).map((f) => ({
       date: f.date,
@@ -267,50 +357,64 @@ async function getUpcomingFixturesTool(args: {
   };
 }
 
-async function getTeamRatingsTool(args: { top_n?: number }): Promise<ToolResult> {
-  const ratings = await getTeamRatings();
-  if (ratings.length === 0) return { error: "No ratings available." };
+async function getTeamRatingsTool(
+  args: { league?: string; top_n?: number },
+  context: string,
+): Promise<ToolResult> {
+  const league = targetLeague(args.league, context);
+  if (!league) return leagueNotFound(args.league!);
+
+  const ratings = await getTeamRatings(league.slug);
+  if (ratings.length === 0) return { error: `No ratings for ${league.name}.` };
 
   const topN = clamp(args.top_n, 20, 1, 30);
 
   return {
+    league: league.name,
     explanation:
-      "Attack and defense parameters from the Dixon-Coles model. Log scale, 0 is league average.",
+      "Attack and defense parameters from the Dixon-Coles model. Log scale, 0 is league average. Only comparable within this league — a rating in one competition says nothing about another.",
     teams: ratings.slice(0, topN).map((r, i) => ({
       rank: i + 1,
       team: r.team,
       attack: Number(r.attack.toFixed(3)),
       defense: Number(r.defense.toFixed(3)),
       overall: Number(r.overall.toFixed(3)),
+      matches_behind_rating: r.matches,
     })),
   };
 }
 
-async function getHeadToHeadTool(args: {
-  team_a: string;
-  team_b: string;
-  limit?: number;
-}): Promise<ToolResult> {
-  const a = await resolveTeam(args.team_a);
-  if (!a) return notFound(args.team_a);
-  const b = await resolveTeam(args.team_b);
-  if (!b) return notFound(args.team_b);
+async function getHeadToHeadTool(
+  args: { team_a: string; team_b: string; limit?: number },
+  context: string,
+): Promise<ToolResult> {
+  const a = await findTeam(args.team_a, context);
+  if (!a) return teamNotFound(args.team_a, context);
+  const b = await findTeam(args.team_b, context);
+  if (!b) return teamNotFound(args.team_b, context);
+
+  if (a.league !== b.league) {
+    return {
+      error: `${a.team} and ${b.team} play in different leagues.`,
+      note: "Only domestic fixtures are in the dataset, so they have no recorded meetings here.",
+    };
+  }
 
   const limit = clamp(args.limit, 10, 1, 20);
-  const matches = await getMatches();
+  const matches = await getMatches(a.league);
 
   const meetings = matches
     .filter(
       (m) =>
         m.status === "FINISHED" &&
-        ((m.homeTeam === a && m.awayTeam === b) ||
-          (m.homeTeam === b && m.awayTeam === a)),
+        ((m.homeTeam === a.team && m.awayTeam === b.team) ||
+          (m.homeTeam === b.team && m.awayTeam === a.team)),
     )
     .slice(-limit)
     .reverse();
 
   if (meetings.length === 0) {
-    return { error: `No recorded meetings between ${a} and ${b}.` };
+    return { error: `No recorded meetings between ${a.team} and ${b.team}.` };
   }
 
   let aWins = 0;
@@ -324,7 +428,7 @@ async function getHeadToHeadTool(args: {
       winner = "draw";
     } else {
       winner = m.result === "H" ? m.homeTeam : m.awayTeam;
-      if (winner === a) aWins++;
+      if (winner === a.team) aWins++;
       else bWins++;
     }
     return {
@@ -336,28 +440,59 @@ async function getHeadToHeadTool(args: {
   });
 
   return {
-    teams: [a, b],
+    league: leagueName(a.league),
+    teams: [a.team, b.team],
     meetings_analysed: results.length,
-    summary: { [`${a} wins`]: aWins, draws, [`${b} wins`]: bWins },
+    summary: { [`${a.team} wins`]: aWins, draws, [`${b.team} wins`]: bWins },
     matches: results,
   };
 }
 
-async function evaluateModelAccuracyTool(): Promise<ToolResult> {
-  const track = await getTrackRecord();
+async function evaluateModelAccuracyTool(
+  args: { league?: string },
+  context: string,
+): Promise<ToolResult> {
+  // With no league named, report every one — "how accurate is the model?" is
+  // usually a question about the whole system.
+  const slugs = args.league
+    ? [resolveLeague(args.league)?.slug]
+    : LEAGUES.map((l) => l.slug);
 
-  if (track.evaluated === 0) {
+  if (slugs[0] === undefined) return leagueNotFound(args.league!);
+
+  const rows = [];
+  let totalEvaluated = 0;
+  let totalCorrect = 0;
+
+  for (const slug of slugs as string[]) {
+    const track = await getTrackRecord(slug);
+    totalEvaluated += track.evaluated;
+    totalCorrect += track.correct;
+
+    rows.push({
+      league: leagueName(slug),
+      matches_evaluated: track.evaluated,
+      correct: track.correct,
+      accuracy: track.accuracy,
+    });
+  }
+
+  if (totalEvaluated === 0) {
     return {
       status: "no_data",
       message:
-        "None of the forecast fixtures have been played yet. The track record builds up as the season progresses.",
+        "No logged forecasts have been played yet. The live track record builds up as the season progresses. Historical evaluation on held-out seasons is reported on the page instead.",
+      current_league: leagueName(context),
     };
   }
 
   return {
-    matches_evaluated: track.evaluated,
-    correct_predictions: track.correct,
-    accuracy: track.accuracy,
+    by_league: rows,
+    overall: {
+      matches_evaluated: totalEvaluated,
+      correct: totalCorrect,
+      accuracy: totalCorrect / totalEvaluated,
+    },
     note: "Accuracy on a small sample is noisy. Interpret with care until several matchweeks have accumulated.",
   };
 }
@@ -365,7 +500,10 @@ async function evaluateModelAccuracyTool(): Promise<ToolResult> {
 // --- Registry and schemas ----------------------------------------------------
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const REGISTRY: Record<string, (args: any) => Promise<ToolResult>> = {
+const REGISTRY: Record<
+  string,
+  (args: any, context: string) => Promise<ToolResult>
+> = {
   get_standings: getStandingsTool,
   get_team_form: getTeamFormTool,
   get_match_prediction: getMatchPredictionTool,
@@ -376,19 +514,25 @@ const REGISTRY: Record<string, (args: any) => Promise<ToolResult>> = {
 };
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
+const LEAGUE_PARAM = {
+  type: "string",
+  description:
+    "Which league. Accepts a name or country: Premier League, LaLiga, Serie A, Bundesliga, Ligue 1. Omit to use the one the user is currently viewing.",
+};
+
 export const TOOL_SCHEMAS = [
   {
     type: "function" as const,
     name: "get_standings",
     description:
-      "Get the Premier League table for a season, computed from finished matches. Use for questions about positions, points, or who is top.",
+      "Get the league table for a competition, computed from finished matches. Use for questions about positions, points, or who is top.",
     parameters: {
       type: "object",
       properties: {
+        league: LEAGUE_PARAM,
         season: {
           type: "integer",
-          description:
-            "Season start year, e.g. 2025 for 2025/26. Omit for the current season.",
+          description: "Season start year, e.g. 2025 for 2025/26. Omit for current.",
         },
       },
     },
@@ -397,7 +541,7 @@ export const TOOL_SCHEMAS = [
     type: "function" as const,
     name: "get_team_form",
     description:
-      "Get a team's recent results and form. Use for questions about how a team has been playing lately, streaks, or recent performance.",
+      "Get a team's recent results and form. Searches every covered league, so the team need not be in the one being viewed.",
     parameters: {
       type: "object",
       properties: {
@@ -414,7 +558,7 @@ export const TOOL_SCHEMAS = [
     type: "function" as const,
     name: "get_match_prediction",
     description:
-      "Get the model's probabilistic forecast for a specific upcoming fixture, including win/draw/loss probabilities and expected goals.",
+      "Get the model's probabilistic forecast for a specific upcoming fixture, including win/draw/loss probabilities and expected goals. Both teams must be in the same league.",
     parameters: {
       type: "object",
       properties: {
@@ -428,11 +572,12 @@ export const TOOL_SCHEMAS = [
     type: "function" as const,
     name: "get_upcoming_fixtures",
     description:
-      "List scheduled fixtures with their forecasts. Use for questions about what is coming up, optionally filtered to one team.",
+      "List scheduled fixtures with their forecasts, optionally filtered to one team or league.",
     parameters: {
       type: "object",
       properties: {
         team: { type: "string", description: "Optional team filter." },
+        league: LEAGUE_PARAM,
         limit: { type: "integer", description: "Max fixtures (default 10)." },
       },
     },
@@ -441,10 +586,11 @@ export const TOOL_SCHEMAS = [
     type: "function" as const,
     name: "get_team_ratings",
     description:
-      "Get model-estimated attack and defense strength for teams. Use when comparing how strong teams are, independent of current league position.",
+      "Get model-estimated attack and defense strength for a league's teams. Ratings are only comparable within a league, never across them.",
     parameters: {
       type: "object",
       properties: {
+        league: LEAGUE_PARAM,
         top_n: { type: "integer", description: "How many teams (default 20)." },
       },
     },
@@ -452,7 +598,8 @@ export const TOOL_SCHEMAS = [
   {
     type: "function" as const,
     name: "get_head_to_head",
-    description: "Get historical results between two specific teams.",
+    description:
+      "Get historical results between two teams. They must play in the same league.",
     parameters: {
       type: "object",
       properties: {
@@ -467,8 +614,11 @@ export const TOOL_SCHEMAS = [
     type: "function" as const,
     name: "evaluate_model_accuracy",
     description:
-      "Check how the model's past predictions performed against real results. Use when asked how accurate or reliable the model is.",
-    parameters: { type: "object", properties: {} },
+      "Check how the model's logged forecasts performed against real results. Reports every league unless one is named.",
+    parameters: {
+      type: "object",
+      properties: { league: LEAGUE_PARAM },
+    },
   },
 ];
 
@@ -476,12 +626,13 @@ export const TOOL_SCHEMAS = [
 export async function executeTool(
   name: string,
   args: Record<string, unknown>,
+  context: string,
 ): Promise<ToolResult> {
   const tool = REGISTRY[name];
   if (!tool) return { error: `Unknown tool: ${name}` };
 
   try {
-    return await tool(args ?? {});
+    return await tool(args ?? {}, context);
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     return { error: `Tool ${name} failed: ${message}` };

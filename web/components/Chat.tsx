@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import type { League } from "@/lib/leagues";
 
 type Message = {
   role: "you" | "pitchiq";
@@ -8,20 +9,46 @@ type Message = {
   tools?: string[];
 };
 
-const SUGGESTIONS = [
-  "Who is top of the table?",
-  "How has Liverpool been playing?",
-  "Compare Arsenal and Manchester City",
-  "How accurate has the model been?",
-];
+/**
+ * Suggestions adapt to context. On a league page they name that competition;
+ * on the index they span several, which is the quickest way to show that the
+ * assistant reaches across all five.
+ */
+function suggestionsFor(league: League | null): string[] {
+  if (!league) {
+    return [
+      "Who is top of LaLiga?",
+      "How is Bayern doing?",
+      "Which league has the strongest home advantage?",
+      "How accurate has the model been?",
+    ];
+  }
 
-export default function Chat() {
+  return [
+    `Who is top of the ${league.shortName}?`,
+    "Which team has the best recent form?",
+    `What are the odds for the next ${league.shortName} fixtures?`,
+    "How accurate has the model been?",
+  ];
+}
+
+export default function Chat({ league }: { league?: League | null }) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [interactionId, setInteractionId] = useState<string | null>(null);
   const endRef = useRef<HTMLDivElement>(null);
+
+  const scope = league?.slug ?? null;
+
+  // Switching leagues starts a new conversation: the old thread's system
+  // context named the previous competition.
+  useEffect(() => {
+    setMessages([]);
+    setInteractionId(null);
+    setError(null);
+  }, [scope]);
 
   useEffect(() => {
     if (messages.length > 0) {
@@ -44,6 +71,7 @@ export default function Chat() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           message: trimmed,
+          league: scope,
           previousInteractionId: interactionId,
         }),
       });
@@ -76,18 +104,20 @@ export default function Chat() {
         <h2 className="font-display text-2xl leading-none sm:text-3xl">
           Ask the data anything
         </h2>
-        <span className="text-outcome-draw text-xs">Live · grounded in the model</span>
+        <span className="text-outcome-draw text-xs">
+          {league ? `Live · ${league.name} and beyond` : "Live · all five leagues"}
+        </span>
       </div>
 
       <p className="text-pitch-dim mb-5 max-w-xl text-sm leading-relaxed">
-        Answers come from querying the match database and the forecasting model
+        Answers come from querying the match database and the forecasting models
         directly. The assistant has no memory of football to fall back on, so it
         cannot make a figure up — if the data does not have it, it says so.
       </p>
 
       {messages.length === 0 && !pending && (
         <div className="mb-5 flex flex-wrap gap-2">
-          {SUGGESTIONS.map((suggestion) => (
+          {suggestionsFor(league ?? null).map((suggestion) => (
             <button
               key={suggestion}
               onClick={() => send(suggestion)}
@@ -137,7 +167,7 @@ export default function Chat() {
 
       <div className="flex gap-2">
         <label htmlFor="chat-input" className="sr-only">
-          Ask a question about the Premier League
+          Ask a question about European football
         </label>
         <input
           id="chat-input"
@@ -146,7 +176,9 @@ export default function Chat() {
           onKeyDown={(event) => {
             if (event.key === "Enter") send(input);
           }}
-          placeholder="How is Arsenal doing?"
+          placeholder={
+            league ? `How is ${league.shortName} looking?` : "How is Arsenal doing?"
+          }
           maxLength={500}
           disabled={pending}
           className="border-pitch-line placeholder:text-pitch-faint focus:border-outcome-draw min-w-0 flex-1 rounded-lg border bg-transparent px-4 py-3 text-base outline-none disabled:opacity-50"

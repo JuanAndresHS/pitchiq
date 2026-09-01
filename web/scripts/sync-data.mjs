@@ -31,6 +31,9 @@ for (const { from, to } of sources) {
   await mkdir(to, { recursive: true });
   await cp(from, to, { recursive: true });
 
-  const files = (await readdir(to)).filter((f) => f.endsWith(".csv"));
+  // Predictions live in per-league subdirectories, so a flat readdir would
+  // report zero even when the copy succeeded.
+  const entries = await readdir(to, { withFileTypes: true, recursive: true });
+  const files = entries.filter((e) => e.isFile() && e.name.endsWith(".csv"));
   console.log(`[sync-data] ${files.length} file(s) → ${to.replace(webRoot, "web")}`);
 }
