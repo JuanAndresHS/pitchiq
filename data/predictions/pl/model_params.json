@@ -2,8 +2,8 @@
   "league": "pl",
   "league_name": "Premier League",
   "home_advantage": 1.2523,
-  "home_advantage_log": 0.225,
-  "rho": -0.086,
+  "home_advantage_log": 0.2249,
+  "rho": -0.0859,
   "xi": 0.002,
   "alpha": 3.0,
   "teams": 27,
@@ -13,5 +13,5 @@
   "home_win_rate": 0.4328,
   "draw_rate": 0.244,
   "away_win_rate": 0.3233,
-  "fitted_at": "2026-09-01T21:25:15+00:00"
+  "fitted_at": "2026-09-01T23:28:39+00:00"
 }

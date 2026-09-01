@@ -1,7 +1,7 @@
 {
   "league": "fl1",
   "league_name": "Ligue 1",
-  "home_advantage": 1.3022,
+  "home_advantage": 1.3023,
   "home_advantage_log": 0.2641,
   "rho": -0.0558,
   "xi": 0.002,
@@ -13,5 +13,5 @@
   "home_win_rate": 0.439,
   "draw_rate": 0.2398,
   "away_win_rate": 0.3212,
-  "fitted_at": "2026-09-01T21:25:17+00:00"
+  "fitted_at": "2026-09-01T23:28:42+00:00"
 }

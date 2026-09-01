@@ -1,28 +1,28 @@
 team,attack,defense,overall,matches
 Arsenal FC,0.3389,0.427,0.7659,116
-Manchester City FC,0.4346,0.1914,0.6259,116
+Manchester City FC,0.4346,0.1914,0.626,116
 Liverpool FC,0.3559,-0.0708,0.2851,116
-Hull City AFC,-0.0604,0.275,0.2146,2
-Chelsea FC,0.239,-0.1318,0.1071,116
+Hull City AFC,-0.0603,0.2753,0.215,2
+Chelsea FC,0.239,-0.1319,0.1071,116
 Newcastle United FC,0.2176,-0.1215,0.0961,116
 Manchester United FC,0.2068,-0.1178,0.089,116
 Brighton & Hove Albion FC,0.1627,-0.1098,0.0529,116
 Brentford FC,0.1575,-0.1194,0.038,116
-AFC Bournemouth,0.1277,-0.0976,0.03,116
+AFC Bournemouth,0.1277,-0.0976,0.0301,116
 Aston Villa FC,0.1348,-0.1142,0.0206,116
-Nottingham Forest FC,0.034,-0.0751,-0.0411,116
-Everton FC,-0.0806,0.0023,-0.0783,116
-Leeds United FC,-0.0129,-0.073,-0.0859,40
+Nottingham Forest FC,0.034,-0.0751,-0.0412,116
+Everton FC,-0.0805,0.0022,-0.0783,116
+Leeds United FC,-0.013,-0.073,-0.086,40
 Fulham FC,-0.018,-0.1203,-0.1383,116
-Sunderland AFC,-0.1509,-0.0224,-0.1733,40
-Crystal Palace FC,-0.0629,-0.1526,-0.2154,116
+Sunderland AFC,-0.1508,-0.0225,-0.1733,40
+Crystal Palace FC,-0.0629,-0.1526,-0.2155,116
 Tottenham Hotspur FC,0.0369,-0.2607,-0.2238,116
-West Ham United FC,-0.0225,-0.2805,-0.303,114
-Luton Town FC,-0.0353,-0.3983,-0.4336,38
-Coventry City FC,-0.3522,-0.144,-0.4962,2
-Wolverhampton Wanderers FC,-0.246,-0.3093,-0.5554,114
+West Ham United FC,-0.0225,-0.2806,-0.3031,114
+Luton Town FC,-0.0353,-0.3982,-0.4336,38
+Coventry City FC,-0.3521,-0.1441,-0.4962,2
+Wolverhampton Wanderers FC,-0.246,-0.3094,-0.5553,114
 Burnley FC,-0.21,-0.4146,-0.6246,76
-Ipswich Town FC,-0.1611,-0.5296,-0.6907,40
-Leicester City FC,-0.3476,-0.4101,-0.7577,38
-Sheffield United FC,-0.2386,-0.5492,-0.7877,38
+Ipswich Town FC,-0.1612,-0.5296,-0.6908,40
+Leicester City FC,-0.3476,-0.4102,-0.7578,38
+Sheffield United FC,-0.2387,-0.5492,-0.7878,38
 Southampton FC,-0.4473,-0.4851,-0.9325,38
