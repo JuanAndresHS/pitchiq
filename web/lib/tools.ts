@@ -12,6 +12,7 @@
 
 import {
   getForecasts,
+  getLeagueStrengths,
   getMatches,
   getModelParams,
   getStandings,
@@ -19,7 +20,12 @@ import {
   getTrackRecord,
   type Match,
 } from "./data";
-import { LEAGUES, resolveLeague, type League } from "./leagues";
+import {
+  CHAMPIONS_LEAGUE,
+  LEAGUES,
+  resolveLeague,
+  type League,
+} from "./leagues";
 
 type ToolResult = Record<string, unknown>;
 
@@ -540,6 +546,108 @@ async function compareLeaguesTool(): Promise<ToolResult> {
   };
 }
 
+async function getLeagueStrengthTool(): Promise<ToolResult> {
+  const model = await getLeagueStrengths();
+
+  if (!model) {
+    return {
+      error: "The cross-league model has not been fit yet.",
+    };
+  }
+
+  const separable = model.strengths.filter(
+    (s) =>
+      s.ciLow !== null &&
+      s.ciHigh !== null &&
+      !(s.ciLow < 0 && s.ciHigh > 0) &&
+      s.strength !== 0,
+  );
+
+  return {
+    reference: model.referenceName,
+    matches_used: model.matchesFitted,
+    european_home_advantage: model.homeAdvantage,
+    leagues: model.strengths.map((s) => ({
+      league: s.name,
+      strength: s.strength,
+      goal_ratio: s.goalRatio,
+      ci_low: s.ciLow,
+      ci_high: s.ciHigh,
+      distinguishable_from_reference:
+        s.ciLow !== null && s.ciHigh !== null
+          ? !(s.ciLow < 0 && s.ciHigh > 0)
+          : null,
+      pooled_group: s.pooled,
+    })),
+    separable_from_reference: separable.map((s) => s.name),
+    notes: [
+      `Strength is a goal-rate multiplier relative to the ${model.referenceName}. A value of +0.20 means about 1.22x the goals, all else equal.`,
+      "Estimated only from European fixtures where clubs from different leagues met — the only matches that connect one league's rating scale to another's.",
+      "Intervals are 95% bootstrap. Where an interval crosses zero, that league is NOT distinguishable from the reference. Two leagues with overlapping intervals are not ranked by this model, whatever the point estimates suggest. Say so rather than presenting an order.",
+      "This measures the strength of the clubs that qualified, not of the division as a whole. Entry quotas differ by country.",
+    ],
+  };
+}
+
+async function getEuropeanFixturesTool(args: {
+  team?: string;
+  limit?: number;
+}): Promise<ToolResult> {
+  const limit = clamp(args.limit, 10, 1, 20);
+  let forecasts = await getForecasts(CHAMPIONS_LEAGUE.slug);
+
+  if (forecasts.length === 0) {
+    return { error: "No Champions League forecasts available." };
+  }
+
+  let teamName: string | null = null;
+
+  if (args.team) {
+    const found = await findTeam(args.team, "pl");
+    // A club may be in the Champions League without being in a modelled
+    // league, so fall back to matching the name as it appears in fixtures.
+    teamName =
+      found?.team ??
+      forecasts
+        .flatMap((f) => [f.homeTeam, f.awayTeam])
+        .find((n) => n.toLowerCase().includes(args.team!.trim().toLowerCase())) ??
+      null;
+
+    if (!teamName) {
+      return { error: `'${args.team}' is not in the Champions League fixtures.` };
+    }
+
+    forecasts = forecasts.filter(
+      (f) => f.homeTeam === teamName || f.awayTeam === teamName,
+    );
+  }
+
+  if (forecasts.length === 0) {
+    return { error: `No upcoming Champions League fixtures for ${teamName}.` };
+  }
+
+  return {
+    competition: "Champions League",
+    team_filter: teamName,
+    count: Math.min(forecasts.length, limit),
+    fixtures: forecasts.slice(0, limit).map((f) => ({
+      date: f.date,
+      stage: f.stage,
+      fixture: `${f.homeTeam} vs ${f.awayTeam}`,
+      probabilities: {
+        home_win: f.pHome,
+        draw: f.pDraw,
+        away_win: f.pAway,
+      },
+      most_likely_score: f.likelyScore,
+      // Forecasts involving a club outside the modelled leagues rest on a
+      // coarser assumption and measurably score worse.
+      lower_confidence: Boolean(f.pooled),
+    })),
+    note: "Fixtures flagged lower_confidence involve a club from a league that is not modelled individually; those clubs share one set of parameters.",
+  };
+}
+
 // --- Registry and schemas ----------------------------------------------------
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -555,6 +663,8 @@ const REGISTRY: Record<
   get_head_to_head: getHeadToHeadTool,
   evaluate_model_accuracy: evaluateModelAccuracyTool,
   compare_leagues: compareLeaguesTool,
+  get_league_strength: getLeagueStrengthTool,
+  get_european_fixtures: getEuropeanFixturesTool,
 };
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
@@ -660,6 +770,26 @@ export const TOOL_SCHEMAS = [
     description:
       "Compare the five leagues against each other: home advantage, goals per match, outcome rates, and fitted model parameters. Use for any question that spans competitions — which league has the strongest home advantage, which is highest scoring, where draws are most common. Takes no arguments and always covers all five.",
     parameters: { type: "object", properties: {} },
+  },
+  {
+    type: "function" as const,
+    name: "get_league_strength",
+    description:
+      "Get how strong each league is relative to the others, estimated from Champions League fixtures. Use for questions about which league is best, how leagues rank against each other, or how a club from one league would fare against one from another. Includes confidence intervals — respect them, and say when two leagues cannot be separated. Takes no arguments.",
+    parameters: { type: "object", properties: {} },
+  },
+  {
+    type: "function" as const,
+    name: "get_european_fixtures",
+    description:
+      "List upcoming Champions League fixtures with forecasts, optionally filtered to one club.",
+    parameters: {
+      type: "object",
+      properties: {
+        team: { type: "string", description: "Optional club filter." },
+        limit: { type: "integer", description: "Max fixtures (default 10)." },
+      },
+    },
   },
   {
     type: "function" as const,

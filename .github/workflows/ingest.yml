@@ -25,17 +25,17 @@ jobs:
   update:
     name: Fetch results and refresh forecasts
     runs-on: ubuntu-latest
-    # Five leagues, throttled to stay inside the API's rate limit, plus five
-    # model fits. Well under this, but the ceiling stops a hung run burning
-    # minutes.
-    timeout-minutes: 15
+    # Eight competitions, throttled to stay inside the API's rate limit, plus
+    # seven domestic fits and the cross-league fit. Well under this, but the
+    # ceiling stops a hung run burning minutes.
+    timeout-minutes: 20
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
@@ -50,8 +50,13 @@ jobs:
           FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
         run: python src/ingestion/fetch_matches.py
 
-      - name: Retrain models and refresh forecasts
+      - name: Retrain domestic models and refresh forecasts
         run: python src/models/train_and_forecast.py
+
+      # Runs after the domestic fits because it consumes their ratings: league
+      # strength is estimated with team parameters held fixed.
+      - name: Fit the cross-league model
+        run: python src/models/european_model.py --bootstrap 300
 
       - name: Commit updated data
         run: |

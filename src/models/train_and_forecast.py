@@ -42,7 +42,7 @@ from scipy.optimize import minimize
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
-from leagues import League, all_codes, get_league  # noqa: E402
+from leagues import League, domestic_codes, get_league  # noqa: E402
 
 PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
 PREDICTIONS_DIR = PROJECT_ROOT / "data" / "predictions"
@@ -417,9 +417,9 @@ def main() -> int:
     parser.add_argument(
         "--league",
         nargs="+",
-        default=all_codes(),
+        default=domestic_codes(),
         metavar="CODE",
-        help=f"Which leagues to model. Default: all ({', '.join(all_codes())}).",
+        help=f"Which leagues to model. Default: all ({', '.join(domestic_codes())}).",
     )
     parser.add_argument(
         "--xi",

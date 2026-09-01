@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LEAGUES, type League } from "@/lib/leagues";
+import { CHAMPIONS_LEAGUE, LEAGUES, type League } from "@/lib/leagues";
 
 /**
  * League switcher.
@@ -18,7 +18,7 @@ export default function LeagueNav({ current }: { current: League }) {
         ← All
       </Link>
 
-      {LEAGUES.map((league) => {
+      {[...LEAGUES, CHAMPIONS_LEAGUE].map((league) => {
         const active = league.slug === current.slug;
 
         return (
@@ -30,7 +30,7 @@ export default function LeagueNav({ current }: { current: League }) {
               active
                 ? "border-outcome-draw text-outcome-draw"
                 : "border-pitch-line text-pitch-dim hover:border-pitch-dim hover:text-pitch-text"
-            }`}
+            } ${league.cup ? "ml-2" : ""}`}
           >
             <span
               className="text-[10px] tracking-wider opacity-60"

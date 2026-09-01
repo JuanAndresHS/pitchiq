@@ -20,6 +20,8 @@ export type League = {
   country: string;
   code: string;
   tagline: string;
+  /** Cups have no domestic table and their own page shape. */
+  cup?: boolean;
 };
 
 export const LEAGUES: League[] = [
@@ -70,14 +72,33 @@ export const LEAGUES: League[] = [
   },
 ];
 
+/**
+ * The Champions League sits apart from the domestic leagues: it has no league
+ * table of its own and its forecasts depend on a second model that calibrates
+ * one competition's ratings against another's.
+ */
+export const CHAMPIONS_LEAGUE: League = {
+  slug: "cl",
+  route: "champions-league",
+  name: "Champions League",
+  shortName: "Champions",
+  country: "Europe",
+  code: "UEFA",
+  tagline: "Where the five leagues finally meet",
+  cup: true,
+};
+
+/** Everything with a page, cups included. */
+export const COMPETITIONS: League[] = [...LEAGUES, CHAMPIONS_LEAGUE];
+
 export const DEFAULT_LEAGUE = LEAGUES[0];
 
 export function getLeagueByRoute(route: string): League | null {
-  return LEAGUES.find((l) => l.route === route) ?? null;
+  return COMPETITIONS.find((l) => l.route === route) ?? null;
 }
 
 export function getLeagueBySlug(slug: string): League | null {
-  return LEAGUES.find((l) => l.slug === slug) ?? null;
+  return COMPETITIONS.find((l) => l.slug === slug) ?? null;
 }
 
 /**
@@ -91,7 +112,7 @@ export function resolveLeague(input: string | null | undefined): League | null {
   const query = input.trim().toLowerCase();
 
   return (
-    LEAGUES.find(
+    COMPETITIONS.find(
       (l) =>
         l.route === query ||
         l.slug === query ||
@@ -100,7 +121,7 @@ export function resolveLeague(input: string | null | undefined): League | null {
         l.shortName.toLowerCase() === query ||
         l.country.toLowerCase() === query,
     ) ??
-    LEAGUES.find((l) => l.name.toLowerCase().includes(query)) ??
+    COMPETITIONS.find((l) => l.name.toLowerCase().includes(query)) ??
     null
   );
 }

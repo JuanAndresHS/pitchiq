@@ -69,6 +69,26 @@ export const LEAGUE_METRICS: Record<string, LeagueMetrics> = {
 };
 
 /**
+ * The cross-league model, evaluated on a held-out European season with every
+ * domestic rating refit behind that season's start date. Reusing today's
+ * ratings would hand the model domestic results that had not happened yet.
+ *
+ * Regenerate with `python src/models/evaluate_european.py`.
+ */
+export const EUROPEAN_METRICS = {
+  testSeason: "2025/26",
+  testMatches: 189,
+  trainMatches: 298,
+  accuracy: { baseline: 0.503, model: 0.571 },
+  logLoss: { baseline: 1.0161, model: 0.9584 },
+  rpsImprovement: 0.093,
+  homeAdvantage: 1.485,
+  /** How much worse, in RPS, a fixture scores when one club comes from the
+   *  pooled group rather than a modelled league. */
+  pooledRpsPenalty: 0.0161,
+} as const;
+
+/**
  * Weighted by test-set size, so the bigger divisions are not outvoted by the
  * 18-team ones.
  */

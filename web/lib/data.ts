@@ -28,6 +28,8 @@ export type Match = {
   league: string;
   season: number;
   matchday: number;
+  /** Cups only: LEAGUE_STAGE, LAST_16, FINAL and so on. */
+  stage: string | null;
   date: string;
   status: string;
   homeTeam: string;
@@ -51,6 +53,33 @@ export type Forecast = {
   likelyScore: string;
   prediction: "H" | "D" | "A";
   confidence: number;
+  /** Cup fixtures only: the round, and whether either club came from the
+   *  pooled group rather than a modelled league. */
+  stage?: string;
+  pooled?: boolean;
+  homeLeague?: string;
+  awayLeague?: string;
+};
+
+export type LeagueStrength = {
+  league: string;
+  name: string;
+  strength: number;
+  goalRatio: number;
+  ciLow: number | null;
+  ciHigh: number | null;
+  pooled: boolean;
+};
+
+export type EuropeanModel = {
+  reference: string;
+  referenceName: string;
+  matchesFitted: number;
+  homeAdvantage: number;
+  rho: number;
+  bootstrapDraws: number;
+  strengths: LeagueStrength[];
+  fittedAt: string;
 };
 
 export type TeamRating = {
@@ -206,6 +235,7 @@ export async function getMatches(league: string): Promise<Match[]> {
         league,
         season: num(r.season) ?? 0,
         matchday: num(r.matchday) ?? 0,
+        stage: r.stage || null,
         date: (r.utc_date ?? "").slice(0, 10),
         status: r.status ?? "",
         homeTeam: r.home_team ?? "",
@@ -243,6 +273,10 @@ export async function getForecasts(league: string): Promise<Forecast[]> {
       likelyScore: r.most_likely_score ?? "",
       prediction: (r.prediction as Forecast["prediction"]) ?? "H",
       confidence: num(r.confidence) ?? 0,
+      stage: r.stage || undefined,
+      pooled: r.pooled_side ? r.pooled_side.toLowerCase() === "true" : undefined,
+      homeLeague: r.home_league || undefined,
+      awayLeague: r.away_league || undefined,
     }))
     .sort((a, b) => a.date.localeCompare(b.date));
 }
@@ -294,6 +328,46 @@ export async function getModelParams(
       homeWinRate: raw.home_win_rate,
       drawRate: raw.draw_rate,
       awayWinRate: raw.away_win_rate,
+      fittedAt: raw.fitted_at,
+    };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Relative league strength, estimated from European fixtures.
+ *
+ * Domestic ratings live on separate scales — a +0.5 in the Bundesliga and a
+ * +0.5 in LaLiga are each "half a unit above that league's average", and
+ * nothing in domestic data says whether those averages match. This is the
+ * calibration between them, and the only place in the project where a
+ * cross-league comparison is defensible.
+ */
+export async function getLeagueStrengths(): Promise<EuropeanModel | null> {
+  const file = path.join(PREDICTIONS, "cl", "league_strengths.json");
+  if (!existsSync(file)) return null;
+
+  try {
+    const raw = JSON.parse(await readFile(file, "utf8"));
+    return {
+      reference: raw.reference,
+      referenceName: raw.reference_name,
+      matchesFitted: raw.matches_fitted,
+      homeAdvantage: raw.home_advantage,
+      rho: raw.rho,
+      bootstrapDraws: raw.bootstrap_draws,
+      strengths: (raw.strengths ?? []).map(
+        (s: Record<string, unknown>): LeagueStrength => ({
+          league: s.league as string,
+          name: s.name as string,
+          strength: s.strength as number,
+          goalRatio: s.goal_ratio as number,
+          ciLow: (s.ci_low as number | null) ?? null,
+          ciHigh: (s.ci_high as number | null) ?? null,
+          pooled: Boolean(s.pooled),
+        }),
+      ),
       fittedAt: raw.fitted_at,
     };
   } catch {
@@ -591,6 +665,151 @@ export async function getRecentResults(league: string): Promise<{
   });
 
   return { matchday, results, scored, correct };
+}
+
+// --- Cup rounds --------------------------------------------------------------
+
+export type Round = { stage: string | null; matchday: number | null };
+
+const sameRound = (a: Round, b: Round) =>
+  a.stage === b.stage && a.matchday === b.matchday;
+
+/**
+ * The next round of a cup.
+ *
+ * A league identifies a round by matchday alone. A cup cannot: every league-phase
+ * fixture shares one stage and is separated by matchday, while knockout ties
+ * share a stage and have no meaningful matchday. Only the pair identifies a
+ * round, and using matchday alone lumps all eight league-phase rounds together.
+ */
+export async function getNextCupRound(league: string): Promise<{
+  round: Round | null;
+  fixtures: Forecast[];
+}> {
+  const forecasts = await getForecasts(league);
+  if (forecasts.length === 0) return { round: null, fixtures: [] };
+
+  const round: Round = {
+    stage: forecasts[0].stage ?? null,
+    matchday: forecasts[0].matchday || null,
+  };
+
+  return {
+    round,
+    fixtures: forecasts.filter((f) =>
+      sameRound({ stage: f.stage ?? null, matchday: f.matchday || null }, round),
+    ),
+  };
+}
+
+/**
+ * The most recently completed round of a cup, scored against what was forecast.
+ *
+ * Anchored on the latest date played rather than on the upcoming round's
+ * matchday: a new season's opening fixtures would otherwise match last season's
+ * first league-phase round and hide the final that came after it.
+ */
+export async function getRecentCupRound(league: string): Promise<{
+  round: Round | null;
+  results: ScoredResult[];
+  scored: number;
+  correct: number;
+}> {
+  const [matches, log] = await Promise.all([
+    getMatches(league),
+    getPredictionLog(league),
+  ]);
+
+  const played = matches.filter(
+    (m) =>
+      m.status === "FINISHED" &&
+      m.result !== null &&
+      m.homeGoals !== null &&
+      m.awayGoals !== null,
+  );
+
+  if (played.length === 0) {
+    return { round: null, results: [], scored: 0, correct: 0 };
+  }
+
+  const latest = played[played.length - 1];
+  const round: Round = {
+    stage: latest.stage,
+    matchday: latest.matchday || null,
+  };
+
+  const selected = played
+    .filter(
+      (m) =>
+        m.season === latest.season &&
+        sameRound({ stage: m.stage, matchday: m.matchday || null }, round),
+    )
+    .sort((a, b) => b.date.localeCompare(a.date));
+
+  let scored = 0;
+  let correct = 0;
+
+  const results: ScoredResult[] = selected.map((m) => {
+    const forecast = log.get(m.matchId);
+    const result = m.result as "H" | "D" | "A";
+
+    let probabilityOfActual: number | null = null;
+    let hit: boolean | null = null;
+
+    if (forecast) {
+      probabilityOfActual =
+        result === "H"
+          ? forecast.pHome
+          : result === "D"
+            ? forecast.pDraw
+            : forecast.pAway;
+      hit = forecast.predicted === result;
+      scored++;
+      if (hit) correct++;
+    }
+
+    return {
+      matchId: m.matchId,
+      date: m.date,
+      matchday: m.matchday,
+      homeTeam: m.homeTeam,
+      awayTeam: m.awayTeam,
+      homeGoals: m.homeGoals as number,
+      awayGoals: m.awayGoals as number,
+      result,
+      predicted: forecast?.predicted ?? null,
+      probabilityOfActual,
+      hit,
+    };
+  });
+
+  return { round, results, scored, correct };
+}
+
+/** Human-readable name for a cup round. */
+export function roundLabel(round: Round | null): string {
+  if (!round) return "Next fixtures";
+
+  const stages: Record<string, string> = {
+    LEAGUE_STAGE: "League phase",
+    GROUP_STAGE: "Group stage",
+    PLAYOFFS: "Play-offs",
+    LAST_16: "Round of 16",
+    QUARTER_FINALS: "Quarter-finals",
+    SEMI_FINALS: "Semi-finals",
+    FINAL: "Final",
+    THIRD_PLACE: "Third place",
+  };
+
+  const stage = round.stage
+    ? (stages[round.stage] ?? round.stage.replace(/_/g, " ").toLowerCase())
+    : "Fixtures";
+
+  // Matchday only disambiguates within a phase that has several.
+  const numbered = round.stage === "LEAGUE_STAGE" || round.stage === "GROUP_STAGE";
+  return numbered && round.matchday
+    ? `${stage}, matchday ${round.matchday}`
+    : stage;
 }
 
 // --- Fixture appeal ----------------------------------------------------------

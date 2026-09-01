@@ -161,6 +161,30 @@
 }
 
 /*
+  Champions League — the darkest palette of the set, with silver rather than a
+  colour for the draw. European nights look different from a domestic Saturday
+  and the page should too, while staying clear of Serie A's navy and Ligue 1's
+  indigo.
+*/
+[data-league="cl"] {
+  --color-pitch-void: #060b18;
+  --color-pitch-deep: #0b1226;
+  --color-pitch-raised: #16203a;
+  --color-pitch-line: #33406b;
+  --color-pitch-line-soft: #242f54;
+  --color-pitch-dim: #ccd6f0;
+  --color-pitch-faint: #8f9bc0;
+
+  --color-outcome-home: #5eead4;
+  --color-outcome-draw: #e2e8f0;
+  --color-outcome-away: #fb7185;
+
+  --color-ink-home: #04302a;
+  --color-ink-draw: #1e293b;
+  --color-ink-away: #4a0a18;
+}
+
+/*
   The index belongs to no competition, so it wears a neutral graphite. The
   league cards on it carry their own palettes, which turns the page into a
   gallery rather than a menu.

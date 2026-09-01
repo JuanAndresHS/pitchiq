@@ -29,7 +29,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from leagues import League, all_codes, get_league  # noqa: E402
+from leagues import League, domestic_codes, get_league  # noqa: E402
 from train_and_forecast import (  # noqa: E402
     DEFAULT_XI,
     fit_dixon_coles,
@@ -199,7 +199,7 @@ def run_league(league: League, xi: float, alpha: float | None, sweep: bool):
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Evaluate the model.")
-    parser.add_argument("--league", nargs="+", default=all_codes(), metavar="CODE")
+    parser.add_argument("--league", nargs="+", default=domestic_codes(), metavar="CODE")
     parser.add_argument("--xi", type=float, default=DEFAULT_XI)
     parser.add_argument("--alpha", type=float, default=None)
     parser.add_argument(
