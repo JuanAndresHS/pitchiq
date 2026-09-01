@@ -29,16 +29,16 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 564687,pd,2026-09-16,6,FC Barcelona,Real Racing Club de Santander,3.0,0.85,0.8044,0.1205,0.075,3-0,H,0.8044
 564686,pd,2026-09-17,6,Real Betis Balompié,Getafe CF,1.41,0.75,0.5279,0.2718,0.2002,1-0,H,0.5279
 564683,pd,2026-09-17,6,Málaga CF,Villarreal CF,1.18,1.63,0.2782,0.2434,0.4785,1-1,A,0.4785
-564694,pd,2026-09-19,7,RC Celta de Vigo,Real Racing Club de Santander,1.69,1.08,0.5154,0.2395,0.2451,1-1,H,0.5154
+564692,pd,2026-09-18,7,RCD Espanyol de Barcelona,Elche CF,1.57,1.09,0.4855,0.2494,0.2651,1-1,H,0.4855
 564690,pd,2026-09-19,7,Sevilla FC,FC Barcelona,1.14,2.22,0.1862,0.195,0.6189,1-2,A,0.6189
+564694,pd,2026-09-19,7,RC Celta de Vigo,Real Racing Club de Santander,1.69,1.08,0.5154,0.2395,0.2451,1-1,H,0.5154
 564693,pd,2026-09-19,7,CA Osasuna,Rayo Vallecano de Madrid,1.3,0.89,0.4617,0.2821,0.2563,1-0,H,0.4617
 564691,pd,2026-09-19,7,Athletic Club,Deportivo Alavés,1.44,0.9,0.496,0.266,0.238,1-0,H,0.496
-564689,pd,2026-09-20,7,Valencia CF,Real Sociedad de Fútbol,1.45,1.14,0.444,0.2583,0.2977,1-1,H,0.444
-564692,pd,2026-09-20,7,RCD Espanyol de Barcelona,Elche CF,1.57,1.09,0.4855,0.2494,0.2651,1-1,H,0.4855
 564697,pd,2026-09-20,7,Getafe CF,Málaga CF,1.16,0.7,0.4701,0.3077,0.2223,1-0,H,0.4701
 564688,pd,2026-09-20,7,Club Atlético de Madrid,Real Madrid CF,1.43,1.41,0.3811,0.2485,0.3704,1-1,H,0.3811
 564695,pd,2026-09-20,7,RC Deportivo La Coruña,Real Betis Balompié,1.43,1.17,0.4304,0.259,0.3106,1-1,H,0.4304
 564696,pd,2026-09-20,7,Villarreal CF,Levante UD,2.36,1.08,0.6584,0.1819,0.1597,2-1,H,0.6584
+564689,pd,2026-09-20,7,Valencia CF,Real Sociedad de Fútbol,1.45,1.14,0.444,0.2583,0.2977,1-1,H,0.444
 564704,pd,2026-10-11,8,Levante UD,Sevilla FC,1.68,1.18,0.492,0.2394,0.2685,1-1,H,0.492
 564703,pd,2026-10-11,8,Elche CF,RC Celta de Vigo,1.51,1.31,0.4197,0.2485,0.3318,1-1,H,0.4197
 564707,pd,2026-10-11,8,Real Sociedad de Fútbol,RC Deportivo La Coruña,1.5,1.13,0.4584,0.2551,0.2865,1-1,H,0.4584

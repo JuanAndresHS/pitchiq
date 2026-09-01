@@ -2,7 +2,7 @@
   "league": "ppl",
   "league_name": "Primeira Liga",
   "home_advantage": 1.2526,
-  "home_advantage_log": 0.2253,
+  "home_advantage_log": 0.2252,
   "rho": 0.0452,
   "xi": 0.002,
   "alpha": 3.0,
@@ -13,5 +13,5 @@
   "home_win_rate": 0.4259,
   "draw_rate": 0.2587,
   "away_win_rate": 0.3155,
-  "fitted_at": "2026-09-01T20:11:41+00:00"
+  "fitted_at": "2026-09-01T21:25:18+00:00"
 }
