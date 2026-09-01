@@ -2,17 +2,18 @@
 
 # ⚽ PitchIQ
 
-**An AI-powered analytics copilot for the Premier League**
+**Probabilistic football forecasts for Europe's five biggest leagues**
 
-Predictive models and a conversational agent that answers football questions in natural language — over live, daily-updated data.
+Dixon–Coles models retrained twice a day, an append-only forecast log, and an assistant that queries the data instead of recalling it.
 
+[![Live demo](https://img.shields.io/badge/demo-live-00FF85?labelColor=37003C)](https://pitchiq-football.vercel.app)
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Gemini](https://img.shields.io/badge/Gemini-API-4285F4?logo=googlegemini&logoColor=white)](https://ai.google.dev/)
-[![Next.js](https://img.shields.io/badge/Next.js-15-000000?logo=next.js&logoColor=white)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=next.js&logoColor=white)](https://nextjs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Live](https://img.shields.io/badge/demo-live-00FF85?labelColor=37003C)](https://pitchiq-theta.vercel.app)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Juan%20Andr%C3%A9s%20Hurtado-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/juan-andres-hurtado/)
-**[Open the live demo →](https://pitchiq-premierleague.vercel.app/))**
+
+**[Open the live demo →](https://pitchiq-football.vercel.app)**
 
 </div>
 
@@ -22,63 +23,57 @@ Predictive models and a conversational agent that answers football questions in 
 
 Football generates an enormous amount of data, but most of it stays locked behind two barriers:
 
-1. **Technical friction.** Answering something as simple as *"which team has the best form over the last five matches?"* requires writing code, not asking a question.
+1. **Technical friction.** Answering something as simple as *"which league has the strongest home advantage?"* requires writing code, not asking a question.
 2. **Static dashboards.** Traditional BI tools answer the questions someone anticipated in advance. Real curiosity is open-ended.
 
-**PitchIQ** removes both. It combines statistical models trained on historical match data with an AI agent that queries those models directly — so the analysis happens in conversation, not in a notebook.
+**PitchIQ** removes both. It combines statistical models fit per competition with an AI agent that queries those models directly — so the analysis happens in conversation, not in a notebook.
+
+---
+
+## Coverage
+
+| League | Country | Teams | Model accuracy | Baseline | Home advantage |
+|---|---|---|---|---|---|
+| Premier League | England | 20 | 47.9% | 42.6% | 1.19× |
+| LaLiga | Spain | 20 | 53.2% | 48.9% | 1.29× |
+| Serie A | Italy | 20 | 51.1% | 38.9% | 1.14× |
+| Bundesliga | Germany | 18 | **54.2%** | 43.8% | 1.20× |
+| Ligue 1 | France | 18 | 50.2% | 46.2% | 1.26× |
+
+Weighted accuracy across all five: **51.2%**. Each league is evaluated on its own held-out 2025/26 season, never seen during training. The baseline is always predicting a home win.
 
 ---
 
 ## What it does
 
-| Capability | Description | Status |
-|---|---|---|
-| 🔄 **Automated ingestion** | Daily pipeline pulling fresh results via GitHub Actions | ✅ |
-| 📊 **Exploratory analysis** | Home advantage, goal distributions, team strength | ✅ |
-| 🎯 **Match forecasting** | Dixon–Coles model producing win/draw/loss probabilities | ✅ |
-| 🤖 **Conversational agent** | Gemini with function calling — asks the data, doesn't invent it | ✅ |
-| 🖥️ **Live dashboard** | Next.js frontend with embedded chat, deployed on Vercel | ⬜ |
-| 📈 **Live accuracy tracking** | Scoring forecasts against real results as the season unfolds | ⬜ |
+| Capability | Description |
+|---|---|
+| 🔄 **Automated pipeline** | Fetches results, retrains five models and refreshes forecasts twice daily via GitHub Actions |
+| 🎯 **Match forecasting** | Dixon–Coles models producing win/draw/loss probabilities per fixture |
+| 📋 **Append-only forecast log** | Every prediction fixed in Git before kick-off, so the track record is verifiable |
+| 🤖 **Conversational agent** | Gemini with function calling over 8 data tools, across all five leagues |
+| 📊 **Table vs model** | Surfaces where league position and estimated strength disagree |
+| 🖥️ **Live dashboard** | Next.js on Vercel, one palette per competition |
 
 ---
 
-## Results
+## Three findings
 
-Evaluated on the 2025/26 season, held out entirely from training. The model
-never saw a single match from it.
+Expanding from one league to five turned single-league curiosities into patterns.
 
-| Metric | Baseline | Dixon–Coles | 
-|---|---|---|
-| Accuracy | 42.6% | **47.9%** |
-| Log-loss | 1.0852 | **1.0286** |
-| RPS improvement | — | **8.2%** |
+### The Premier League is the hardest of the five to forecast
 
-The baseline is "always predict a home win." Accuracy is the least interesting
-number here: football is genuinely high-variance, and professional bookmakers
-with far richer data operate in a similar range. The meaningful gain is in
-**log-loss and ranked probability score**, which measure whether the stated
-probabilities are honest rather than whether the top pick happened to land.
+It has both the lowest accuracy (47.9%) and the smallest gain over baseline (8.2%). The Bundesliga is the easiest (54.2%, 14.1% gain). That ordering matches how competitive each division is: a league with one dominant side is more predictable than one where anyone beats anyone. English football's reputation for unpredictability holds up under measurement.
 
-**Three findings shaped the model:**
+### The Dixon–Coles correction runs the other way
 
-**Goals are Poisson.** A chi-square goodness-of-fit test could not reject the
-Poisson hypothesis for either home or away goals (p = 0.31 / p = 0.46), with
-mean and variance within 4% of each other. That makes Poisson regression a
-justified starting point rather than an arbitrary one.
+Dixon and Coles (1997) found that 0–0 and 1–1 occur more often than a double-Poisson predicts, and set their correction parameter ρ positive on English data from 1992–95. Fitting the same model on 2023–26 data gives a **negative ρ in four of five leagues**, strongest in the Bundesliga.
 
-**Regularization matters more for credibility than for accuracy.** A ridge
-penalty on team parameters, tuned by held-out validation, improves RPS only
-marginally — but without it a newly promoted side with two matches played
-topped the strength ratings. With little data the likelihood barely constrains
-a team's parameters, so the optimiser fits those two results exactly. The
-penalty pulls them back to league average until real evidence accumulates.
+One league would be noise. Four independent competitions pointing the same way is a pattern worth stating rather than quietly assuming the original sign.
 
-**The low-score correction runs the other way.** Dixon and Coles found in 1997
-that 0–0 and 1–1 occur more often than independence predicts. In this dataset
-the fitted rho is slightly negative (−0.018), pointing the opposite direction.
-The magnitude is small enough that it is probably noise at 760 training
-matches, but it is worth stating rather than quietly assuming the original
-paper's sign.
+### Home advantage varies more than expected
+
+LaLiga home teams see a 1.29× lift in goal rate; Serie A only 1.14×. Serie A's home-win baseline is 38.9%, the lowest of the five. Home advantage is not a constant of football — it is a property of each competition.
 
 ---
 
@@ -86,71 +81,65 @@ paper's sign.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                      DATA SOURCE                            │
-│              football-data.org  ·  Premier League           │
+│  DATA SOURCE      football-data.org · 5 competitions        │
 └────────────────────────┬────────────────────────────────────┘
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  INGESTION LAYER          src/ingestion/                    │
-│  Scheduled ETL via GitHub Actions (daily cron)              │
+│  INGESTION        src/ingestion/                            │
+│  GitHub Actions, twice daily, rate-limit aware              │
 │  fetch → normalize → validate → data/processed/             │
 └────────────────────────┬────────────────────────────────────┘
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  MODELING LAYER           notebooks/                        │
-│  Poisson GLM · Dixon-Coles · attack/defense ratings         │
-│  → data/predictions/                                        │
+│  MODELLING        src/models/                               │
+│  One Dixon-Coles fit per league, ridge penalty tuned        │
+│  per competition on held-out seasons                        │
+│  → ratings · forecasts · prediction log · model params      │
 └────────────────────────┬────────────────────────────────────┘
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  AGENT LAYER              src/agent/                        │
-│  Gemini + function calling over 7 data tools                │
-│  get_standings · get_team_form · get_match_prediction       │
-│  get_upcoming_fixtures · get_team_ratings                   │
-│  get_head_to_head · evaluate_model_accuracy                 │
+│  AGENT            web/lib/tools.ts                          │
+│  Gemini + function calling over 8 tools                     │
+│  standings · form · prediction · fixtures · ratings         │
+│  head-to-head · accuracy · compare_leagues                  │
 └────────────────────────┬────────────────────────────────────┘
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  PRESENTATION LAYER       app/                              │
-│  Next.js dashboard + chat interface  →  Vercel              │
+│  PRESENTATION     web/                                      │
+│  Next.js, one route and palette per league  →  Vercel       │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 ### Design decisions
 
+- **One model per league, never a global one.** Attack and defense ratings are only comparable within a competition — there are no matches connecting LaLiga to the Bundesliga, so any cross-league rating comparison would be an artifact. The agent refuses those explicitly rather than producing a number that looks like information.
+
+- **Home advantage *is* comparable, and the agent knows the difference.** It describes the competition rather than a squad, so `compare_leagues` exposes it while team ratings stay league-scoped.
+
+- **Append-only prediction log.** Forecasts are recorded before kick-off and never rewritten. Overwriting them each run would erase the evidence needed to score them afterwards, turning a live track record into an unfalsifiable claim. Git history makes every prediction auditable.
+
 - **Function calling over RAG.** The agent runs real queries against real data instead of retrieving text about it. This removes a whole class of hallucination risk — a hard requirement if forecasts are going to be trusted.
 
-- **Provider-agnostic tool layer.** Tools are declared once in `tools.py` using a neutral schema. Each agent implementation adapts them to its provider's format, so switching models means writing a thin adapter rather than rewriting the data logic.
+- **Model parameters read from disk, not hardcoded.** The training script writes what it estimated; the site reads it. A number copied into a config by hand drifts silently from the model that produced it.
 
-- **Chronological train/test split.** A random split would let the model learn from matches that happened *after* the ones it predicts. The split is enforced with an assertion so the leak cannot slip back in silently.
+- **Chronological train/test split.** A random split would let a model learn from matches that happened *after* the ones it predicts. The split is enforced with an assertion so the leak cannot slip back in.
 
-- **Validation inside the pipeline.** Ingestion checks for duplicates, impossible scores and finished matches missing results before anything reaches the models. Bad data fails loudly instead of quietly degrading forecasts.
+- **Per-league regularization, tuned not guessed.** The ridge penalty differs by competition (Serie A 1.0, Premier League 3.0, LaLiga 5.0) because each was selected by sweeping values against a held-out season. Without it, a newly promoted side with two matches played topped the strength ratings.
 
-- **Versioned data artifacts.** Processed data and forecasts are committed by the pipeline, making every prediction reproducible and auditable after the fact.
-
-- **Three recent seasons, not ten.** Training depth is limited by what the free API tier exposes, but the constraint aligns with the domain: squads and managers turn over, so older seasons contribute more noise than signal.
-
-  - **Append-only prediction log.** Forecasts are recorded before kick-off and
-  never rewritten. Overwriting them each run would erase the evidence needed to
-  score them afterwards, turning a live track record into an unfalsifiable
-  claim. The log makes every prediction auditable through Git history.
-
-- **Regularised fit.** A ridge penalty on attack and defense parameters,
-  selected by validation rather than by eye, keeps teams with few matches from
-  receiving extreme ratings the data cannot support.
+- **Parameterised, not duplicated.** Adding a sixth league is one entry in `src/leagues.py`. Five copies of the project would mean fixing every bug five times.
 
 ---
 
 ## Tech stack
 
-**Data & Modeling** — Python · pandas · NumPy · SciPy · statsmodels · scikit-learn
+**Data & Modelling** — Python · pandas · NumPy · SciPy · statsmodels · scikit-learn
 **AI** — Google Gemini API (function calling via the Interactions API)
 **Orchestration** — GitHub Actions
-**Frontend** — Next.js · TypeScript · Tailwind CSS
+**Frontend** — Next.js 16 · React 19 · TypeScript · Tailwind CSS 4
 **Deployment** — Vercel
 
 ---
@@ -159,7 +148,7 @@ paper's sign.
 
 ### Prerequisites
 
-- Python 3.12+
+- Python 3.12+ and Node.js 20+
 - A [football-data.org](https://www.football-data.org/) API key (free tier)
 - A [Google AI Studio](https://aistudio.google.com/apikey) API key (free tier)
 
@@ -174,56 +163,49 @@ venv\Scripts\activate        # Windows
 # source venv/bin/activate   # macOS / Linux
 
 pip install -r requirements.txt
+
+cd web && npm install && cd ..
 ```
 
 ### Configuration
 
-Create a `.env` file in the project root:
+`.env` in the project root, for the Python pipeline:
 
 ```env
 FOOTBALL_DATA_API_KEY=your_key_here
+```
+
+`web/.env.local`, for the Next.js app:
+
+```env
 GEMINI_API_KEY=your_key_here
 ```
 
-> `.env` is gitignored. Never commit API keys.
+> Both are gitignored. Never commit API keys.
 
 ### Running it
 
 ```bash
-# Fetch the current season
+# Fetch every league for the current season
 python src/ingestion/fetch_matches.py
 
-# Fetch a specific season
-python src/ingestion/fetch_matches.py --season 2024
+# One league, or a past season
+python src/ingestion/fetch_matches.py --league PD --season 2024
 
-# Talk to the agent
-python src/agent/gemini_agent.py
+# Fit all five models and refresh forecasts
+python src/models/train_and_forecast.py
 
-# Or ask a single question
-python src/agent/gemini_agent.py "How has Arsenal been playing lately?"
+# Evaluate on held-out seasons, sweeping the ridge penalty
+python src/models/evaluate.py --sweep
+
+# Run the site
+cd web && npm run dev
 ```
 
-Run the notebooks in order to reproduce the analysis and regenerate forecasts:
+Reproduce the analysis from scratch with the notebooks, in order:
 
 1. `notebooks/01_exploratory_analysis.ipynb`
 2. `notebooks/02_outcome_model.ipynb`
-
----
-
-## Roadmap
-
-- [x] Project scaffolding and environment setup
-- [x] Daily ingestion pipeline (football-data.org)
-- [x] Automated scheduling via GitHub Actions
-- [x] Exploratory data analysis
-- [x] Match outcome model (Poisson GLM + Dixon–Coles)
-- [x] Conversational agent with function calling
-- [x] Next.js dashboard
-- [x] Vercel deployment
-- [x] Automated retraining and append-only prediction log
-- [ ] Live accuracy tracked across a full season
-- [ ] Expected goals (xG) model from event-level data
-- [ ] Squad availability as a model input
 
 ---
 
@@ -232,53 +214,77 @@ Run the notebooks in order to reproduce the analysis and regenerate forecasts:
 ```
 pitchiq/
 ├── .github/workflows/
-│   └── ingest.yml         # Daily scheduled pipeline
-├── app/                   # Next.js frontend
+│   └── ingest.yml              # Twice-daily pipeline
 ├── data/
-│   ├── raw/               # Source data (gitignored)
-│   ├── processed/         # Clean, versioned match data
-│   └── predictions/       # ratings, forecasts, and the append-only log
+│   ├── processed/              # <league>_matches_<season>.csv
+│   └── predictions/<league>/   # ratings, forecasts, log, model params
 ├── notebooks/
 │   ├── 01_exploratory_analysis.ipynb
 │   └── 02_outcome_model.ipynb
 ├── src/
-│   ├── ingestion/
-│   │   └── fetch_matches.py
+│   ├── leagues.py              # Single source of truth for competitions
+│   ├── ingestion/fetch_matches.py
 │   ├── models/
-│   │   ├── train_and_forecast.py   # fits the model, writes forecasts
-│   │   └── evaluate.py             # held-out evaluation and alpha sweep
-│   └── agent/
-│       ├── tools.py
-│       └── gemini_agent.py
-├── requirements.txt
-└── README.md
+│   │   ├── train_and_forecast.py
+│   │   └── evaluate.py
+│   └── agent/                  # CLI agent (Python)
+└── web/
+    ├── app/
+    │   ├── page.tsx            # League index
+    │   ├── [league]/page.tsx   # Per-league dashboard
+    │   └── api/chat/route.ts
+    ├── components/
+    ├── lib/
+    │   ├── leagues.ts
+    │   ├── data.ts             # CSV access layer
+    │   └── tools.ts            # Agent tools
+    └── scripts/sync-data.mjs   # Pulls data into the build
 ```
 
 ---
 
 ## Known limitations
 
-The model knows goals, teams and dates. It does not know about:
+The models know goals, teams and dates. They do not know about:
 
-- **Squad information** — injuries, suspensions and transfers are invisible to it
-- **Newly promoted teams** — they receive replacement-level ratings until they accumulate matches, which makes their early-season forecasts the least reliable in the set
-- **Fixture congestion** — teams playing midweek in Europe are systematically disadvantaged, and the model has no way to see it
+- **Squad information** — injuries, suspensions and transfers are invisible
+- **Managerial changes** — a rating built on four seasons assumes continuity
+- **Fixture congestion** — midweek European matches are a systematic disadvantage the model cannot see
+- **Newly promoted teams** — they carry the least reliable ratings until matches accumulate
 
-These are stated rather than buried, because a forecasting system that overstates its own reach is worse than one that is clear about where it stops.
+The team ratings measure accumulated squad strength, not recent form. With a decay half-life of roughly a year, a side that changed substantially will keep an outdated rating for weeks. That is the models' blind spot.
+
+These are stated rather than buried, because a forecasting system that overstates its reach is worse than one that is clear about where it stops.
+
+---
+
+## Roadmap
+
+- [x] Automated ingestion and scheduling
+- [x] Exploratory analysis and Poisson validation
+- [x] Dixon–Coles model with tuned regularization
+- [x] Conversational agent with function calling
+- [x] Dashboard deployed on Vercel
+- [x] Append-only prediction log
+- [x] Expansion to five leagues
+- [ ] Live accuracy tracked across a full season
+- [ ] Champions League: estimating relative league strength from European fixtures
+- [ ] Expected goals (xG) from event-level data
+- [ ] Squad availability as a model input
 
 ---
 
 ## Data sources & attribution
 
-- **[football-data.org](https://www.football-data.org/)** — fixtures, results and standings
+- **[football-data.org](https://www.football-data.org/)** — fixtures, results and standings for all five competitions
 
-This is an independent, non-commercial project built for learning and portfolio purposes. It is not affiliated with the Premier League or any club.
+This is an independent, non-commercial project built for learning and portfolio purposes. It is not affiliated with any league or club.
 
 ---
 
 ## About this project
 
-PitchIQ is a personal project applying business analytics, data engineering and generative AI to something I actually care about. The goal was to build the full path end to end — from raw ingestion to a deployed interface — rather than stopping at a notebook.
+PitchIQ applies business analytics, data engineering and generative AI to something I actually care about. The goal was to build the full path end to end — from raw ingestion to a deployed interface — rather than stopping at a notebook.
 
 **Juan Andrés Hurtado** · [LinkedIn](https://www.linkedin.com/in/juan-andres-hurtado/) · [GitHub](https://github.com/JuanAndresHS)
 
