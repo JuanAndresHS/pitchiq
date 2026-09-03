@@ -3,7 +3,7 @@
   "league_name": "Serie A",
   "home_advantage": 1.1135,
   "home_advantage_log": 0.1075,
-  "rho": -0.0044,
+  "rho": -0.0043,
   "xi": 0.002,
   "alpha": 1.0,
   "teams": 25,
@@ -13,5 +13,5 @@
   "home_win_rate": 0.4017,
   "draw_rate": 0.2759,
   "away_win_rate": 0.3224,
-  "fitted_at": "2026-09-02T23:29:54+00:00"
+  "fitted_at": "2026-09-03T10:14:19+00:00"
 }
