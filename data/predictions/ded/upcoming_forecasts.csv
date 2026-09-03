@@ -165,7 +165,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558747,ded,2027-02-13,22,Telstar 1963,SC Heerenveen,1.63,1.35,0.4299,0.2653,0.3048,1-1,H,0.4299
 558751,ded,2027-02-13,22,PSV,FC Twente '65,2.68,1.23,0.6758,0.179,0.1452,2-1,H,0.6758
 558742,ded,2027-02-20,23,SC Heerenveen,Willem II Tilburg,2.02,0.94,0.6145,0.2287,0.1567,1-1,H,0.6145
-558745,ded,2027-02-20,23,PSV,SC Cambuur-Leeuwarden,6.19,0.76,0.978,0.0164,0.0056,6-0,H,0.978
+558745,ded,2027-02-20,23,PSV,SC Cambuur-Leeuwarden,6.19,0.76,0.9781,0.0164,0.0056,6-0,H,0.9781
 558744,ded,2027-02-20,23,AFC Ajax,Go Ahead Eagles,2.16,1.09,0.606,0.2202,0.1738,1-1,H,0.606
 558743,ded,2027-02-20,23,PEC Zwolle,FC Groningen,1.38,1.46,0.345,0.2758,0.3793,1-1,A,0.3793
 558741,ded,2027-02-20,23,AZ,Fortuna Sittard,2.19,0.94,0.6476,0.2116,0.1409,2-0,H,0.6476
