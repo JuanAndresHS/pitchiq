@@ -1,9 +1,9 @@
 {
   "league": "pd",
   "league_name": "LaLiga",
-  "home_advantage": 1.3967,
-  "home_advantage_log": 0.3341,
-  "rho": 0.0151,
+  "home_advantage": 1.3966,
+  "home_advantage_log": 0.334,
+  "rho": 0.0153,
   "xi": 0.002,
   "alpha": 5.0,
   "teams": 29,
@@ -13,5 +13,5 @@
   "home_win_rate": 0.4603,
   "draw_rate": 0.2596,
   "away_win_rate": 0.2801,
-  "fitted_at": "2026-09-04T21:54:21+00:00"
+  "fitted_at": "2026-09-04T23:10:20+00:00"
 }
