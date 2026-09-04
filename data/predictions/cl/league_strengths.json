@@ -3,9 +3,9 @@
   "reference": "pl",
   "reference_name": "Premier League",
   "matches_fitted": 477,
-  "home_advantage": 1.5709,
-  "home_advantage_log": 0.4516,
-  "rho": 0.0708,
+  "home_advantage": 1.5711,
+  "home_advantage_log": 0.4518,
+  "rho": 0.07,
   "bootstrap_draws": 300,
   "strengths": [
     {
@@ -20,37 +20,37 @@
     {
       "league": "fl1",
       "name": "Ligue 1",
-      "strength": -0.107,
-      "goal_ratio": 0.8986,
-      "ci_low": -0.267,
-      "ci_high": 0.0492,
+      "strength": -0.1071,
+      "goal_ratio": 0.8984,
+      "ci_low": -0.2671,
+      "ci_high": 0.049,
       "pooled": false
     },
     {
       "league": "pd",
       "name": "LaLiga",
-      "strength": -0.1376,
+      "strength": -0.1375,
       "goal_ratio": 0.8715,
-      "ci_low": -0.2547,
+      "ci_low": -0.2546,
       "ci_high": -0.0237,
       "pooled": false
     },
     {
       "league": "bl1",
       "name": "Bundesliga",
-      "strength": -0.2414,
+      "strength": -0.2415,
       "goal_ratio": 0.7855,
-      "ci_low": -0.3605,
+      "ci_low": -0.3606,
       "ci_high": -0.1072,
       "pooled": false
     },
     {
       "league": "sa",
       "name": "Serie A",
-      "strength": -0.3276,
-      "goal_ratio": 0.7207,
+      "strength": -0.3277,
+      "goal_ratio": 0.7206,
       "ci_low": -0.45,
-      "ci_high": -0.1945,
+      "ci_high": -0.1946,
       "pooled": false
     },
     {
@@ -59,27 +59,27 @@
       "strength": -0.3697,
       "goal_ratio": 0.691,
       "ci_low": -0.4932,
-      "ci_high": -0.2451,
+      "ci_high": -0.245,
       "pooled": true
     },
     {
       "league": "ppl",
       "name": "Primeira Liga",
-      "strength": -0.4975,
+      "strength": -0.4976,
       "goal_ratio": 0.608,
-      "ci_low": -0.658,
-      "ci_high": -0.3476,
+      "ci_low": -0.6581,
+      "ci_high": -0.3477,
       "pooled": false
     },
     {
       "league": "ded",
       "name": "Eredivisie",
       "strength": -0.5514,
-      "goal_ratio": 0.5762,
+      "goal_ratio": 0.5761,
       "ci_low": -0.7327,
       "ci_high": -0.3754,
       "pooled": false
     }
   ],
-  "fitted_at": "2026-09-03T23:26:11+00:00"
+  "fitted_at": "2026-09-04T10:04:27+00:00"
 }
