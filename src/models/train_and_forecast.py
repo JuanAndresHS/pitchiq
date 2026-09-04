@@ -315,6 +315,21 @@ def run_league(league: League, xi: float, alpha: float | None) -> bool:
     played = df[df["status"] == "FINISHED"].copy()
     upcoming = df[df["status"] != "FINISHED"].copy()
 
+    # Abandoned, cancelled and long-postponed fixtures keep a non-finished
+    # status forever while holding a date in the past. Sorted by date they come
+    # first, so whatever matchday they belong to looks like the current one —
+    # which is how a league in its fourth round ends up showing its twenty-sixth.
+    if not upcoming.empty:
+        horizon = pd.Timestamp.now(tz="UTC") - pd.Timedelta(days=1)
+        stale = upcoming[upcoming["utc_date"] < horizon]
+        if not stale.empty:
+            logger.info(
+                "  Dropping %s stale fixture(s) dated before %s.",
+                len(stale),
+                horizon.date(),
+            )
+        upcoming = upcoming[upcoming["utc_date"] >= horizon].copy()
+
     if len(played) < MIN_MATCHES:
         logger.warning(
             "  Only %s finished matches — need at least %s to fit.",

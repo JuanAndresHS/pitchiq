@@ -258,6 +258,14 @@ export async function getForecasts(league: string): Promise<Forecast[]> {
 
   const text = await readFile(file, "utf8");
 
+  // Fixtures dated in the past are abandoned or cancelled ties that never got a
+  // final status. Sorted by date they lead the list, and every "next matchday"
+  // derived from it would be wrong. The pipeline drops them too; this is the
+  // guard for data written before that fix.
+  const horizon = new Date(Date.now() - 36 * 60 * 60 * 1000)
+    .toISOString()
+    .slice(0, 10);
+
   return parseCsv(text)
     .map((r) => ({
       matchId: num(r.match_id) ?? 0,
@@ -278,6 +286,7 @@ export async function getForecasts(league: string): Promise<Forecast[]> {
       homeLeague: r.home_league || undefined,
       awayLeague: r.away_league || undefined,
     }))
+    .filter((f) => f.date >= horizon)
     .sort((a, b) => a.date.localeCompare(b.date));
 }
 

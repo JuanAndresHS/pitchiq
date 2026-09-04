@@ -388,6 +388,12 @@ def main() -> int:
     ].copy()
     upcoming = matches[matches["status"] != "FINISHED"].copy()
 
+    # Same guard as the domestic script: fixtures left un-finished from an
+    # earlier season would sort ahead of everything real.
+    if not upcoming.empty:
+        horizon = pd.Timestamp.now(tz="UTC") - pd.Timedelta(days=1)
+        upcoming = upcoming[upcoming["utc_date"] >= horizon].copy()
+
     data = prepare(played, index)
     logger.info(
         "Fitting on %s of %s finished matches (%s excluded as same-group).",
