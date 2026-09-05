@@ -1,17 +1,17 @@
 {
   "league": "bl1",
   "league_name": "Bundesliga",
-  "home_advantage": 1.2919,
-  "home_advantage_log": 0.2561,
-  "rho": -0.0731,
+  "home_advantage": 1.2995,
+  "home_advantage_log": 0.262,
+  "rho": -0.0744,
   "xi": 0.002,
   "alpha": 3.0,
   "teams": 24,
-  "matches_fitted": 927,
+  "matches_fitted": 933,
   "seasons": 4,
-  "goals_per_match": 3.206,
-  "home_win_rate": 0.425,
-  "draw_rate": 0.2535,
-  "away_win_rate": 0.3215,
-  "fitted_at": "2026-09-05T09:33:41+00:00"
+  "goals_per_match": 3.208,
+  "home_win_rate": 0.4244,
+  "draw_rate": 0.2529,
+  "away_win_rate": 0.3226,
+  "fitted_at": "2026-09-05T23:06:36+00:00"
 }
