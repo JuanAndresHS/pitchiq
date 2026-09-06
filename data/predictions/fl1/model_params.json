@@ -1,17 +1,17 @@
 {
   "league": "fl1",
   "league_name": "Ligue 1",
-  "home_advantage": 1.2898,
-  "home_advantage_log": 0.2545,
-  "rho": -0.0445,
+  "home_advantage": 1.2844,
+  "home_advantage_log": 0.2503,
+  "rho": -0.0476,
   "xi": 0.002,
   "alpha": 5.0,
   "teams": 24,
-  "matches_fitted": 940,
+  "matches_fitted": 943,
   "seasons": 4,
-  "goals_per_match": 2.836,
-  "home_win_rate": 0.4372,
-  "draw_rate": 0.2394,
-  "away_win_rate": 0.3234,
-  "fitted_at": "2026-09-06T09:47:52+00:00"
+  "goals_per_match": 2.844,
+  "home_win_rate": 0.4358,
+  "draw_rate": 0.2386,
+  "away_win_rate": 0.3256,
+  "fitted_at": "2026-09-06T22:59:03+00:00"
 }
