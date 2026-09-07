@@ -1,17 +1,17 @@
 {
   "league": "ppl",
   "league_name": "Primeira Liga",
-  "home_advantage": 1.2498,
-  "home_advantage_log": 0.223,
-  "rho": 0.0441,
+  "home_advantage": 1.2495,
+  "home_advantage_log": 0.2228,
+  "rho": 0.0267,
   "xi": 0.002,
   "alpha": 3.0,
   "teams": 25,
-  "matches_fitted": 959,
+  "matches_fitted": 960,
   "seasons": 4,
-  "goals_per_match": 2.704,
-  "home_win_rate": 0.4254,
-  "draw_rate": 0.2586,
-  "away_win_rate": 0.316,
-  "fitted_at": "2026-09-07T10:53:00+00:00"
+  "goals_per_match": 2.701,
+  "home_win_rate": 0.425,
+  "draw_rate": 0.2594,
+  "away_win_rate": 0.3156,
+  "fitted_at": "2026-09-07T23:39:36+00:00"
 }
