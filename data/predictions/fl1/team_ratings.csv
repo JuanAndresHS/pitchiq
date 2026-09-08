@@ -1,25 +1,25 @@
 team,attack,defense,overall,matches
-Paris Saint-Germain FC,0.4909,0.1425,0.6334,105
-Lille OSC,0.1045,0.154,0.2585,105
-Racing Club de Lens,0.2057,0.0479,0.2535,105
+Paris Saint-Germain FC,0.491,0.1424,0.6334,105
+Lille OSC,0.1045,0.1539,0.2585,105
+Racing Club de Lens,0.2056,0.0479,0.2535,105
 AS Monaco FC,0.2838,-0.0793,0.2045,105
 Olympique de Marseille,0.3007,-0.1053,0.1954,105
-Olympique Lyonnais,0.2093,-0.0432,0.1661,105
-RC Strasbourg Alsace,0.2245,-0.1482,0.0764,105
-Stade Rennais FC 1901,0.2339,-0.1699,0.064,105
+Olympique Lyonnais,0.2092,-0.0431,0.1661,105
+RC Strasbourg Alsace,0.2245,-0.1482,0.0763,105
+Stade Rennais FC 1901,0.2339,-0.1698,0.064,105
 Paris FC,0.0766,-0.0481,0.0285,37
-Toulouse FC,-0.0095,-0.1011,-0.1106,104
+Toulouse FC,-0.0094,-0.1011,-0.1105,104
 FC Lorient,-0.006,-0.1305,-0.1365,71
-Stade Brestois 29,0.064,-0.228,-0.1639,105
-Le Mans FC,-0.0302,-0.1445,-0.1748,3
+Stade Brestois 29,0.064,-0.228,-0.164,105
+Le Mans FC,-0.0302,-0.1445,-0.1747,3
 OGC Nice,-0.0521,-0.1557,-0.2078,105
-AJ Auxerre,-0.0859,-0.177,-0.2629,71
-Stade de Reims,-0.2196,-0.0768,-0.2963,68
-ES Troyes AC,-0.0952,-0.2494,-0.3446,3
-Le Havre AC,-0.2282,-0.1624,-0.3907,105
-Clermont Foot 63,-0.2572,-0.1702,-0.4274,34
+AJ Auxerre,-0.0858,-0.177,-0.2628,71
+Stade de Reims,-0.2196,-0.0768,-0.2964,68
+ES Troyes AC,-0.0952,-0.2493,-0.3446,3
+Le Havre AC,-0.2282,-0.1624,-0.3906,105
+Clermont Foot 63,-0.2573,-0.1701,-0.4274,34
 FC Nantes,-0.2706,-0.1827,-0.4534,101
-Angers SCO,-0.3021,-0.1516,-0.4537,71
-AS Saint-Étienne,-0.114,-0.4326,-0.5466,33
-Montpellier HSC,-0.2868,-0.3612,-0.648,67
-FC Metz,-0.2364,-0.4549,-0.6913,68
+Angers SCO,-0.3021,-0.1515,-0.4537,71
+AS Saint-Étienne,-0.1139,-0.4325,-0.5464,33
+Montpellier HSC,-0.2868,-0.3611,-0.6479,67
+FC Metz,-0.2364,-0.455,-0.6913,68
