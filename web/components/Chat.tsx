@@ -105,7 +105,7 @@ export default function Chat({ league }: { league?: League | null }) {
           Ask the data anything
         </h2>
         <span className="text-outcome-draw text-xs">
-          {league ? `Live · ${league.name} and beyond` : "Live · all five leagues"}
+          {league ? `Live · ${league.name} and beyond` : "Live · all six competitions"}
         </span>
       </div>
 

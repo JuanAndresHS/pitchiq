@@ -22,6 +22,7 @@ import {
 } from "./data";
 import {
   CHAMPIONS_LEAGUE,
+  COMPETITIONS,
   LEAGUES,
   resolveLeague,
   type League,
@@ -154,12 +155,12 @@ async function findTeam(
 }
 
 function leagueName(slug: string): string {
-  return LEAGUES.find((l) => l.slug === slug)?.name ?? slug;
+  return COMPETITIONS.find((l) => l.slug === slug)?.name ?? slug;
 }
 
 /** The league a tool should act on: the one named, else the page's. */
 function targetLeague(named: string | undefined, fallback: string): League | null {
-  if (!named) return LEAGUES.find((l) => l.slug === fallback) ?? null;
+  if (!named) return COMPETITIONS.find((l) => l.slug === fallback) ?? null;
   return resolveLeague(named);
 }
 
@@ -459,11 +460,12 @@ async function evaluateModelAccuracyTool(
   args: { league?: string },
   context: string,
 ): Promise<ToolResult> {
-  // With no league named, report every one — "how accurate is the model?" is
-  // usually a question about the whole system.
+  // With no competition named, report every one — "how accurate is the model?"
+  // is usually a question about the whole system. The Champions League keeps its
+  // own forecast log, so it belongs here alongside the domestic leagues.
   const slugs = args.league
     ? [resolveLeague(args.league)?.slug]
-    : LEAGUES.map((l) => l.slug);
+    : COMPETITIONS.map((l) => l.slug);
 
   if (slugs[0] === undefined) return leagueNotFound(args.league!);
 
@@ -795,7 +797,7 @@ export const TOOL_SCHEMAS = [
     type: "function" as const,
     name: "evaluate_model_accuracy",
     description:
-      "Check how the model's logged forecasts performed against real results. Reports every league unless one is named.",
+      "Check how the models' logged forecasts performed against real results. Covers all six competitions including the Champions League, unless one is named. Use this for any question about how accurate the model has been.",
     parameters: {
       type: "object",
       properties: { league: LEAGUE_PARAM },

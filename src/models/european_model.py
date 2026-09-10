@@ -324,6 +324,59 @@ def forecast(
     return pd.DataFrame(rows).sort_values("date").reset_index(drop=True)
 
 
+def report_track_record(played: pd.DataFrame, out_dir: Path) -> None:
+    """Score logged forecasts against results, and against their own confidence.
+
+    Raw hit rate says little on a small sample. The informative comparison is
+    between what the model claimed and what happened: a run of wins on fixtures
+    it called at 60% is luck, not skill, and the two are easy to confuse when
+    only the tally is reported.
+    """
+    path = out_dir / "prediction_log.csv"
+    if not path.exists():
+        return
+
+    log = pd.read_csv(path)
+    scored = log.merge(played[["match_id", "result"]], on="match_id", how="inner")
+
+    if scored.empty:
+        logger.info("  Track record: nothing logged has been played yet.")
+        return
+
+    correct = int((scored["prediction"] == scored["result"]).sum())
+    n = len(scored)
+    expected = float(scored["confidence"].sum())
+
+    # Spread of the number of hits if every stated probability were exactly
+    # right: a Poisson-binomial, whose variance is the sum of p(1-p).
+    variance = float((scored["confidence"] * (1 - scored["confidence"])).sum())
+    sd = variance**0.5
+
+    logger.info(
+        "  Track record: %s/%s correct (%.1f%%).", correct, n, correct / n * 100
+    )
+    logger.info(
+        "    Model expected %.1f hits from its own probabilities (sd %.1f).",
+        expected,
+        sd,
+    )
+
+    if sd > 0:
+        z = (correct - expected) / sd
+        if abs(z) < 1:
+            verdict = "in line with what it claimed"
+        elif z > 0:
+            verdict = "running above its own forecasts — likely luck at this size"
+        else:
+            verdict = "running below its own forecasts"
+        logger.info("    %+.1f standard deviations: %s.", z, verdict)
+
+    if n < 50:
+        logger.info(
+            "    Sample too small to read as calibration; treat as provisional."
+        )
+
+
 def update_prediction_log(forecasts: pd.DataFrame, out_dir: Path) -> int:
     """Append-only: a forecast already logged is never rewritten."""
     path = out_dir / "prediction_log.csv"
@@ -488,6 +541,7 @@ def main() -> int:
             )
             update_prediction_log(forecasts, out_dir)
 
+    report_track_record(played, out_dir)
     logger.info("Done.")
     return 0
 
