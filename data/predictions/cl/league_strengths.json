@@ -3,10 +3,10 @@
   "reference": "pl",
   "reference_name": "Premier League",
   "matches_fitted": 488,
-  "home_advantage": 1.585,
+  "home_advantage": 1.5851,
   "home_advantage_log": 0.4606,
   "rho": 0.0723,
-  "bootstrap_draws": 500,
+  "bootstrap_draws": 300,
   "strengths": [
     {
       "league": "pl",
@@ -22,8 +22,8 @@
       "name": "Ligue 1",
       "strength": -0.1037,
       "goal_ratio": 0.9015,
-      "ci_low": -0.2538,
-      "ci_high": 0.0131,
+      "ci_low": -0.2558,
+      "ci_high": 0.0125,
       "pooled": false
     },
     {
@@ -31,8 +31,8 @@
       "name": "LaLiga",
       "strength": -0.1324,
       "goal_ratio": 0.876,
-      "ci_low": -0.2459,
-      "ci_high": -0.0298,
+      "ci_low": -0.2467,
+      "ci_high": -0.0259,
       "pooled": false
     },
     {
@@ -40,8 +40,8 @@
       "name": "Bundesliga",
       "strength": -0.2358,
       "goal_ratio": 0.7899,
-      "ci_low": -0.358,
-      "ci_high": -0.1179,
+      "ci_low": -0.3474,
+      "ci_high": -0.12,
       "pooled": false
     },
     {
@@ -49,17 +49,17 @@
       "name": "Serie A",
       "strength": -0.3256,
       "goal_ratio": 0.7221,
-      "ci_low": -0.4597,
-      "ci_high": -0.1956,
+      "ci_low": -0.452,
+      "ci_high": -0.1897,
       "pooled": false
     },
     {
       "league": "rest",
       "name": "Rest of Europe",
-      "strength": -0.3723,
+      "strength": -0.3722,
       "goal_ratio": 0.6892,
-      "ci_low": -0.4968,
-      "ci_high": -0.2561,
+      "ci_low": -0.4921,
+      "ci_high": -0.2551,
       "pooled": true
     },
     {
@@ -67,8 +67,8 @@
       "name": "Primeira Liga",
       "strength": -0.5199,
       "goal_ratio": 0.5946,
-      "ci_low": -0.7057,
-      "ci_high": -0.3735,
+      "ci_low": -0.6971,
+      "ci_high": -0.3658,
       "pooled": false
     },
     {
@@ -76,10 +76,10 @@
       "name": "Eredivisie",
       "strength": -0.5647,
       "goal_ratio": 0.5685,
-      "ci_low": -0.7565,
-      "ci_high": -0.371,
+      "ci_low": -0.7543,
+      "ci_high": -0.3706,
       "pooled": false
     }
   ],
-  "fitted_at": "2026-09-10T02:01:03+00:00"
+  "fitted_at": "2026-09-10T10:09:56+00:00"
 }
