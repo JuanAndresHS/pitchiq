@@ -1,30 +1,30 @@
 team,attack,defense,overall,matches
-FC Barcelona,0.6553,0.2069,0.8622,115
-Real Madrid CF,0.4616,0.2531,0.7147,115
-Club Atlético de Madrid,0.287,0.1331,0.4201,116
-Villarreal CF,0.3968,-0.0456,0.3512,116
-Real Betis Balompié,0.1727,0.0396,0.2123,116
-RC Celta de Vigo,0.1236,-0.0221,0.1015,115
-Athletic Club,0.0292,0.001,0.0302,115
-Real Sociedad de Fútbol,0.0838,-0.0877,-0.0039,115
-Rayo Vallecano de Madrid,-0.1339,0.0731,-0.0608,116
-CA Osasuna,-0.0358,-0.0258,-0.0616,115
-RC Deportivo La Coruña,-0.0868,0.0185,-0.0683,2
-Girona FC,0.0055,-0.079,-0.0734,114
-Valencia CF,-0.0518,-0.0303,-0.0821,116
-Deportivo Alavés,-0.0468,-0.0375,-0.0843,116
-Real Racing Club de Santander,-0.0614,-0.0367,-0.0981,2
-Sevilla FC,0.0149,-0.1228,-0.1079,116
-RCD Mallorca,-0.0789,-0.0316,-0.1104,114
-RCD Espanyol de Barcelona,-0.055,-0.0559,-0.111,78
-Getafe CF,-0.2755,0.1537,-0.1218,116
-Elche CF,0.0225,-0.1713,-0.1487,40
-Málaga CF,-0.1373,-0.0194,-0.1566,2
-CD Leganés,-0.0974,-0.0796,-0.177,38
-Levante UD,-0.0275,-0.1507,-0.1782,40
-UD Almería,-0.034,-0.1929,-0.2268,38
-UD Las Palmas,-0.1613,-0.1021,-0.2633,76
-Cádiz CF,-0.2144,-0.0527,-0.2671,38
-Granada CF,-0.1065,-0.2404,-0.3469,38
-Real Oviedo,-0.3643,-0.1402,-0.5045,38
-Real Valladolid CF,-0.2845,-0.4453,-0.7298,38
+FC Barcelona,0.6774,0.2158,0.8933,118
+Real Madrid CF,0.4616,0.2646,0.7263,118
+Club Atlético de Madrid,0.2732,0.1061,0.3792,118
+Villarreal CF,0.3595,-0.0582,0.3013,118
+Real Betis Balompié,0.1614,0.0093,0.1707,118
+RC Deportivo La Coruña,0.1324,-0.0012,0.1312,4
+Athletic Club,0.0394,0.0523,0.0918,118
+RC Celta de Vigo,0.0606,-0.0239,0.0367,119
+Real Sociedad de Fútbol,0.078,-0.0971,-0.0191,119
+Deportivo Alavés,-0.0123,-0.0302,-0.0424,118
+CA Osasuna,-0.0194,-0.0579,-0.0773,118
+Rayo Vallecano de Madrid,-0.0996,0.0212,-0.0784,118
+Girona FC,-0.0111,-0.0768,-0.088,114
+Real Racing Club de Santander,0.0892,-0.2097,-0.1205,4
+Levante UD,0.016,-0.1384,-0.1225,42
+RCD Mallorca,-0.0948,-0.0298,-0.1246,114
+Sevilla FC,-0.0141,-0.1199,-0.134,119
+RCD Espanyol de Barcelona,-0.0786,-0.0584,-0.137,80
+Getafe CF,-0.3102,0.1592,-0.151,118
+Elche CF,0.0345,-0.2142,-0.1797,42
+Valencia CF,-0.0995,-0.0814,-0.181,119
+CD Leganés,-0.1105,-0.0794,-0.1899,38
+UD Almería,-0.0477,-0.1894,-0.2371,38
+UD Las Palmas,-0.1742,-0.1017,-0.2759,76
+Cádiz CF,-0.2238,-0.0521,-0.2759,38
+Málaga CF,-0.2975,-0.0469,-0.3444,4
+Granada CF,-0.1187,-0.2365,-0.3552,38
+Real Oviedo,-0.3765,-0.1371,-0.5136,38
+Real Valladolid CF,-0.2947,-0.4415,-0.7362,38
