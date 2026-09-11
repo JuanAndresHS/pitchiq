@@ -624,13 +624,20 @@ export async function getRecentResults(league: string): Promise<{
   const currentSeason = Math.max(...played.map((m) => m.season));
   const seasonPlayed = played.filter((m) => m.season === currentSeason);
 
+  // The next unplayed matchday sets the ceiling. Without it, a fixture brought
+  // forward — LaLiga moves matches for scheduling reasons, and a round-six game
+  // can be played before round five — would be read as the current round simply
+  // because it is the most recent one on the calendar.
   const inPlay = forecasts[0]?.matchday ?? null;
-  const hasResults =
-    inPlay !== null && seasonPlayed.some((m) => m.matchday === inPlay);
 
-  const matchday = hasResults
-    ? inPlay
-    : Math.max(...seasonPlayed.map((m) => m.matchday));
+  const played_matchdays = seasonPlayed
+    .map((m) => m.matchday)
+    .filter((md) => inPlay === null || md <= inPlay);
+
+  const matchday =
+    played_matchdays.length > 0
+      ? Math.max(...played_matchdays)
+      : Math.max(...seasonPlayed.map((m) => m.matchday));
 
   const selected = seasonPlayed
     .filter((m) => m.matchday === matchday)
@@ -741,7 +748,24 @@ export async function getRecentCupRound(league: string): Promise<{
     return { round: null, results: [], scored: 0, correct: 0 };
   }
 
-  const latest = played[played.length - 1];
+  // Same reasoning as the league case: a tie played ahead of schedule should
+  // not present itself as the round in progress.
+  const forecasts = await getForecasts(league);
+  const nextStage = forecasts[0]?.stage ?? null;
+  const nextMatchday = forecasts[0]?.matchday || null;
+
+  const eligible =
+    nextStage && nextMatchday
+      ? played.filter(
+          (m) =>
+            m.stage !== nextStage ||
+            !m.matchday ||
+            m.matchday <= nextMatchday,
+        )
+      : played;
+
+  const pool = eligible.length > 0 ? eligible : played;
+  const latest = pool[pool.length - 1];
   const round: Round = {
     stage: latest.stage,
     matchday: latest.matchday || null,
