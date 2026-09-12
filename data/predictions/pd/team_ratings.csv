@@ -1,30 +1,30 @@
 team,attack,defense,overall,matches
-FC Barcelona,0.6774,0.2158,0.8933,118
-Real Madrid CF,0.4616,0.2646,0.7263,118
-Club Atlético de Madrid,0.2732,0.1061,0.3792,118
-Villarreal CF,0.3595,-0.0582,0.3013,118
+FC Barcelona,0.6774,0.2159,0.8933,118
+Real Madrid CF,0.4616,0.2647,0.7263,118
+Club Atlético de Madrid,0.2731,0.1061,0.3792,118
+Villarreal CF,0.3594,-0.0582,0.3012,118
 Real Betis Balompié,0.1614,0.0093,0.1707,118
-RC Deportivo La Coruña,0.1324,-0.0012,0.1312,4
-Athletic Club,0.0394,0.0523,0.0918,118
+RC Deportivo La Coruña,0.1324,-0.0011,0.1314,4
+Athletic Club,0.0394,0.0523,0.0917,118
 RC Celta de Vigo,0.0606,-0.0239,0.0367,119
 Real Sociedad de Fútbol,0.078,-0.0971,-0.0191,119
-Deportivo Alavés,-0.0123,-0.0302,-0.0424,118
+Deportivo Alavés,-0.0123,-0.0302,-0.0425,118
 CA Osasuna,-0.0194,-0.0579,-0.0773,118
 Rayo Vallecano de Madrid,-0.0996,0.0212,-0.0784,118
-Girona FC,-0.0111,-0.0768,-0.088,114
-Real Racing Club de Santander,0.0892,-0.2097,-0.1205,4
-Levante UD,0.016,-0.1384,-0.1225,42
+Girona FC,-0.0112,-0.0768,-0.088,114
+Real Racing Club de Santander,0.0892,-0.2098,-0.1206,4
+Levante UD,0.016,-0.1384,-0.1224,42
 RCD Mallorca,-0.0948,-0.0298,-0.1246,114
 Sevilla FC,-0.0141,-0.1199,-0.134,119
-RCD Espanyol de Barcelona,-0.0786,-0.0584,-0.137,80
-Getafe CF,-0.3102,0.1592,-0.151,118
-Elche CF,0.0345,-0.2142,-0.1797,42
+RCD Espanyol de Barcelona,-0.0785,-0.0584,-0.137,80
+Getafe CF,-0.3102,0.1593,-0.1509,118
+Elche CF,0.0345,-0.2142,-0.1796,42
 Valencia CF,-0.0995,-0.0814,-0.181,119
 CD Leganés,-0.1105,-0.0794,-0.1899,38
-UD Almería,-0.0477,-0.1894,-0.2371,38
-UD Las Palmas,-0.1742,-0.1017,-0.2759,76
-Cádiz CF,-0.2238,-0.0521,-0.2759,38
-Málaga CF,-0.2975,-0.0469,-0.3444,4
-Granada CF,-0.1187,-0.2365,-0.3552,38
+UD Almería,-0.0477,-0.1894,-0.2372,38
+UD Las Palmas,-0.1741,-0.1018,-0.2759,76
+Cádiz CF,-0.2239,-0.0521,-0.276,38
+Málaga CF,-0.2973,-0.0469,-0.3442,4
+Granada CF,-0.1188,-0.2365,-0.3553,38
 Real Oviedo,-0.3765,-0.1371,-0.5136,38
-Real Valladolid CF,-0.2947,-0.4415,-0.7362,38
+Real Valladolid CF,-0.2948,-0.4415,-0.7363,38

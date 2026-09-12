@@ -3,7 +3,7 @@
   "league_name": "Ligue 1",
   "home_advantage": 1.287,
   "home_advantage_log": 0.2523,
-  "rho": -0.0397,
+  "rho": -0.0398,
   "xi": 0.002,
   "alpha": 5.0,
   "teams": 24,
@@ -13,5 +13,5 @@
   "home_win_rate": 0.4364,
   "draw_rate": 0.2383,
   "away_win_rate": 0.3252,
-  "fitted_at": "2026-09-11T23:27:53+00:00"
+  "fitted_at": "2026-09-12T09:42:13+00:00"
 }

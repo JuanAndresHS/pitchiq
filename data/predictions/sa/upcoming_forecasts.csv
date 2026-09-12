@@ -23,7 +23,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558588,sa,2026-10-10,6,Genoa CFC,ACF Fiorentina,1.18,1.29,0.3364,0.2749,0.3887,1-1,A,0.3887
 558585,sa,2026-10-11,6,Como 1907,AS Roma,1.23,1.24,0.3603,0.2752,0.3645,1-1,A,0.3645
 558583,sa,2026-10-11,6,SS Lazio,AC Monza,1.83,0.76,0.6281,0.2239,0.1479,1-0,H,0.6281
-558581,sa,2026-10-11,6,US Lecce,Bologna FC 1909,0.76,1.35,0.2092,0.2839,0.5069,0-1,A,0.5069
+558581,sa,2026-10-11,6,US Lecce,Bologna FC 1909,0.76,1.35,0.2091,0.2839,0.5069,0-1,A,0.5069
 558580,sa,2026-10-11,6,US Sassuolo Calcio,AC Milan,1.09,1.64,0.251,0.2483,0.5007,1-1,A,0.5007
 558584,sa,2026-10-11,6,Cagliari Calcio,Juventus FC,0.79,1.56,0.1874,0.2576,0.555,0-1,A,0.555
 558579,sa,2026-10-12,6,Atalanta BC,Venezia FC,2.29,0.68,0.7364,0.1704,0.0932,2-0,H,0.7364
@@ -86,7 +86,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558520,sa,2026-11-22,12,Atalanta BC,FC Internazionale Milano,1.23,1.66,0.2836,0.2448,0.4716,1-1,A,0.4716
 558524,sa,2026-11-22,12,US Sassuolo Calcio,Genoa CFC,1.38,1.14,0.4205,0.2698,0.3098,1-1,H,0.4205
 558523,sa,2026-11-22,12,AC Milan,Frosinone Calcio,1.87,1.05,0.5645,0.2275,0.208,1-1,H,0.5645
-558519,sa,2026-11-23,12,AC Monza,ACF Fiorentina,1.04,1.71,0.229,0.2418,0.5291,1-1,A,0.5291
+558519,sa,2026-11-23,12,AC Monza,ACF Fiorentina,1.04,1.71,0.2291,0.2418,0.5291,1-1,A,0.5291
 558521,sa,2026-11-23,12,Juventus FC,Venezia FC,2.18,0.61,0.7336,0.177,0.0895,2-0,H,0.7336
 558514,sa,2026-11-29,13,Torino FC,SS Lazio,1.02,1.33,0.284,0.2786,0.4373,1-1,A,0.4373
 558518,sa,2026-11-29,13,FC Internazionale Milano,Genoa CFC,2.46,0.74,0.7496,0.1586,0.0918,2-0,H,0.7496
@@ -108,7 +108,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558500,sa,2026-12-06,14,Juventus FC,Udinese Calcio,1.66,0.79,0.5816,0.2446,0.1738,1-0,H,0.5816
 558499,sa,2026-12-06,14,Genoa CFC,Torino FC,1.24,1.13,0.3857,0.2814,0.3329,1-1,H,0.3857
 558501,sa,2026-12-06,14,Frosinone Calcio,FC Internazionale Milano,1.03,2.5,0.1361,0.1719,0.692,1-2,A,0.692
-558498,sa,2026-12-13,15,SS Lazio,AS Roma,0.93,1.38,0.2517,0.2773,0.4711,0-1,A,0.4711
+558498,sa,2026-12-13,15,SS Lazio,AS Roma,0.93,1.38,0.2516,0.2773,0.4711,0-1,A,0.4711
 558497,sa,2026-12-13,15,Atalanta BC,Genoa CFC,1.74,0.78,0.6016,0.2353,0.1631,1-0,H,0.6016
 558496,sa,2026-12-13,15,Juventus FC,AC Monza,2.21,0.62,0.736,0.1747,0.0893,2-0,H,0.736
 558495,sa,2026-12-13,15,FC Internazionale Milano,Torino FC,2.63,0.8,0.763,0.1477,0.0893,2-0,H,0.763
@@ -123,7 +123,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558485,sa,2026-12-20,16,Genoa CFC,Udinese Calcio,1.16,1.17,0.3557,0.2847,0.3596,1-1,A,0.3596
 558484,sa,2026-12-20,16,ACF Fiorentina,Bologna FC 1909,1.28,1.34,0.3518,0.2657,0.3824,1-1,A,0.3824
 558488,sa,2026-12-20,16,Venezia FC,AC Monza,1.34,1.22,0.3944,0.2686,0.3369,1-1,H,0.3944
-558482,sa,2026-12-20,16,Frosinone Calcio,SS Lazio,1.19,1.4,0.318,0.2659,0.4162,1-1,A,0.4162
+558482,sa,2026-12-20,16,Frosinone Calcio,SS Lazio,1.19,1.4,0.318,0.2659,0.4161,1-1,A,0.4161
 558481,sa,2026-12-20,16,AS Roma,Juventus FC,1.25,1.01,0.4163,0.2867,0.297,1-1,H,0.4163
 558480,sa,2026-12-20,16,US Sassuolo Calcio,Parma Calcio 1913,1.33,0.93,0.4575,0.2828,0.2597,1-0,H,0.4575
 558479,sa,2026-12-20,16,AC Milan,Como 1907,1.22,1.31,0.3439,0.2711,0.3851,1-1,A,0.3851
@@ -220,7 +220,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558393,sa,2027-02-21,25,ACF Fiorentina,FC Internazionale Milano,1.01,2.26,0.1538,0.1904,0.6559,1-2,A,0.6559
 558384,sa,2027-02-28,26,Como 1907,AC Milan,1.44,1.11,0.447,0.2654,0.2876,1-1,H,0.447
 558388,sa,2027-02-28,26,Frosinone Calcio,SSC Napoli,1.07,1.7,0.2378,0.2427,0.5195,1-1,A,0.5195
-558387,sa,2027-02-28,26,AC Monza,Juventus FC,0.69,2.0,0.1176,0.2017,0.6807,0-2,A,0.6807
+558387,sa,2027-02-28,26,AC Monza,Juventus FC,0.69,2.0,0.1176,0.2017,0.6808,0-2,A,0.6808
 558386,sa,2027-02-28,26,Bologna FC 1909,US Lecce,1.5,0.69,0.5647,0.2649,0.1704,1-0,H,0.5647
 558385,sa,2027-02-28,26,Torino FC,ACF Fiorentina,1.27,1.38,0.3434,0.2637,0.3929,1-1,A,0.3929
 558381,sa,2027-02-28,26,Parma Calcio 1913,US Sassuolo Calcio,1.02,1.2,0.3101,0.291,0.3989,1-1,A,0.3989
@@ -273,7 +273,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558337,sa,2027-04-11,31,SSC Napoli,US Sassuolo Calcio,1.83,0.92,0.5863,0.2292,0.1845,1-0,H,0.5863
 558338,sa,2027-04-11,31,ACF Fiorentina,AC Milan,1.13,1.53,0.2777,0.2572,0.4651,1-1,A,0.4651
 558336,sa,2027-04-11,31,Juventus FC,US Lecce,1.7,0.52,0.6638,0.2298,0.1064,1-0,H,0.6638
-558332,sa,2027-04-11,31,Bologna FC 1909,Venezia FC,1.91,0.82,0.6301,0.2172,0.1528,1-0,H,0.6301
+558332,sa,2027-04-11,31,Bologna FC 1909,Venezia FC,1.91,0.82,0.63,0.2172,0.1528,1-0,H,0.63
 558333,sa,2027-04-11,31,Frosinone Calcio,Genoa CFC,1.46,1.18,0.4343,0.2619,0.3038,1-1,H,0.4343
 558334,sa,2027-04-11,31,FC Internazionale Milano,AS Roma,1.66,1.2,0.4803,0.2455,0.2742,1-1,H,0.4803
 558335,sa,2027-04-11,31,Udinese Calcio,AC Monza,1.72,0.93,0.5579,0.2406,0.2015,1-0,H,0.5579
@@ -304,11 +304,11 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558307,sa,2027-05-02,34,US Lecce,Cagliari Calcio,0.88,1.09,0.2892,0.3125,0.3983,0-1,A,0.3983
 558304,sa,2027-05-02,34,Bologna FC 1909,ACF Fiorentina,1.48,1.16,0.4453,0.2606,0.2941,1-1,H,0.4453
 558301,sa,2027-05-02,34,AC Milan,SS Lazio,1.36,0.99,0.4514,0.2775,0.2711,1-1,H,0.4514
-558300,sa,2027-05-02,34,Torino FC,Parma Calcio 1913,1.2,0.91,0.4263,0.2971,0.2765,1-0,H,0.4263
+558300,sa,2027-05-02,34,Torino FC,Parma Calcio 1913,1.2,0.91,0.4264,0.2971,0.2765,1-0,H,0.4264
 558302,sa,2027-05-02,34,Udinese Calcio,Genoa CFC,1.29,1.05,0.4181,0.2812,0.3008,1-1,H,0.4181
 558303,sa,2027-05-02,34,US Sassuolo Calcio,Frosinone Calcio,1.54,1.44,0.4003,0.2462,0.3535,1-1,H,0.4003
 558299,sa,2027-05-02,34,Atalanta BC,Juventus FC,1.17,1.12,0.3693,0.2875,0.3431,1-1,H,0.3693
-558289,sa,2027-05-09,35,Parma Calcio 1913,AC Milan,0.74,1.45,0.1903,0.2709,0.5388,0-1,A,0.5388
+558289,sa,2027-05-09,35,Parma Calcio 1913,AC Milan,0.74,1.45,0.1903,0.2708,0.5388,0-1,A,0.5388
 558290,sa,2027-05-09,35,Genoa CFC,Cagliari Calcio,1.2,1.06,0.3907,0.289,0.3203,1-1,H,0.3907
 558291,sa,2027-05-09,35,SS Lazio,US Sassuolo Calcio,1.5,1.02,0.4825,0.2625,0.255,1-1,H,0.4825
 558292,sa,2027-05-09,35,SSC Napoli,AC Monza,2.23,0.68,0.7255,0.1764,0.0981,2-0,H,0.7255
@@ -322,7 +322,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558284,sa,2027-05-16,36,Juventus FC,FC Internazionale Milano,1.18,1.5,0.2965,0.2588,0.4447,1-1,A,0.4447
 558287,sa,2027-05-16,36,AC Milan,AS Roma,1.12,1.34,0.3116,0.2739,0.4145,1-1,A,0.4145
 558288,sa,2027-05-16,36,Cagliari Calcio,Torino FC,1.25,1.17,0.3802,0.2779,0.3419,1-1,H,0.3802
-558285,sa,2027-05-16,36,US Sassuolo Calcio,Venezia FC,1.81,1.0,0.5631,0.2325,0.2044,1-1,H,0.5631
+558285,sa,2027-05-16,36,US Sassuolo Calcio,Venezia FC,1.81,1.0,0.5631,0.2325,0.2045,1-1,H,0.5631
 558280,sa,2027-05-16,36,US Lecce,ACF Fiorentina,0.86,1.32,0.2428,0.2856,0.4716,0-1,A,0.4716
 558281,sa,2027-05-16,36,SS Lazio,Udinese Calcio,1.38,0.95,0.4658,0.2761,0.2581,1-0,H,0.4658
 558283,sa,2027-05-16,36,Como 1907,Atalanta BC,1.36,1.16,0.4123,0.2705,0.3171,1-1,H,0.4123
