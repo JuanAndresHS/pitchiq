@@ -1,11 +1,11 @@
 team,attack,defense,overall,matches
 FC Barcelona,0.689,0.1965,0.8854,119
-Real Madrid CF,0.4779,0.2545,0.7323,119
-Club Atlético de Madrid,0.2888,0.1231,0.4119,119
+Real Madrid CF,0.4779,0.2544,0.7323,119
+Club Atlético de Madrid,0.2888,0.123,0.4118,119
 Villarreal CF,0.3571,-0.0612,0.2959,118
 Real Betis Balompié,0.1584,0.0066,0.165,118
 RC Deportivo La Coruña,0.1356,-0.0016,0.134,5
-Athletic Club,0.0258,0.049,0.0748,119
+Athletic Club,0.0259,0.049,0.0748,119
 RC Celta de Vigo,0.0512,-0.0317,0.0194,120
 Deportivo Alavés,-0.0191,-0.0387,-0.0578,119
 Real Sociedad de Fútbol,0.0576,-0.1199,-0.0623,120
@@ -20,11 +20,11 @@ Levante UD,0.0355,-0.1759,-0.1404,43
 Getafe CF,-0.3143,0.1555,-0.1589,119
 Elche CF,0.0314,-0.2032,-0.1718,43
 Valencia CF,-0.1027,-0.0849,-0.1876,119
-CD Leganés,-0.1125,-0.082,-0.1946,38
-UD Almería,-0.0507,-0.1923,-0.243,38
+CD Leganés,-0.1125,-0.082,-0.1945,38
+UD Almería,-0.0507,-0.1922,-0.243,38
 Cádiz CF,-0.2264,-0.0548,-0.2812,38
 UD Las Palmas,-0.1776,-0.1054,-0.283,76
 Málaga CF,-0.2834,-0.0147,-0.2981,5
 Granada CF,-0.1231,-0.2391,-0.3622,38
-Real Oviedo,-0.3785,-0.1405,-0.5189,38
-Real Valladolid CF,-0.2978,-0.4447,-0.7426,38
+Real Oviedo,-0.3785,-0.1404,-0.5189,38
+Real Valladolid CF,-0.2978,-0.4447,-0.7425,38
