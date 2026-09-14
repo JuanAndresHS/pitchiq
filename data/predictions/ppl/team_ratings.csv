@@ -1,26 +1,26 @@
 team,attack,defense,overall,matches
-Sporting Clube de Portugal,0.7057,0.3077,1.0134,108
-Sport Lisboa e Benfica,0.6478,0.3439,0.9917,108
-FC Porto,0.4192,0.4795,0.8986,108
-Sporting Clube de Braga,0.3516,0.0821,0.4337,106
-FC Famalicão,-0.0254,0.1726,0.1471,108
-CD Santa Clara,-0.072,0.1316,0.0596,74
-Académico de Viseu FC,0.0388,-0.0557,-0.0169,6
-Gil Vicente FC,-0.0327,0.011,-0.0217,107
-Vitória SC,-0.0234,-0.0416,-0.0651,108
-FC Arouca,0.1058,-0.2053,-0.0995,108
-GD Estoril Praia,0.1264,-0.2402,-0.1138,107
-CS Marítimo,-0.0365,-0.1353,-0.1718,5
-FC Alverca,-0.0614,-0.174,-0.2354,40
-CD Nacional,-0.1157,-0.1257,-0.2413,74
-Moreirense FC,-0.1091,-0.1617,-0.2708,107
-SC Farense,-0.1918,-0.0887,-0.2805,68
-CF Estrela da Amadora,-0.056,-0.2338,-0.2898,107
-FC Vizela,-0.1096,-0.274,-0.3836,34
-Portimonense SC,-0.0635,-0.3206,-0.3841,34
-Rio Ave FC,-0.1525,-0.2513,-0.4038,107
-GD Chaves,-0.188,-0.2947,-0.4827,34
-CD Tondela,-0.2952,-0.2132,-0.5084,34
-Casa Pia AC,-0.2558,-0.2545,-0.5102,108
-Boavista FC,-0.2673,-0.2959,-0.5632,68
-AVS,-0.3394,-0.355,-0.6944,68
+Sporting Clube de Portugal,0.7036,0.3113,1.0149,108
+Sport Lisboa e Benfica,0.6451,0.3457,0.9908,108
+FC Porto,0.4177,0.4818,0.8995,108
+Sporting Clube de Braga,0.3335,0.1061,0.4397,107
+FC Famalicão,-0.0296,0.1752,0.1455,108
+CD Santa Clara,-0.0735,0.1338,0.0603,74
+Gil Vicente FC,-0.0346,0.014,-0.0206,107
+Académico de Viseu FC,0.026,-0.0569,-0.0309,6
+Vitória SC,-0.0243,-0.0402,-0.0645,108
+FC Arouca,0.102,-0.203,-0.101,108
+GD Estoril Praia,0.1075,-0.2196,-0.1121,108
+FC Alverca,-0.0624,-0.1719,-0.2343,40
+Moreirense FC,-0.0789,-0.1593,-0.2383,108
+CD Nacional,-0.1166,-0.123,-0.2395,74
+CF Estrela da Amadora,-0.0222,-0.255,-0.2773,108
+SC Farense,-0.1929,-0.0863,-0.2792,68
+CS Marítimo,-0.0487,-0.2512,-0.2999,6
+FC Vizela,-0.1119,-0.2717,-0.3835,34
+Portimonense SC,-0.0655,-0.3184,-0.3839,34
+Rio Ave FC,-0.1186,-0.2739,-0.3926,108
+GD Chaves,-0.1899,-0.2929,-0.4827,34
+CD Tondela,-0.2965,-0.2103,-0.5068,34
+Casa Pia AC,-0.2592,-0.2516,-0.5109,108
+Boavista FC,-0.2688,-0.2932,-0.562,68
+AVS,-0.3412,-0.3516,-0.6928,68
