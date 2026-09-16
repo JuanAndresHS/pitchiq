@@ -1,6 +1,6 @@
 team,attack,defense,overall,matches
 FC Barcelona,0.6885,0.1948,0.8833,119
-Real Madrid CF,0.4878,0.2362,0.7241,120
+Real Madrid CF,0.4878,0.2362,0.724,120
 Club Atlético de Madrid,0.2882,0.1207,0.409,119
 Villarreal CF,0.3466,-0.0734,0.2732,119
 Real Betis Balompié,0.167,0.0185,0.1855,119
@@ -25,6 +25,6 @@ UD Almería,-0.0518,-0.1927,-0.2445,38
 Cádiz CF,-0.2271,-0.0556,-0.2827,38
 UD Las Palmas,-0.1774,-0.1069,-0.2843,76
 Málaga CF,-0.2854,-0.0145,-0.2999,5
-Granada CF,-0.1234,-0.2396,-0.363,38
+Granada CF,-0.1234,-0.2396,-0.3631,38
 Real Oviedo,-0.3793,-0.1414,-0.5207,38
 Real Valladolid CF,-0.2978,-0.4458,-0.7436,38
