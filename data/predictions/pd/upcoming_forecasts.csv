@@ -1,5 +1,4 @@
 match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_draw,p_away_win,most_likely_score,prediction,confidence
-564685,pd,2026-09-16,6,Levante UD,Athletic Club,1.36,1.22,0.4007,0.2654,0.3339,1-1,H,0.4007
 564686,pd,2026-09-17,6,Real Betis Balompié,Getafe CF,1.4,0.71,0.5352,0.2756,0.1892,1-0,H,0.5352
 564683,pd,2026-09-17,6,Málaga CF,Villarreal CF,1.12,1.43,0.2933,0.2638,0.4429,1-1,A,0.4429
 564692,pd,2026-09-18,7,RCD Espanyol de Barcelona,Elche CF,1.62,1.1,0.4946,0.2481,0.2574,1-1,H,0.4946
@@ -9,9 +8,9 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 564690,pd,2026-09-19,7,Sevilla FC,FC Barcelona,1.14,2.25,0.1815,0.1947,0.6238,1-2,A,0.6238
 564689,pd,2026-09-20,7,Valencia CF,Real Sociedad de Fútbol,1.41,1.13,0.4328,0.2655,0.3017,1-1,H,0.4328
 564696,pd,2026-09-20,7,Villarreal CF,Levante UD,2.32,1.11,0.645,0.1879,0.1671,2-1,H,0.645
+564695,pd,2026-09-20,7,RC Deportivo La Coruña,Real Betis Balompié,1.4,1.19,0.4193,0.2635,0.3173,1-1,H,0.4193
 564688,pd,2026-09-20,7,Club Atlético de Madrid,Real Madrid CF,1.49,1.42,0.3915,0.2479,0.3606,1-1,H,0.3915
 564697,pd,2026-09-20,7,Getafe CF,Málaga CF,1.03,0.64,0.4397,0.3356,0.2247,1-0,H,0.4397
-564695,pd,2026-09-20,7,RC Deportivo La Coruña,Real Betis Balompié,1.4,1.19,0.4193,0.2635,0.3173,1-1,H,0.4193
 564706,pd,2026-10-09,8,Málaga CF,RCD Espanyol de Barcelona,1.09,0.95,0.3841,0.3041,0.3118,1-0,H,0.3841
 564698,pd,2026-10-10,8,Rayo Vallecano de Madrid,Athletic Club,1.2,1.03,0.3991,0.2882,0.3127,1-1,H,0.3991
 564699,pd,2026-10-10,8,Deportivo Alavés,Club Atlético de Madrid,1.16,1.41,0.3074,0.2639,0.4288,1-1,A,0.4288
@@ -71,7 +70,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 564753,pd,2026-11-22,13,Getafe CF,Club Atlético de Madrid,0.88,1.17,0.2755,0.3007,0.4238,0-1,A,0.4238
 564754,pd,2026-11-22,13,Real Madrid CF,RC Celta de Vigo,2.33,0.83,0.7096,0.1744,0.1161,2-0,H,0.7096
 564755,pd,2026-11-22,13,Deportivo Alavés,RC Deportivo La Coruña,1.33,1.07,0.4254,0.2743,0.3003,1-1,H,0.4254
-564756,pd,2026-11-22,13,Sevilla FC,Real Betis Balompié,1.33,1.3,0.3758,0.2625,0.3617,1-1,H,0.3758
+564756,pd,2026-11-22,13,Sevilla FC,Real Betis Balompié,1.33,1.3,0.3757,0.2625,0.3617,1-1,H,0.3757
 564766,pd,2026-11-29,14,RC Deportivo La Coruña,FC Barcelona,1.2,2.05,0.2187,0.2123,0.569,1-2,A,0.569
 564765,pd,2026-11-29,14,Levante UD,Real Racing Club de Santander,2.07,1.4,0.5298,0.2125,0.2577,2-1,H,0.5298
 564767,pd,2026-11-29,14,Málaga CF,Athletic Club,0.99,1.04,0.3324,0.3065,0.3611,0-1,A,0.3611
