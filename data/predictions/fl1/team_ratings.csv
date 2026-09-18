@@ -1,25 +1,25 @@
 team,attack,defense,overall,matches
-Paris Saint-Germain FC,0.4864,0.1662,0.6526,106
-Lille OSC,0.1134,0.1676,0.2809,106
-Racing Club de Lens,0.2195,0.0343,0.2539,106
-AS Monaco FC,0.2839,-0.0679,0.216,106
-Olympique de Marseille,0.2867,-0.0923,0.1944,106
-Olympique Lyonnais,0.1985,-0.0193,0.1792,106
-Stade Rennais FC 1901,0.2283,-0.1438,0.0845,106
-RC Strasbourg Alsace,0.2202,-0.1401,0.0801,106
-Paris FC,0.0513,-0.02,0.0313,38
-Toulouse FC,0.0131,-0.1107,-0.0976,105
-FC Lorient,0.0122,-0.1478,-0.1355,72
-Le Mans FC,0.0294,-0.1808,-0.1513,4
-Stade Brestois 29,0.0498,-0.2105,-0.1607,106
-OGC Nice,-0.0667,-0.1479,-0.2146,106
-AJ Auxerre,-0.0862,-0.1572,-0.2433,72
-Stade de Reims,-0.2126,-0.0758,-0.2884,68
-Le Havre AC,-0.2427,-0.1497,-0.3924,106
-ES Troyes AC,-0.145,-0.256,-0.401,4
-Clermont Foot 63,-0.2501,-0.1678,-0.4179,34
-FC Nantes,-0.2621,-0.1827,-0.4448,101
-Angers SCO,-0.313,-0.1321,-0.4451,72
-AS Saint-Étienne,-0.1066,-0.4303,-0.5369,33
-Montpellier HSC,-0.279,-0.359,-0.6379,67
-FC Metz,-0.2287,-0.454,-0.6827,68
+Paris Saint-Germain FC,0.4858,0.1666,0.6524,106
+Lille OSC,0.1131,0.1679,0.281,106
+Racing Club de Lens,0.215,0.0293,0.2443,107
+AS Monaco FC,0.2875,-0.0621,0.2253,107
+Olympique de Marseille,0.2863,-0.0913,0.1949,106
+Olympique Lyonnais,0.1981,-0.0186,0.1795,106
+Stade Rennais FC 1901,0.2278,-0.143,0.0848,106
+RC Strasbourg Alsace,0.2198,-0.1392,0.0806,106
+Paris FC,0.051,-0.0193,0.0317,38
+Toulouse FC,0.0129,-0.11,-0.097,105
+FC Lorient,0.0119,-0.147,-0.1351,72
+Le Mans FC,0.0284,-0.1798,-0.1514,4
+Stade Brestois 29,0.0497,-0.2095,-0.1599,106
+OGC Nice,-0.0668,-0.1471,-0.2139,106
+AJ Auxerre,-0.0863,-0.1564,-0.2426,72
+Stade de Reims,-0.2119,-0.075,-0.287,68
+Le Havre AC,-0.2424,-0.1487,-0.3911,106
+ES Troyes AC,-0.1444,-0.2542,-0.3986,4
+Clermont Foot 63,-0.2487,-0.1665,-0.4152,34
+FC Nantes,-0.2617,-0.1818,-0.4434,101
+Angers SCO,-0.3125,-0.1313,-0.4438,72
+AS Saint-Étienne,-0.1064,-0.4283,-0.5347,33
+Montpellier HSC,-0.278,-0.3574,-0.6354,67
+FC Metz,-0.2283,-0.4526,-0.6809,68
