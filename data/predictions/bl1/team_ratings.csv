@@ -1,25 +1,25 @@
 team,attack,defense,overall,matches
-FC Bayern München,0.773,0.1322,0.9052,106
-Borussia Dortmund,0.3384,0.0823,0.4207,105
+FC Bayern München,0.773,0.1321,0.9051,106
+Borussia Dortmund,0.3384,0.0824,0.4207,105
 Bayer 04 Leverkusen,0.356,-0.017,0.339,105
-VfB Stuttgart,0.3343,-0.1396,0.1947,105
+VfB Stuttgart,0.3344,-0.1396,0.1947,105
 RB Leipzig,0.2644,-0.0815,0.1829,105
 SV 07 Elversberg,0.2719,-0.1863,0.0856,3
 Eintracht Frankfurt,0.2122,-0.3031,-0.0909,105
 SC Freiburg,0.0875,-0.1963,-0.1088,105
 TSG 1899 Hoffenheim,0.1855,-0.3067,-0.1212,105
-1. FSV Mainz 05,-0.0229,-0.1046,-0.1275,105
+1. FSV Mainz 05,-0.0229,-0.1045,-0.1274,105
 FC Schalke 04,-0.1957,0.0379,-0.1578,3
 FC Augsburg,-0.0409,-0.2132,-0.2541,105
 Borussia Mönchengladbach,-0.0386,-0.3055,-0.3441,105
 SV Werder Bremen,-0.1115,-0.2516,-0.363,105
 VfL Wolfsburg,-0.0604,-0.3226,-0.383,102
 1. FC Köln,-0.0769,-0.3511,-0.428,71
-Holstein Kiel,-0.04,-0.4559,-0.4959,34
+Holstein Kiel,-0.0401,-0.4559,-0.496,34
 1. FC Union Berlin,-0.17,-0.3311,-0.501,105
 1. FC Heidenheim 1846,-0.1465,-0.376,-0.5225,102
-SC Paderborn 07,-0.5492,0.0096,-0.5396,3
+SC Paderborn 07,-0.549,0.0096,-0.5394,3
 Hamburger SV,-0.2502,-0.317,-0.5672,37
 FC St. Pauli 1910,-0.4794,-0.1722,-0.6516,68
 VfL Bochum 1848,-0.2852,-0.38,-0.6651,67
-SV Darmstadt 98,-0.356,-0.4272,-0.7832,34
+SV Darmstadt 98,-0.356,-0.4271,-0.7831,34
