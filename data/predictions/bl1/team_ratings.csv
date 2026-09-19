@@ -1,25 +1,25 @@
 team,attack,defense,overall,matches
-FC Bayern München,0.773,0.1321,0.9051,106
-Borussia Dortmund,0.3384,0.0824,0.4207,105
-Bayer 04 Leverkusen,0.356,-0.017,0.339,105
-VfB Stuttgart,0.3344,-0.1396,0.1947,105
-RB Leipzig,0.2644,-0.0815,0.1829,105
-SV 07 Elversberg,0.2719,-0.1863,0.0856,3
-Eintracht Frankfurt,0.2122,-0.3031,-0.0909,105
-SC Freiburg,0.0875,-0.1963,-0.1088,105
-TSG 1899 Hoffenheim,0.1855,-0.3067,-0.1212,105
-1. FSV Mainz 05,-0.0229,-0.1045,-0.1274,105
-FC Schalke 04,-0.1957,0.0379,-0.1578,3
-FC Augsburg,-0.0409,-0.2132,-0.2541,105
-Borussia Mönchengladbach,-0.0386,-0.3055,-0.3441,105
-SV Werder Bremen,-0.1115,-0.2516,-0.363,105
-VfL Wolfsburg,-0.0604,-0.3226,-0.383,102
-1. FC Köln,-0.0769,-0.3511,-0.428,71
-Holstein Kiel,-0.0401,-0.4559,-0.496,34
-1. FC Union Berlin,-0.17,-0.3311,-0.501,105
-1. FC Heidenheim 1846,-0.1465,-0.376,-0.5225,102
-SC Paderborn 07,-0.549,0.0096,-0.5394,3
-Hamburger SV,-0.2502,-0.317,-0.5672,37
-FC St. Pauli 1910,-0.4794,-0.1722,-0.6516,68
-VfL Bochum 1848,-0.2852,-0.38,-0.6651,67
-SV Darmstadt 98,-0.356,-0.4271,-0.7831,34
+FC Bayern München,0.7692,0.1305,0.8997,106
+Borussia Dortmund,0.3266,0.1162,0.4428,106
+Bayer 04 Leverkusen,0.3517,-0.0185,0.3331,105
+RB Leipzig,0.259,-0.0811,0.1779,105
+VfB Stuttgart,0.3089,-0.1311,0.1778,106
+SV 07 Elversberg,0.2639,-0.1847,0.0792,3
+Eintracht Frankfurt,0.2077,-0.3105,-0.1028,106
+SC Freiburg,0.0897,-0.1976,-0.1078,106
+1. FSV Mainz 05,0.0164,-0.1324,-0.116,106
+TSG 1899 Hoffenheim,0.1822,-0.3085,-0.1263,105
+FC Schalke 04,-0.2019,0.0387,-0.1632,3
+FC Augsburg,-0.0314,-0.2372,-0.2685,106
+SV Werder Bremen,-0.0881,-0.2651,-0.3532,106
+Borussia Mönchengladbach,-0.0148,-0.3419,-0.3568,106
+VfL Wolfsburg,-0.0638,-0.3237,-0.3875,102
+1. FC Köln,-0.0859,-0.3619,-0.4479,72
+Holstein Kiel,-0.0442,-0.4566,-0.5007,34
+1. FC Union Berlin,-0.1746,-0.3329,-0.5075,105
+1. FC Heidenheim 1846,-0.1508,-0.377,-0.5278,102
+SC Paderborn 07,-0.5507,0.0124,-0.5383,3
+Hamburger SV,-0.2379,-0.3125,-0.5504,38
+FC St. Pauli 1910,-0.4836,-0.1732,-0.6567,68
+VfL Bochum 1848,-0.2887,-0.3807,-0.6694,67
+SV Darmstadt 98,-0.3589,-0.4279,-0.7868,34
