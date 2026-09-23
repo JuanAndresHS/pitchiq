@@ -1,5 +1,5 @@
 match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_draw,p_away_win,most_likely_score,prediction,confidence
-564706,pd,2026-10-09,8,Málaga CF,RCD Espanyol de Barcelona,1.07,1.02,0.3603,0.3042,0.3355,1-1,H,0.3603
+564706,pd,2026-10-09,8,Málaga CF,RCD Espanyol de Barcelona,1.07,1.02,0.3603,0.3041,0.3355,1-1,H,0.3603
 564698,pd,2026-10-10,8,Rayo Vallecano de Madrid,Athletic Club,1.18,1.01,0.3965,0.2947,0.3088,1-1,H,0.3965
 564699,pd,2026-10-10,8,Deportivo Alavés,Club Atlético de Madrid,1.13,1.39,0.3028,0.2695,0.4277,1-1,A,0.4277
 564700,pd,2026-10-10,8,FC Barcelona,Getafe CF,2.39,0.6,0.7718,0.1547,0.0735,2-0,H,0.7718
@@ -109,7 +109,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 564799,pd,2027-01-03,18,Real Sociedad de Fútbol,CA Osasuna,1.66,1.06,0.5124,0.2466,0.241,1-1,H,0.5124
 564798,pd,2027-01-03,18,Real Madrid CF,Getafe CF,1.89,0.57,0.6911,0.2075,0.1015,1-0,H,0.6911
 564801,pd,2027-01-03,18,Real Racing Club de Santander,Athletic Club,1.43,1.62,0.3379,0.2422,0.4198,1-1,A,0.4198
-564802,pd,2027-01-03,18,Málaga CF,Elche CF,1.22,1.19,0.369,0.2792,0.3517,1-1,H,0.369
+564802,pd,2027-01-03,18,Málaga CF,Elche CF,1.22,1.19,0.3691,0.2792,0.3517,1-1,H,0.3691
 564813,pd,2027-01-10,19,Club Atlético de Madrid,Real Racing Club de Santander,3.07,0.96,0.7908,0.1255,0.0837,3-0,H,0.7908
 564814,pd,2027-01-10,19,Deportivo Alavés,Real Sociedad de Fútbol,1.47,1.1,0.4544,0.2633,0.2823,1-1,H,0.4544
 564816,pd,2027-01-10,19,RCD Espanyol de Barcelona,Real Betis Balompié,1.24,1.26,0.357,0.2735,0.3695,1-1,A,0.3695
@@ -148,7 +148,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 564842,pd,2027-01-31,22,Villarreal CF,Real Racing Club de Santander,3.23,1.19,0.7689,0.1284,0.1027,3-1,H,0.7689
 564840,pd,2027-01-31,22,Club Atlético de Madrid,RCD Espanyol de Barcelona,2.05,0.8,0.6618,0.2025,0.1357,2-0,H,0.6618
 564839,pd,2027-01-31,22,Rayo Vallecano de Madrid,Real Madrid CF,1.0,1.62,0.232,0.2509,0.5171,1-1,A,0.5171
-564838,pd,2027-01-31,22,Real Betis Balompié,Elche CF,2.01,1.04,0.5967,0.2147,0.1887,1-1,H,0.5967
+564838,pd,2027-01-31,22,Real Betis Balompié,Elche CF,2.01,1.04,0.5967,0.2147,0.1886,1-1,H,0.5967
 564841,pd,2027-01-31,22,RC Celta de Vigo,Getafe CF,1.27,0.72,0.493,0.2965,0.2105,1-0,H,0.493
 564855,pd,2027-02-07,23,Real Sociedad de Fútbol,Real Madrid CF,1.2,1.83,0.247,0.2316,0.5214,1-1,A,0.5214
 564854,pd,2027-02-07,23,RC Deportivo La Coruña,Málaga CF,1.53,0.71,0.568,0.2606,0.1714,1-0,H,0.568

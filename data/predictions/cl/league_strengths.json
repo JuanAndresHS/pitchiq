@@ -39,7 +39,7 @@
       "league": "bl1",
       "name": "Bundesliga",
       "strength": -0.2511,
-      "goal_ratio": 0.7779,
+      "goal_ratio": 0.778,
       "ci_low": -0.3633,
       "ci_high": -0.1241,
       "pooled": false
@@ -81,5 +81,5 @@
       "pooled": false
     }
   ],
-  "fitted_at": "2026-09-23T10:23:06+00:00"
+  "fitted_at": "2026-09-23T23:51:52+00:00"
 }
