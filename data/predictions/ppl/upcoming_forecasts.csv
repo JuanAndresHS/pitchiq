@@ -1,6 +1,6 @@
 match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_draw,p_away_win,most_likely_score,prediction,confidence
-567321,ppl,2026-10-10,8,Casa Pia AC,CD Santa Clara,0.83,1.17,0.2631,0.298,0.4389,0-1,A,0.4389
 567323,ppl,2026-10-10,8,CS Marítimo,FC Porto,0.73,1.91,0.1374,0.2078,0.6547,0-1,A,0.6547
+567321,ppl,2026-10-10,8,Casa Pia AC,CD Santa Clara,0.83,1.17,0.2631,0.298,0.4389,0-1,A,0.4389
 567322,ppl,2026-10-10,8,Académico de Viseu FC,GD Estoril Praia,1.68,1.08,0.5174,0.238,0.2446,1-1,H,0.5174
 567328,ppl,2026-10-11,8,Rio Ave FC,CD Nacional,1.28,1.15,0.395,0.2696,0.3354,1-1,H,0.395
 567320,ppl,2026-10-11,8,Sport Lisboa e Benfica,Vitória SC,2.45,0.72,0.7559,0.1532,0.0909,2-0,H,0.7559
