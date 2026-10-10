@@ -1,25 +1,25 @@
 team,attack,defense,overall,matches
-Paris Saint-Germain FC,0.4843,0.182,0.6663,107
-Lille OSC,0.1056,0.1565,0.2622,107
-Racing Club de Lens,0.2122,0.0374,0.2496,107
-Olympique Lyonnais,0.2223,0.0097,0.232,107
-AS Monaco FC,0.2844,-0.0544,0.23,107
-Olympique de Marseille,0.2768,-0.0875,0.1892,107
-RC Strasbourg Alsace,0.2127,-0.1391,0.0736,107
-Paris FC,0.0574,-0.0079,0.0495,39
-Stade Rennais FC 1901,0.2099,-0.1656,0.0442,107
-Toulouse FC,0.0343,-0.1208,-0.0865,106
-Le Mans FC,0.0539,-0.1665,-0.1126,5
-FC Lorient,0.004,-0.1474,-0.1434,73
-Stade Brestois 29,0.0435,-0.2077,-0.1642,107
-OGC Nice,-0.053,-0.1354,-0.1884,107
-AJ Auxerre,-0.0776,-0.1444,-0.222,73
-Stade de Reims,-0.2131,-0.069,-0.2821,68
-Le Havre AC,-0.2213,-0.1626,-0.3839,107
-Angers SCO,-0.2997,-0.1086,-0.4084,73
-Clermont Foot 63,-0.2479,-0.1631,-0.4109,34
-FC Nantes,-0.2635,-0.1744,-0.4379,101
-ES Troyes AC,-0.209,-0.2948,-0.5038,5
-AS Saint-Étienne,-0.1072,-0.4219,-0.5291,33
-Montpellier HSC,-0.2785,-0.3506,-0.6291,67
-FC Metz,-0.2305,-0.4451,-0.6755,68
+Paris Saint-Germain FC,0.482,0.1815,0.6635,107
+Lille OSC,0.1047,0.1562,0.2609,107
+Racing Club de Lens,0.2158,0.0411,0.2569,108
+AS Monaco FC,0.2825,-0.0532,0.2293,107
+Olympique Lyonnais,0.2182,0.0039,0.2221,108
+Olympique de Marseille,0.2748,-0.0864,0.1885,107
+RC Strasbourg Alsace,0.2112,-0.1373,0.0738,107
+Paris FC,0.0559,-0.0074,0.0485,39
+Stade Rennais FC 1901,0.2081,-0.1641,0.044,107
+Toulouse FC,0.0333,-0.1194,-0.0861,106
+Le Mans FC,0.0511,-0.1623,-0.1112,5
+FC Lorient,0.0035,-0.1454,-0.1419,73
+Stade Brestois 29,0.0426,-0.2058,-0.1632,107
+OGC Nice,-0.0533,-0.1338,-0.1872,107
+AJ Auxerre,-0.0779,-0.1427,-0.2206,73
+Stade de Reims,-0.2111,-0.0674,-0.2785,68
+Le Havre AC,-0.2206,-0.161,-0.3815,107
+Clermont Foot 63,-0.2435,-0.159,-0.4025,34
+Angers SCO,-0.2979,-0.1072,-0.4051,73
+FC Nantes,-0.262,-0.1725,-0.4346,101
+ES Troyes AC,-0.2056,-0.2881,-0.4938,5
+AS Saint-Étienne,-0.1069,-0.4156,-0.5225,33
+Montpellier HSC,-0.2756,-0.346,-0.6215,67
+FC Metz,-0.2291,-0.4415,-0.6706,68
