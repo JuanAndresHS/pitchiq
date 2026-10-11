@@ -1,17 +1,17 @@
 {
   "league": "pd",
   "league_name": "LaLiga",
-  "home_advantage": 1.3881,
-  "home_advantage_log": 0.3279,
-  "rho": -0.0176,
+  "home_advantage": 1.3889,
+  "home_advantage_log": 0.3285,
+  "rho": -0.0132,
   "xi": 0.002,
   "alpha": 5.0,
   "teams": 29,
-  "matches_fitted": 1210,
+  "matches_fitted": 1213,
   "seasons": 4,
   "goals_per_match": 2.674,
-  "home_win_rate": 0.457,
-  "draw_rate": 0.2603,
-  "away_win_rate": 0.2826,
-  "fitted_at": "2026-10-10T11:29:13+00:00"
+  "home_win_rate": 0.4575,
+  "draw_rate": 0.2597,
+  "away_win_rate": 0.2828,
+  "fitted_at": "2026-10-11T00:20:46+00:00"
 }

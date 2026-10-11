@@ -1,17 +1,17 @@
 {
   "league": "ded",
   "league_name": "Eredivisie",
-  "home_advantage": 1.2777,
-  "home_advantage_log": 0.2451,
-  "rho": -0.1185,
+  "home_advantage": 1.2779,
+  "home_advantage_log": 0.2452,
+  "rho": -0.1298,
   "xi": 0.002,
   "alpha": 3.0,
   "teams": 24,
-  "matches_fitted": 982,
+  "matches_fitted": 986,
   "seasons": 4,
-  "goals_per_match": 3.176,
-  "home_win_rate": 0.4348,
-  "draw_rate": 0.2546,
-  "away_win_rate": 0.3106,
-  "fitted_at": "2026-10-10T11:29:15+00:00"
+  "goals_per_match": 3.175,
+  "home_win_rate": 0.4341,
+  "draw_rate": 0.2566,
+  "away_win_rate": 0.3093,
+  "fitted_at": "2026-10-11T00:20:50+00:00"
 }
