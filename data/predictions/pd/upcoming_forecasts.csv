@@ -1,308 +1,303 @@
 match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_draw,p_away_win,most_likely_score,prediction,confidence
-564698,pd,2026-10-10,8,Rayo Vallecano de Madrid,Athletic Club,1.18,1.01,0.3975,0.2942,0.3083,1-1,H,0.3975
-564703,pd,2026-10-11,8,Elche CF,RC Celta de Vigo,1.52,1.34,0.4148,0.2513,0.3339,1-1,H,0.4148
-564707,pd,2026-10-11,8,Real Sociedad de Fútbol,RC Deportivo La Coruña,1.51,1.14,0.4561,0.2594,0.2845,1-1,H,0.4561
-564701,pd,2026-10-11,8,Real Betis Balompié,CA Osasuna,1.79,0.9,0.5822,0.2325,0.1853,1-0,H,0.5822
-564705,pd,2026-10-11,8,Real Racing Club de Santander,Valencia CF,1.68,1.47,0.426,0.2381,0.3359,1-1,H,0.426
-564704,pd,2026-10-12,8,Levante UD,Sevilla FC,1.59,1.18,0.4679,0.2513,0.2808,1-1,H,0.4679
-564716,pd,2026-10-16,9,RC Deportivo La Coruña,Levante UD,1.68,1.03,0.5239,0.2456,0.2304,1-1,H,0.5239
-564710,pd,2026-10-17,9,RCD Espanyol de Barcelona,Club Atlético de Madrid,1.12,1.48,0.2834,0.2618,0.4547,1-1,A,0.4547
-564708,pd,2026-10-17,9,Villarreal CF,Elche CF,2.43,1.14,0.6579,0.1817,0.1604,2-1,H,0.6579
-564713,pd,2026-10-17,9,Real Betis Balompié,FC Barcelona,1.35,1.97,0.26,0.2211,0.519,1-1,A,0.519
-564711,pd,2026-10-17,9,Valencia CF,Athletic Club,1.19,1.1,0.378,0.2881,0.3338,1-1,H,0.378
-564715,pd,2026-10-18,9,CA Osasuna,Real Racing Club de Santander,2.1,1.22,0.5742,0.2107,0.2152,2-1,H,0.5742
-564712,pd,2026-10-18,9,RC Celta de Vigo,Deportivo Alavés,1.55,0.95,0.5107,0.2587,0.2305,1-0,H,0.5107
-564714,pd,2026-10-18,9,Málaga CF,Real Sociedad de Fútbol,1.13,1.19,0.3407,0.2855,0.3738,1-1,A,0.3738
-564709,pd,2026-10-18,9,Real Madrid CF,Sevilla FC,2.47,0.76,0.7464,0.1594,0.0943,2-0,H,0.7464
-564717,pd,2026-10-19,9,Getafe CF,Rayo Vallecano de Madrid,0.98,0.78,0.3904,0.3341,0.2755,0-0,H,0.3904
-564685,pd,2026-10-21,6,Levante UD,Athletic Club,1.34,1.21,0.3957,0.2701,0.3342,1-1,H,0.3957
-564719,pd,2026-10-23,10,Deportivo Alavés,Málaga CF,1.43,0.74,0.5352,0.2741,0.1907,1-0,H,0.5352
-564718,pd,2026-10-24,10,Rayo Vallecano de Madrid,Elche CF,1.56,1.08,0.4826,0.2555,0.2619,1-1,H,0.4826
-564727,pd,2026-10-24,10,Real Racing Club de Santander,RCD Espanyol de Barcelona,1.65,1.49,0.4155,0.2386,0.3459,1-1,H,0.4155
-564722,pd,2026-10-24,10,Valencia CF,Villarreal CF,1.33,1.55,0.3266,0.2501,0.4234,1-1,A,0.4234
-564724,pd,2026-10-24,10,Club Atlético de Madrid,RC Deportivo La Coruña,1.91,0.87,0.6168,0.2195,0.1637,1-0,H,0.6168
-564720,pd,2026-10-25,10,Athletic Club,Getafe CF,1.19,0.66,0.4847,0.3109,0.2044,1-0,H,0.4847
-564725,pd,2026-10-25,10,RC Celta de Vigo,Real Betis Balompié,1.45,1.19,0.4305,0.262,0.3075,1-1,H,0.4305
-564726,pd,2026-10-25,10,Real Sociedad de Fútbol,Levante UD,1.81,1.16,0.5244,0.2332,0.2424,1-1,H,0.5244
-564723,pd,2026-10-25,10,FC Barcelona,Real Madrid CF,2.21,1.32,0.5758,0.2035,0.2207,2-1,H,0.5758
-564721,pd,2026-10-26,10,Sevilla FC,CA Osasuna,1.5,1.05,0.4757,0.2619,0.2623,1-1,H,0.4757
-564737,pd,2026-10-30,11,Villarreal CF,RCD Espanyol de Barcelona,2.12,0.98,0.6354,0.2022,0.1624,2-0,H,0.6354
-564730,pd,2026-10-31,11,Levante UD,Club Atlético de Madrid,1.24,1.66,0.2847,0.2451,0.4702,1-1,A,0.4702
-564735,pd,2026-10-31,11,Rayo Vallecano de Madrid,RC Celta de Vigo,1.28,1.09,0.4072,0.2801,0.3127,1-1,H,0.4072
-564736,pd,2026-10-31,11,Real Betis Balompié,Málaga CF,1.79,0.69,0.6355,0.2271,0.1375,1-0,H,0.6355
-564732,pd,2026-10-31,11,FC Barcelona,Deportivo Alavés,2.92,0.78,0.8066,0.1239,0.0695,2-0,H,0.8066
-564728,pd,2026-11-01,11,Elche CF,Valencia CF,1.64,1.13,0.4916,0.248,0.2604,1-1,H,0.4916
-564729,pd,2026-11-01,11,Athletic Club,Real Sociedad de Fútbol,1.58,1.02,0.5022,0.2553,0.2425,1-1,H,0.5022
-564733,pd,2026-11-01,11,Getafe CF,Sevilla FC,1.09,0.83,0.4111,0.3151,0.2738,1-0,H,0.4111
-564734,pd,2026-11-01,11,Real Racing Club de Santander,Real Madrid CF,1.19,2.56,0.1577,0.1742,0.6681,1-2,A,0.6681
-564731,pd,2026-11-02,11,RC Deportivo La Coruña,CA Osasuna,1.54,0.94,0.5114,0.26,0.2287,1-0,H,0.5114
-564742,pd,2026-11-08,12,RC Celta de Vigo,Levante UD,1.82,1.04,0.5529,0.2324,0.2146,1-1,H,0.5529
-564738,pd,2026-11-08,12,Elche CF,Real Betis Balompié,1.45,1.45,0.3741,0.2512,0.3747,1-1,A,0.3747
-564739,pd,2026-11-08,12,CA Osasuna,Athletic Club,1.22,1.11,0.3855,0.2846,0.3299,1-1,H,0.3855
-564741,pd,2026-11-08,12,Valencia CF,Real Madrid CF,0.99,1.74,0.2113,0.239,0.5497,1-1,A,0.5497
-564740,pd,2026-11-08,12,Sevilla FC,Deportivo Alavés,1.4,1.04,0.4482,0.272,0.2797,1-1,H,0.4482
-564744,pd,2026-11-08,12,Málaga CF,Real Racing Club de Santander,1.6,1.21,0.4618,0.25,0.2882,1-1,H,0.4618
-564746,pd,2026-11-08,12,Club Atlético de Madrid,FC Barcelona,1.58,1.77,0.3455,0.2296,0.4249,1-1,A,0.4249
-564747,pd,2026-11-08,12,Villarreal CF,Getafe CF,1.68,0.74,0.596,0.2424,0.1617,1-0,H,0.596
-564743,pd,2026-11-08,12,Real Sociedad de Fútbol,Rayo Vallecano de Madrid,1.51,1.03,0.4823,0.2612,0.2565,1-1,H,0.4823
-564745,pd,2026-11-08,12,RCD Espanyol de Barcelona,RC Deportivo La Coruña,1.29,1.08,0.4098,0.2804,0.3098,1-1,H,0.4098
-564755,pd,2026-11-22,13,Deportivo Alavés,RC Deportivo La Coruña,1.3,1.03,0.4255,0.2817,0.2928,1-1,H,0.4255
-564757,pd,2026-11-22,13,Levante UD,Elche CF,1.77,1.3,0.4827,0.236,0.2813,1-1,H,0.4827
-564756,pd,2026-11-22,13,Sevilla FC,Real Betis Balompié,1.31,1.3,0.3683,0.2664,0.3653,1-1,H,0.3683
-564754,pd,2026-11-22,13,Real Madrid CF,RC Celta de Vigo,2.25,0.85,0.69,0.1846,0.1255,2-0,H,0.69
-564753,pd,2026-11-22,13,Getafe CF,Club Atlético de Madrid,0.85,1.17,0.2643,0.3043,0.4314,0-1,A,0.4314
-564750,pd,2026-11-22,13,Real Racing Club de Santander,Real Sociedad de Fútbol,1.74,1.75,0.385,0.2259,0.389,1-1,A,0.389
-564749,pd,2026-11-22,13,FC Barcelona,Villarreal CF,2.99,1.17,0.7395,0.1429,0.1176,2-1,H,0.7395
-564748,pd,2026-11-22,13,Athletic Club,RCD Espanyol de Barcelona,1.5,0.87,0.5195,0.2646,0.2159,1-0,H,0.5195
-564751,pd,2026-11-22,13,Rayo Vallecano de Madrid,Valencia CF,1.38,0.92,0.4757,0.2772,0.247,1-0,H,0.4757
-564752,pd,2026-11-22,13,CA Osasuna,Málaga CF,1.43,0.79,0.5213,0.2733,0.2053,1-0,H,0.5213
-564764,pd,2026-11-29,14,Real Sociedad de Fútbol,Sevilla FC,1.68,1.11,0.5058,0.2448,0.2495,1-1,H,0.5058
-564767,pd,2026-11-29,14,Málaga CF,Athletic Club,0.93,1.1,0.3017,0.3075,0.3908,0-1,A,0.3908
-564765,pd,2026-11-29,14,Levante UD,Real Racing Club de Santander,2.3,1.33,0.5904,0.1978,0.2119,2-1,H,0.5904
-564766,pd,2026-11-29,14,RC Deportivo La Coruña,FC Barcelona,1.15,2.05,0.2084,0.2138,0.5779,1-2,A,0.5779
-564763,pd,2026-11-29,14,RCD Espanyol de Barcelona,Getafe CF,1.1,0.76,0.4304,0.3193,0.2503,1-0,H,0.4304
-564762,pd,2026-11-29,14,Real Madrid CF,Deportivo Alavés,2.27,0.73,0.7215,0.1756,0.1029,2-0,H,0.7215
-564759,pd,2026-11-29,14,Elche CF,Club Atlético de Madrid,1.3,1.7,0.2921,0.2405,0.4674,1-1,A,0.4674
-564758,pd,2026-11-29,14,RC Celta de Vigo,Villarreal CF,1.59,1.44,0.4104,0.244,0.3456,1-1,H,0.4104
-564760,pd,2026-11-29,14,Real Betis Balompié,Rayo Vallecano de Madrid,1.63,0.88,0.55,0.25,0.2,1-0,H,0.55
-564761,pd,2026-11-29,14,Valencia CF,CA Osasuna,1.4,1.03,0.4532,0.2722,0.2745,1-1,H,0.4532
-564774,pd,2026-12-06,15,Getafe CF,Valencia CF,1.07,0.78,0.4187,0.3217,0.2596,1-0,H,0.4187
-564777,pd,2026-12-06,15,Rayo Vallecano de Madrid,Levante UD,1.52,1.03,0.4841,0.2605,0.2554,1-1,H,0.4841
-564775,pd,2026-12-06,15,Athletic Club,Real Madrid CF,1.08,1.49,0.2741,0.2622,0.4638,1-1,A,0.4638
-564773,pd,2026-12-06,15,FC Barcelona,RC Celta de Vigo,2.89,0.9,0.7787,0.1344,0.087,2-0,H,0.7787
-564776,pd,2026-12-06,15,Villarreal CF,Real Sociedad de Fútbol,2.23,1.14,0.6181,0.1984,0.1836,2-1,H,0.6181
-564771,pd,2026-12-06,15,Club Atlético de Madrid,Real Betis Balompié,1.84,1.01,0.5661,0.2297,0.2042,1-1,H,0.5661
-564768,pd,2026-12-06,15,CA Osasuna,Elche CF,1.61,1.19,0.4698,0.2493,0.2809,1-1,H,0.4698
-564772,pd,2026-12-06,15,Real Racing Club de Santander,RC Deportivo La Coruña,1.53,1.61,0.3629,0.2393,0.3978,1-1,A,0.3978
-564770,pd,2026-12-06,15,Deportivo Alavés,RCD Espanyol de Barcelona,1.4,0.95,0.4723,0.2741,0.2535,1-0,H,0.4723
-564769,pd,2026-12-06,15,Sevilla FC,Málaga CF,1.5,0.8,0.5358,0.2656,0.1986,1-0,H,0.5358
-564784,pd,2026-12-13,16,Villarreal CF,Rayo Vallecano de Madrid,1.97,0.96,0.6091,0.2156,0.1753,1-0,H,0.6091
-564778,pd,2026-12-13,16,RCD Espanyol de Barcelona,RC Celta de Vigo,1.31,1.17,0.3957,0.2739,0.3304,1-1,H,0.3957
-564779,pd,2026-12-13,16,Málaga CF,FC Barcelona,0.82,2.25,0.1213,0.1832,0.6956,0-2,A,0.6956
-564780,pd,2026-12-13,16,Real Madrid CF,CA Osasuna,2.44,0.73,0.7498,0.1593,0.0909,2-0,H,0.7498
-564781,pd,2026-12-13,16,RC Deportivo La Coruña,Athletic Club,1.3,1.0,0.4328,0.2826,0.2846,1-1,H,0.4328
-564782,pd,2026-12-13,16,Levante UD,Deportivo Alavés,1.47,1.13,0.4474,0.2632,0.2894,1-1,H,0.4474
-564783,pd,2026-12-13,16,Elche CF,Sevilla FC,1.67,1.21,0.4803,0.2443,0.2755,1-1,H,0.4803
-564785,pd,2026-12-13,16,Real Betis Balompié,Real Racing Club de Santander,2.61,1.06,0.7044,0.1645,0.1311,2-1,H,0.7044
-564786,pd,2026-12-13,16,Real Sociedad de Fútbol,Getafe CF,1.29,0.8,0.4773,0.2923,0.2304,1-0,H,0.4773
-564787,pd,2026-12-13,16,Club Atlético de Madrid,Valencia CF,2.09,0.79,0.6736,0.1973,0.1291,2-0,H,0.6736
-564795,pd,2026-12-20,17,Rayo Vallecano de Madrid,Málaga CF,1.39,0.72,0.5285,0.2797,0.1918,1-0,H,0.5285
-564794,pd,2026-12-20,17,RC Celta de Vigo,Club Atlético de Madrid,1.31,1.4,0.3489,0.2607,0.3903,1-1,A,0.3903
-564797,pd,2026-12-20,17,Sevilla FC,Real Racing Club de Santander,2.19,1.23,0.5901,0.2039,0.206,2-1,H,0.5901
-564796,pd,2026-12-20,17,RC Deportivo La Coruña,Real Madrid CF,1.08,1.59,0.2575,0.253,0.4895,1-1,A,0.4895
-564793,pd,2026-12-20,17,FC Barcelona,Real Sociedad de Fútbol,3.22,0.9,0.8191,0.112,0.0689,3-0,H,0.8191
-564792,pd,2026-12-20,17,CA Osasuna,Villarreal CF,1.37,1.56,0.3334,0.2477,0.4189,1-1,A,0.4189
-564791,pd,2026-12-20,17,Valencia CF,RCD Espanyol de Barcelona,1.37,1.01,0.4473,0.2759,0.2768,1-1,H,0.4473
-564790,pd,2026-12-20,17,Deportivo Alavés,Elche CF,1.61,1.11,0.4882,0.2511,0.2607,1-1,H,0.4882
-564789,pd,2026-12-20,17,Getafe CF,Levante UD,1.18,0.88,0.4274,0.302,0.2706,1-0,H,0.4274
-564788,pd,2026-12-20,17,Athletic Club,Real Betis Balompié,1.34,1.09,0.4218,0.275,0.3032,1-1,H,0.4218
-564804,pd,2027-01-03,18,RC Celta de Vigo,RC Deportivo La Coruña,1.51,1.02,0.4838,0.262,0.2542,1-1,H,0.4838
-564807,pd,2027-01-03,18,Rayo Vallecano de Madrid,Club Atlético de Madrid,1.1,1.38,0.2963,0.2715,0.4322,1-1,A,0.4322
-564806,pd,2027-01-03,18,Villarreal CF,Sevilla FC,2.19,1.03,0.6367,0.1977,0.1656,2-1,H,0.6367
-564805,pd,2027-01-03,18,RCD Espanyol de Barcelona,FC Barcelona,1.07,2.21,0.1713,0.1978,0.6309,1-2,A,0.6309
-564803,pd,2027-01-03,18,Real Betis Balompié,Deportivo Alavés,1.67,0.9,0.5526,0.2461,0.2013,1-0,H,0.5526
-564800,pd,2027-01-03,18,Levante UD,Valencia CF,1.56,1.1,0.479,0.2555,0.2655,1-1,H,0.479
-564799,pd,2027-01-03,18,Real Sociedad de Fútbol,CA Osasuna,1.67,1.06,0.5128,0.2465,0.2408,1-1,H,0.5128
-564798,pd,2027-01-03,18,Real Madrid CF,Getafe CF,1.89,0.55,0.6941,0.2072,0.0987,1-0,H,0.6941
-564801,pd,2027-01-03,18,Real Racing Club de Santander,Athletic Club,1.43,1.61,0.3398,0.2428,0.4173,1-1,A,0.4173
-564802,pd,2027-01-03,18,Málaga CF,Elche CF,1.23,1.19,0.3709,0.2788,0.3504,1-1,H,0.3709
-564813,pd,2027-01-10,19,Club Atlético de Madrid,Real Racing Club de Santander,3.07,0.96,0.7917,0.1251,0.0833,3-0,H,0.7917
-564814,pd,2027-01-10,19,Deportivo Alavés,Real Sociedad de Fútbol,1.47,1.11,0.4525,0.2628,0.2847,1-1,H,0.4525
-564816,pd,2027-01-10,19,RCD Espanyol de Barcelona,Real Betis Balompié,1.24,1.26,0.3584,0.2733,0.3684,1-1,A,0.3684
-564815,pd,2027-01-10,19,Sevilla FC,RC Celta de Vigo,1.38,1.21,0.4068,0.2665,0.3268,1-1,H,0.4068
-564817,pd,2027-01-10,19,Valencia CF,Málaga CF,1.39,0.78,0.5122,0.2786,0.2092,1-0,H,0.5122
-564812,pd,2027-01-10,19,RC Deportivo La Coruña,Rayo Vallecano de Madrid,1.4,0.91,0.4812,0.2758,0.243,1-0,H,0.4812
-564809,pd,2027-01-10,19,Elche CF,Getafe CF,1.28,0.87,0.4569,0.2905,0.2526,1-0,H,0.4569
-564810,pd,2027-01-10,19,Real Madrid CF,Levante UD,2.66,0.8,0.7676,0.1452,0.0872,2-0,H,0.7676
-564811,pd,2027-01-10,19,CA Osasuna,FC Barcelona,1.08,2.26,0.1681,0.1937,0.6382,1-2,A,0.6382
-564808,pd,2027-01-10,19,Athletic Club,Villarreal CF,1.46,1.33,0.4036,0.2558,0.3406,1-1,H,0.4036
-564818,pd,2027-01-17,20,Málaga CF,Real Madrid CF,0.77,1.75,0.1605,0.2342,0.6053,0-1,A,0.6053
-564819,pd,2027-01-17,20,FC Barcelona,Elche CF,3.52,0.9,0.8501,0.0944,0.0555,3-0,H,0.8501
-564820,pd,2027-01-17,20,Villarreal CF,Deportivo Alavés,2.02,0.99,0.6119,0.2122,0.1759,2-0,H,0.6119
-564821,pd,2027-01-17,20,Real Racing Club de Santander,CA Osasuna,1.69,1.51,0.4211,0.2359,0.343,1-1,H,0.4211
-564822,pd,2027-01-17,20,Levante UD,RCD Espanyol de Barcelona,1.54,1.12,0.4692,0.257,0.2737,1-1,H,0.4692
-564824,pd,2027-01-17,20,Getafe CF,Athletic Club,0.92,0.85,0.3499,0.3352,0.3149,0-0,H,0.3499
-564825,pd,2027-01-17,20,Rayo Vallecano de Madrid,Sevilla FC,1.41,0.98,0.4665,0.2726,0.2609,1-1,H,0.4665
-564826,pd,2027-01-17,20,Real Betis Balompié,RC Deportivo La Coruña,1.62,0.97,0.526,0.2509,0.2231,1-0,H,0.526
-564827,pd,2027-01-17,20,Club Atlético de Madrid,Real Sociedad de Fútbol,2.16,0.94,0.6519,0.1969,0.1512,2-0,H,0.6519
-564823,pd,2027-01-17,20,RC Celta de Vigo,Valencia CF,1.65,0.93,0.5425,0.248,0.2095,1-0,H,0.5425
-564837,pd,2027-01-24,21,RC Deportivo La Coruña,Club Atlético de Madrid,1.21,1.38,0.3271,0.2672,0.4058,1-1,A,0.4058
-564833,pd,2027-01-24,21,Real Sociedad de Fútbol,Málaga CF,1.66,0.81,0.5736,0.246,0.1804,1-0,H,0.5736
-564836,pd,2027-01-24,21,RCD Espanyol de Barcelona,Villarreal CF,1.35,1.53,0.336,0.2507,0.4134,1-1,A,0.4134
-564835,pd,2027-01-24,21,Athletic Club,Levante UD,1.67,0.96,0.5397,0.2457,0.2147,1-0,H,0.5397
-564834,pd,2027-01-24,21,Real Racing Club de Santander,RC Celta de Vigo,1.56,1.75,0.3442,0.2317,0.4241,1-1,A,0.4241
-564832,pd,2027-01-24,21,Deportivo Alavés,FC Barcelona,1.08,2.1,0.1857,0.2074,0.607,1-2,A,0.607
-564830,pd,2027-01-24,21,Valencia CF,Sevilla FC,1.41,1.07,0.4464,0.2696,0.2841,1-1,H,0.4464
-564829,pd,2027-01-24,21,Getafe CF,CA Osasuna,1.08,0.8,0.4164,0.3187,0.2649,1-0,H,0.4164
-564828,pd,2027-01-24,21,Real Madrid CF,Real Betis Balompié,2.13,0.91,0.6524,0.1988,0.1487,2-0,H,0.6524
-564831,pd,2027-01-24,21,Elche CF,Rayo Vallecano de Madrid,1.51,1.13,0.4581,0.2597,0.2821,1-1,H,0.4581
-564847,pd,2027-01-31,22,Málaga CF,Deportivo Alavés,1.02,1.03,0.3439,0.3074,0.3486,1-1,A,0.3486
-564846,pd,2027-01-31,22,CA Osasuna,RC Deportivo La Coruña,1.3,1.11,0.4084,0.2776,0.3139,1-1,H,0.4084
-564845,pd,2027-01-31,22,Sevilla FC,Athletic Club,1.27,1.12,0.3978,0.2797,0.3225,1-1,H,0.3978
-564844,pd,2027-01-31,22,FC Barcelona,Valencia CF,3.11,0.76,0.8325,0.1093,0.0582,3-0,H,0.8325
-564843,pd,2027-01-31,22,Levante UD,Real Sociedad de Fútbol,1.62,1.31,0.4457,0.2464,0.3079,1-1,H,0.4457
-564842,pd,2027-01-31,22,Villarreal CF,Real Racing Club de Santander,3.16,1.16,0.7655,0.131,0.1035,3-1,H,0.7655
-564840,pd,2027-01-31,22,Club Atlético de Madrid,RCD Espanyol de Barcelona,2.06,0.8,0.6646,0.201,0.1344,2-0,H,0.6646
-564839,pd,2027-01-31,22,Rayo Vallecano de Madrid,Real Madrid CF,0.98,1.6,0.2314,0.2534,0.5152,1-1,A,0.5152
-564838,pd,2027-01-31,22,Real Betis Balompié,Elche CF,2.01,1.04,0.5967,0.2145,0.1888,1-1,H,0.5967
-564841,pd,2027-01-31,22,RC Celta de Vigo,Getafe CF,1.29,0.72,0.4993,0.2943,0.2064,1-0,H,0.4993
-564856,pd,2027-02-07,23,Valencia CF,Real Racing Club de Santander,2.04,1.21,0.5642,0.2152,0.2206,2-1,H,0.5642
-564854,pd,2027-02-07,23,RC Deportivo La Coruña,Málaga CF,1.53,0.72,0.5671,0.2605,0.1724,1-0,H,0.5671
-564857,pd,2027-02-07,23,FC Barcelona,Club Atlético de Madrid,2.46,1.14,0.6626,0.1794,0.158,2-1,H,0.6626
-564853,pd,2027-02-07,23,Getafe CF,Villarreal CF,1.03,1.21,0.3111,0.2903,0.3986,1-1,A,0.3986
-564855,pd,2027-02-07,23,Real Sociedad de Fútbol,Real Madrid CF,1.17,1.8,0.2463,0.234,0.5198,1-1,A,0.5198
-564850,pd,2027-02-07,23,Real Betis Balompié,Sevilla FC,1.81,0.94,0.5764,0.2315,0.1921,1-0,H,0.5764
-564852,pd,2027-02-07,23,RCD Espanyol de Barcelona,Rayo Vallecano de Madrid,1.29,0.98,0.4345,0.2846,0.2809,1-1,H,0.4345
-564849,pd,2027-02-07,23,Deportivo Alavés,RC Celta de Vigo,1.32,1.12,0.4119,0.2757,0.3124,1-1,H,0.4119
-564848,pd,2027-02-07,23,Athletic Club,CA Osasuna,1.54,0.88,0.5262,0.2604,0.2135,1-0,H,0.5262
-564851,pd,2027-02-07,23,Elche CF,Levante UD,1.8,1.27,0.4981,0.2334,0.2685,1-1,H,0.4981
-564864,pd,2027-02-14,24,Valencia CF,Deportivo Alavés,1.3,1.02,0.4266,0.2819,0.2915,1-1,H,0.4266
-564867,pd,2027-02-14,24,Real Madrid CF,Athletic Club,2.07,0.78,0.672,0.1989,0.1291,2-0,H,0.672
-564866,pd,2027-02-14,24,Real Racing Club de Santander,Getafe CF,1.31,1.14,0.403,0.276,0.321,1-1,H,0.403
-564865,pd,2027-02-14,24,Levante UD,Málaga CF,1.57,0.86,0.5387,0.2568,0.2045,1-0,H,0.5387
-564863,pd,2027-02-14,24,Elche CF,RC Deportivo La Coruña,1.5,1.24,0.4308,0.2567,0.3125,1-1,H,0.4308
-564862,pd,2027-02-14,24,Real Sociedad de Fútbol,Real Betis Balompié,1.45,1.32,0.4008,0.2566,0.3427,1-1,H,0.4008
-564860,pd,2027-02-14,24,RC Celta de Vigo,Rayo Vallecano de Madrid,1.51,0.93,0.5085,0.2626,0.2288,1-0,H,0.5085
-564859,pd,2027-02-14,24,CA Osasuna,Club Atlético de Madrid,1.13,1.52,0.2809,0.2584,0.4607,1-1,A,0.4607
-564858,pd,2027-02-14,24,Sevilla FC,RCD Espanyol de Barcelona,1.47,1.03,0.4696,0.2656,0.2648,1-1,H,0.4696
-564861,pd,2027-02-14,24,Villarreal CF,FC Barcelona,1.63,2.15,0.2931,0.209,0.4979,1-2,A,0.4979
-564873,pd,2027-02-21,25,RCD Espanyol de Barcelona,CA Osasuna,1.42,1.01,0.4628,0.2705,0.2667,1-1,H,0.4628
-564877,pd,2027-02-21,25,Rayo Vallecano de Madrid,Getafe CF,1.08,0.71,0.4376,0.3255,0.2369,1-0,H,0.4376
-564876,pd,2027-02-21,25,RC Deportivo La Coruña,Real Sociedad de Fútbol,1.58,1.08,0.4859,0.2543,0.2598,1-1,H,0.4859
-564875,pd,2027-02-21,25,Club Atlético de Madrid,Elche CF,2.36,0.94,0.69,0.1786,0.1314,2-0,H,0.69
-564874,pd,2027-02-21,25,Sevilla FC,Real Madrid CF,1.06,1.78,0.2237,0.2363,0.5401,1-1,A,0.5401
-564871,pd,2027-02-21,25,FC Barcelona,Levante UD,3.42,0.85,0.8479,0.097,0.0552,3-0,H,0.8479
-564870,pd,2027-02-21,25,Villarreal CF,Valencia CF,2.15,0.96,0.6451,0.1988,0.1561,2-0,H,0.6451
-564869,pd,2027-02-21,25,Málaga CF,Real Betis Balompié,0.96,1.29,0.2754,0.2863,0.4383,0-1,A,0.4383
-564868,pd,2027-02-21,25,Deportivo Alavés,Real Racing Club de Santander,2.09,1.13,0.5927,0.2094,0.1979,2-1,H,0.5927
-564872,pd,2027-02-21,25,Athletic Club,RC Celta de Vigo,1.41,1.02,0.4597,0.2711,0.2691,1-1,H,0.4597
-564883,pd,2027-02-28,26,Getafe CF,Deportivo Alavés,1.01,0.8,0.3922,0.3291,0.2786,0-0,H,0.3922
-564887,pd,2027-02-28,26,Real Sociedad de Fútbol,Elche CF,1.86,1.22,0.5225,0.229,0.2484,1-1,H,0.5225
-564886,pd,2027-02-28,26,Real Betis Balompié,Villarreal CF,1.71,1.36,0.4552,0.2388,0.306,1-1,H,0.4552
-564885,pd,2027-02-28,26,Real Racing Club de Santander,Rayo Vallecano de Madrid,1.54,1.46,0.3935,0.2457,0.3608,1-1,H,0.3935
-564884,pd,2027-02-28,26,Athletic Club,FC Barcelona,1.15,1.92,0.2256,0.2246,0.5498,1-1,A,0.5498
-564880,pd,2027-02-28,26,Málaga CF,Club Atlético de Madrid,0.86,1.51,0.2128,0.2633,0.5239,0-1,A,0.5239
-564879,pd,2027-02-28,26,Levante UD,RC Deportivo La Coruña,1.43,1.21,0.4195,0.2634,0.3171,1-1,H,0.4195
-564882,pd,2027-02-28,26,Real Madrid CF,Valencia CF,2.42,0.71,0.7508,0.16,0.0892,2-0,H,0.7508
-564881,pd,2027-02-28,26,CA Osasuna,Sevilla FC,1.45,1.08,0.4549,0.2655,0.2796,1-1,H,0.4549
-564878,pd,2027-02-28,26,RC Celta de Vigo,RCD Espanyol de Barcelona,1.63,0.94,0.533,0.2505,0.2166,1-0,H,0.533
-564895,pd,2027-03-07,27,Valencia CF,Levante UD,1.52,1.12,0.4632,0.2582,0.2786,1-1,H,0.4632
-564893,pd,2027-03-07,27,Club Atlético de Madrid,RC Celta de Vigo,1.94,0.94,0.6059,0.2183,0.1757,1-0,H,0.6059
-564897,pd,2027-03-07,27,RCD Espanyol de Barcelona,Real Racing Club de Santander,2.07,1.19,0.5751,0.2123,0.2126,2-1,H,0.5751
-564896,pd,2027-03-07,27,RC Deportivo La Coruña,Getafe CF,1.19,0.71,0.4728,0.3092,0.218,1-0,H,0.4728
-564894,pd,2027-03-07,27,Villarreal CF,Real Madrid CF,1.53,1.68,0.3515,0.2361,0.4125,1-1,A,0.4125
-564888,pd,2027-03-07,27,FC Barcelona,Real Betis Balompié,2.74,0.97,0.7437,0.1497,0.1066,2-0,H,0.7437
-564890,pd,2027-03-07,27,Deportivo Alavés,Athletic Club,1.22,1.03,0.4022,0.2896,0.3082,1-1,H,0.4022
-564889,pd,2027-03-07,27,Elche CF,Málaga CF,1.65,0.89,0.5525,0.2479,0.1996,1-0,H,0.5525
-564892,pd,2027-03-07,27,Sevilla FC,Real Sociedad de Fútbol,1.54,1.21,0.4478,0.2546,0.2976,1-1,H,0.4478
-564891,pd,2027-03-07,27,Rayo Vallecano de Madrid,CA Osasuna,1.4,0.94,0.4728,0.2751,0.2521,1-0,H,0.4728
-564903,pd,2027-03-14,28,Real Racing Club de Santander,Club Atlético de Madrid,1.33,2.21,0.2226,0.2037,0.5736,1-2,A,0.5736
-564907,pd,2027-03-14,28,Real Madrid CF,RCD Espanyol de Barcelona,2.39,0.72,0.7427,0.164,0.0933,2-0,H,0.7427
-564906,pd,2027-03-14,28,FC Barcelona,RC Deportivo La Coruña,2.84,0.83,0.786,0.1334,0.0806,2-0,H,0.786
-564905,pd,2027-03-14,28,Getafe CF,Real Sociedad de Fútbol,1.11,0.93,0.3948,0.3069,0.2983,1-0,H,0.3948
-564904,pd,2027-03-14,28,Málaga CF,Rayo Vallecano de Madrid,1.0,1.0,0.3432,0.3122,0.3446,0-0,A,0.3446
-564901,pd,2027-03-14,28,Athletic Club,Valencia CF,1.52,0.85,0.5287,0.2622,0.2091,1-0,H,0.5287
-564900,pd,2027-03-14,28,Deportivo Alavés,Sevilla FC,1.45,1.01,0.472,0.2679,0.26,1-1,H,0.472
-564899,pd,2027-03-14,28,Elche CF,Villarreal CF,1.58,1.75,0.3482,0.2308,0.421,1-1,A,0.421
-564898,pd,2027-03-14,28,CA Osasuna,RC Celta de Vigo,1.33,1.2,0.3941,0.2712,0.3348,1-1,H,0.3941
-564902,pd,2027-03-14,28,Real Betis Balompié,Levante UD,1.95,0.99,0.5969,0.2184,0.1847,1-1,H,0.5969
-564913,pd,2027-03-21,29,Real Sociedad de Fútbol,Deportivo Alavés,1.55,1.06,0.484,0.2574,0.2586,1-1,H,0.484
-564914,pd,2027-03-21,29,RCD Espanyol de Barcelona,Athletic Club,1.21,1.08,0.3869,0.2875,0.3256,1-1,H,0.3869
-564916,pd,2027-03-21,29,Valencia CF,RC Deportivo La Coruña,1.27,1.1,0.4006,0.2813,0.3181,1-1,H,0.4006
-564917,pd,2027-03-21,29,Club Atlético de Madrid,Getafe CF,1.63,0.61,0.6197,0.2447,0.1356,1-0,H,0.6197
-564915,pd,2027-03-21,29,Real Racing Club de Santander,Real Betis Balompié,1.48,1.88,0.303,0.226,0.471,1-1,A,0.471
-564912,pd,2027-03-21,29,Rayo Vallecano de Madrid,FC Barcelona,1.05,2.05,0.1849,0.2107,0.6044,1-2,A,0.6044
-564909,pd,2027-03-21,29,Sevilla FC,Elche CF,1.68,1.2,0.4841,0.2436,0.2722,1-1,H,0.4841
-564908,pd,2027-03-21,29,Villarreal CF,Málaga CF,2.16,0.75,0.6965,0.1878,0.1157,2-0,H,0.6965
-564911,pd,2027-03-21,29,RC Celta de Vigo,Real Madrid CF,1.18,1.62,0.2757,0.2492,0.4751,1-1,A,0.4751
-564910,pd,2027-03-21,29,Levante UD,CA Osasuna,1.58,1.13,0.4753,0.2535,0.2711,1-1,H,0.4753
-564921,pd,2027-04-04,30,Athletic Club,Real Racing Club de Santander,2.24,1.03,0.6449,0.1939,0.1612,2-1,H,0.6449
-564922,pd,2027-04-04,30,RC Deportivo La Coruña,Villarreal CF,1.46,1.42,0.3852,0.2517,0.363,1-1,H,0.3852
-564918,pd,2027-04-04,30,Levante UD,Rayo Vallecano de Madrid,1.43,1.1,0.4462,0.267,0.2868,1-1,H,0.4462
-564919,pd,2027-04-04,30,FC Barcelona,Sevilla FC,3.17,0.81,0.8291,0.1093,0.0616,3-0,H,0.8291
-564920,pd,2027-04-04,30,Málaga CF,CA Osasuna,1.1,1.03,0.3668,0.3003,0.333,1-1,H,0.3668
-564924,pd,2027-04-04,30,Elche CF,Deportivo Alavés,1.54,1.16,0.4594,0.256,0.2846,1-1,H,0.4594
-564925,pd,2027-04-04,30,Real Madrid CF,Club Atlético de Madrid,1.92,1.07,0.5695,0.2234,0.2071,1-1,H,0.5695
-564926,pd,2027-04-04,30,Getafe CF,RCD Espanyol de Barcelona,1.06,0.79,0.4107,0.3228,0.2664,1-0,H,0.4107
-564927,pd,2027-04-04,30,Real Betis Balompié,RC Celta de Vigo,1.65,1.05,0.5132,0.2479,0.2389,1-1,H,0.5132
-564923,pd,2027-04-04,30,Real Sociedad de Fútbol,Valencia CF,1.65,1.03,0.5161,0.2481,0.2358,1-1,H,0.5161
-564933,pd,2027-04-11,31,Sevilla FC,RC Deportivo La Coruña,1.36,1.12,0.4213,0.2725,0.3062,1-1,H,0.4213
-564935,pd,2027-04-11,31,Real Racing Club de Santander,FC Barcelona,1.27,3.29,0.109,0.1288,0.7621,1-3,A,0.7621
-564937,pd,2027-04-11,31,Club Atlético de Madrid,Levante UD,2.3,0.89,0.6889,0.1821,0.129,2-0,H,0.6889
-564936,pd,2027-04-11,31,CA Osasuna,Real Madrid CF,1.02,1.76,0.2157,0.2375,0.5467,1-1,A,0.5467
-564934,pd,2027-04-11,31,RC Celta de Vigo,Elche CF,1.87,1.1,0.5519,0.2283,0.2197,1-1,H,0.5519
-564929,pd,2027-04-11,31,RCD Espanyol de Barcelona,Málaga CF,1.42,0.77,0.5213,0.2758,0.2028,1-0,H,0.5213
-564930,pd,2027-04-11,31,Villarreal CF,Athletic Club,1.84,1.05,0.5563,0.2302,0.2134,1-1,H,0.5563
-564932,pd,2027-04-11,31,Valencia CF,Getafe CF,1.08,0.77,0.4221,0.3211,0.2569,1-0,H,0.4221
-564931,pd,2027-04-11,31,Deportivo Alavés,Real Betis Balompié,1.25,1.2,0.3745,0.2763,0.3492,1-1,H,0.3745
-564928,pd,2027-04-11,31,Rayo Vallecano de Madrid,Real Sociedad de Fútbol,1.43,1.09,0.4473,0.2672,0.2855,1-1,H,0.4473
-564943,pd,2027-04-18,32,RC Deportivo La Coruña,RC Celta de Vigo,1.42,1.09,0.4437,0.2689,0.2875,1-1,H,0.4437
-564947,pd,2027-04-18,32,Getafe CF,Real Madrid CF,0.76,1.36,0.2091,0.2836,0.5073,0-1,A,0.5073
-564946,pd,2027-04-18,32,Real Betis Balompié,Athletic Club,1.52,0.97,0.4999,0.2616,0.2385,1-0,H,0.4999
-564945,pd,2027-04-18,32,Deportivo Alavés,Rayo Vallecano de Madrid,1.31,0.93,0.4496,0.2852,0.2652,1-0,H,0.4496
-564944,pd,2027-04-18,32,Elche CF,CA Osasuna,1.66,1.16,0.4879,0.2462,0.2659,1-1,H,0.4879
-564938,pd,2027-04-18,32,Club Atlético de Madrid,Sevilla FC,2.13,0.85,0.6672,0.1961,0.1367,2-0,H,0.6672
-564940,pd,2027-04-18,32,Levante UD,Villarreal CF,1.5,1.7,0.3391,0.2356,0.4253,1-1,A,0.4253
-564939,pd,2027-04-18,32,FC Barcelona,RCD Espanyol de Barcelona,3.07,0.77,0.8255,0.1131,0.0615,3-0,H,0.8255
-564942,pd,2027-04-18,32,Málaga CF,Valencia CF,1.09,1.0,0.3701,0.3035,0.3264,1-1,H,0.3701
-564941,pd,2027-04-18,32,Real Sociedad de Fútbol,Real Racing Club de Santander,2.42,1.25,0.6317,0.1863,0.182,2-1,H,0.6317
-564953,pd,2027-04-21,33,Athletic Club,RC Deportivo La Coruña,1.39,0.94,0.4723,0.2758,0.2519,1-0,H,0.4723
-564957,pd,2027-04-21,33,RCD Espanyol de Barcelona,Real Sociedad de Fútbol,1.46,1.17,0.4357,0.2622,0.302,1-1,H,0.4357
-564956,pd,2027-04-21,33,Sevilla FC,Levante UD,1.64,1.15,0.4863,0.2482,0.2655,1-1,H,0.4863
-564955,pd,2027-04-21,33,Villarreal CF,Club Atlético de Madrid,1.71,1.45,0.4368,0.237,0.3262,1-1,H,0.4368
-564954,pd,2027-04-21,33,Real Racing Club de Santander,Málaga CF,1.68,1.15,0.4969,0.2441,0.2591,1-1,H,0.4969
-564950,pd,2027-04-21,33,RC Celta de Vigo,FC Barcelona,1.25,2.08,0.2242,0.2125,0.5634,1-2,A,0.5634
-564949,pd,2027-04-21,33,Valencia CF,Rayo Vallecano de Madrid,1.27,1.0,0.4253,0.286,0.2887,1-1,H,0.4253
-564948,pd,2027-04-21,33,Getafe CF,Real Betis Balompié,0.95,1.0,0.3275,0.3174,0.355,0-0,A,0.355
-564952,pd,2027-04-21,33,Real Madrid CF,Elche CF,2.74,0.84,0.7697,0.142,0.0883,2-0,H,0.7697
-564951,pd,2027-04-21,33,CA Osasuna,Deportivo Alavés,1.34,1.03,0.4348,0.2778,0.2873,1-1,H,0.4348
-564960,pd,2027-05-02,34,Real Sociedad de Fútbol,Athletic Club,1.41,1.14,0.4312,0.2674,0.3013,1-1,H,0.4312
-564961,pd,2027-05-02,34,FC Barcelona,CA Osasuna,3.14,0.78,0.8318,0.1089,0.0593,3-0,H,0.8318
-564958,pd,2027-05-02,34,RC Deportivo La Coruña,Real Racing Club de Santander,2.24,1.1,0.6291,0.1962,0.1746,2-1,H,0.6291
-564959,pd,2027-05-02,34,RC Celta de Vigo,Sevilla FC,1.68,1.0,0.5334,0.245,0.2216,1-1,H,0.5334
-564962,pd,2027-05-02,34,Rayo Vallecano de Madrid,Villarreal CF,1.33,1.42,0.3499,0.2583,0.3918,1-1,A,0.3918
-564965,pd,2027-05-02,34,Elche CF,RCD Espanyol de Barcelona,1.62,1.15,0.4817,0.2497,0.2686,1-1,H,0.4817
-564967,pd,2027-05-02,34,Club Atlético de Madrid,Deportivo Alavés,1.96,0.81,0.6421,0.2119,0.146,1-0,H,0.6421
-564966,pd,2027-05-02,34,Levante UD,Real Madrid CF,1.11,1.92,0.2162,0.2241,0.5597,1-1,A,0.5597
-564964,pd,2027-05-02,34,Real Betis Balompié,Valencia CF,1.78,0.88,0.5847,0.2338,0.1815,1-0,H,0.5847
-564963,pd,2027-05-02,34,Málaga CF,Getafe CF,0.85,0.78,0.3436,0.3531,0.3032,0-0,D,0.3531
-564977,pd,2027-05-09,35,Villarreal CF,RC Celta de Vigo,2.0,1.14,0.5706,0.2174,0.2119,1-1,H,0.5706
-564974,pd,2027-05-09,35,Real Betis Balompié,RCD Espanyol de Barcelona,1.75,0.89,0.5752,0.2368,0.188,1-0,H,0.5752
-564976,pd,2027-05-09,35,Getafe CF,Elche CF,1.21,0.92,0.4264,0.2959,0.2777,1-0,H,0.4264
-564975,pd,2027-05-09,35,Real Madrid CF,FC Barcelona,1.83,1.59,0.4363,0.2263,0.3374,1-1,H,0.4363
-564973,pd,2027-05-09,35,Rayo Vallecano de Madrid,RC Deportivo La Coruña,1.26,1.01,0.4205,0.2864,0.2932,1-1,H,0.4205
-564970,pd,2027-05-09,35,Deportivo Alavés,Levante UD,1.57,1.05,0.4899,0.2559,0.2542,1-1,H,0.4899
-564971,pd,2027-05-09,35,Athletic Club,Málaga CF,1.53,0.67,0.5793,0.2599,0.1608,1-0,H,0.5793
-564969,pd,2027-05-09,35,CA Osasuna,Real Sociedad de Fútbol,1.48,1.2,0.4342,0.2598,0.306,1-1,H,0.4342
-564968,pd,2027-05-09,35,Valencia CF,Club Atlético de Madrid,1.1,1.51,0.2752,0.2605,0.4644,1-1,A,0.4644
-564972,pd,2027-05-09,35,Real Racing Club de Santander,Sevilla FC,1.71,1.57,0.4117,0.2331,0.3552,1-1,H,0.4117
-564985,pd,2027-05-16,36,RCD Espanyol de Barcelona,Valencia CF,1.41,0.98,0.466,0.2726,0.2613,1-1,H,0.466
-564986,pd,2027-05-16,36,Real Madrid CF,Real Racing Club de Santander,3.56,0.86,0.8594,0.09,0.0507,3-0,H,0.8594
-564987,pd,2027-05-16,36,CA Osasuna,Real Betis Balompié,1.26,1.29,0.3564,0.2703,0.3733,1-1,A,0.3733
-564984,pd,2027-05-16,36,Levante UD,Getafe CF,1.22,0.85,0.4447,0.299,0.2563,1-0,H,0.4447
-564983,pd,2027-05-16,36,RC Deportivo La Coruña,Deportivo Alavés,1.43,0.94,0.4833,0.2717,0.245,1-0,H,0.4833
-564981,pd,2027-05-16,36,Elche CF,Athletic Club,1.4,1.24,0.4064,0.2636,0.3301,1-1,H,0.4064
-564980,pd,2027-05-16,36,Real Sociedad de Fútbol,FC Barcelona,1.25,2.32,0.194,0.1943,0.6117,1-2,A,0.6117
-564982,pd,2027-05-16,36,Málaga CF,RC Celta de Vigo,1.01,1.19,0.3074,0.2928,0.3998,1-1,A,0.3998
-564978,pd,2027-05-16,36,Club Atlético de Madrid,Rayo Vallecano de Madrid,1.92,0.79,0.6387,0.2157,0.1456,1-0,H,0.6387
-564979,pd,2027-05-16,36,Sevilla FC,Villarreal CF,1.43,1.58,0.3451,0.2448,0.4102,1-1,A,0.4102
-564988,pd,2027-05-23,37,Rayo Vallecano de Madrid,Real Betis Balompié,1.22,1.17,0.3704,0.2806,0.349,1-1,H,0.3704
-564991,pd,2027-05-23,37,RC Celta de Vigo,Real Sociedad de Fútbol,1.71,1.1,0.514,0.2423,0.2437,1-1,H,0.514
-564990,pd,2027-05-23,37,Valencia CF,Elche CF,1.57,1.18,0.461,0.2532,0.2858,1-1,H,0.461
-564989,pd,2027-05-23,37,FC Barcelona,Málaga CF,3.13,0.59,0.8626,0.0962,0.0411,3-0,H,0.8626
-564997,pd,2027-05-23,37,RC Deportivo La Coruña,RCD Espanyol de Barcelona,1.5,0.93,0.5049,0.264,0.2311,1-0,H,0.5049
-564994,pd,2027-05-23,37,Sevilla FC,Getafe CF,1.16,0.79,0.4431,0.3094,0.2475,1-0,H,0.4431
-564995,pd,2027-05-23,37,Villarreal CF,CA Osasuna,2.17,0.99,0.6426,0.198,0.1594,2-0,H,0.6426
-564992,pd,2027-05-23,37,Club Atlético de Madrid,Athletic Club,1.79,0.87,0.5897,0.2324,0.1778,1-0,H,0.5897
-564996,pd,2027-05-23,37,Real Racing Club de Santander,Levante UD,1.84,1.65,0.4269,0.2244,0.3487,1-1,H,0.4269
-564993,pd,2027-05-23,37,Deportivo Alavés,Real Madrid CF,1.01,1.63,0.2331,0.2496,0.5173,1-1,A,0.5173
-565004,pd,2027-05-30,38,Athletic Club,Rayo Vallecano de Madrid,1.4,0.85,0.4956,0.2771,0.2273,1-0,H,0.4956
-565005,pd,2027-05-30,38,RCD Espanyol de Barcelona,Deportivo Alavés,1.32,1.01,0.4359,0.2804,0.2836,1-1,H,0.4359
-565006,pd,2027-05-30,38,Getafe CF,FC Barcelona,0.81,1.74,0.1702,0.236,0.5937,0-1,A,0.5937
-564998,pd,2027-05-30,38,Levante UD,RC Celta de Vigo,1.45,1.31,0.404,0.2575,0.3386,1-1,H,0.404
-564999,pd,2027-05-30,38,Real Madrid CF,RC Deportivo La Coruña,2.21,0.78,0.6986,0.1846,0.1168,2-0,H,0.6986
-565000,pd,2027-05-30,38,Real Betis Balompié,Club Atlético de Madrid,1.41,1.33,0.3893,0.2593,0.3514,1-1,H,0.3893
-565001,pd,2027-05-30,38,Real Sociedad de Fútbol,Villarreal CF,1.59,1.6,0.3774,0.2374,0.3852,1-1,A,0.3852
-565002,pd,2027-05-30,38,Málaga CF,Sevilla FC,1.11,1.08,0.3601,0.296,0.3439,1-1,H,0.3601
-565003,pd,2027-05-30,38,Elche CF,Real Racing Club de Santander,2.41,1.36,0.6049,0.1903,0.2048,2-1,H,0.6049
-565007,pd,2027-05-30,38,CA Osasuna,Valencia CF,1.43,1.01,0.4651,0.2702,0.2647,1-1,H,0.4651
+564704,pd,2026-10-12,8,Levante UD,Sevilla FC,1.59,1.17,0.4679,0.2536,0.2785,1-1,H,0.4679
+564716,pd,2026-10-16,9,RC Deportivo La Coruña,Levante UD,1.75,1.1,0.5228,0.2404,0.2368,1-1,H,0.5228
+564710,pd,2026-10-17,9,RCD Espanyol de Barcelona,Club Atlético de Madrid,1.12,1.48,0.2838,0.2645,0.4517,1-1,A,0.4517
+564708,pd,2026-10-17,9,Villarreal CF,Elche CF,2.37,1.09,0.6552,0.1865,0.1584,2-1,H,0.6552
+564713,pd,2026-10-17,9,Real Betis Balompié,FC Barcelona,1.4,1.99,0.2679,0.2209,0.5112,1-1,A,0.5112
+564711,pd,2026-10-17,9,Valencia CF,Athletic Club,1.2,1.1,0.38,0.2894,0.3306,1-1,H,0.38
+564714,pd,2026-10-18,9,Málaga CF,Real Sociedad de Fútbol,1.14,1.21,0.3384,0.2852,0.3764,1-1,A,0.3764
+564709,pd,2026-10-18,9,Real Madrid CF,Sevilla FC,2.46,0.76,0.7464,0.1605,0.0931,2-0,H,0.7464
+564715,pd,2026-10-18,9,CA Osasuna,Real Racing Club de Santander,2.19,1.29,0.5771,0.206,0.217,2-1,H,0.5771
+564712,pd,2026-10-18,9,RC Celta de Vigo,Deportivo Alavés,1.52,0.92,0.5083,0.2643,0.2274,1-0,H,0.5083
+564717,pd,2026-10-19,9,Getafe CF,Rayo Vallecano de Madrid,0.98,0.77,0.3895,0.3372,0.2733,0-0,H,0.3895
+564685,pd,2026-10-21,6,Levante UD,Athletic Club,1.34,1.2,0.396,0.2722,0.3318,1-1,H,0.396
+564719,pd,2026-10-23,10,Deportivo Alavés,Málaga CF,1.43,0.73,0.5355,0.2761,0.1884,1-0,H,0.5355
+564718,pd,2026-10-24,10,Rayo Vallecano de Madrid,Elche CF,1.52,1.04,0.4811,0.2618,0.2571,1-1,H,0.4811
+564727,pd,2026-10-24,10,Real Racing Club de Santander,RCD Espanyol de Barcelona,1.69,1.52,0.416,0.2375,0.3465,1-1,H,0.416
+564722,pd,2026-10-24,10,Valencia CF,Villarreal CF,1.34,1.54,0.3286,0.2521,0.4193,1-1,A,0.4193
+564724,pd,2026-10-24,10,Club Atlético de Madrid,RC Deportivo La Coruña,2.06,0.9,0.639,0.207,0.1539,2-0,H,0.639
+564723,pd,2026-10-25,10,FC Barcelona,Real Madrid CF,2.21,1.31,0.5759,0.2049,0.2192,2-1,H,0.5759
+564726,pd,2026-10-25,10,Real Sociedad de Fútbol,Levante UD,1.85,1.17,0.5302,0.2318,0.238,1-1,H,0.5302
+564720,pd,2026-10-25,10,Athletic Club,Getafe CF,1.19,0.66,0.4845,0.3132,0.2023,1-0,H,0.4845
+564725,pd,2026-10-25,10,RC Celta de Vigo,Real Betis Balompié,1.45,1.2,0.4246,0.2638,0.3116,1-1,H,0.4246
+564721,pd,2026-10-26,10,Sevilla FC,CA Osasuna,1.57,1.06,0.4874,0.2577,0.2549,1-1,H,0.4874
+564737,pd,2026-10-30,11,Villarreal CF,RCD Espanyol de Barcelona,2.12,0.97,0.6349,0.204,0.1611,2-0,H,0.6349
+564730,pd,2026-10-31,11,Levante UD,Club Atlético de Madrid,1.24,1.65,0.2851,0.2477,0.4672,1-1,A,0.4672
+564735,pd,2026-10-31,11,Rayo Vallecano de Madrid,RC Celta de Vigo,1.25,1.06,0.4037,0.2863,0.31,1-1,H,0.4037
+564736,pd,2026-10-31,11,Real Betis Balompié,Málaga CF,1.86,0.7,0.6498,0.2196,0.1306,1-0,H,0.6498
+564732,pd,2026-10-31,11,FC Barcelona,Deportivo Alavés,2.91,0.77,0.8066,0.1247,0.0686,2-0,H,0.8066
+564733,pd,2026-11-01,11,Getafe CF,Sevilla FC,1.09,0.83,0.41,0.3184,0.2717,1-0,H,0.41
+564734,pd,2026-11-01,11,Real Racing Club de Santander,Real Madrid CF,1.22,2.62,0.1558,0.1722,0.672,1-2,A,0.672
+564728,pd,2026-11-01,11,Elche CF,Valencia CF,1.59,1.1,0.4842,0.2545,0.2613,1-1,H,0.4842
+564729,pd,2026-11-01,11,Athletic Club,Real Sociedad de Fútbol,1.6,1.03,0.5019,0.2551,0.243,1-1,H,0.5019
+564731,pd,2026-11-02,11,RC Deportivo La Coruña,CA Osasuna,1.68,1.03,0.5231,0.2473,0.2296,1-1,H,0.5231
+564746,pd,2026-11-08,12,Club Atlético de Madrid,FC Barcelona,1.58,1.76,0.346,0.2317,0.4224,1-1,A,0.4224
+564743,pd,2026-11-08,12,Real Sociedad de Fútbol,Rayo Vallecano de Madrid,1.54,1.04,0.4877,0.2601,0.2522,1-1,H,0.4877
+564747,pd,2026-11-08,12,Villarreal CF,Getafe CF,1.67,0.74,0.5951,0.2449,0.16,1-0,H,0.5951
+564745,pd,2026-11-08,12,RCD Espanyol de Barcelona,RC Deportivo La Coruña,1.39,1.13,0.4269,0.2716,0.3015,1-1,H,0.4269
+564744,pd,2026-11-08,12,Málaga CF,Real Racing Club de Santander,1.64,1.23,0.4655,0.2485,0.286,1-1,H,0.4655
+564741,pd,2026-11-08,12,Valencia CF,Real Madrid CF,0.99,1.74,0.2123,0.241,0.5467,1-1,A,0.5467
+564742,pd,2026-11-08,12,RC Celta de Vigo,Levante UD,1.78,1.02,0.5504,0.2374,0.2122,1-1,H,0.5504
+564738,pd,2026-11-08,12,Elche CF,Real Betis Balompié,1.42,1.46,0.3639,0.2533,0.3828,1-1,A,0.3828
+564740,pd,2026-11-08,12,Sevilla FC,Deportivo Alavés,1.39,1.04,0.4482,0.2747,0.2771,1-1,H,0.4482
+564739,pd,2026-11-08,12,CA Osasuna,Athletic Club,1.25,1.15,0.382,0.2819,0.3361,1-1,H,0.382
+564751,pd,2026-11-22,13,Rayo Vallecano de Madrid,Valencia CF,1.39,0.92,0.4748,0.279,0.2462,1-0,H,0.4748
+564748,pd,2026-11-22,13,Athletic Club,RCD Espanyol de Barcelona,1.5,0.87,0.5196,0.2663,0.2141,1-0,H,0.5196
+564749,pd,2026-11-22,13,FC Barcelona,Villarreal CF,2.98,1.17,0.7397,0.1438,0.1165,2-1,H,0.7397
+564750,pd,2026-11-22,13,Real Racing Club de Santander,Real Sociedad de Fútbol,1.79,1.82,0.3829,0.2228,0.3943,1-1,A,0.3943
+564753,pd,2026-11-22,13,Getafe CF,Club Atlético de Madrid,0.85,1.16,0.2637,0.3077,0.4286,0-1,A,0.4286
+564755,pd,2026-11-22,13,Deportivo Alavés,RC Deportivo La Coruña,1.4,1.07,0.4425,0.2727,0.2848,1-1,H,0.4425
+564756,pd,2026-11-22,13,Sevilla FC,Real Betis Balompié,1.33,1.35,0.3631,0.2645,0.3724,1-1,A,0.3724
+564757,pd,2026-11-22,13,Levante UD,Elche CF,1.72,1.25,0.4823,0.2415,0.2762,1-1,H,0.4823
+564754,pd,2026-11-22,13,Real Madrid CF,RC Celta de Vigo,2.2,0.83,0.685,0.1897,0.1253,2-0,H,0.685
+564752,pd,2026-11-22,13,CA Osasuna,Málaga CF,1.46,0.82,0.521,0.2712,0.2077,1-0,H,0.521
+564764,pd,2026-11-29,14,Real Sociedad de Fútbol,Sevilla FC,1.71,1.12,0.5111,0.2437,0.2452,1-1,H,0.5111
+564763,pd,2026-11-29,14,RCD Espanyol de Barcelona,Getafe CF,1.1,0.76,0.4303,0.322,0.2477,1-0,H,0.4303
+564767,pd,2026-11-29,14,Málaga CF,Athletic Club,0.93,1.1,0.3009,0.3098,0.3893,0-1,A,0.3893
+564765,pd,2026-11-29,14,Levante UD,Real Racing Club de Santander,2.35,1.35,0.5966,0.1953,0.2081,2-1,H,0.5966
+564766,pd,2026-11-29,14,RC Deportivo La Coruña,FC Barcelona,1.21,2.2,0.1992,0.2039,0.5968,1-2,A,0.5968
+564762,pd,2026-11-29,14,Real Madrid CF,Deportivo Alavés,2.27,0.72,0.7219,0.1767,0.1015,2-0,H,0.7219
+564759,pd,2026-11-29,14,Elche CF,Club Atlético de Madrid,1.26,1.65,0.2893,0.2468,0.4639,1-1,A,0.4639
+564758,pd,2026-11-29,14,RC Celta de Vigo,Villarreal CF,1.55,1.4,0.4099,0.2493,0.3408,1-1,H,0.4099
+564760,pd,2026-11-29,14,Real Betis Balompié,Rayo Vallecano de Madrid,1.7,0.89,0.5629,0.2445,0.1926,1-0,H,0.5629
+564761,pd,2026-11-29,14,Valencia CF,CA Osasuna,1.47,1.05,0.4668,0.2669,0.2663,1-1,H,0.4668
+564777,pd,2026-12-06,15,Rayo Vallecano de Madrid,Levante UD,1.52,1.03,0.4839,0.2627,0.2534,1-1,H,0.4839
+564776,pd,2026-12-06,15,Villarreal CF,Real Sociedad de Fútbol,2.25,1.16,0.6176,0.1986,0.1838,2-1,H,0.6176
+564775,pd,2026-12-06,15,Athletic Club,Real Madrid CF,1.09,1.49,0.2739,0.2644,0.4617,1-1,A,0.4617
+564774,pd,2026-12-06,15,Getafe CF,Valencia CF,1.07,0.78,0.4173,0.3238,0.2589,1-0,H,0.4173
+564773,pd,2026-12-06,15,FC Barcelona,RC Celta de Vigo,2.82,0.88,0.7736,0.1388,0.0876,2-0,H,0.7736
+564771,pd,2026-12-06,15,Club Atlético de Madrid,Real Betis Balompié,1.87,1.05,0.5628,0.2293,0.2079,1-1,H,0.5628
+564770,pd,2026-12-06,15,Deportivo Alavés,RCD Espanyol de Barcelona,1.4,0.95,0.4717,0.2765,0.2517,1-0,H,0.4717
+564769,pd,2026-12-06,15,Sevilla FC,Málaga CF,1.5,0.79,0.5365,0.2675,0.196,1-0,H,0.5365
+564768,pd,2026-12-06,15,CA Osasuna,Elche CF,1.61,1.2,0.4655,0.2516,0.2828,1-1,H,0.4655
+564772,pd,2026-12-06,15,Real Racing Club de Santander,RC Deportivo La Coruña,1.69,1.72,0.3778,0.2303,0.3919,1-1,A,0.3919
+564784,pd,2026-12-13,16,Villarreal CF,Rayo Vallecano de Madrid,1.97,0.95,0.6087,0.2176,0.1737,2-0,H,0.6087
+564787,pd,2026-12-13,16,Club Atlético de Madrid,Valencia CF,2.09,0.79,0.673,0.1985,0.1284,2-0,H,0.673
+564786,pd,2026-12-13,16,Real Sociedad de Fútbol,Getafe CF,1.31,0.8,0.4824,0.2911,0.2265,1-0,H,0.4824
+564785,pd,2026-12-13,16,Real Betis Balompié,Real Racing Club de Santander,2.79,1.1,0.7247,0.154,0.1214,2-1,H,0.7247
+564783,pd,2026-12-13,16,Elche CF,Sevilla FC,1.62,1.18,0.4737,0.2512,0.275,1-1,H,0.4737
+564778,pd,2026-12-13,16,RCD Espanyol de Barcelona,RC Celta de Vigo,1.28,1.14,0.3929,0.2797,0.3274,1-1,H,0.3929
+564781,pd,2026-12-13,16,RC Deportivo La Coruña,Athletic Club,1.36,1.08,0.4307,0.2758,0.2935,1-1,H,0.4307
+564780,pd,2026-12-13,16,Real Madrid CF,CA Osasuna,2.55,0.74,0.7633,0.1517,0.0851,2-0,H,0.7633
+564779,pd,2026-12-13,16,Málaga CF,FC Barcelona,0.82,2.24,0.1209,0.1851,0.694,0-2,A,0.694
+564782,pd,2026-12-13,16,Levante UD,Deportivo Alavés,1.46,1.12,0.4477,0.2655,0.2869,1-1,H,0.4477
+564796,pd,2026-12-20,17,RC Deportivo La Coruña,Real Madrid CF,1.13,1.71,0.2497,0.2437,0.5066,1-1,A,0.5066
+564795,pd,2026-12-20,17,Rayo Vallecano de Madrid,Málaga CF,1.39,0.71,0.5291,0.2815,0.1894,1-0,H,0.5291
+564794,pd,2026-12-20,17,RC Celta de Vigo,Club Atlético de Madrid,1.28,1.36,0.3486,0.2665,0.3848,1-1,A,0.3848
+564793,pd,2026-12-20,17,FC Barcelona,Real Sociedad de Fútbol,3.25,0.91,0.8202,0.1114,0.0684,3-0,H,0.8202
+564797,pd,2026-12-20,17,Sevilla FC,Real Racing Club de Santander,2.24,1.25,0.596,0.2016,0.2024,2-1,H,0.596
+564791,pd,2026-12-20,17,Valencia CF,RCD Espanyol de Barcelona,1.38,1.01,0.4493,0.277,0.2737,1-1,H,0.4493
+564790,pd,2026-12-20,17,Deportivo Alavés,Elche CF,1.57,1.07,0.4866,0.2574,0.2561,1-1,H,0.4866
+564789,pd,2026-12-20,17,Getafe CF,Levante UD,1.18,0.87,0.4265,0.305,0.2685,1-0,H,0.4265
+564788,pd,2026-12-20,17,Athletic Club,Real Betis Balompié,1.36,1.14,0.4177,0.2732,0.3091,1-1,H,0.4177
+564792,pd,2026-12-20,17,CA Osasuna,Villarreal CF,1.4,1.62,0.3282,0.2452,0.4266,1-1,A,0.4266
+564804,pd,2027-01-03,18,RC Celta de Vigo,RC Deportivo La Coruña,1.6,1.04,0.5011,0.2551,0.2438,1-1,H,0.5011
+564807,pd,2027-01-03,18,Rayo Vallecano de Madrid,Club Atlético de Madrid,1.09,1.37,0.2963,0.2743,0.4294,1-1,A,0.4294
+564806,pd,2027-01-03,18,Villarreal CF,Sevilla FC,2.18,1.02,0.6361,0.1997,0.1642,2-1,H,0.6361
+564805,pd,2027-01-03,18,RCD Espanyol de Barcelona,FC Barcelona,1.07,2.2,0.1718,0.2001,0.6281,1-2,A,0.6281
+564803,pd,2027-01-03,18,Real Betis Balompié,Deportivo Alavés,1.73,0.91,0.5656,0.2408,0.1936,1-0,H,0.5656
+564802,pd,2027-01-03,18,Málaga CF,Elche CF,1.2,1.15,0.3698,0.2859,0.3443,1-1,H,0.3698
+564799,pd,2027-01-03,18,Real Sociedad de Fútbol,CA Osasuna,1.77,1.09,0.5309,0.2383,0.2308,1-1,H,0.5309
+564798,pd,2027-01-03,18,Real Madrid CF,Getafe CF,1.88,0.55,0.6939,0.2087,0.0973,1-0,H,0.6939
+564801,pd,2027-01-03,18,Real Racing Club de Santander,Athletic Club,1.46,1.65,0.3398,0.2415,0.4187,1-1,A,0.4187
+564800,pd,2027-01-03,18,Levante UD,Valencia CF,1.57,1.1,0.4783,0.257,0.2647,1-1,H,0.4783
+564815,pd,2027-01-10,19,Sevilla FC,RC Celta de Vigo,1.35,1.18,0.4037,0.2724,0.3239,1-1,H,0.4037
+564814,pd,2027-01-10,19,Deportivo Alavés,Real Sociedad de Fútbol,1.49,1.13,0.4512,0.2631,0.2857,1-1,H,0.4512
+564816,pd,2027-01-10,19,RCD Espanyol de Barcelona,Real Betis Balompié,1.26,1.31,0.3536,0.271,0.3754,1-1,A,0.3754
+564813,pd,2027-01-10,19,Club Atlético de Madrid,Real Racing Club de Santander,3.15,0.97,0.7977,0.1219,0.0804,3-0,H,0.7977
+564817,pd,2027-01-10,19,Valencia CF,Málaga CF,1.41,0.78,0.5153,0.279,0.2056,1-0,H,0.5153
+564811,pd,2027-01-10,19,CA Osasuna,FC Barcelona,1.1,2.35,0.1623,0.1886,0.6492,1-2,A,0.6492
+564810,pd,2027-01-10,19,Real Madrid CF,Levante UD,2.66,0.8,0.7679,0.146,0.0861,2-0,H,0.7679
+564812,pd,2027-01-10,19,RC Deportivo La Coruña,Rayo Vallecano de Madrid,1.46,0.98,0.4805,0.2696,0.2499,1-1,H,0.4805
+564809,pd,2027-01-10,19,Elche CF,Getafe CF,1.24,0.85,0.45,0.299,0.2511,1-0,H,0.45
+564808,pd,2027-01-10,19,Athletic Club,Villarreal CF,1.46,1.32,0.404,0.2581,0.338,1-1,H,0.404
+564827,pd,2027-01-17,20,Club Atlético de Madrid,Real Sociedad de Fútbol,2.19,0.96,0.6521,0.1969,0.151,2-0,H,0.6521
+564826,pd,2027-01-17,20,Real Betis Balompié,RC Deportivo La Coruña,1.82,1.02,0.5596,0.2331,0.2073,1-1,H,0.5596
+564825,pd,2027-01-17,20,Rayo Vallecano de Madrid,Sevilla FC,1.41,0.98,0.466,0.2752,0.2588,1-1,H,0.466
+564823,pd,2027-01-17,20,RC Celta de Vigo,Valencia CF,1.62,0.91,0.5391,0.2528,0.2081,1-0,H,0.5391
+564824,pd,2027-01-17,20,Getafe CF,Athletic Club,0.92,0.85,0.3493,0.338,0.3127,0-0,H,0.3493
+564821,pd,2027-01-17,20,Real Racing Club de Santander,CA Osasuna,1.8,1.57,0.4327,0.2301,0.3372,1-1,H,0.4327
+564820,pd,2027-01-17,20,Villarreal CF,Deportivo Alavés,2.01,0.98,0.6116,0.2141,0.1743,2-0,H,0.6116
+564819,pd,2027-01-17,20,FC Barcelona,Elche CF,3.43,0.86,0.8468,0.0977,0.0555,3-0,H,0.8468
+564818,pd,2027-01-17,20,Málaga CF,Real Madrid CF,0.77,1.75,0.1597,0.2364,0.6039,0-1,A,0.6039
+564822,pd,2027-01-17,20,Levante UD,RCD Espanyol de Barcelona,1.54,1.11,0.4693,0.2591,0.2717,1-1,H,0.4693
+564837,pd,2027-01-24,21,RC Deportivo La Coruña,Club Atlético de Madrid,1.26,1.48,0.321,0.2596,0.4195,1-1,A,0.4195
+564836,pd,2027-01-24,21,RCD Espanyol de Barcelona,Villarreal CF,1.35,1.52,0.3365,0.2532,0.4103,1-1,A,0.4103
+564835,pd,2027-01-24,21,Athletic Club,Levante UD,1.68,0.96,0.5399,0.2473,0.2128,1-0,H,0.5399
+564834,pd,2027-01-24,21,Real Racing Club de Santander,RC Celta de Vigo,1.55,1.75,0.3421,0.2333,0.4245,1-1,A,0.4245
+564833,pd,2027-01-24,21,Real Sociedad de Fútbol,Málaga CF,1.69,0.82,0.5805,0.2436,0.1759,1-0,H,0.5805
+564832,pd,2027-01-24,21,Deportivo Alavés,FC Barcelona,1.08,2.09,0.1859,0.2098,0.6043,1-2,A,0.6043
+564830,pd,2027-01-24,21,Valencia CF,Sevilla FC,1.42,1.07,0.4483,0.271,0.2807,1-1,H,0.4483
+564829,pd,2027-01-24,21,Getafe CF,CA Osasuna,1.13,0.81,0.4262,0.3145,0.2594,1-0,H,0.4262
+564828,pd,2027-01-24,21,Real Madrid CF,Real Betis Balompié,2.17,0.94,0.6509,0.1983,0.1508,2-0,H,0.6509
+564831,pd,2027-01-24,21,Elche CF,Rayo Vallecano de Madrid,1.46,1.09,0.452,0.2669,0.2811,1-1,H,0.452
+564847,pd,2027-01-31,22,Málaga CF,Deportivo Alavés,1.02,1.03,0.343,0.3102,0.3467,1-1,A,0.3467
+564846,pd,2027-01-31,22,CA Osasuna,RC Deportivo La Coruña,1.43,1.2,0.4215,0.2649,0.3136,1-1,H,0.4215
+564845,pd,2027-01-31,22,Sevilla FC,Athletic Club,1.27,1.11,0.3979,0.2821,0.32,1-1,H,0.3979
+564844,pd,2027-01-31,22,FC Barcelona,Valencia CF,3.12,0.76,0.8325,0.1097,0.0577,3-0,H,0.8325
+564843,pd,2027-01-31,22,Levante UD,Real Sociedad de Fútbol,1.64,1.33,0.4447,0.2464,0.3089,1-1,H,0.4447
+564842,pd,2027-01-31,22,Villarreal CF,Real Racing Club de Santander,3.23,1.18,0.7715,0.1281,0.1005,3-1,H,0.7715
+564840,pd,2027-01-31,22,Club Atlético de Madrid,RCD Espanyol de Barcelona,2.06,0.8,0.6643,0.2025,0.1332,2-0,H,0.6643
+564839,pd,2027-01-31,22,Rayo Vallecano de Madrid,Real Madrid CF,0.98,1.59,0.2311,0.256,0.5129,1-1,A,0.5129
+564838,pd,2027-01-31,22,Real Betis Balompié,Elche CF,2.04,1.02,0.6079,0.2125,0.1796,1-1,H,0.6079
+564841,pd,2027-01-31,22,RC Celta de Vigo,Getafe CF,1.26,0.7,0.4958,0.3009,0.2033,1-0,H,0.4958
+564855,pd,2027-02-07,23,Real Sociedad de Fútbol,Real Madrid CF,1.2,1.82,0.2488,0.2345,0.5166,1-1,A,0.5166
+564854,pd,2027-02-07,23,RC Deportivo La Coruña,Málaga CF,1.6,0.77,0.5705,0.2538,0.1757,1-0,H,0.5705
+564856,pd,2027-02-07,23,Valencia CF,Real Racing Club de Santander,2.1,1.23,0.5726,0.2117,0.2156,2-1,H,0.5726
+564853,pd,2027-02-07,23,Getafe CF,Villarreal CF,1.03,1.2,0.3106,0.2937,0.3956,1-1,A,0.3956
+564857,pd,2027-02-07,23,FC Barcelona,Club Atlético de Madrid,2.46,1.13,0.6629,0.1806,0.1565,2-1,H,0.6629
+564850,pd,2027-02-07,23,Real Betis Balompié,Sevilla FC,1.88,0.95,0.5894,0.2262,0.1844,1-0,H,0.5894
+564849,pd,2027-02-07,23,Deportivo Alavés,RC Celta de Vigo,1.29,1.09,0.4082,0.2819,0.3099,1-1,H,0.4082
+564848,pd,2027-02-07,23,Athletic Club,CA Osasuna,1.61,0.89,0.5389,0.2546,0.2065,1-0,H,0.5389
+564852,pd,2027-02-07,23,RCD Espanyol de Barcelona,Rayo Vallecano de Madrid,1.29,0.98,0.4347,0.2869,0.2784,1-1,H,0.4347
+564851,pd,2027-02-07,23,Elche CF,Levante UD,1.75,1.24,0.4916,0.2399,0.2684,1-1,H,0.4916
+564864,pd,2027-02-14,24,Valencia CF,Deportivo Alavés,1.31,1.02,0.4287,0.2833,0.2879,1-1,H,0.4287
+564867,pd,2027-02-14,24,Real Madrid CF,Athletic Club,2.07,0.78,0.6727,0.1999,0.1274,2-0,H,0.6727
+564866,pd,2027-02-14,24,Real Racing Club de Santander,Getafe CF,1.33,1.16,0.4039,0.2752,0.321,1-1,H,0.4039
+564865,pd,2027-02-14,24,Levante UD,Málaga CF,1.57,0.86,0.5397,0.2584,0.2019,1-0,H,0.5397
+564863,pd,2027-02-14,24,Elche CF,RC Deportivo La Coruña,1.57,1.26,0.4425,0.2531,0.3044,1-1,H,0.4425
+564862,pd,2027-02-14,24,Real Sociedad de Fútbol,Real Betis Balompié,1.51,1.39,0.4,0.2524,0.3476,1-1,H,0.4
+564860,pd,2027-02-14,24,RC Celta de Vigo,Rayo Vallecano de Madrid,1.48,0.9,0.506,0.2682,0.2258,1-0,H,0.506
+564859,pd,2027-02-14,24,CA Osasuna,Club Atlético de Madrid,1.15,1.58,0.2758,0.255,0.4693,1-1,A,0.4693
+564858,pd,2027-02-14,24,Sevilla FC,RCD Espanyol de Barcelona,1.46,1.03,0.4694,0.2679,0.2627,1-1,H,0.4694
+564861,pd,2027-02-14,24,Villarreal CF,FC Barcelona,1.63,2.14,0.2937,0.2111,0.4952,1-2,A,0.4952
+564873,pd,2027-02-21,25,RCD Espanyol de Barcelona,CA Osasuna,1.48,1.03,0.4746,0.266,0.2595,1-1,H,0.4746
+564877,pd,2027-02-21,25,Rayo Vallecano de Madrid,Getafe CF,1.07,0.7,0.437,0.3284,0.2346,1-0,H,0.437
+564876,pd,2027-02-21,25,RC Deportivo La Coruña,Real Sociedad de Fútbol,1.67,1.19,0.4829,0.2468,0.2703,1-1,H,0.4829
+564875,pd,2027-02-21,25,Club Atlético de Madrid,Elche CF,2.3,0.9,0.6867,0.1835,0.1298,2-0,H,0.6867
+564874,pd,2027-02-21,25,Sevilla FC,Real Madrid CF,1.06,1.77,0.2236,0.2389,0.5374,1-1,A,0.5374
+564871,pd,2027-02-21,25,FC Barcelona,Levante UD,3.42,0.85,0.848,0.0975,0.0545,3-0,H,0.848
+564870,pd,2027-02-21,25,Villarreal CF,Valencia CF,2.15,0.96,0.6442,0.2003,0.1555,2-0,H,0.6442
+564869,pd,2027-02-21,25,Málaga CF,Real Betis Balompié,0.97,1.34,0.2696,0.2826,0.4478,1-1,A,0.4478
+564868,pd,2027-02-21,25,Deportivo Alavés,Real Racing Club de Santander,2.14,1.15,0.5982,0.2072,0.1946,2-1,H,0.5982
+564872,pd,2027-02-21,25,Athletic Club,RC Celta de Vigo,1.38,0.99,0.4561,0.2769,0.2671,1-1,H,0.4561
+564883,pd,2027-02-28,26,Getafe CF,Deportivo Alavés,1.0,0.79,0.3914,0.3323,0.2762,0-0,H,0.3914
+564887,pd,2027-02-28,26,Real Sociedad de Fútbol,Elche CF,1.86,1.19,0.5271,0.2312,0.2416,1-1,H,0.5271
+564886,pd,2027-02-28,26,Real Betis Balompié,Villarreal CF,1.78,1.38,0.4673,0.2358,0.2969,1-1,H,0.4673
+564885,pd,2027-02-28,26,Real Racing Club de Santander,Rayo Vallecano de Madrid,1.57,1.49,0.394,0.2447,0.3612,1-1,H,0.394
+564884,pd,2027-02-28,26,Athletic Club,FC Barcelona,1.16,1.91,0.2259,0.2268,0.5473,1-1,A,0.5473
+564880,pd,2027-02-28,26,Málaga CF,Club Atlético de Madrid,0.86,1.51,0.2121,0.2659,0.522,0-1,A,0.522
+564879,pd,2027-02-28,26,Levante UD,RC Deportivo La Coruña,1.54,1.25,0.4368,0.2552,0.308,1-1,H,0.4368
+564882,pd,2027-02-28,26,Real Madrid CF,Valencia CF,2.43,0.71,0.751,0.1606,0.0884,2-0,H,0.751
+564881,pd,2027-02-28,26,CA Osasuna,Sevilla FC,1.48,1.12,0.4515,0.264,0.2845,1-1,H,0.4515
+564878,pd,2027-02-28,26,RC Celta de Vigo,RCD Espanyol de Barcelona,1.6,0.92,0.5302,0.2558,0.214,1-0,H,0.5302
+564895,pd,2027-03-07,27,Valencia CF,Levante UD,1.54,1.12,0.4655,0.2592,0.2753,1-1,H,0.4655
+564893,pd,2027-03-07,27,Club Atlético de Madrid,RC Celta de Vigo,1.9,0.92,0.6008,0.224,0.1752,1-0,H,0.6008
+564897,pd,2027-03-07,27,RCD Espanyol de Barcelona,Real Racing Club de Santander,2.12,1.21,0.5814,0.2098,0.2088,2-1,H,0.5814
+564896,pd,2027-03-07,27,RC Deportivo La Coruña,Getafe CF,1.24,0.76,0.4739,0.3021,0.2241,1-0,H,0.4739
+564894,pd,2027-03-07,27,Villarreal CF,Real Madrid CF,1.53,1.67,0.3513,0.2384,0.4103,1-1,A,0.4103
+564888,pd,2027-03-07,27,FC Barcelona,Real Betis Balompié,2.78,1.0,0.7424,0.1495,0.1081,2-1,H,0.7424
+564890,pd,2027-03-07,27,Deportivo Alavés,Athletic Club,1.22,1.02,0.4019,0.2919,0.3061,1-1,H,0.4019
+564889,pd,2027-03-07,27,Elche CF,Málaga CF,1.6,0.86,0.5458,0.2552,0.1989,1-0,H,0.5458
+564892,pd,2027-03-07,27,Sevilla FC,Real Sociedad de Fútbol,1.56,1.23,0.4468,0.2548,0.2984,1-1,H,0.4468
+564891,pd,2027-03-07,27,Rayo Vallecano de Madrid,CA Osasuna,1.46,0.96,0.4842,0.2705,0.2453,1-0,H,0.4842
+564903,pd,2027-03-14,28,Real Racing Club de Santander,Club Atlético de Madrid,1.35,2.26,0.2214,0.2023,0.5762,1-2,A,0.5762
+564907,pd,2027-03-14,28,Real Madrid CF,RCD Espanyol de Barcelona,2.39,0.72,0.743,0.1649,0.0921,2-0,H,0.743
+564906,pd,2027-03-14,28,FC Barcelona,RC Deportivo La Coruña,3.06,0.86,0.8073,0.1205,0.0722,3-0,H,0.8073
+564905,pd,2027-03-14,28,Getafe CF,Real Sociedad de Fútbol,1.12,0.94,0.3934,0.3071,0.2994,1-0,H,0.3934
+564904,pd,2027-03-14,28,Málaga CF,Rayo Vallecano de Madrid,1.0,1.0,0.3423,0.3149,0.3429,0-0,A,0.3429
+564901,pd,2027-03-14,28,Athletic Club,Valencia CF,1.53,0.86,0.5283,0.2634,0.2083,1-0,H,0.5283
+564900,pd,2027-03-14,28,Deportivo Alavés,Sevilla FC,1.45,1.0,0.4714,0.2706,0.2581,1-1,H,0.4714
+564899,pd,2027-03-14,28,Elche CF,Villarreal CF,1.52,1.7,0.3447,0.2368,0.4185,1-1,A,0.4185
+564898,pd,2027-03-14,28,CA Osasuna,RC Celta de Vigo,1.32,1.22,0.3872,0.2723,0.3405,1-1,H,0.3872
+564902,pd,2027-03-14,28,Real Betis Balompié,Levante UD,2.03,1.0,0.6104,0.2127,0.1768,1-1,H,0.6104
+564913,pd,2027-03-21,29,Real Sociedad de Fútbol,Deportivo Alavés,1.58,1.07,0.4895,0.2564,0.2541,1-1,H,0.4895
+564914,pd,2027-03-21,29,RCD Espanyol de Barcelona,Athletic Club,1.21,1.08,0.3873,0.2896,0.3231,1-1,H,0.3873
+564916,pd,2027-03-21,29,Valencia CF,RC Deportivo La Coruña,1.38,1.14,0.4191,0.2719,0.309,1-1,H,0.4191
+564917,pd,2027-03-21,29,Club Atlético de Madrid,Getafe CF,1.62,0.61,0.619,0.247,0.134,1-0,H,0.619
+564915,pd,2027-03-21,29,Real Racing Club de Santander,Real Betis Balompié,1.53,2.0,0.295,0.2198,0.4851,1-1,A,0.4851
+564912,pd,2027-03-21,29,Rayo Vallecano de Madrid,FC Barcelona,1.05,2.04,0.1851,0.2131,0.6017,1-2,A,0.6017
+564909,pd,2027-03-21,29,Sevilla FC,Elche CF,1.64,1.16,0.4832,0.2496,0.2672,1-1,H,0.4832
+564908,pd,2027-03-21,29,Villarreal CF,Málaga CF,2.16,0.75,0.697,0.189,0.114,2-0,H,0.697
+564911,pd,2027-03-21,29,RC Celta de Vigo,Real Madrid CF,1.15,1.58,0.2759,0.2551,0.469,1-1,A,0.469
+564910,pd,2027-03-21,29,Levante UD,CA Osasuna,1.64,1.15,0.4873,0.2493,0.2634,1-1,H,0.4873
+564921,pd,2027-04-04,30,Athletic Club,Real Racing Club de Santander,2.3,1.05,0.6516,0.1908,0.1577,2-1,H,0.6516
+564922,pd,2027-04-04,30,RC Deportivo La Coruña,Villarreal CF,1.53,1.52,0.3795,0.2456,0.3749,1-1,H,0.3795
+564918,pd,2027-04-04,30,Levante UD,Rayo Vallecano de Madrid,1.43,1.09,0.4464,0.2693,0.2844,1-1,H,0.4464
+564919,pd,2027-04-04,30,FC Barcelona,Sevilla FC,3.16,0.81,0.8289,0.1101,0.061,3-0,H,0.8289
+564920,pd,2027-04-04,30,Málaga CF,CA Osasuna,1.14,1.05,0.3752,0.297,0.3278,1-1,H,0.3752
+564924,pd,2027-04-04,30,Elche CF,Deportivo Alavés,1.49,1.12,0.4533,0.2632,0.2835,1-1,H,0.4533
+564925,pd,2027-04-04,30,Real Madrid CF,Club Atlético de Madrid,1.92,1.07,0.57,0.225,0.2049,1-1,H,0.57
+564926,pd,2027-04-04,30,Getafe CF,RCD Espanyol de Barcelona,1.05,0.79,0.4098,0.3257,0.2645,1-0,H,0.4098
+564927,pd,2027-04-04,30,Real Betis Balompié,RC Celta de Vigo,1.68,1.04,0.5215,0.247,0.2315,1-1,H,0.5215
+564923,pd,2027-04-04,30,Real Sociedad de Fútbol,Valencia CF,1.69,1.05,0.521,0.2462,0.2327,1-1,H,0.521
+564933,pd,2027-04-11,31,Sevilla FC,RC Deportivo La Coruña,1.46,1.16,0.4385,0.264,0.2975,1-1,H,0.4385
+564935,pd,2027-04-11,31,Real Racing Club de Santander,FC Barcelona,1.3,3.36,0.1073,0.1268,0.7659,1-3,A,0.7659
+564937,pd,2027-04-11,31,Club Atlético de Madrid,Levante UD,2.3,0.89,0.6887,0.1835,0.1278,2-0,H,0.6887
+564936,pd,2027-04-11,31,CA Osasuna,Real Madrid CF,1.04,1.83,0.21,0.2329,0.5572,1-1,A,0.5572
+564934,pd,2027-04-11,31,RC Celta de Vigo,Elche CF,1.79,1.03,0.5477,0.2369,0.2154,1-1,H,0.5477
+564929,pd,2027-04-11,31,RCD Espanyol de Barcelona,Málaga CF,1.42,0.77,0.5224,0.2774,0.2002,1-0,H,0.5224
+564930,pd,2027-04-11,31,Villarreal CF,Athletic Club,1.84,1.05,0.5563,0.232,0.2117,1-1,H,0.5563
+564932,pd,2027-04-11,31,Valencia CF,Getafe CF,1.09,0.77,0.4238,0.3226,0.2536,1-0,H,0.4238
+564931,pd,2027-04-11,31,Deportivo Alavés,Real Betis Balompié,1.27,1.24,0.3694,0.2745,0.3561,1-1,H,0.3694
+564928,pd,2027-04-11,31,Rayo Vallecano de Madrid,Real Sociedad de Fútbol,1.45,1.11,0.4462,0.2674,0.2864,1-1,H,0.4462
+564943,pd,2027-04-18,32,RC Deportivo La Coruña,RC Celta de Vigo,1.45,1.14,0.4374,0.2662,0.2964,1-1,H,0.4374
+564947,pd,2027-04-18,32,Getafe CF,Real Madrid CF,0.76,1.35,0.2085,0.2867,0.5048,0-1,A,0.5048
+564946,pd,2027-04-18,32,Real Betis Balompié,Athletic Club,1.59,0.98,0.5125,0.2567,0.2309,1-1,H,0.5125
+564945,pd,2027-04-18,32,Deportivo Alavés,Rayo Vallecano de Madrid,1.3,0.93,0.4491,0.2878,0.2631,1-0,H,0.4491
+564944,pd,2027-04-18,32,Elche CF,CA Osasuna,1.67,1.15,0.4933,0.2468,0.2599,1-1,H,0.4933
+564938,pd,2027-04-18,32,Club Atlético de Madrid,Sevilla FC,2.12,0.84,0.6667,0.1979,0.1354,2-0,H,0.6667
+564940,pd,2027-04-18,32,Levante UD,Villarreal CF,1.5,1.69,0.3397,0.2379,0.4223,1-1,A,0.4223
+564939,pd,2027-04-18,32,FC Barcelona,RCD Espanyol de Barcelona,3.07,0.77,0.8255,0.1137,0.0608,3-0,H,0.8255
+564942,pd,2027-04-18,32,Málaga CF,Valencia CF,1.09,1.01,0.3683,0.3052,0.3265,1-1,H,0.3683
+564941,pd,2027-04-18,32,Real Sociedad de Fútbol,Real Racing Club de Santander,2.54,1.28,0.6443,0.1803,0.1753,2-1,H,0.6443
+564953,pd,2027-04-21,33,Athletic Club,RC Deportivo La Coruña,1.5,0.98,0.4917,0.2651,0.2433,1-1,H,0.4917
+564957,pd,2027-04-21,33,RCD Espanyol de Barcelona,Real Sociedad de Fútbol,1.48,1.19,0.435,0.2621,0.3029,1-1,H,0.435
+564956,pd,2027-04-21,33,Sevilla FC,Levante UD,1.63,1.14,0.4863,0.2504,0.2633,1-1,H,0.4863
+564955,pd,2027-04-21,33,Villarreal CF,Club Atlético de Madrid,1.7,1.44,0.4369,0.2393,0.3238,1-1,H,0.4369
+564954,pd,2027-04-21,33,Real Racing Club de Santander,Málaga CF,1.72,1.17,0.4997,0.2426,0.2577,1-1,H,0.4997
+564950,pd,2027-04-21,33,RC Celta de Vigo,FC Barcelona,1.23,2.02,0.2257,0.2181,0.5562,1-1,A,0.5562
+564949,pd,2027-04-21,33,Valencia CF,Rayo Vallecano de Madrid,1.28,0.99,0.4273,0.2874,0.2853,1-1,H,0.4273
+564948,pd,2027-04-21,33,Getafe CF,Real Betis Balompié,0.96,1.03,0.3231,0.315,0.3619,0-0,A,0.3619
+564952,pd,2027-04-21,33,Real Madrid CF,Elche CF,2.67,0.81,0.7664,0.1461,0.0874,2-0,H,0.7664
+564951,pd,2027-04-21,33,CA Osasuna,Deportivo Alavés,1.36,1.07,0.4319,0.276,0.2921,1-1,H,0.4319
+564960,pd,2027-05-02,34,Real Sociedad de Fútbol,Athletic Club,1.44,1.14,0.4363,0.2665,0.2972,1-1,H,0.4363
+564961,pd,2027-05-02,34,FC Barcelona,CA Osasuna,3.27,0.79,0.8435,0.102,0.0545,3-0,H,0.8435
+564958,pd,2027-05-02,34,RC Deportivo La Coruña,Real Racing Club de Santander,2.4,1.21,0.6354,0.1882,0.1765,2-1,H,0.6354
+564959,pd,2027-05-02,34,RC Celta de Vigo,Sevilla FC,1.65,0.97,0.5306,0.2504,0.219,1-1,H,0.5306
+564962,pd,2027-05-02,34,Rayo Vallecano de Madrid,Villarreal CF,1.33,1.41,0.35,0.261,0.389,1-1,A,0.389
+564965,pd,2027-05-02,34,Elche CF,RCD Espanyol de Barcelona,1.57,1.12,0.4751,0.2566,0.2683,1-1,H,0.4751
+564967,pd,2027-05-02,34,Club Atlético de Madrid,Deportivo Alavés,1.96,0.81,0.6419,0.2137,0.1444,1-0,H,0.6419
+564966,pd,2027-05-02,34,Levante UD,Real Madrid CF,1.11,1.91,0.2163,0.2264,0.5573,1-1,A,0.5573
+564964,pd,2027-05-02,34,Real Betis Balompié,Valencia CF,1.86,0.9,0.5974,0.2276,0.175,1-0,H,0.5974
+564963,pd,2027-05-02,34,Málaga CF,Getafe CF,0.84,0.77,0.3425,0.3562,0.3013,0-0,D,0.3562
+564977,pd,2027-05-09,35,Villarreal CF,RC Celta de Vigo,1.95,1.11,0.5658,0.2229,0.2113,1-1,H,0.5658
+564974,pd,2027-05-09,35,Real Betis Balompié,RCD Espanyol de Barcelona,1.82,0.9,0.5883,0.2311,0.1806,1-0,H,0.5883
+564976,pd,2027-05-09,35,Getafe CF,Elche CF,1.18,0.89,0.4241,0.3036,0.2723,1-0,H,0.4241
+564975,pd,2027-05-09,35,Real Madrid CF,FC Barcelona,1.83,1.59,0.4373,0.228,0.3347,1-1,H,0.4373
+564973,pd,2027-05-09,35,Rayo Vallecano de Madrid,RC Deportivo La Coruña,1.36,1.05,0.4375,0.2771,0.2853,1-1,H,0.4375
+564970,pd,2027-05-09,35,Deportivo Alavés,Levante UD,1.56,1.05,0.4894,0.2582,0.2524,1-1,H,0.4894
+564971,pd,2027-05-09,35,Athletic Club,Málaga CF,1.54,0.67,0.5804,0.2611,0.1586,1-0,H,0.5804
+564969,pd,2027-05-09,35,CA Osasuna,Real Sociedad de Fútbol,1.52,1.27,0.4292,0.2558,0.315,1-1,H,0.4292
+564968,pd,2027-05-09,35,Valencia CF,Club Atlético de Madrid,1.11,1.5,0.2768,0.2626,0.4606,1-1,A,0.4606
+564972,pd,2027-05-09,35,Real Racing Club de Santander,Sevilla FC,1.74,1.6,0.4121,0.2322,0.3557,1-1,H,0.4121
+564985,pd,2027-05-16,36,RCD Espanyol de Barcelona,Valencia CF,1.41,0.99,0.4655,0.2741,0.2603,1-1,H,0.4655
+564986,pd,2027-05-16,36,Real Madrid CF,Real Racing Club de Santander,3.65,0.87,0.8651,0.0866,0.0483,3-0,H,0.8651
+564987,pd,2027-05-16,36,CA Osasuna,Real Betis Balompié,1.3,1.4,0.3465,0.263,0.3904,1-1,A,0.3904
+564984,pd,2027-05-16,36,Levante UD,Getafe CF,1.21,0.84,0.4445,0.3017,0.2538,1-0,H,0.4445
+564983,pd,2027-05-16,36,RC Deportivo La Coruña,Deportivo Alavés,1.49,1.0,0.4824,0.2657,0.2519,1-1,H,0.4824
+564981,pd,2027-05-16,36,Elche CF,Athletic Club,1.36,1.21,0.4012,0.2703,0.3285,1-1,H,0.4012
+564980,pd,2027-05-16,36,Real Sociedad de Fútbol,FC Barcelona,1.28,2.33,0.1965,0.1951,0.6084,1-2,A,0.6084
+564982,pd,2027-05-16,36,Málaga CF,RC Celta de Vigo,0.99,1.17,0.3044,0.299,0.3966,1-1,A,0.3966
+564978,pd,2027-05-16,36,Club Atlético de Madrid,Rayo Vallecano de Madrid,1.92,0.78,0.6385,0.2174,0.1441,1-0,H,0.6385
+564979,pd,2027-05-16,36,Sevilla FC,Villarreal CF,1.43,1.57,0.3455,0.2475,0.4071,1-1,A,0.4071
+564988,pd,2027-05-23,37,Rayo Vallecano de Madrid,Real Betis Balompié,1.24,1.22,0.3656,0.2785,0.3559,1-1,H,0.3656
+564991,pd,2027-05-23,37,RC Celta de Vigo,Real Sociedad de Fútbol,1.69,1.1,0.5113,0.2454,0.2432,1-1,H,0.5113
+564990,pd,2027-05-23,37,Valencia CF,Elche CF,1.54,1.14,0.4624,0.2583,0.2793,1-1,H,0.4624
+564989,pd,2027-05-23,37,FC Barcelona,Málaga CF,3.13,0.59,0.8633,0.0964,0.0403,3-0,H,0.8633
+564997,pd,2027-05-23,37,RC Deportivo La Coruña,RCD Espanyol de Barcelona,1.57,1.0,0.5042,0.2581,0.2377,1-1,H,0.5042
+564994,pd,2027-05-23,37,Sevilla FC,Getafe CF,1.16,0.78,0.4426,0.3124,0.245,1-0,H,0.4426
+564995,pd,2027-05-23,37,Villarreal CF,CA Osasuna,2.26,1.0,0.6559,0.192,0.1522,2-1,H,0.6559
+564992,pd,2027-05-23,37,Club Atlético de Madrid,Athletic Club,1.79,0.87,0.5898,0.234,0.1762,1-0,H,0.5898
+564996,pd,2027-05-23,37,Real Racing Club de Santander,Levante UD,1.88,1.69,0.4275,0.2233,0.3492,1-1,H,0.4275
+564993,pd,2027-05-23,37,Deportivo Alavés,Real Madrid CF,1.01,1.63,0.2327,0.2523,0.515,1-1,A,0.515
+565004,pd,2027-05-30,38,Athletic Club,Rayo Vallecano de Madrid,1.4,0.85,0.4958,0.279,0.2252,1-0,H,0.4958
+565005,pd,2027-05-30,38,RCD Espanyol de Barcelona,Deportivo Alavés,1.32,1.0,0.4362,0.2828,0.281,1-1,H,0.4362
+565006,pd,2027-05-30,38,Getafe CF,FC Barcelona,0.81,1.73,0.1701,0.239,0.5908,0-1,A,0.5908
+564998,pd,2027-05-30,38,Levante UD,RC Celta de Vigo,1.42,1.28,0.4013,0.263,0.3357,1-1,H,0.4013
+564999,pd,2027-05-30,38,Real Madrid CF,RC Deportivo La Coruña,2.39,0.81,0.7217,0.1709,0.1074,2-0,H,0.7217
+565000,pd,2027-05-30,38,Real Betis Balompié,Club Atlético de Madrid,1.47,1.34,0.3999,0.257,0.3431,1-1,H,0.3999
+565001,pd,2027-05-30,38,Real Sociedad de Fútbol,Villarreal CF,1.62,1.61,0.3821,0.2375,0.3803,1-1,H,0.3821
+565002,pd,2027-05-30,38,Málaga CF,Sevilla FC,1.11,1.07,0.3589,0.2988,0.3423,1-1,H,0.3589
+565003,pd,2027-05-30,38,Elche CF,Real Racing Club de Santander,2.39,1.35,0.6034,0.1925,0.2041,2-1,H,0.6034
+565007,pd,2027-05-30,38,CA Osasuna,Valencia CF,1.46,1.05,0.4616,0.2678,0.2706,1-1,H,0.4616
