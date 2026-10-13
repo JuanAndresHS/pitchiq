@@ -9,6 +9,7 @@ import ResultsList from "@/components/ResultsList";
 import { EUROPEAN_METRICS } from "@/lib/model-metrics";
 import { CHAMPIONS_LEAGUE } from "@/lib/leagues";
 import {
+  getFeaturedEuropeanFixture,
   getForecasts,
   getLeagueStrengths,
   getNextCupRound,
@@ -78,10 +79,10 @@ export default async function ChampionsLeaguePage() {
     getRecentCupRound(league.slug),
   ]);
 
-  // The most lopsided call makes the clearest hero here: knockout football
-  // produces genuine mismatches, and hiding that would be coy.
-  const featured =
-    [...next.fixtures].sort((a, b) => b.confidence - a.confidence)[0] ?? null;
+  // Scored on cross-league strength rather than on the model's confidence.
+  // Confidence is highest where the gap is widest, so ranking by it guarantees
+  // the hero is the night's biggest mismatch — the one tie nobody tuned in for.
+  const featured = await getFeaturedEuropeanFixture(next.fixtures);
   const rest = next.fixtures.filter((f) => f.matchId !== featured?.matchId);
 
   const pooledCount = forecasts.filter((f) => f.pooled).length;

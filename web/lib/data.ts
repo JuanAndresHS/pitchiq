@@ -10,7 +10,9 @@
  *
  * Every function takes a league slug. Leagues are modelled separately — attack
  * and defense ratings are only comparable within a competition — so nothing
- * here ever mixes them.
+ * here mixes them, with one deliberate exception: getAbsoluteStrengths(), which
+ * uses the cross-league model's offsets to put every club on one axis, and
+ * exists only because the Champions League needs that comparison.
  */
 
 import { readFile, readdir } from "node:fs/promises";
@@ -945,6 +947,116 @@ export async function getFeaturedFixture(
   for (const fixture of fixtures) {
     const home = stature.get(fixture.homeTeam) ?? fallback;
     const away = stature.get(fixture.awayTeam) ?? fallback;
+
+    const score = 0.65 * ((home + away) / 2) + 0.35 * (1 - Math.abs(home - away));
+
+    if (score > bestScore) {
+      bestScore = score;
+      best = fixture;
+    }
+  }
+
+  return best;
+}
+
+/**
+ * Domestic competitions with a fitted model — the two hidden ones included.
+ * The Champions League field is drawn from all of them, so ranking European
+ * clubs needs ratings the site itself never shows.
+ */
+const DOMESTIC_SLUGS = ["pl", "pd", "sa", "bl1", "fl1", "ppl", "ded"] as const;
+
+/**
+ * Every rated club placed on one absolute strength axis.
+ *
+ * A domestic rating says how far above its own league's average a club sits;
+ * the cross-league model says how far above the reference league that average
+ * sits. Adding the two puts an Eredivisie side and a Premier League side on the
+ * same axis. It is the only arithmetic in the project allowed to mix leagues,
+ * and only because the second term was estimated for exactly this purpose.
+ */
+async function getAbsoluteStrengths(): Promise<Map<string, number>> {
+  const [european, perLeague] = await Promise.all([
+    getLeagueStrengths(),
+    Promise.all(DOMESTIC_SLUGS.map((slug) => getTeamRatings(slug))),
+  ]);
+
+  const offsets = new Map(
+    (european?.strengths ?? []).map((s) => [s.league, s.strength]),
+  );
+
+  const absolute = new Map<string, number>();
+
+  DOMESTIC_SLUGS.forEach((slug, i) => {
+    const ratings = perLeague[i];
+    if (ratings.length === 0) return;
+
+    // Re-centred the way the cross-league fit centres them, or the league
+    // offset lands on top of a scale that already carries its own.
+    const mean = ratings.reduce((sum, r) => sum + r.overall, 0) / ratings.length;
+    const offset = offsets.get(slug) ?? 0;
+
+    for (const rating of ratings) {
+      absolute.set(rating.team, rating.overall - mean + offset);
+    }
+  });
+
+  return absolute;
+}
+
+/**
+ * Pick the most appealing fixture of a European round.
+ *
+ * Same formula as the league pages — both sides good, and closely matched —
+ * but scored on cross-league strength rather than league position, because a
+ * table position means nothing when the two clubs sit in different tables.
+ *
+ * Deliberately not confidence: the model is most certain about mismatches, so
+ * ranking by it surfaces the one tie nobody wants to watch.
+ */
+export async function getFeaturedEuropeanFixture(
+  fixtures: Forecast[],
+): Promise<Forecast | null> {
+  if (fixtures.length === 0) return null;
+  if (fixtures.length === 1) return fixtures[0];
+
+  const [absolute, european, matches] = await Promise.all([
+    getAbsoluteStrengths(),
+    getLeagueStrengths(),
+    getMatches("cl"),
+  ]);
+
+  // A club from an unmodelled league has no rating of its own. The pooled
+  // group's offset is the whole of what the model knows about it.
+  const pooled = european?.strengths.find((s) => s.pooled)?.strength ?? 0;
+  const level = (team: string) => absolute.get(team) ?? pooled;
+
+  // Normalised against this season's whole field rather than against the round
+  // alone, so a round of mismatches cannot promote two weak clubs on balance.
+  const season = matches.reduce((max, m) => Math.max(max, m.season), 0);
+  const field = new Set<string>();
+
+  for (const match of matches) {
+    if (match.season !== season) continue;
+    field.add(match.homeTeam);
+    field.add(match.awayTeam);
+  }
+  for (const fixture of fixtures) {
+    field.add(fixture.homeTeam);
+    field.add(fixture.awayTeam);
+  }
+
+  const values = [...field].map(level);
+  const low = Math.min(...values);
+  const span = Math.max(...values) - low;
+  const normalise = (value: number) => (span > 0 ? (value - low) / span : 0.5);
+
+  let best = fixtures[0];
+  let bestScore = -Infinity;
+
+  for (const fixture of fixtures) {
+    const home = normalise(level(fixture.homeTeam));
+    const away = normalise(level(fixture.awayTeam));
 
     const score = 0.65 * ((home + away) / 2) + 0.35 * (1 - Math.abs(home - away));
 
