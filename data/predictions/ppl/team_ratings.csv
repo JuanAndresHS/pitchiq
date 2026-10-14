@@ -1,10 +1,10 @@
 team,attack,defense,overall,matches
 Sporting Clube de Portugal,0.6987,0.2735,0.9721,110
-Sport Lisboa e Benfica,0.6361,0.308,0.944,110
+Sport Lisboa e Benfica,0.6361,0.3079,0.944,110
 FC Porto,0.4352,0.4624,0.8977,110
 Sporting Clube de Braga,0.3085,0.087,0.3954,109
 FC Famalicão,0.01,0.1109,0.1209,110
-Académico de Viseu FC,0.0956,0.0194,0.115,8
+Académico de Viseu FC,0.0955,0.0194,0.115,8
 CD Santa Clara,-0.106,0.1687,0.0627,76
 Gil Vicente FC,-0.0491,0.0207,-0.0284,109
 FC Arouca,0.1039,-0.1872,-0.0833,110
@@ -17,10 +17,10 @@ SC Farense,-0.1961,-0.1004,-0.2965,68
 CD Nacional,-0.1182,-0.214,-0.3322,76
 CF Estrela da Amadora,-0.0733,-0.2619,-0.3353,110
 FC Vizela,-0.1168,-0.2753,-0.3921,34
-Portimonense SC,-0.0719,-0.3211,-0.393,34
+Portimonense SC,-0.0718,-0.3211,-0.3929,34
 Rio Ave FC,-0.1076,-0.2927,-0.4004,110
-GD Chaves,-0.1926,-0.2961,-0.4887,34
+GD Chaves,-0.1926,-0.2961,-0.4886,34
 Casa Pia AC,-0.2571,-0.2533,-0.5104,110
 CD Tondela,-0.2985,-0.2218,-0.5203,34
-Boavista FC,-0.2712,-0.305,-0.5762,68
+Boavista FC,-0.2713,-0.305,-0.5762,68
 AVS,-0.3443,-0.3648,-0.709,68
