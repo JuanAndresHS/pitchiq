@@ -20,11 +20,11 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 567346,ppl,2026-11-02,10,Gil Vicente FC,Vitória SC,1.22,0.93,0.4305,0.2835,0.2861,1-0,H,0.4305
 567353,ppl,2026-11-06,11,FC Famalicão,FC Arouca,1.49,0.99,0.4895,0.254,0.2565,1-0,H,0.4895
 567352,ppl,2026-11-07,11,CD Nacional,Académico de Viseu FC,1.06,1.36,0.2961,0.2634,0.4405,0-1,A,0.4405
-567347,ppl,2026-11-07,11,FC Alverca,Casa Pia AC,1.58,0.9,0.5347,0.2458,0.2195,1-0,H,0.5347
+567347,ppl,2026-11-07,11,FC Alverca,Casa Pia AC,1.58,0.9,0.5347,0.2459,0.2195,1-0,H,0.5347
 567350,ppl,2026-11-07,11,Sporting Clube de Portugal,Moreirense FC,2.89,0.69,0.8233,0.1144,0.0623,2-0,H,0.8233
 567348,ppl,2026-11-08,11,GD Estoril Praia,CS Marítimo,1.66,1.26,0.4722,0.2347,0.2931,1-1,H,0.4722
 567351,ppl,2026-11-08,11,CD Santa Clara,Gil Vicente FC,1.07,0.8,0.4181,0.3083,0.2735,1-0,H,0.4181
-567349,ppl,2026-11-08,11,Vitória SC,FC Porto,0.73,1.62,0.1702,0.2394,0.5903,0-1,A,0.5903
+567349,ppl,2026-11-08,11,Vitória SC,FC Porto,0.73,1.62,0.1702,0.2395,0.5903,0-1,A,0.5903
 567354,ppl,2026-11-08,11,Rio Ave FC,Sporting Clube de Braga,1.0,1.82,0.2088,0.2218,0.5694,0-1,A,0.5694
 567355,ppl,2026-11-08,11,CF Estrela da Amadora,Sport Lisboa e Benfica,0.83,2.45,0.1096,0.1583,0.7321,0-2,A,0.7321
 567361,ppl,2026-11-27,12,CS Marítimo,CD Nacional,1.48,1.11,0.4597,0.2522,0.2882,1-1,H,0.4597
@@ -32,7 +32,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 567364,ppl,2026-11-28,12,Académico de Viseu FC,FC Alverca,1.57,0.98,0.5129,0.2462,0.2409,1-0,H,0.5129
 567357,ppl,2026-11-28,12,Moreirense FC,CD Santa Clara,0.93,1.06,0.3154,0.3004,0.3842,0-1,A,0.3842
 567362,ppl,2026-11-28,12,FC Arouca,Rio Ave FC,1.81,1.08,0.5479,0.2236,0.2284,1-1,H,0.5479
-567363,ppl,2026-11-29,12,Gil Vicente FC,GD Estoril Praia,1.49,1.07,0.4733,0.2517,0.275,1-1,H,0.4733
+567363,ppl,2026-11-29,12,Gil Vicente FC,GD Estoril Praia,1.49,1.07,0.4732,0.2517,0.275,1-1,H,0.4732
 567358,ppl,2026-11-29,12,FC Porto,Sporting Clube de Portugal,1.43,1.27,0.4136,0.2498,0.3366,1-1,H,0.4136
 567359,ppl,2026-11-30,12,Casa Pia AC,Sporting Clube de Braga,0.86,1.75,0.1858,0.2266,0.5876,0-1,A,0.5876
 567360,ppl,2026-11-30,12,Sport Lisboa e Benfica,FC Famalicão,2.06,0.74,0.6839,0.1898,0.1263,2-0,H,0.6839
@@ -65,7 +65,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 567383,ppl,2026-12-20,15,Rio Ave FC,Sport Lisboa e Benfica,0.8,2.53,0.0995,0.1501,0.7504,0-2,A,0.7504
 567392,ppl,2026-12-27,16,Vitória SC,Rio Ave FC,1.56,0.94,0.5201,0.2477,0.2321,1-0,H,0.5201
 567393,ppl,2026-12-27,16,Casa Pia AC,FC Famalicão,0.84,1.3,0.246,0.2778,0.4762,0-1,A,0.4762
-567394,ppl,2026-12-27,16,FC Porto,CD Nacional,2.33,0.56,0.7754,0.1507,0.0739,2-0,H,0.7754
+567394,ppl,2026-12-27,16,FC Porto,CD Nacional,2.33,0.56,0.7753,0.1507,0.0739,2-0,H,0.7753
 567396,ppl,2026-12-27,16,Moreirense FC,Académico de Viseu FC,1.08,1.3,0.3127,0.2683,0.419,1-1,A,0.419
 567395,ppl,2026-12-27,16,CD Santa Clara,CF Estrela da Amadora,1.43,0.79,0.5258,0.2639,0.2102,1-0,H,0.5258
 567398,ppl,2026-12-27,16,Gil Vicente FC,FC Arouca,1.4,1.09,0.4449,0.2593,0.2958,1-1,H,0.4449
@@ -75,12 +75,12 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 567406,ppl,2027-01-10,17,FC Arouca,Sport Lisboa e Benfica,0.99,2.28,0.1537,0.1815,0.6649,0-2,A,0.6649
 567408,ppl,2027-01-10,17,Académico de Viseu FC,Casa Pia AC,1.73,0.76,0.6089,0.227,0.164,1-0,H,0.6089
 567407,ppl,2027-01-10,17,FC Alverca,CS Marítimo,1.53,1.14,0.4649,0.2472,0.2879,1-1,H,0.4649
-567405,ppl,2027-01-10,17,Rio Ave FC,Moreirense FC,1.29,1.21,0.3886,0.262,0.3493,1-1,H,0.3886
+567405,ppl,2027-01-10,17,Rio Ave FC,Moreirense FC,1.29,1.21,0.3886,0.2621,0.3493,1-1,H,0.3886
 567403,ppl,2027-01-10,17,FC Famalicão,Vitória SC,1.29,0.85,0.4715,0.2787,0.2498,1-0,H,0.4715
-567402,ppl,2027-01-10,17,CF Estrela da Amadora,GD Estoril Praia,1.46,1.42,0.3877,0.242,0.3704,1-1,H,0.3877
+567402,ppl,2027-01-10,17,CF Estrela da Amadora,GD Estoril Praia,1.46,1.42,0.3877,0.242,0.3703,1-1,H,0.3877
 567401,ppl,2027-01-10,17,Sporting Clube de Braga,FC Porto,1.05,1.42,0.2819,0.2592,0.4589,0-1,A,0.4589
 567409,ppl,2027-01-10,17,Sporting Clube de Portugal,CD Santa Clara,2.07,0.68,0.7002,0.1857,0.1141,2-0,H,0.7002
-567404,ppl,2027-01-10,17,CD Nacional,Gil Vicente FC,1.06,1.18,0.3308,0.2795,0.3897,0-1,A,0.3897
+567404,ppl,2027-01-10,17,CD Nacional,Gil Vicente FC,1.06,1.18,0.3308,0.2795,0.3896,0-1,A,0.3896
 567418,ppl,2027-01-17,18,FC Arouca,Vitória SC,1.42,1.15,0.4359,0.2555,0.3086,1-1,H,0.4359
 567415,ppl,2027-01-17,18,CD Nacional,CD Santa Clara,0.92,1.11,0.3005,0.2957,0.4038,0-1,A,0.4038
 567417,ppl,2027-01-17,18,Académico de Viseu FC,Sport Lisboa e Benfica,0.99,1.85,0.201,0.2189,0.58,0-1,A,0.58
@@ -89,7 +89,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 567412,ppl,2027-01-17,18,Sporting Clube de Braga,Moreirense FC,1.96,0.83,0.642,0.2042,0.1538,1-0,H,0.642
 567411,ppl,2027-01-17,18,Sporting Clube de Portugal,CF Estrela da Amadora,3.19,0.71,0.8512,0.0969,0.052,3-0,H,0.8512
 567410,ppl,2027-01-17,18,FC Famalicão,GD Estoril Praia,1.58,0.98,0.5185,0.2447,0.2368,1-0,H,0.5185
-567413,ppl,2027-01-17,18,Rio Ave FC,Gil Vicente FC,1.07,1.28,0.3151,0.2705,0.4144,1-1,A,0.4144
+567413,ppl,2027-01-17,18,Rio Ave FC,Gil Vicente FC,1.07,1.28,0.3151,0.2706,0.4144,1-1,A,0.4144
 567426,ppl,2027-01-24,19,Gil Vicente FC,Sporting Clube de Braga,1.06,1.33,0.302,0.2659,0.4321,1-1,A,0.4321
 567425,ppl,2027-01-24,19,CS Marítimo,FC Famalicão,1.07,1.26,0.3163,0.2722,0.4114,1-1,A,0.4114
 567424,ppl,2027-01-24,19,CD Santa Clara,Académico de Viseu FC,1.08,0.93,0.3888,0.2988,0.3124,1-0,H,0.3888
@@ -110,17 +110,17 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 567431,ppl,2027-01-31,20,Sporting Clube de Braga,CF Estrela da Amadora,2.16,0.85,0.6756,0.1858,0.1386,2-0,H,0.6756
 567441,ppl,2027-02-07,21,FC Porto,Académico de Viseu FC,1.85,0.69,0.6528,0.2109,0.1363,1-0,H,0.6528
 567442,ppl,2027-02-07,21,CF Estrela da Amadora,CD Nacional,1.4,1.15,0.4304,0.2564,0.3132,1-1,H,0.4304
-567444,ppl,2027-02-07,21,Gil Vicente FC,FC Famalicão,1.04,0.99,0.3642,0.2977,0.3382,1-0,H,0.3642
+567444,ppl,2027-02-07,21,Gil Vicente FC,FC Famalicão,1.04,0.99,0.3641,0.2977,0.3382,1-0,H,0.3641
 567445,ppl,2027-02-07,21,Moreirense FC,Casa Pia AC,1.42,0.91,0.4914,0.2626,0.2459,1-0,H,0.4914
 567443,ppl,2027-02-07,21,Vitória SC,Sporting Clube de Braga,1.06,1.43,0.2849,0.2576,0.4574,1-1,A,0.4574
 567438,ppl,2027-02-07,21,CD Santa Clara,FC Alverca,1.28,0.85,0.4698,0.2801,0.2501,1-0,H,0.4698
 567437,ppl,2027-02-07,21,CS Marítimo,FC Arouca,1.44,1.38,0.3896,0.2445,0.3659,1-1,H,0.3896
 567440,ppl,2027-02-07,21,Sporting Clube de Portugal,Rio Ave FC,3.29,0.68,0.8646,0.0894,0.046,3-0,H,0.8646
-567439,ppl,2027-02-07,21,GD Estoril Praia,Sport Lisboa e Benfica,0.98,2.43,0.1363,0.1683,0.6954,0-2,A,0.6954
+567439,ppl,2027-02-07,21,GD Estoril Praia,Sport Lisboa e Benfica,0.98,2.43,0.1363,0.1684,0.6954,0-2,A,0.6954
 567447,ppl,2027-02-14,22,CD Nacional,Sporting Clube de Portugal,0.82,2.49,0.1055,0.1547,0.7398,0-2,A,0.7398
 567448,ppl,2027-02-14,22,Moreirense FC,FC Porto,0.69,1.82,0.1389,0.2139,0.6472,0-1,A,0.6472
 567449,ppl,2027-02-14,22,Sporting Clube de Braga,FC Alverca,1.94,0.92,0.6154,0.2091,0.1755,1-0,H,0.6154
-567450,ppl,2027-02-14,22,Académico de Viseu FC,Gil Vicente FC,1.31,0.93,0.4578,0.2731,0.2692,1-0,H,0.4578
+567450,ppl,2027-02-14,22,Académico de Viseu FC,Gil Vicente FC,1.31,0.93,0.4577,0.2731,0.2692,1-0,H,0.4577
 567446,ppl,2027-02-14,22,FC Arouca,GD Estoril Praia,1.74,1.32,0.4775,0.2283,0.2941,1-1,H,0.4775
 567452,ppl,2027-02-14,22,Casa Pia AC,Vitória SC,0.99,1.23,0.3008,0.2795,0.4196,0-1,A,0.4196
 567453,ppl,2027-02-14,22,FC Famalicão,CF Estrela da Amadora,1.6,0.83,0.5592,0.243,0.1979,1-0,H,0.5592
@@ -134,7 +134,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 567455,ppl,2027-02-21,23,Vitória SC,Académico de Viseu FC,1.14,1.15,0.358,0.2763,0.3656,1-1,A,0.3656
 567458,ppl,2027-02-21,23,Gil Vicente FC,Sport Lisboa e Benfica,0.85,1.85,0.1715,0.2162,0.6123,0-1,A,0.6123
 567463,ppl,2027-02-21,23,FC Alverca,CD Nacional,1.51,1.04,0.4862,0.2504,0.2633,1-0,H,0.4862
-567456,ppl,2027-02-21,23,CS Marítimo,Moreirense FC,1.41,1.13,0.4374,0.2574,0.3053,1-1,H,0.4374
+567456,ppl,2027-02-21,23,CS Marítimo,Moreirense FC,1.41,1.13,0.4373,0.2574,0.3053,1-1,H,0.4373
 567466,ppl,2027-02-28,24,Casa Pia AC,GD Estoril Praia,1.21,1.41,0.3279,0.2539,0.4182,1-1,A,0.4182
 567464,ppl,2027-02-28,24,Rio Ave FC,FC Alverca,1.28,1.34,0.3575,0.2549,0.3875,1-1,A,0.3875
 567465,ppl,2027-02-28,24,CS Marítimo,Gil Vicente FC,1.17,1.19,0.359,0.2719,0.3692,1-1,A,0.3692
@@ -144,14 +144,14 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 567471,ppl,2027-02-28,24,FC Arouca,Sporting Clube de Portugal,1.03,2.43,0.1455,0.171,0.6835,1-2,A,0.6835
 567468,ppl,2027-02-28,24,Sport Lisboa e Benfica,FC Porto,1.45,1.14,0.447,0.2534,0.2996,1-1,H,0.447
 567470,ppl,2027-02-28,24,Sporting Clube de Braga,CD Santa Clara,1.4,0.82,0.5094,0.2662,0.2244,1-0,H,0.5094
-567473,ppl,2027-03-07,25,Gil Vicente FC,Moreirense FC,1.37,0.88,0.4854,0.2686,0.246,1-0,H,0.4854
+567473,ppl,2027-03-07,25,Gil Vicente FC,Moreirense FC,1.37,0.88,0.4854,0.2687,0.246,1-0,H,0.4854
 567476,ppl,2027-03-07,25,CD Santa Clara,Casa Pia AC,1.41,0.65,0.5577,0.2665,0.1758,1-0,H,0.5577
 567475,ppl,2027-03-07,25,FC Alverca,FC Famalicão,1.09,1.18,0.3401,0.2773,0.3826,1-1,A,0.3826
 567477,ppl,2027-03-07,25,Sporting Clube de Portugal,Sporting Clube de Braga,2.25,1.04,0.6499,0.1856,0.1645,2-1,H,0.6499
 567479,ppl,2027-03-07,25,Vitória SC,Sport Lisboa e Benfica,0.85,1.98,0.1568,0.2029,0.6403,0-1,A,0.6403
 567478,ppl,2027-03-07,25,CF Estrela da Amadora,FC Arouca,1.37,1.44,0.3605,0.2451,0.3945,1-1,A,0.3945
 567480,ppl,2027-03-07,25,CD Nacional,Rio Ave FC,1.45,1.11,0.4527,0.254,0.2933,1-1,H,0.4527
-567481,ppl,2027-03-07,25,GD Estoril Praia,Académico de Viseu FC,1.31,1.41,0.3503,0.2494,0.4004,1-1,A,0.4004
+567481,ppl,2027-03-07,25,GD Estoril Praia,Académico de Viseu FC,1.31,1.41,0.3503,0.2494,0.4003,1-1,A,0.4003
 567474,ppl,2027-03-07,25,FC Porto,CS Marítimo,2.35,0.62,0.7651,0.1532,0.0817,2-0,H,0.7651
 567490,ppl,2027-03-14,26,Moreirense FC,GD Estoril Praia,1.41,1.29,0.4042,0.2502,0.3456,1-1,H,0.4042
 567487,ppl,2027-03-14,26,Casa Pia AC,CF Estrela da Amadora,1.23,1.2,0.3732,0.2673,0.3595,1-1,H,0.3732
@@ -161,15 +161,15 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 567483,ppl,2027-03-14,26,Sport Lisboa e Benfica,CD Santa Clara,1.95,0.66,0.6814,0.1982,0.1204,1-0,H,0.6814
 567482,ppl,2027-03-14,26,CS Marítimo,Vitória SC,1.25,1.19,0.3818,0.2662,0.352,1-1,H,0.3818
 567486,ppl,2027-03-14,26,FC Porto,Gil Vicente FC,1.85,0.6,0.6767,0.2069,0.1163,1-0,H,0.6767
-567485,ppl,2027-03-14,26,Académico de Viseu FC,Sporting Clube de Portugal,1.02,1.97,0.1934,0.2087,0.5979,0-1,A,0.5979
-567499,ppl,2027-03-21,27,FC Famalicão,Sporting Clube de Braga,1.13,1.22,0.3421,0.272,0.3858,1-1,A,0.3858
+567485,ppl,2027-03-14,26,Académico de Viseu FC,Sporting Clube de Portugal,1.02,1.97,0.1934,0.2088,0.5979,0-1,A,0.5979
+567499,ppl,2027-03-21,27,FC Famalicão,Sporting Clube de Braga,1.13,1.22,0.3421,0.2721,0.3858,1-1,A,0.3858
 567498,ppl,2027-03-21,27,Rio Ave FC,Académico de Viseu FC,1.07,1.47,0.2794,0.2532,0.4674,1-1,A,0.4674
 567497,ppl,2027-03-21,27,Sporting Clube de Portugal,Casa Pia AC,3.16,0.59,0.8687,0.0899,0.0415,3-0,H,0.8687
 567496,ppl,2027-03-21,27,CD Santa Clara,CS Marítimo,1.37,0.83,0.4999,0.2702,0.2299,1-0,H,0.4999
 567495,ppl,2027-03-21,27,GD Estoril Praia,FC Porto,0.84,1.99,0.1531,0.2018,0.6451,0-1,A,0.6451
 567493,ppl,2027-03-21,27,CF Estrela da Amadora,Moreirense FC,1.34,1.17,0.4087,0.2607,0.3306,1-1,H,0.4087
 567492,ppl,2027-03-21,27,Vitória SC,Gil Vicente FC,1.14,1.0,0.3915,0.2876,0.3209,1-0,H,0.3915
-567491,ppl,2027-03-21,27,CD Nacional,FC Arouca,1.31,1.37,0.3585,0.2517,0.3898,1-1,A,0.3898
+567491,ppl,2027-03-21,27,CD Nacional,FC Arouca,1.31,1.37,0.3585,0.2517,0.3897,1-1,A,0.3897
 567494,ppl,2027-03-21,27,FC Alverca,Sport Lisboa e Benfica,0.9,2.21,0.1427,0.1834,0.6738,0-2,A,0.6738
 567508,ppl,2027-04-04,28,Sport Lisboa e Benfica,CF Estrela da Amadora,2.99,0.68,0.8353,0.1073,0.0574,2-0,H,0.8353
 567507,ppl,2027-04-04,28,FC Porto,Vitória SC,1.98,0.6,0.7032,0.1914,0.1054,1-0,H,0.7032
@@ -187,21 +187,21 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 567514,ppl,2027-04-11,29,Sporting Clube de Braga,Casa Pia AC,2.14,0.71,0.7067,0.1801,0.1132,2-0,H,0.7067
 567512,ppl,2027-04-11,29,CD Santa Clara,Moreirense FC,1.29,0.76,0.4951,0.2813,0.2236,1-0,H,0.4951
 567509,ppl,2027-04-11,29,Sporting Clube de Portugal,FC Porto,1.54,1.18,0.4618,0.2449,0.2933,1-1,H,0.4618
-567510,ppl,2027-04-11,29,FC Famalicão,Sport Lisboa e Benfica,0.91,1.69,0.2037,0.2337,0.5625,0-1,A,0.5625
+567510,ppl,2027-04-11,29,FC Famalicão,Sport Lisboa e Benfica,0.91,1.69,0.2037,0.2338,0.5625,0-1,A,0.5625
 567513,ppl,2027-04-11,29,Rio Ave FC,FC Arouca,1.32,1.49,0.3402,0.2444,0.4154,1-1,A,0.4154
 567525,ppl,2027-04-18,30,Gil Vicente FC,CF Estrela da Amadora,1.51,0.91,0.516,0.2529,0.2311,1-0,H,0.516
 567526,ppl,2027-04-18,30,FC Arouca,Sporting Clube de Braga,1.24,1.64,0.2926,0.2363,0.4711,1-1,A,0.4711
 567523,ppl,2027-04-18,30,Vitória SC,GD Estoril Praia,1.49,1.14,0.4557,0.2498,0.2945,1-1,H,0.4557
 567522,ppl,2027-04-18,30,Académico de Viseu FC,FC Famalicão,1.2,0.99,0.412,0.2819,0.3061,1-0,H,0.412
-567524,ppl,2027-04-18,30,Casa Pia AC,Rio Ave FC,1.26,1.16,0.3924,0.267,0.3407,1-1,H,0.3924
+567524,ppl,2027-04-18,30,Casa Pia AC,Rio Ave FC,1.26,1.16,0.3923,0.267,0.3407,1-1,H,0.3923
 567519,ppl,2027-04-18,30,FC Porto,CD Santa Clara,1.59,0.57,0.628,0.2394,0.1326,1-0,H,0.628
 567518,ppl,2027-04-18,30,Sport Lisboa e Benfica,CD Nacional,2.85,0.65,0.8252,0.1147,0.0601,2-0,H,0.8252
 567521,ppl,2027-04-18,30,Moreirense FC,FC Alverca,1.29,1.18,0.3927,0.2639,0.3434,1-1,H,0.3927
 567520,ppl,2027-04-18,30,CS Marítimo,Sporting Clube de Portugal,0.91,2.51,0.1173,0.158,0.7247,0-2,A,0.7247
-567533,ppl,2027-04-25,31,CD Santa Clara,GD Estoril Praia,1.41,0.92,0.4869,0.2632,0.2498,1-0,H,0.4869
+567533,ppl,2027-04-25,31,CD Santa Clara,GD Estoril Praia,1.41,0.92,0.4869,0.2633,0.2498,1-0,H,0.4869
 567535,ppl,2027-04-25,31,FC Famalicão,Moreirense FC,1.45,0.81,0.5274,0.2603,0.2123,1-0,H,0.5274
-567532,ppl,2027-04-25,31,Sporting Clube de Braga,Sport Lisboa e Benfica,1.22,1.73,0.2729,0.23,0.4971,1-1,A,0.4971
-567529,ppl,2027-04-25,31,CD Nacional,Casa Pia AC,1.4,0.96,0.4744,0.2638,0.2619,1-0,H,0.4744
+567532,ppl,2027-04-25,31,Sporting Clube de Braga,Sport Lisboa e Benfica,1.22,1.73,0.2728,0.23,0.4971,1-1,A,0.4971
+567529,ppl,2027-04-25,31,CD Nacional,Casa Pia AC,1.4,0.96,0.4743,0.2638,0.2619,1-0,H,0.4743
 567534,ppl,2027-04-25,31,FC Arouca,Académico de Viseu FC,1.33,1.33,0.3734,0.2534,0.3733,1-1,H,0.3734
 567530,ppl,2027-04-25,31,CF Estrela da Amadora,FC Porto,0.71,2.01,0.1255,0.194,0.6805,0-1,A,0.6805
 567527,ppl,2027-04-25,31,FC Alverca,Vitória SC,1.28,1.11,0.4073,0.268,0.3247,1-1,H,0.4073
@@ -210,7 +210,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 567540,ppl,2027-05-02,32,Moreirense FC,CD Nacional,1.36,1.05,0.4439,0.2639,0.2921,1-0,H,0.4439
 567543,ppl,2027-05-02,32,CS Marítimo,CF Estrela da Amadora,1.55,1.16,0.4664,0.245,0.2886,1-1,H,0.4664
 567544,ppl,2027-05-02,32,Sport Lisboa e Benfica,Rio Ave FC,3.09,0.66,0.8493,0.0996,0.0511,3-0,H,0.8493
-567541,ppl,2027-05-02,32,Casa Pia AC,FC Arouca,1.14,1.43,0.3039,0.2551,0.4411,1-1,A,0.4411
+567541,ppl,2027-05-02,32,Casa Pia AC,FC Arouca,1.14,1.43,0.3039,0.2551,0.441,1-1,A,0.441
 567537,ppl,2027-05-02,32,Vitória SC,CD Santa Clara,0.98,0.94,0.3561,0.3077,0.3362,1-0,H,0.3561
 567538,ppl,2027-05-02,32,GD Estoril Praia,Sporting Clube de Portugal,1.01,2.59,0.1282,0.1578,0.7139,1-2,A,0.7139
 567536,ppl,2027-05-02,32,Gil Vicente FC,FC Alverca,1.36,0.98,0.4577,0.267,0.2753,1-0,H,0.4577
