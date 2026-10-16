@@ -1,17 +1,17 @@
 {
   "league": "pl",
   "league_name": "Premier League",
-  "home_advantage": 1.2397,
-  "home_advantage_log": 0.2149,
-  "rho": -0.1049,
+  "home_advantage": 1.2476,
+  "home_advantage_log": 0.2213,
+  "rho": -0.1038,
   "xi": 0.002,
   "alpha": 3.0,
   "teams": 27,
-  "matches_fitted": 1196,
+  "matches_fitted": 1200,
   "seasons": 4,
-  "goals_per_match": 2.982,
-  "home_win_rate": 0.4289,
+  "goals_per_match": 2.986,
+  "home_win_rate": 0.4292,
   "draw_rate": 0.2483,
-  "away_win_rate": 0.3227,
-  "fitted_at": "2026-10-16T10:15:29+00:00"
+  "away_win_rate": 0.3225,
+  "fitted_at": "2026-10-16T23:46:03+00:00"
 }

@@ -1,17 +1,17 @@
 {
   "league": "sa",
   "league_name": "Serie A",
-  "home_advantage": 1.1326,
-  "home_advantage_log": 0.1245,
-  "rho": -0.0301,
+  "home_advantage": 1.1362,
+  "home_advantage_log": 0.1277,
+  "rho": -0.0296,
   "xi": 0.002,
   "alpha": 1.0,
   "teams": 25,
-  "matches_fitted": 1200,
+  "matches_fitted": 1201,
   "seasons": 4,
-  "goals_per_match": 2.549,
-  "home_win_rate": 0.405,
-  "draw_rate": 0.2758,
-  "away_win_rate": 0.3192,
-  "fitted_at": "2026-10-16T10:15:31+00:00"
+  "goals_per_match": 2.552,
+  "home_win_rate": 0.4055,
+  "draw_rate": 0.2756,
+  "away_win_rate": 0.3189,
+  "fitted_at": "2026-10-16T23:46:04+00:00"
 }
