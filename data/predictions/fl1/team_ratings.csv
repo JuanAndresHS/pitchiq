@@ -1,25 +1,25 @@
 team,attack,defense,overall,matches
-Paris Saint-Germain FC,0.4885,0.1857,0.6742,108
-Lille OSC,0.0967,0.1769,0.2736,108
-Racing Club de Lens,0.2175,0.047,0.2645,108
-Olympique Lyonnais,0.2209,0.0127,0.2336,108
-AS Monaco FC,0.2885,-0.0587,0.2298,108
-Olympique de Marseille,0.2814,-0.0616,0.2198,108
-Stade Rennais FC 1901,0.2367,-0.1569,0.0798,108
-RC Strasbourg Alsace,0.209,-0.1379,0.0711,108
-Paris FC,0.0301,0.0077,0.0378,40
-Toulouse FC,0.078,-0.0904,-0.0124,108
-Stade Brestois 29,0.0971,-0.2016,-0.1045,108
-FC Lorient,-0.002,-0.1162,-0.1182,74
-OGC Nice,-0.0428,-0.1211,-0.1639,108
-AJ Auxerre,-0.0764,-0.1667,-0.2431,74
-Stade de Reims,-0.2066,-0.059,-0.2657,68
-Le Mans FC,-0.0211,-0.259,-0.2801,7
-Le Havre AC,-0.2316,-0.1392,-0.3708,108
-Clermont Foot 63,-0.2378,-0.1528,-0.3906,34
-FC Nantes,-0.2576,-0.1635,-0.4211,101
-Angers SCO,-0.29,-0.1573,-0.4473,74
-AS Saint-Étienne,-0.1043,-0.4062,-0.5105,33
-ES Troyes AC,-0.2784,-0.2985,-0.5769,6
-Montpellier HSC,-0.2707,-0.3358,-0.6064,67
-FC Metz,-0.2248,-0.4313,-0.6561,68
+Paris Saint-Germain FC,0.5005,0.19,0.6905,109
+Racing Club de Lens,0.2336,0.0437,0.2774,109
+Lille OSC,0.0841,0.1752,0.2593,109
+Olympique Lyonnais,0.2215,0.0115,0.233,108
+AS Monaco FC,0.2884,-0.0597,0.2287,108
+Olympique de Marseille,0.2795,-0.0625,0.217,108
+Stade Rennais FC 1901,0.2373,-0.158,0.0793,108
+RC Strasbourg Alsace,0.2041,-0.1555,0.0486,109
+Paris FC,0.028,0.0055,0.0334,40
+Toulouse FC,0.0781,-0.0923,-0.0141,108
+Stade Brestois 29,0.0981,-0.1924,-0.0943,109
+FC Lorient,-0.0042,-0.117,-0.1212,74
+OGC Nice,-0.0426,-0.1233,-0.166,108
+AJ Auxerre,-0.0759,-0.1681,-0.2441,74
+Stade de Reims,-0.2076,-0.0603,-0.2679,68
+Le Mans FC,-0.0216,-0.2574,-0.279,7
+Le Havre AC,-0.2313,-0.1415,-0.3728,108
+Clermont Foot 63,-0.2401,-0.1534,-0.3935,34
+FC Nantes,-0.2579,-0.165,-0.4229,101
+Angers SCO,-0.2918,-0.1586,-0.4503,74
+AS Saint-Étienne,-0.1058,-0.4066,-0.5124,33
+Montpellier HSC,-0.2718,-0.337,-0.6088,67
+ES Troyes AC,-0.2778,-0.3628,-0.6406,7
+FC Metz,-0.2248,-0.4329,-0.6577,68
