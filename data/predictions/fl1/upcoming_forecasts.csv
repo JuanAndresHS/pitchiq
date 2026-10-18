@@ -24,7 +24,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 559645,fl1,2026-11-01,9,Olympique de Marseille,Toulouse FC,1.9,1.15,0.5451,0.2306,0.2243,1-1,H,0.5451
 559638,fl1,2026-11-06,10,Toulouse FC,RC Strasbourg Alsace,1.66,1.34,0.4443,0.248,0.3077,1-1,H,0.4443
 559637,fl1,2026-11-07,10,AJ Auxerre,Paris FC,1.21,1.22,0.3559,0.2846,0.3596,1-1,A,0.3596
-559635,fl1,2026-11-07,10,Paris Saint-Germain FC,ES Troyes AC,3.11,0.63,0.8544,0.1019,0.0437,3-0,H,0.8544
+559635,fl1,2026-11-07,10,Paris Saint-Germain FC,ES Troyes AC,3.11,0.63,0.8543,0.1019,0.0437,3-0,H,0.8543
 559634,fl1,2026-11-08,10,Angers SCO,OGC Nice,1.11,1.12,0.3469,0.2988,0.3543,1-1,A,0.3543
 559633,fl1,2026-11-08,10,Le Havre AC,FC Lorient,1.17,1.15,0.3595,0.2923,0.3483,1-1,H,0.3595
 559630,fl1,2026-11-08,10,Racing Club de Lens,Olympique de Marseille,1.76,1.27,0.4871,0.2417,0.2712,1-1,H,0.4871
@@ -91,7 +91,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 559568,fl1,2027-01-23,17,RC Strasbourg Alsace,Olympique Lyonnais,1.59,1.46,0.4046,0.2484,0.3469,1-1,H,0.4046
 559571,fl1,2027-01-23,17,Paris Saint-Germain FC,AJ Auxerre,2.56,0.77,0.7583,0.1548,0.0869,2-0,H,0.7583
 559570,fl1,2027-01-23,17,Racing Club de Lens,Stade Brestois 29,2.01,1.06,0.5905,0.2197,0.1897,1-1,H,0.5905
-559567,fl1,2027-01-23,17,Le Havre AC,Stade Rennais FC 1901,1.22,1.46,0.3111,0.2662,0.4227,1-1,A,0.4227
+559567,fl1,2027-01-23,17,Le Havre AC,Stade Rennais FC 1901,1.22,1.46,0.3111,0.2662,0.4226,1-1,A,0.4226
 559569,fl1,2027-01-23,17,Lille OSC,Paris FC,1.42,0.86,0.4957,0.2803,0.224,1-0,H,0.4957
 559575,fl1,2027-01-23,17,Toulouse FC,OGC Nice,1.6,1.05,0.4979,0.2579,0.2442,1-1,H,0.4979
 559558,fl1,2027-01-30,18,Paris FC,AJ Auxerre,1.6,0.92,0.5272,0.2596,0.2132,1-0,H,0.5272
@@ -133,7 +133,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 559526,fl1,2027-02-27,22,Stade Brestois 29,AS Monaco FC,1.54,1.62,0.3605,0.2439,0.3956,1-1,A,0.3956
 559523,fl1,2027-02-27,22,RC Strasbourg Alsace,Le Havre AC,1.85,0.93,0.5875,0.232,0.1805,1-0,H,0.5875
 559524,fl1,2027-02-27,22,AJ Auxerre,Lille OSC,1.02,1.29,0.2896,0.2897,0.4207,1-1,A,0.4207
-559525,fl1,2027-02-27,22,ES Troyes AC,OGC Nice,1.12,1.38,0.3014,0.2768,0.4219,1-1,A,0.4219
+559525,fl1,2027-02-27,22,ES Troyes AC,OGC Nice,1.12,1.38,0.3014,0.2768,0.4218,1-1,A,0.4218
 559528,fl1,2027-02-27,22,Olympique de Marseille,Stade Rennais FC 1901,2.03,1.35,0.5291,0.2213,0.2496,1-1,H,0.5291
 559529,fl1,2027-02-27,22,Olympique Lyonnais,Toulouse FC,1.8,1.07,0.5397,0.2398,0.2205,1-1,H,0.5397
 559530,fl1,2027-02-27,22,Le Mans FC,Paris FC,1.28,1.33,0.3511,0.2727,0.3762,1-1,A,0.3762
@@ -151,7 +151,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 559511,fl1,2027-03-13,24,AJ Auxerre,Paris Saint-Germain FC,1.01,1.95,0.1858,0.2239,0.5903,1-1,A,0.5903
 559510,fl1,2027-03-13,24,Olympique de Marseille,AS Monaco FC,1.84,1.42,0.4716,0.2341,0.2944,1-1,H,0.4716
 559509,fl1,2027-03-13,24,Le Havre AC,Racing Club de Lens,1.0,1.46,0.2539,0.2737,0.4725,1-1,A,0.4725
-559507,fl1,2027-03-13,24,Le Mans FC,Stade Rennais FC 1901,1.5,1.64,0.3486,0.244,0.4074,1-1,A,0.4074
+559507,fl1,2027-03-13,24,Le Mans FC,Stade Rennais FC 1901,1.5,1.64,0.3486,0.244,0.4075,1-1,A,0.4075
 559508,fl1,2027-03-13,24,Stade Brestois 29,Lille OSC,1.21,1.32,0.3368,0.277,0.3862,1-1,A,0.3862
 559506,fl1,2027-03-13,24,RC Strasbourg Alsace,Angers SCO,1.88,0.87,0.6081,0.2272,0.1647,1-0,H,0.6081
 559504,fl1,2027-03-13,24,OGC Nice,Toulouse FC,1.38,1.22,0.4002,0.2722,0.3276,1-1,H,0.4002

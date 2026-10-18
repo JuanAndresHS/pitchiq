@@ -1,5 +1,5 @@
 team,attack,defense,overall,matches
-Arsenal FC,0.3209,0.3746,0.6955,120
+Arsenal FC,0.3209,0.3746,0.6956,120
 Manchester City FC,0.4471,0.1774,0.6244,121
 Liverpool FC,0.301,-0.034,0.2671,121
 Brighton & Hove Albion FC,0.2273,-0.0608,0.1665,120
@@ -24,5 +24,5 @@ Wolverhampton Wanderers FC,-0.251,-0.3172,-0.5682,114
 Ipswich Town FC,-0.0897,-0.4819,-0.5716,45
 Burnley FC,-0.2175,-0.4211,-0.6386,76
 Leicester City FC,-0.3471,-0.409,-0.7561,38
-Sheffield United FC,-0.2452,-0.5409,-0.7861,38
+Sheffield United FC,-0.2452,-0.541,-0.7861,38
 Southampton FC,-0.4436,-0.4835,-0.9271,38

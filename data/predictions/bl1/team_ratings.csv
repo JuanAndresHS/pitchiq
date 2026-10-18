@@ -1,25 +1,25 @@
 team,attack,defense,overall,matches
 FC Bayern München,0.7841,0.1211,0.9052,108
-Borussia Dortmund,0.2978,0.1257,0.4235,108
-Bayer 04 Leverkusen,0.3768,-0.0142,0.3626,107
-VfB Stuttgart,0.2885,-0.0965,0.192,108
-RB Leipzig,0.2843,-0.0927,0.1916,108
-SV 07 Elversberg,0.1836,-0.2103,-0.0268,6
-SC Freiburg,0.0946,-0.1843,-0.0897,107
-1. FSV Mainz 05,0.0412,-0.1371,-0.0959,108
-Eintracht Frankfurt,0.1714,-0.3241,-0.1527,108
+Borussia Dortmund,0.2977,0.1256,0.4234,108
+Bayer 04 Leverkusen,0.3768,-0.0143,0.3624,107
+VfB Stuttgart,0.2885,-0.0966,0.1919,108
+RB Leipzig,0.2843,-0.0928,0.1915,108
+SV 07 Elversberg,0.1838,-0.2103,-0.0265,6
+SC Freiburg,0.0946,-0.1844,-0.0898,107
+1. FSV Mainz 05,0.0412,-0.1372,-0.096,108
+Eintracht Frankfurt,0.1714,-0.3242,-0.1528,108
 TSG 1899 Hoffenheim,0.179,-0.343,-0.164,107
-FC Augsburg,0.0115,-0.2445,-0.2329,108
-SV Werder Bremen,-0.0565,-0.2626,-0.3191,108
-FC Schalke 04,-0.4131,0.0817,-0.3314,6
-Borussia Mönchengladbach,-0.0255,-0.3311,-0.3566,107
-VfL Wolfsburg,-0.0638,-0.3085,-0.3723,102
-SC Paderborn 07,-0.3338,-0.0755,-0.4092,6
+FC Augsburg,0.0115,-0.2445,-0.233,108
+SV Werder Bremen,-0.0565,-0.2627,-0.3192,108
+FC Schalke 04,-0.4127,0.0814,-0.3313,6
+Borussia Mönchengladbach,-0.0255,-0.3311,-0.3567,107
+VfL Wolfsburg,-0.064,-0.3086,-0.3725,102
+SC Paderborn 07,-0.3337,-0.0755,-0.4092,6
 1. FC Köln,-0.1103,-0.3192,-0.4295,74
 Hamburger SV,-0.1901,-0.2574,-0.4475,40
-1. FC Union Berlin,-0.2031,-0.2732,-0.4763,107
-Holstein Kiel,-0.048,-0.44,-0.488,34
-1. FC Heidenheim 1846,-0.1505,-0.3619,-0.5124,102
-FC St. Pauli 1910,-0.4807,-0.1588,-0.6395,68
-VfL Bochum 1848,-0.2875,-0.3646,-0.6521,67
-SV Darmstadt 98,-0.35,-0.4105,-0.7605,34
+1. FC Union Berlin,-0.2032,-0.2732,-0.4763,107
+Holstein Kiel,-0.0482,-0.4399,-0.4881,34
+1. FC Heidenheim 1846,-0.1506,-0.362,-0.5125,102
+FC St. Pauli 1910,-0.481,-0.1589,-0.6398,68
+VfL Bochum 1848,-0.2875,-0.3648,-0.6524,67
+SV Darmstadt 98,-0.3497,-0.4108,-0.7605,34
