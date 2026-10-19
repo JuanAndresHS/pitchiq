@@ -1,25 +1,25 @@
 team,attack,defense,overall,matches
-FC Bayern München,0.7847,0.1201,0.9048,108
-Borussia Dortmund,0.2986,0.1248,0.4233,108
-Bayer 04 Leverkusen,0.3736,-0.0131,0.3605,108
+FC Bayern München,0.7848,0.1202,0.905,108
+Borussia Dortmund,0.2986,0.1247,0.4233,108
+Bayer 04 Leverkusen,0.3736,-0.0131,0.3606,108
 VfB Stuttgart,0.2893,-0.0975,0.1918,108
 RB Leipzig,0.285,-0.0943,0.1907,108
 SV 07 Elversberg,0.1833,-0.212,-0.0287,6
 SC Freiburg,0.0931,-0.1806,-0.0875,108
 1. FSV Mainz 05,0.0419,-0.1385,-0.0966,108
-TSG 1899 Hoffenheim,0.1835,-0.3337,-0.1501,108
-Eintracht Frankfurt,0.172,-0.3253,-0.1532,108
-FC Augsburg,0.0122,-0.2456,-0.2335,108
-SV Werder Bremen,-0.0557,-0.2637,-0.3194,108
+TSG 1899 Hoffenheim,0.1835,-0.3336,-0.1501,108
+Eintracht Frankfurt,0.172,-0.3252,-0.1532,108
+FC Augsburg,0.0122,-0.2456,-0.2334,108
+SV Werder Bremen,-0.0557,-0.2636,-0.3193,108
 FC Schalke 04,-0.4129,0.0814,-0.3315,6
-VfL Wolfsburg,-0.0631,-0.3097,-0.3728,102
+VfL Wolfsburg,-0.0633,-0.3097,-0.373,102
 Borussia Mönchengladbach,-0.038,-0.3358,-0.3738,108
-SC Paderborn 07,-0.3322,-0.0754,-0.4076,6
-1. FC Köln,-0.1096,-0.3203,-0.4299,74
-Hamburger SV,-0.1892,-0.2581,-0.4473,40
-1. FC Union Berlin,-0.2025,-0.2744,-0.4769,107
-Holstein Kiel,-0.0477,-0.441,-0.4887,34
-1. FC Heidenheim 1846,-0.1498,-0.363,-0.5128,102
+SC Paderborn 07,-0.3321,-0.0754,-0.4076,6
+1. FC Köln,-0.1096,-0.3202,-0.4298,74
+Hamburger SV,-0.1891,-0.258,-0.4471,40
+1. FC Union Berlin,-0.2025,-0.2743,-0.4768,107
+Holstein Kiel,-0.0476,-0.4411,-0.4887,34
+1. FC Heidenheim 1846,-0.1499,-0.363,-0.5129,102
 FC St. Pauli 1910,-0.4801,-0.16,-0.6401,68
-VfL Bochum 1848,-0.2869,-0.3656,-0.6525,67
-SV Darmstadt 98,-0.3496,-0.4111,-0.7607,34
+VfL Bochum 1848,-0.2868,-0.3656,-0.6524,67
+SV Darmstadt 98,-0.3496,-0.411,-0.7606,34
