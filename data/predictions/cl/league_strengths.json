@@ -3,7 +3,7 @@
   "reference": "pl",
   "reference_name": "Premier League",
   "matches_fitted": 510,
-  "home_advantage": 1.6108,
+  "home_advantage": 1.6107,
   "home_advantage_log": 0.4767,
   "rho": 0.0705,
   "bootstrap_draws": 300,
@@ -20,7 +20,7 @@
     {
       "league": "fl1",
       "name": "Ligue 1",
-      "strength": -0.1406,
+      "strength": -0.1407,
       "goal_ratio": 0.8688,
       "ci_low": -0.2818,
       "ci_high": -0.0149,
@@ -29,9 +29,9 @@
     {
       "league": "pd",
       "name": "LaLiga",
-      "strength": -0.1716,
+      "strength": -0.1717,
       "goal_ratio": 0.8423,
-      "ci_low": -0.2761,
+      "ci_low": -0.2762,
       "ci_high": -0.0498,
       "pooled": false
     },
@@ -40,8 +40,8 @@
       "name": "Bundesliga",
       "strength": -0.2669,
       "goal_ratio": 0.7657,
-      "ci_low": -0.3756,
-      "ci_high": -0.1515,
+      "ci_low": -0.3757,
+      "ci_high": -0.1516,
       "pooled": false
     },
     {
@@ -57,7 +57,7 @@
       "league": "rest",
       "name": "Rest of Europe",
       "strength": -0.3921,
-      "goal_ratio": 0.6757,
+      "goal_ratio": 0.6756,
       "ci_low": -0.4862,
       "ci_high": -0.2729,
       "pooled": true
@@ -81,5 +81,5 @@
       "pooled": false
     }
   ],
-  "fitted_at": "2026-10-20T00:31:17+00:00"
+  "fitted_at": "2026-10-20T10:31:58+00:00"
 }
