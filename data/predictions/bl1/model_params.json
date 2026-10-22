@@ -2,7 +2,7 @@
   "league": "bl1",
   "league_name": "Bundesliga",
   "home_advantage": 1.327,
-  "home_advantage_log": 0.2829,
+  "home_advantage_log": 0.283,
   "rho": -0.0545,
   "xi": 0.002,
   "alpha": 3.0,
@@ -13,5 +13,5 @@
   "home_win_rate": 0.4264,
   "draw_rate": 0.2513,
   "away_win_rate": 0.3223,
-  "fitted_at": "2026-10-22T00:06:46+00:00"
+  "fitted_at": "2026-10-22T10:45:49+00:00"
 }

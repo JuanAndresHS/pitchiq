@@ -1,6 +1,6 @@
 team,attack,defense,overall,matches
 FC Barcelona,0.7425,0.1855,0.928,123
-Real Madrid CF,0.4805,0.2552,0.7357,123
+Real Madrid CF,0.4805,0.2552,0.7356,123
 Club Atlético de Madrid,0.3116,0.1738,0.4854,123
 Villarreal CF,0.3203,-0.0234,0.2969,123
 Real Betis Balompié,0.2112,-0.0105,0.2007,123
@@ -14,7 +14,7 @@ Deportivo Alavés,-0.0606,-0.0238,-0.0844,123
 Levante UD,0.0886,-0.1934,-0.1048,47
 Elche CF,0.0275,-0.1424,-0.1148,47
 RCD Mallorca,-0.0948,-0.022,-0.1168,114
-Sevilla FC,0.0142,-0.1338,-0.1196,123
+Sevilla FC,0.0142,-0.1338,-0.1195,123
 RCD Espanyol de Barcelona,-0.0939,-0.0551,-0.149,85
 CA Osasuna,-0.0429,-0.1159,-0.1588,123
 Valencia CF,-0.1015,-0.0678,-0.1693,123
