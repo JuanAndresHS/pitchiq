@@ -1,6 +1,6 @@
 match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_draw,p_away_win,most_likely_score,prediction,confidence
 558560,sa,2026-10-24,8,Cagliari Calcio,Bologna FC 1909,1.05,1.31,0.295,0.2818,0.4231,1-1,A,0.4231
-558561,sa,2026-10-24,8,Como 1907,US Sassuolo Calcio,2.03,0.93,0.6282,0.2102,0.1615,2-0,H,0.6282
+558561,sa,2026-10-24,8,Como 1907,US Sassuolo Calcio,2.03,0.93,0.6282,0.2102,0.1616,2-0,H,0.6282
 558564,sa,2026-10-24,8,SSC Napoli,AS Roma,1.03,1.15,0.3216,0.2969,0.3815,1-1,A,0.3815
 558565,sa,2026-10-24,8,SS Lazio,Parma Calcio 1913,1.49,0.66,0.5714,0.2671,0.1616,1-0,H,0.5714
 558566,sa,2026-10-25,8,US Lecce,Juventus FC,0.68,1.52,0.1629,0.2632,0.574,0-1,A,0.574
@@ -42,7 +42,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558528,sa,2026-11-21,12,SS Lazio,US Lecce,1.55,0.66,0.5863,0.2586,0.1551,1-0,H,0.5863
 558526,sa,2026-11-21,12,Parma Calcio 1913,AS Roma,0.59,1.65,0.1285,0.2429,0.6285,0-1,A,0.6285
 558527,sa,2026-11-21,12,SSC Napoli,Torino FC,1.72,0.82,0.5842,0.2407,0.1751,1-0,H,0.5842
-558520,sa,2026-11-22,12,Atalanta BC,FC Internazionale Milano,1.29,1.83,0.2679,0.2328,0.4994,1-1,A,0.4994
+558520,sa,2026-11-22,12,Atalanta BC,FC Internazionale Milano,1.29,1.83,0.2679,0.2327,0.4994,1-1,A,0.4994
 558523,sa,2026-11-22,12,AC Milan,Frosinone Calcio,1.92,1.16,0.5489,0.2257,0.2254,1-1,H,0.5489
 558522,sa,2026-11-22,12,Bologna FC 1909,Udinese Calcio,1.54,1.02,0.4918,0.2603,0.2479,1-1,H,0.4918
 558524,sa,2026-11-22,12,US Sassuolo Calcio,Genoa CFC,1.44,1.17,0.4305,0.2657,0.3038,1-1,H,0.4305
@@ -113,7 +113,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558455,sa,2027-01-09,19,Bologna FC 1909,Genoa CFC,1.44,0.92,0.488,0.2726,0.2393,1-0,H,0.488
 558451,sa,2027-01-10,19,Torino FC,Atalanta BC,1.06,1.62,0.2465,0.2519,0.5016,1-1,A,0.5016
 558453,sa,2027-01-10,19,FC Internazionale Milano,Juventus FC,1.85,1.08,0.552,0.2312,0.2167,1-1,H,0.552
-558449,sa,2027-01-10,19,ACF Fiorentina,US Lecce,1.49,0.86,0.5155,0.2681,0.2163,1-0,H,0.5155
+558449,sa,2027-01-10,19,ACF Fiorentina,US Lecce,1.49,0.86,0.5155,0.2681,0.2164,1-0,H,0.5155
 558457,sa,2027-01-10,19,Como 1907,SS Lazio,1.42,0.96,0.4734,0.2743,0.2523,1-0,H,0.4734
 558454,sa,2027-01-10,19,Parma Calcio 1913,Venezia FC,1.17,0.89,0.4207,0.304,0.2753,1-0,H,0.4207
 558456,sa,2027-01-11,19,Cagliari Calcio,US Sassuolo Calcio,1.32,1.31,0.3695,0.2671,0.3634,1-1,H,0.3695
@@ -178,7 +178,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558391,sa,2027-02-21,25,Udinese Calcio,Parma Calcio 1913,1.28,0.89,0.4529,0.2911,0.256,1-0,H,0.4529
 558390,sa,2027-02-21,25,Atalanta BC,AC Monza,2.41,0.92,0.6996,0.1754,0.125,2-0,H,0.6996
 558389,sa,2027-02-21,25,Como 1907,Torino FC,1.88,0.85,0.6138,0.2233,0.1629,1-0,H,0.6138
-558387,sa,2027-02-28,26,AC Monza,Juventus FC,0.93,2.01,0.1655,0.2129,0.6216,0-2,A,0.6216
+558387,sa,2027-02-28,26,AC Monza,Juventus FC,0.93,2.01,0.1655,0.2129,0.6217,0-2,A,0.6217
 558386,sa,2027-02-28,26,Bologna FC 1909,US Lecce,1.5,0.75,0.5491,0.2666,0.1844,1-0,H,0.5491
 558385,sa,2027-02-28,26,Torino FC,ACF Fiorentina,1.37,1.32,0.3792,0.2631,0.3576,1-1,H,0.3792
 558383,sa,2027-02-28,26,AS Roma,Venezia FC,2.32,0.56,0.7686,0.1598,0.0716,2-0,H,0.7686
@@ -260,7 +260,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558311,sa,2027-04-25,33,SSC Napoli,Udinese Calcio,1.75,0.8,0.5997,0.2359,0.1644,1-0,H,0.5997
 558306,sa,2027-05-02,34,AC Monza,Venezia FC,1.62,1.22,0.4644,0.2495,0.2861,1-1,H,0.4644
 558308,sa,2027-05-02,34,AS Roma,SSC Napoli,1.3,0.92,0.4523,0.2879,0.2598,1-0,H,0.4523
-558304,sa,2027-05-02,34,Bologna FC 1909,ACF Fiorentina,1.49,1.13,0.4514,0.2625,0.2861,1-1,H,0.4514
+558304,sa,2027-05-02,34,Bologna FC 1909,ACF Fiorentina,1.49,1.13,0.4513,0.2625,0.2861,1-1,H,0.4513
 558307,sa,2027-05-02,34,US Lecce,Cagliari Calcio,0.97,1.07,0.3175,0.3093,0.3732,1-1,A,0.3732
 558305,sa,2027-05-02,34,Como 1907,FC Internazionale Milano,1.32,1.66,0.3039,0.2445,0.4516,1-1,A,0.4516
 558303,sa,2027-05-02,34,US Sassuolo Calcio,Frosinone Calcio,1.58,1.64,0.3684,0.2372,0.3944,1-1,A,0.3944
