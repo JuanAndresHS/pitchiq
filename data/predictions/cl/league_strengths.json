@@ -30,8 +30,8 @@
       "league": "pd",
       "name": "LaLiga",
       "strength": -0.1656,
-      "goal_ratio": 0.8473,
-      "ci_low": -0.284,
+      "goal_ratio": 0.8474,
+      "ci_low": -0.2839,
       "ci_high": -0.0554,
       "pooled": false
     },
@@ -81,5 +81,5 @@
       "pooled": false
     }
   ],
-  "fitted_at": "2026-10-23T23:55:45+00:00"
+  "fitted_at": "2026-10-24T09:55:17+00:00"
 }

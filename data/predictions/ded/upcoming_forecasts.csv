@@ -1,10 +1,10 @@
 match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_draw,p_away_win,most_likely_score,prediction,confidence
 558862,ded,2026-10-24,10,FC Utrecht,PEC Zwolle,2.23,1.07,0.6266,0.2137,0.1597,2-1,H,0.6266
-558861,ded,2026-10-24,10,Willem II Tilburg,SC Cambuur-Leeuwarden,1.44,1.54,0.3437,0.2695,0.3867,1-1,A,0.3867
+558861,ded,2026-10-24,10,Willem II Tilburg,SC Cambuur-Leeuwarden,1.44,1.54,0.3437,0.2695,0.3868,1-1,A,0.3868
 558860,ded,2026-10-24,10,ADO Den Haag,SC Heerenveen,1.32,1.46,0.3281,0.28,0.3919,1-1,A,0.3919
 558859,ded,2026-10-25,10,Fortuna Sittard,SBV Excelsior,1.65,1.34,0.4362,0.2655,0.2983,1-1,H,0.4362
 558857,ded,2026-10-25,10,NEC,FC Groningen,1.96,1.33,0.5103,0.2418,0.2479,1-1,H,0.5103
-558858,ded,2026-10-25,10,PSV,Feyenoord Rotterdam,2.43,1.62,0.5489,0.2072,0.244,2-1,H,0.5489
+558858,ded,2026-10-25,10,PSV,Feyenoord Rotterdam,2.43,1.62,0.5489,0.2071,0.244,2-1,H,0.5489
 558856,ded,2026-10-25,10,Sparta Rotterdam,AFC Ajax,1.17,1.89,0.221,0.2475,0.5315,1-1,A,0.5315
 558855,ded,2026-10-25,10,AZ,FC Twente '65,1.52,1.24,0.4219,0.2796,0.2985,1-1,H,0.4219
 558854,ded,2026-10-31,11,Feyenoord Rotterdam,Fortuna Sittard,2.76,0.9,0.7531,0.1575,0.0894,2-0,H,0.7531
@@ -90,7 +90,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558770,ded,2027-01-22,20,SBV Excelsior,Fortuna Sittard,1.71,1.3,0.4594,0.2623,0.2783,1-1,H,0.4594
 558768,ded,2027-01-23,20,AFC Ajax,Telstar 1963,2.38,0.97,0.6768,0.1955,0.1277,2-0,H,0.6768
 558772,ded,2027-01-23,20,Feyenoord Rotterdam,PEC Zwolle,3.12,0.84,0.8141,0.1244,0.0615,3-0,H,0.8141
-558766,ded,2027-01-23,20,FC Twente '65,SC Heerenveen,1.86,1.04,0.5515,0.2504,0.1981,1-1,H,0.5515
+558766,ded,2027-01-23,20,FC Twente '65,SC Heerenveen,1.86,1.04,0.5515,0.2503,0.1981,1-1,H,0.5515
 558767,ded,2027-01-23,20,PSV,ADO Den Haag,3.53,0.87,0.8509,0.1001,0.0491,3-0,H,0.8509
 558769,ded,2027-01-24,20,AZ,FC Utrecht,1.87,1.18,0.5236,0.2494,0.227,1-1,H,0.5236
 558771,ded,2027-01-24,20,Sparta Rotterdam,FC Groningen,1.41,1.48,0.3472,0.2748,0.3779,1-1,A,0.3779
@@ -102,7 +102,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558761,ded,2027-01-30,21,Willem II Tilburg,PSV,0.92,3.28,0.0639,0.119,0.8171,0-3,A,0.8171
 558758,ded,2027-01-30,21,PEC Zwolle,Fortuna Sittard,1.51,1.45,0.3787,0.2704,0.351,1-1,H,0.3787
 558757,ded,2027-01-31,21,SC Heerenveen,AFC Ajax,1.36,1.69,0.2972,0.2622,0.4406,1-1,A,0.4406
-558759,ded,2027-01-31,21,FC Twente '65,SC Cambuur-Leeuwarden,2.43,0.92,0.6974,0.1877,0.1149,2-0,H,0.6974
+558759,ded,2027-01-31,21,FC Twente '65,SC Cambuur-Leeuwarden,2.43,0.92,0.6974,0.1877,0.115,2-0,H,0.6974
 558760,ded,2027-01-31,21,AZ,Feyenoord Rotterdam,1.47,1.65,0.3299,0.2612,0.4089,1-1,A,0.4089
 558764,ded,2027-01-31,21,FC Groningen,NEC,1.69,1.53,0.4062,0.256,0.3378,1-1,H,0.4062
 558808,ded,2027-02-06,16,FC Twente '65,Sparta Rotterdam,2.08,0.89,0.6363,0.2225,0.1412,2-0,H,0.6363
@@ -213,7 +213,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558653,ded,2027-05-16,33,PSV,NEC,3.1,1.28,0.7298,0.1509,0.1193,3-1,H,0.7298
 558656,ded,2027-05-16,33,FC Groningen,SC Cambuur-Leeuwarden,2.21,1.14,0.6062,0.2178,0.176,1-1,H,0.6062
 558648,ded,2027-05-16,33,AZ,PEC Zwolle,2.36,0.91,0.6874,0.1941,0.1185,2-0,H,0.6874
-558652,ded,2027-05-16,33,SBV Excelsior,ADO Den Haag,1.75,1.17,0.4955,0.2612,0.2432,1-1,H,0.4955
+558652,ded,2027-05-16,33,SBV Excelsior,ADO Den Haag,1.75,1.17,0.4955,0.2612,0.2433,1-1,H,0.4955
 558641,ded,2027-05-23,34,Sparta Rotterdam,Fortuna Sittard,1.57,1.28,0.4274,0.2737,0.2989,1-1,H,0.4274
 558643,ded,2027-05-23,34,PEC Zwolle,FC Twente '65,1.1,1.84,0.2133,0.2523,0.5343,1-1,A,0.5343
 558644,ded,2027-05-23,34,Feyenoord Rotterdam,FC Groningen,2.47,1.04,0.678,0.1901,0.1319,2-1,H,0.678
