@@ -1,34 +1,36 @@
-name: Daily update
+name: Ingest results
 
-# Keeps results, models and forecasts current across every league without
-# manual intervention.
+# Fetches match data only. No model fitting: the point is to pick up scores
+# soon after they settle, and refitting eight models for that would make every
+# run slower and the forecasts flicker through the day.
+#
+# Times are UTC and sit on an odd minute on purpose. GitHub queues scheduled
+# workflows, and the queue is deepest on the hour and half hour — the same
+# schedule written as :00 routinely lands hours late.
 on:
   schedule:
-    # 21:30 UTC — after the last European match of the day has finished and the
-    # result has settled.
-    - cron: "30 21 * * *"
-    # 06:00 UTC — catches late kick-offs, midweek fixtures and rescheduled games.
-    - cron: "0 6 * * *"
-  workflow_dispatch: # allows manual runs from the Actions tab
+    # Saturday and Sunday, every two hours across the European match day.
+    - cron: "17 11,13,15,17,19,21,23 * * 6,0"
+    # Tuesday and Wednesday evenings: Champions League.
+    - cron: "17 19,21,23 * * 2,3"
+    # Monday, Thursday and Friday: one late sweep for the odd evening fixture.
+    - cron: "17 23 * * 1,4,5"
+  workflow_dispatch:
 
-# Required so the workflow can commit refreshed data back to the repository.
 permissions:
   contents: write
 
-# A second run starting while the first is mid-commit would race on the same
-# files, so queue them instead.
+# Shared with the retraining workflow. Two jobs writing the same files would
+# race on the commit, so they queue instead.
 concurrency:
   group: data-update
   cancel-in-progress: false
 
 jobs:
-  update:
-    name: Fetch results and refresh forecasts
+  ingest:
+    name: Fetch latest results
     runs-on: ubuntu-latest
-    # Eight competitions, throttled to stay inside the API's rate limit, plus
-    # seven domestic fits and the cross-league fit. Well under this, but the
-    # ceiling stops a hung run burning minutes.
-    timeout-minutes: 20
+    timeout-minutes: 10
 
     steps:
       - name: Check out repository
@@ -50,26 +52,28 @@ jobs:
           FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
         run: python src/ingestion/fetch_matches.py
 
-      - name: Retrain domestic models and refresh forecasts
-        run: python src/models/train_and_forecast.py
-
-      # Runs after the domestic fits because it consumes their ratings: league
-      # strength is estimated with team parameters held fixed.
-      - name: Fit the cross-league model
-        run: python src/models/european_model.py --bootstrap 300
-
-      - name: Commit updated data
+      - name: Commit updated results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data/processed/ data/predictions/
+          git add data/processed/
 
-          # Exit cleanly when nothing changed — a no-op run is not a failure.
+          # Most runs find nothing new. Exiting here keeps the history readable
+          # and stops Vercel rebuilding for an identical dataset.
           if git diff --staged --quiet; then
-            echo "No new data. Nothing to commit."
+            echo "No new results. Nothing to commit."
             exit 0
           fi
 
-          git commit -m "data: refresh results and forecasts ($(date -u +'%Y-%m-%d %H:%M UTC'))"
-          git push
+          git commit -m "data: refresh results ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+
+          # The retraining workflow or a manual push can land in between.
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push; then
+              exit 0
+            fi
+            echo "Push attempt $attempt failed — retrying."
+            sleep 5
+          done
+          exit 1

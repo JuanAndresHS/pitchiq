@@ -1,0 +1,79 @@
+name: Retrain models
+
+# Fits every model once a day and republishes the forecasts.
+#
+# Fetches first rather than depending on the ingest workflow having run: eight
+# API calls cost a minute and remove an ordering assumption that would fail
+# silently the day a scheduled run is skipped.
+#
+# 03:47 UTC looks early for a job whose output is needed by 11:30, and that is
+# deliberate. Scheduled runs here are routinely delayed by hours, so the slack
+# is what guarantees every fixture has a logged forecast before kick-off.
+on:
+  schedule:
+    - cron: "47 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-update
+  cancel-in-progress: false
+
+jobs:
+  retrain:
+    name: Refit and forecast
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Fetch latest results
+        env:
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+        run: python src/ingestion/fetch_matches.py
+
+      - name: Retrain domestic models and refresh forecasts
+        run: python src/models/train_and_forecast.py
+
+      # Runs after the domestic fits because it consumes their ratings: league
+      # strength is estimated with team parameters held fixed.
+      - name: Fit the cross-league model
+        run: python src/models/european_model.py --bootstrap 300
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/processed/ data/predictions/
+
+          if git diff --staged --quiet; then
+            echo "No changes. Nothing to commit."
+            exit 0
+          fi
+
+          git commit -m "model: retrain and refresh forecasts ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push; then
+              exit 0
+            fi
+            echo "Push attempt $attempt failed — retrying."
+            sleep 5
+          done
+          exit 1
