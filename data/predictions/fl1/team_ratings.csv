@@ -1,25 +1,25 @@
 team,attack,defense,overall,matches
-Paris Saint-Germain FC,0.4935,0.1871,0.6805,109
-Racing Club de Lens,0.2293,0.0399,0.2691,109
-Lille OSC,0.0768,0.172,0.2488,109
-Olympique de Marseille,0.3161,-0.0822,0.2338,109
-Olympique Lyonnais,0.2153,0.0099,0.2252,109
-AS Monaco FC,0.2616,-0.0549,0.2067,109
-Stade Rennais FC 1901,0.2538,-0.1937,0.06,109
-RC Strasbourg Alsace,0.1971,-0.1559,0.0413,109
-Paris FC,0.0759,-0.0361,0.0397,41
-Toulouse FC,0.0726,-0.0962,-0.0236,108
-FC Lorient,-0.0191,-0.089,-0.1081,75
-Stade Brestois 29,0.0814,-0.2054,-0.1239,110
-OGC Nice,-0.0341,-0.1176,-0.1517,110
-AJ Auxerre,-0.0485,-0.167,-0.2156,75
-Stade de Reims,-0.2131,-0.0629,-0.276,68
-Le Mans FC,-0.0261,-0.2589,-0.285,7
-Clermont Foot 63,-0.2445,-0.1546,-0.3992,34
-Le Havre AC,-0.241,-0.1714,-0.4124,109
-FC Nantes,-0.2643,-0.1664,-0.4307,101
-Angers SCO,-0.2751,-0.2147,-0.4898,75
-AS Saint-Étienne,-0.1128,-0.4071,-0.5199,33
-Montpellier HSC,-0.2774,-0.3386,-0.6159,67
-ES Troyes AC,-0.2859,-0.3572,-0.6432,7
-FC Metz,-0.2312,-0.4331,-0.6643,68
+Paris Saint-Germain FC,0.4932,0.1873,0.6805,109
+Racing Club de Lens,0.2329,0.0407,0.2735,110
+Lille OSC,0.0766,0.1722,0.2488,109
+Olympique de Marseille,0.3157,-0.0819,0.2338,109
+Olympique Lyonnais,0.215,0.0103,0.2253,109
+AS Monaco FC,0.2614,-0.0545,0.2069,109
+Stade Rennais FC 1901,0.2534,-0.1933,0.0601,109
+RC Strasbourg Alsace,0.1969,-0.1554,0.0414,109
+Paris FC,0.0751,-0.0424,0.0327,42
+Toulouse FC,0.0724,-0.0958,-0.0234,108
+FC Lorient,-0.0194,-0.0885,-0.1079,75
+Stade Brestois 29,0.0813,-0.205,-0.1237,110
+OGC Nice,-0.0343,-0.1173,-0.1516,110
+AJ Auxerre,-0.0487,-0.1665,-0.2152,75
+Stade de Reims,-0.2129,-0.0625,-0.2755,68
+Le Mans FC,-0.0264,-0.2583,-0.2847,7
+Clermont Foot 63,-0.2443,-0.1543,-0.3986,34
+Le Havre AC,-0.2411,-0.1711,-0.4122,109
+FC Nantes,-0.2643,-0.166,-0.4304,101
+Angers SCO,-0.2751,-0.2144,-0.4895,75
+AS Saint-Étienne,-0.1128,-0.4066,-0.5194,33
+Montpellier HSC,-0.2771,-0.3381,-0.6152,67
+ES Troyes AC,-0.2859,-0.3564,-0.6423,7
+FC Metz,-0.2314,-0.4328,-0.6641,68
