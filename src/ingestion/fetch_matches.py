@@ -144,7 +144,6 @@ def normalize_matches(matches: list[dict], league: League) -> pd.DataFrame:
     df["result"] = df.apply(encode_result, axis=1)
     df["total_goals"] = df["home_goals"] + df["away_goals"]
     df["goal_difference"] = df["home_goals"] - df["away_goals"]
-    df["ingested_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
     return df.sort_values("utc_date").reset_index(drop=True)
 
