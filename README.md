@@ -61,7 +61,25 @@ Two more leagues — Portugal's Primeira Liga and the Dutch Eredivisie — are m
 
 ---
 
-## Four findings
+## Five findings
+
+### The model covers three quarters of the distance to the betting market
+
+Beating a naive baseline proves a model learned something. It says nothing about whether what it learned is any good. The honest yardstick is the closing line, which prices in team news, lineups, and the judgement of people with money at stake.
+
+Measured on 1,751 matches of the 2025/26 season — the same held-out season used everywhere else here — against closing odds with the bookmaker's margin removed:
+
+|  | baseline | model | market |
+| --- | --- | --- | --- |
+| Accuracy | 44.0% | 51.2% | **53.5%** |
+| Log-loss | 1.0729 | 1.0056 | **0.9773** |
+| RPS | 0.2293 | 0.2062 | **0.1976** |
+
+The model loses, as it should. It knows goals, teams and dates; the market knows who is injured. The informative number is the distance — **0.0086 of RPS and 2.3 points of accuracy** — which closes **72.8%** of the gap between doing nothing and the closing line.
+
+That remaining gap is a measurement of what the model cannot see, and it is not uniform: 79% of the distance covered in the Premier League and 78% in the Bundesliga, against 65% in Serie A and 66% in Ligue 1. Squad information appears to be worth more in some competitions than in others.
+
+Reproduce with `python src/models/benchmark_market.py`.
 
 ### The Premier League is the hardest of the five to forecast
 
@@ -249,6 +267,10 @@ python src/models/evaluate_european.py
 # Check how well European fixtures connect the leagues
 python src/models/analyse_european.py
 
+# Benchmark against bookmakers' closing odds (offline, run by hand)
+python src/models/benchmark_market.py --download
+python src/models/benchmark_market.py
+
 # Run the site
 cd web && npm run dev
 ```
@@ -265,10 +287,12 @@ Reproduce the analysis from scratch with the notebooks, in order:
 ```
 pitchiq/
 ├── .github/workflows/
-│   └── ingest.yml              # Twice-daily pipeline
+│   ├── ingest.yml              # Results, several times a day
+│   └── model.yml               # Refit and forecast, once a day
 ├── data/
 │   ├── processed/              # <competition>_matches_<season>.csv
-│   └── predictions/<slug>/     # ratings, forecasts, log, params
+│   ├── predictions/<slug>/     # ratings, forecasts, log, params
+│   └── external/               # Closing odds + team-name aliases
 ├── notebooks/
 ├── src/
 │   ├── leagues.py              # Single source of truth for competitions
@@ -278,7 +302,8 @@ pitchiq/
 │   │   ├── evaluate.py              # Domestic evaluation + ridge sweep
 │   │   ├── european_model.py        # Cross-league calibration
 │   │   ├── evaluate_european.py     # European evaluation with cutoff refit
-│   │   └── analyse_european.py      # Connectivity report
+│   │   ├── analyse_european.py      # Connectivity report
+│   │   └── benchmark_market.py      # Model against the closing line
 │   └── agent/                  # CLI agent (Python)
 └── web/
     ├── app/
@@ -326,6 +351,7 @@ These are stated rather than buried, because a forecasting system that overstate
 - [x] Append-only prediction log
 - [x] Expansion to five leagues
 - [x] Cross-league calibration and Champions League forecasts
+- [x] Benchmark against the betting market's closing odds
 - [ ] Live accuracy tracked across a full season
 - [ ] Europa League and Conference League as further calibration data
 - [ ] Expected goals (xG) from event-level data
@@ -336,6 +362,9 @@ These are stated rather than buried, because a forecasting system that overstate
 ## Data sources & attribution
 
 - **[football-data.org](https://www.football-data.org/)** — fixtures, results and standings for all eight competitions
+- **[football-data.co.uk](https://www.football-data.co.uk/)** — historical closing odds, used only to benchmark the model and never as a model input
+
+The odds site was unreachable from two networks while this benchmark was built, so the files come from a community GitHub mirror. A mirror is somebody else's copy, so it is not taken on faith: every scoreline it supplies is checked against the independently ingested football-data.org results before a single metric is computed. All 1,751 agree, and the count is stored in `data/predictions/market_benchmark.json` alongside the figures.
 
 This is an independent, non-commercial project built for learning and portfolio purposes. It is not affiliated with UEFA, any league or any club.
 

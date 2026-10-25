@@ -1,0 +1,159 @@
+{
+  "leagues": [
+    {
+      "league": "pl",
+      "name": "Premier League",
+      "test_season": 2025,
+      "matches": 380,
+      "coverage": 1.0,
+      "odds": "market average closing",
+      "devig": "proportional",
+      "scorelines_verified": 380,
+      "scorelines_disagreeing": 0,
+      "baseline": {
+        "accuracy": 0.4263157894736842,
+        "log_loss": 1.085174234704821,
+        "rps": 0.22794754155124655
+      },
+      "model": {
+        "accuracy": 0.4789473684210526,
+        "log_loss": 1.0286187433055392,
+        "rps": 0.20931485632407912
+      },
+      "market": {
+        "accuracy": 0.49473684210526314,
+        "log_loss": 1.0117668726695337,
+        "rps": 0.20449146861486855
+      },
+      "skill_closed": 0.7944
+    },
+    {
+      "league": "pd",
+      "name": "LaLiga",
+      "test_season": 2025,
+      "matches": 380,
+      "coverage": 1.0,
+      "odds": "market average closing",
+      "devig": "proportional",
+      "scorelines_verified": 380,
+      "scorelines_disagreeing": 0,
+      "baseline": {
+        "accuracy": 0.48947368421052634,
+        "log_loss": 1.0508862823270697,
+        "rps": 0.22391966759002768
+      },
+      "model": {
+        "accuracy": 0.531578947368421,
+        "log_loss": 0.9859661521456342,
+        "rps": 0.20227786611717954
+      },
+      "market": {
+        "accuracy": 0.5447368421052632,
+        "log_loss": 0.9649804790839724,
+        "rps": 0.19577860587019877
+      },
+      "skill_closed": 0.769
+    },
+    {
+      "league": "sa",
+      "name": "Serie A",
+      "test_season": 2025,
+      "matches": 380,
+      "coverage": 1.0,
+      "odds": "market average closing",
+      "devig": "proportional",
+      "scorelines_verified": 380,
+      "scorelines_disagreeing": 0,
+      "baseline": {
+        "accuracy": 0.3894736842105263,
+        "log_loss": 1.0905648143261948,
+        "rps": 0.23393351800554013
+      },
+      "model": {
+        "accuracy": 0.5105263157894737,
+        "log_loss": 1.0213422963724574,
+        "rps": 0.20942637571899897
+      },
+      "market": {
+        "accuracy": 0.5394736842105263,
+        "log_loss": 0.9784381328582251,
+        "rps": 0.19612249491547956
+      },
+      "skill_closed": 0.6481
+    },
+    {
+      "league": "bl1",
+      "name": "Bundesliga",
+      "test_season": 2025,
+      "matches": 306,
+      "coverage": 1.0,
+      "odds": "market average closing",
+      "devig": "proportional",
+      "scorelines_verified": 306,
+      "scorelines_disagreeing": 0,
+      "baseline": {
+        "accuracy": 0.43790849673202614,
+        "log_loss": 1.0717678700040019,
+        "rps": 0.23172268926321146
+      },
+      "model": {
+        "accuracy": 0.5424836601307189,
+        "log_loss": 0.9790745346393899,
+        "rps": 0.19910699335642873
+      },
+      "market": {
+        "accuracy": 0.565359477124183,
+        "log_loss": 0.9510054747507788,
+        "rps": 0.19005719163177381
+      },
+      "skill_closed": 0.7828
+    },
+    {
+      "league": "fl1",
+      "name": "Ligue 1",
+      "test_season": 2025,
+      "matches": 305,
+      "coverage": 1.0,
+      "odds": "market average closing",
+      "devig": "proportional",
+      "scorelines_verified": 305,
+      "scorelines_disagreeing": 0,
+      "baseline": {
+        "accuracy": 0.46229508196721314,
+        "log_loss": 1.0642932893396126,
+        "rps": 0.22961821938409177
+      },
+      "model": {
+        "accuracy": 0.5016393442622951,
+        "log_loss": 1.0084712186680929,
+        "rps": 0.21031569380144102
+      },
+      "market": {
+        "accuracy": 0.5377049180327869,
+        "log_loss": 0.9744267393912591,
+        "rps": 0.20056224549193008
+      },
+      "skill_closed": 0.6643
+    }
+  ],
+  "overall": {
+    "baseline": {
+      "accuracy": 0.44031981724728725,
+      "log_loss": 1.0729229282614956,
+      "rps": 0.22932323023556833
+    },
+    "model": {
+      "accuracy": 0.5122786978869217,
+      "log_loss": 1.0056155694953748,
+      "rps": 0.20620233231148177
+    },
+    "market": {
+      "accuracy": 0.5351227869788692,
+      "log_loss": 0.9772577469677499,
+      "rps": 0.19757747680557924
+    },
+    "matches": 1751,
+    "skill_closed": 0.7283
+  },
+  "devig": "proportional"
+}

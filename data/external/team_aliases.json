@@ -1,0 +1,17 @@
+{
+  "bl1": {
+    "M'gladbach": "Borussia Mönchengladbach"
+  },
+  "fl1": {
+    "Paris SG": "Paris Saint-Germain FC",
+    "Rennes": "Stade Rennais FC 1901"
+  },
+  "pd": {
+    "Ath Bilbao": "Athletic Club",
+    "Ath Madrid": "Club Atlético de Madrid",
+    "Espanol": "RCD Espanyol de Barcelona"
+  },
+  "pl": {
+    "Wolves": "Wolverhampton Wanderers FC"
+  }
+}
