@@ -78,7 +78,7 @@ match_id,league,league_name,season,matchday,utc_date,status,stage,home_team,home
 560613,pl,Premier League,2026,8,2026-10-25 14:00:00+00:00,FINISHED,REGULAR_SEASON,Crystal Palace FC,354,Newcastle United FC,67,0.0,2.0,0.0,0.0,AWAY_TEAM,,2026-10-25,A,2.0,-2.0
 560615,pl,Premier League,2026,8,2026-10-25 14:00:00+00:00,FINISHED,REGULAR_SEASON,Manchester United FC,66,AFC Bournemouth,1044,0.0,3.0,0.0,2.0,AWAY_TEAM,,2026-10-25,A,3.0,-3.0
 560619,pl,Premier League,2026,8,2026-10-25 14:00:00+00:00,FINISHED,REGULAR_SEASON,Hull City AFC,322,Brentford FC,402,1.0,1.0,1.0,0.0,DRAW,,2026-10-25,D,2.0,0.0
-560621,pl,Premier League,2026,8,2026-10-25 16:30:00+00:00,IN_PLAY,REGULAR_SEASON,Sunderland AFC,71,Leeds United FC,341,0.0,0.0,,,DRAW,,2026-10-25,D,0.0,0.0
+560621,pl,Premier League,2026,8,2026-10-25 16:30:00+00:00,FINISHED,REGULAR_SEASON,Sunderland AFC,71,Leeds United FC,341,0.0,0.0,0.0,0.0,DRAW,,2026-10-25,D,0.0,0.0
 560626,pl,Premier League,2026,9,2026-10-31 12:30:00+00:00,TIMED,REGULAR_SEASON,Chelsea FC,61,Manchester United FC,66,,,,,,,2026-10-31,,,
 560630,pl,Premier League,2026,9,2026-10-31 15:00:00+00:00,TIMED,REGULAR_SEASON,Brentford FC,402,Nottingham Forest FC,351,,,,,,,2026-10-31,,,
 560629,pl,Premier League,2026,9,2026-10-31 15:00:00+00:00,TIMED,REGULAR_SEASON,Hull City AFC,322,Ipswich Town FC,349,,,,,,,2026-10-31,,,
