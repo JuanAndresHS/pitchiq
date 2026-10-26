@@ -61,7 +61,7 @@ Two more leagues — Portugal's Primeira Liga and the Dutch Eredivisie — are m
 
 ---
 
-## Five findings
+## Six findings
 
 ### The model covers three quarters of the distance to the betting market
 
@@ -102,6 +102,16 @@ In European fixtures it jumps to **1.49×**, larger than any domestic league. In
 The cross-league model ranks the Premier League above LaLiga, Ligue 1, the Bundesliga and Serie A — but the bootstrap intervals for the first three overlap heavily. Refitting behind a different cutoff swaps LaLiga and Ligue 1 in the order.
 
 That instability is the point. With a few hundred European matches spread across eight groups, the model can separate the Premier League from Serie A and cannot separate it from Ligue 1. The site reports both facts, and the assistant refuses to rank leagues whose intervals overlap.
+
+### The data source goes backwards, and nothing was watching for it
+
+On the night of 25 October 2026 a routine ingestion turned **31 finished matches across eight competitions back into unplayed fixtures**, scores blanked — results this same pipeline had recorded correctly four hours earlier. The upstream API had simply gone back to reporting them as `TIMED`.
+
+Every run overwrote the season's file with the current response. That assumes a source only ever moves forward, and this one does not. The consequence is not cosmetic: a match that stops being finished leaves the training set, reappears among the forecasts as an upcoming fixture, and drops out of the track record — so the site advertises a prediction for a match that has already been played.
+
+It had been possible for months and stayed invisible, because retraining ran on every ingestion and the following run usually repaired the damage before anyone looked. Splitting ingestion from retraining is what let it surface.
+
+The fix is monotonic ingestion: **a match that is finished, with goals, stays finished**. The API remains the authority for everything else — kick-off times, venues, even a corrected scoreline on a match that is still finished — but it cannot un-play a game. Regressions are counted and logged rather than silently absorbed, so the next one is visible while it happens.
 
 ---
 
@@ -329,6 +339,8 @@ The models know goals, teams and dates. They do not know about:
 - **Managerial changes** — a rating built on four seasons assumes continuity
 - **Fixture congestion** — midweek European matches are a systematic disadvantage the model cannot see
 - **Newly promoted teams** — they carry the least reliable ratings until matches accumulate
+
+The upstream feed is also not always right. It has reported finished matches as unplayed hours after the final whistle, and has lagged by a full day on some competitions while being current on others. Ingestion is monotonic to stop the first failure mode destroying recorded results, but nothing can make a result appear before the source publishes it.
 
 Two limitations are specific to the cross-league model:
 
