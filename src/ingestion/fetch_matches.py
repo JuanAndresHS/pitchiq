@@ -187,6 +187,88 @@ def validate(df: pd.DataFrame, league: League) -> None:
 # --- Load --------------------------------------------------------------------
 
 
+def protect_finished(
+    df: pd.DataFrame, league: League, season: int, allow_regressions: bool = False
+) -> pd.DataFrame:
+    """Never let a recorded result go back to being an unplayed fixture.
+
+    Each run overwrites the season's CSV with whatever the API says at that
+    moment, which assumes the API only ever moves forward. It does not. On the
+    night of 2026-10-25 one sweep turned 31 finished matches across eight
+    competitions back into `TIMED` with their scores blanked — results that had
+    been recorded correctly four hours earlier.
+
+    The damage is not cosmetic. A match that stops being finished leaves the
+    training set, reappears among the forecasts as an upcoming fixture, and
+    drops out of the track record. The site then advertises a prediction for a
+    match that has already been played.
+
+    So the merge is one-directional: a match that is finished, with goals, stays
+    finished. Everything else the API says is taken as given, including a
+    corrected scoreline on a match that is still finished.
+    """
+    path = OUTPUT_DIR / matches_filename(league, season)
+    if df.empty or not path.exists():
+        return df
+
+    try:
+        previous = pd.read_csv(path)
+    except (pd.errors.ParserError, OSError) as exc:
+        logger.warning("Could not read the previous %s: %s", path.name, exc)
+        return df
+
+    required = {"match_id", "status", "home_goals", "away_goals"}
+    if not required.issubset(previous.columns):
+        return df
+
+    settled = previous[
+        (previous["status"] == "FINISHED")
+        & previous["home_goals"].notna()
+        & previous["away_goals"].notna()
+    ]
+    if settled.empty:
+        return df
+
+    current = df.set_index("match_id")
+    # Align to the new schema: a column added or dropped since the file was
+    # written must not come back through the side door.
+    recorded = settled.set_index("match_id").reindex(columns=current.columns)
+
+    shared = recorded.index.intersection(current.index)
+    downgraded = shared[
+        (current.loc[shared, "status"] != "FINISHED")
+        | current.loc[shared, "home_goals"].isna()
+        | current.loc[shared, "away_goals"].isna()
+    ]
+    vanished = recorded.index.difference(current.index)
+
+    at_risk = len(downgraded) + len(vanished)
+    if at_risk == 0:
+        return df
+
+    if allow_regressions:
+        logger.warning(
+            "%s: %s recorded result(s) un-finished by this fetch, kept as the "
+            "API reports them (--allow-regressions).",
+            league.name,
+            at_risk,
+        )
+        return df
+
+    logger.warning(
+        "%s: the API un-finished %s already-recorded result(s). Keeping ours.",
+        league.name,
+        at_risk,
+    )
+
+    if len(downgraded) > 0:
+        current.loc[downgraded] = recorded.loc[downgraded]
+    if len(vanished) > 0:
+        current = pd.concat([current, recorded.loc[vanished]])
+
+    return current.reset_index().sort_values("utc_date").reset_index(drop=True)
+
+
 def save(df: pd.DataFrame, league: League, season: int) -> Path:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     output_path = OUTPUT_DIR / matches_filename(league, season)
@@ -220,6 +302,14 @@ def main() -> int:
         metavar="CODE",
         help=f"Which leagues to fetch. Default: all ({', '.join(all_codes())}).",
     )
+    parser.add_argument(
+        "--allow-regressions",
+        action="store_true",
+        help=(
+            "Let the API un-finish matches that are already recorded. Only for "
+            "the rare case where a result was genuinely annulled."
+        ),
+    )
     args = parser.parse_args()
 
     load_dotenv()
@@ -249,6 +339,7 @@ def main() -> int:
             continue
 
         df = normalize_matches(raw, league)
+        df = protect_finished(df, league, args.season, args.allow_regressions)
         validate(df, league)
 
         if df.empty:
