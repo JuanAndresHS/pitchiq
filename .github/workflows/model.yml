@@ -6,12 +6,17 @@ name: Retrain models
 # API calls cost a minute and remove an ordering assumption that would fail
 # silently the day a scheduled run is skipped.
 #
-# 03:47 UTC looks early for a job whose output is needed by 11:30, and that is
-# deliberate. Scheduled runs here are routinely delayed by hours, so the slack
-# is what guarantees every fixture has a logged forecast before kick-off.
+# Twice a day, bracketing the football.
+#
+# The morning run is what guarantees every fixture has a logged forecast
+# standing before kick-off, which is what makes the prediction log auditable.
+# The night run is what makes the fixture list advance the same evening a round
+# ends: ingestion alone refreshes results, but the upcoming fixtures and the
+# ratings behind them only move when the models are refit.
 on:
   schedule:
     - cron: "47 3 * * *"
+    - cron: "47 23 * * *"
   workflow_dispatch:
 
 permissions:
