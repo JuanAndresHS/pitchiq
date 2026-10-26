@@ -39,6 +39,20 @@ THROTTLE_SECONDS = 7
 
 OUTPUT_DIR = PROJECT_ROOT / "data" / "processed"
 
+# What it means for a match to have been played. These are the only fields
+# restored when the API un-finishes a result that is already on record.
+OUTCOME_COLUMNS = [
+    "status",
+    "home_goals",
+    "away_goals",
+    "home_goals_ht",
+    "away_goals_ht",
+    "winner",
+    "result",
+    "total_goals",
+    "goal_difference",
+]
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(levelname)-8s | %(message)s",
@@ -261,10 +275,21 @@ def protect_finished(
         at_risk,
     )
 
-    if len(downgraded) > 0:
-        current.loc[downgraded] = recorded.loc[downgraded]
+    # Only the outcome is restored. Kick-off times, venues and matchday numbers
+    # are the API's to correct, and copying whole rows back meant copying their
+    # dtypes too — a column read from CSV as empty floats landing in a column of
+    # strings, which pandas rejects outright.
+    for column in OUTCOME_COLUMNS:
+        if column in current.columns and column in recorded.columns:
+            current.loc[downgraded, column] = recorded.loc[downgraded, column]
+
     if len(vanished) > 0:
-        current = pd.concat([current, recorded.loc[vanished]])
+        revived = recorded.loc[vanished].copy()
+        if pd.api.types.is_datetime64_any_dtype(current["utc_date"].dtype):
+            revived["utc_date"] = pd.to_datetime(
+                revived["utc_date"], utc=True, errors="coerce"
+            )
+        current = pd.concat([current, revived])
 
     return current.reset_index().sort_values("utc_date").reset_index(drop=True)
 
