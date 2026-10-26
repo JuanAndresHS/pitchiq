@@ -35,7 +35,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 560646,pl,2026-11-22,11,Hull City AFC,Brighton & Hove Albion FC,1.15,1.2,0.3352,0.304,0.3609,1-1,A,0.3609
 560649,pl,2026-11-23,11,Brentford FC,Everton FC,1.5,1.0,0.477,0.2814,0.2416,1-1,H,0.477
 560658,pl,2026-11-27,12,Nottingham Forest FC,Chelsea FC,1.41,1.38,0.3697,0.2742,0.3561,1-1,H,0.3697
-560653,pl,2026-11-28,12,Ipswich Town FC,Aston Villa FC,1.24,1.84,0.2492,0.2473,0.5036,1-1,A,0.5036
+560653,pl,2026-11-28,12,Ipswich Town FC,Aston Villa FC,1.24,1.84,0.2492,0.2472,0.5036,1-1,A,0.5036
 560652,pl,2026-11-28,12,Leeds United FC,Coventry City FC,1.59,0.76,0.5597,0.2716,0.1687,1-0,H,0.5597
 560655,pl,2026-11-28,12,Manchester United FC,Brentford FC,1.68,1.32,0.4476,0.2587,0.2937,1-1,H,0.4476
 560656,pl,2026-11-29,12,Everton FC,Liverpool FC,1.14,1.37,0.3011,0.2897,0.4092,1-1,A,0.4092
@@ -67,7 +67,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 560689,pl,2026-12-12,15,Manchester City FC,Chelsea FC,2.27,1.09,0.6312,0.2064,0.1624,2-1,H,0.6312
 560691,pl,2026-12-12,15,Fulham FC,Brentford FC,1.34,1.31,0.365,0.283,0.352,1-1,H,0.365
 560690,pl,2026-12-12,15,Liverpool FC,Leeds United FC,1.75,1.03,0.5323,0.2556,0.2121,1-1,H,0.5323
-560686,pl,2026-12-12,15,Ipswich Town FC,Newcastle United FC,1.4,1.93,0.2701,0.2387,0.4911,1-1,A,0.4911
+560686,pl,2026-12-12,15,Ipswich Town FC,Newcastle United FC,1.4,1.93,0.2702,0.2387,0.4911,1-1,A,0.4911
 560688,pl,2026-12-13,15,Arsenal FC,AFC Bournemouth,1.98,0.74,0.6559,0.2215,0.1226,2-0,H,0.6559
 560687,pl,2026-12-13,15,Coventry City FC,Aston Villa FC,1.01,1.46,0.2502,0.2855,0.4643,1-1,A,0.4643
 560682,pl,2026-12-13,15,Sunderland AFC,Nottingham Forest FC,1.14,1.09,0.3565,0.3128,0.3307,1-1,H,0.3565
@@ -92,7 +92,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 560702,pl,2026-12-26,17,Aston Villa FC,Leeds United FC,1.49,1.1,0.4509,0.2806,0.2685,1-1,H,0.4509
 560708,pl,2026-12-26,17,Fulham FC,Brighton & Hove Albion FC,1.24,1.44,0.3137,0.2797,0.4066,1-1,A,0.4066
 560706,pl,2026-12-27,17,Coventry City FC,Chelsea FC,1.08,1.63,0.241,0.2674,0.4916,1-1,A,0.4916
-560703,pl,2026-12-27,17,Manchester United FC,Nottingham Forest FC,1.6,1.08,0.4835,0.2708,0.2457,1-1,H,0.4835
+560703,pl,2026-12-27,17,Manchester United FC,Nottingham Forest FC,1.6,1.08,0.4836,0.2708,0.2457,1-1,H,0.4836
 560704,pl,2026-12-27,17,Crystal Palace FC,Arsenal FC,0.8,1.7,0.1634,0.2573,0.5793,0-1,A,0.5793
 560716,pl,2026-12-29,18,Hull City AFC,Leeds United FC,1.13,0.92,0.393,0.3253,0.2817,1-1,H,0.393
 560719,pl,2026-12-29,18,Tottenham Hotspur FC,Brighton & Hove Albion FC,1.35,1.62,0.3109,0.2622,0.4269,1-1,A,0.4269
@@ -141,7 +141,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 560758,pl,2027-01-23,22,Fulham FC,Aston Villa FC,1.3,1.27,0.3628,0.2881,0.3491,1-1,H,0.3628
 560753,pl,2027-01-23,22,Everton FC,Brentford FC,1.25,1.2,0.3642,0.2957,0.34,1-1,H,0.3642
 560752,pl,2027-01-23,22,Ipswich Town FC,Hull City AFC,1.04,1.4,0.2685,0.2914,0.4401,1-1,A,0.4401
-560756,pl,2027-01-23,22,Arsenal FC,Newcastle United FC,2.11,0.8,0.6688,0.2093,0.1218,2-0,H,0.6688
+560756,pl,2027-01-23,22,Arsenal FC,Newcastle United FC,2.11,0.8,0.6689,0.2093,0.1218,2-0,H,0.6689
 560755,pl,2027-01-23,22,Nottingham Forest FC,AFC Bournemouth,1.39,1.21,0.4007,0.2847,0.3146,1-1,H,0.4007
 560754,pl,2027-01-23,22,Sunderland AFC,Coventry City FC,1.34,0.83,0.4765,0.3033,0.2202,1-0,H,0.4765
 560769,pl,2027-01-30,23,Liverpool FC,Everton FC,1.71,0.91,0.5518,0.2586,0.1896,1-1,H,0.5518
@@ -170,7 +170,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 560788,pl,2027-02-10,25,Fulham FC,Nottingham Forest FC,1.28,1.07,0.4003,0.302,0.2977,1-1,H,0.4003
 560787,pl,2027-02-10,25,Newcastle United FC,Chelsea FC,1.77,1.58,0.4164,0.2448,0.3388,1-1,H,0.4164
 560786,pl,2027-02-10,25,Crystal Palace FC,Brentford FC,1.37,1.48,0.3399,0.2712,0.389,1-1,A,0.389
-560785,pl,2027-02-10,25,Aston Villa FC,AFC Bournemouth,1.66,1.23,0.4641,0.2621,0.2738,1-1,H,0.4641
+560785,pl,2027-02-10,25,Aston Villa FC,AFC Bournemouth,1.66,1.23,0.4641,0.262,0.2738,1-1,H,0.4641
 560784,pl,2027-02-10,25,Hull City AFC,Sunderland AFC,1.23,0.78,0.4583,0.3193,0.2223,1-0,H,0.4583
 560783,pl,2027-02-10,25,Coventry City FC,Liverpool FC,0.95,1.72,0.1971,0.2582,0.5447,1-1,A,0.5447
 560782,pl,2027-02-10,25,Everton FC,Leeds United FC,1.15,1.01,0.3752,0.3176,0.3071,1-1,H,0.3752
@@ -181,7 +181,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 560797,pl,2027-02-20,26,Arsenal FC,Fulham FC,1.89,0.63,0.6678,0.2254,0.1068,2-0,H,0.6678
 560795,pl,2027-02-20,26,Chelsea FC,Ipswich Town FC,2.56,1.06,0.6901,0.1799,0.13,2-1,H,0.6901
 560794,pl,2027-02-20,26,Brentford FC,Coventry City FC,1.89,0.83,0.6125,0.2366,0.1509,2-0,H,0.6125
-560793,pl,2027-02-20,26,AFC Bournemouth,Crystal Palace FC,1.74,1.12,0.5099,0.2565,0.2336,1-1,H,0.5099
+560793,pl,2027-02-20,26,AFC Bournemouth,Crystal Palace FC,1.74,1.12,0.51,0.2565,0.2336,1-1,H,0.51
 560792,pl,2027-02-20,26,Manchester City FC,Newcastle United FC,2.39,1.03,0.6681,0.193,0.1389,2-1,H,0.6681
 560796,pl,2027-02-20,26,Liverpool FC,Hull City AFC,1.55,0.9,0.5145,0.2769,0.2086,1-1,H,0.5145
 560808,pl,2027-02-27,27,Aston Villa FC,Chelsea FC,1.69,1.41,0.4318,0.2556,0.3127,1-1,H,0.4318
@@ -245,7 +245,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 560855,pl,2027-04-17,32,Nottingham Forest FC,Liverpool FC,1.25,1.46,0.3118,0.278,0.4102,1-1,A,0.4102
 560856,pl,2027-04-17,32,Hull City AFC,Coventry City FC,1.39,0.68,0.531,0.2979,0.1711,1-0,H,0.531
 560867,pl,2027-04-24,33,Nottingham Forest FC,Sunderland AFC,1.36,0.91,0.4604,0.2994,0.2403,1-1,H,0.4604
-560871,pl,2027-04-24,33,Leeds United FC,Liverpool FC,1.29,1.4,0.3339,0.2802,0.3858,1-1,A,0.3858
+560871,pl,2027-04-24,33,Leeds United FC,Liverpool FC,1.29,1.4,0.3339,0.2802,0.3859,1-1,A,0.3859
 560870,pl,2027-04-24,33,Brentford FC,Fulham FC,1.64,1.07,0.4953,0.2666,0.2381,1-1,H,0.4953
 560869,pl,2027-04-24,33,Aston Villa FC,Coventry City FC,1.83,0.81,0.6056,0.2426,0.1518,1-0,H,0.6056
 560868,pl,2027-04-24,33,Newcastle United FC,Ipswich Town FC,2.41,1.12,0.6514,0.1951,0.1535,2-1,H,0.6514
@@ -255,7 +255,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 560864,pl,2027-04-24,33,Tottenham Hotspur FC,Hull City AFC,1.19,1.09,0.3708,0.3088,0.3204,1-1,H,0.3708
 560866,pl,2027-04-24,33,Everton FC,Brighton & Hove Albion FC,1.16,1.32,0.3148,0.2931,0.3921,1-1,A,0.3921
 560874,pl,2027-05-01,34,Coventry City FC,Manchester United FC,1.03,1.51,0.2471,0.2807,0.4721,1-1,A,0.4721
-560872,pl,2027-05-01,34,Sunderland AFC,Newcastle United FC,1.3,1.36,0.3456,0.282,0.3723,1-1,A,0.3723
+560872,pl,2027-05-01,34,Sunderland AFC,Newcastle United FC,1.3,1.36,0.3457,0.282,0.3723,1-1,A,0.3723
 560873,pl,2027-05-01,34,Brighton & Hove Albion FC,Nottingham Forest FC,1.76,1.01,0.5388,0.2548,0.2065,1-1,H,0.5388
 560876,pl,2027-05-01,34,Manchester City FC,Brentford FC,2.19,1.01,0.6346,0.2107,0.1547,2-1,H,0.6346
 560875,pl,2027-05-01,34,Hull City AFC,AFC Bournemouth,1.26,1.03,0.4051,0.305,0.2898,1-1,H,0.4051
@@ -278,7 +278,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 560894,pl,2027-05-15,36,Ipswich Town FC,Manchester City FC,0.96,2.47,0.1203,0.1823,0.6974,0-2,A,0.6974
 560895,pl,2027-05-15,36,Arsenal FC,Nottingham Forest FC,1.85,0.64,0.6549,0.232,0.1131,1-0,H,0.6549
 560892,pl,2027-05-15,36,Sunderland AFC,AFC Bournemouth,1.22,1.26,0.3428,0.2939,0.3633,1-1,A,0.3633
-560893,pl,2027-05-15,36,Liverpool FC,Brentford FC,1.91,1.23,0.5252,0.2407,0.2341,1-1,H,0.5252
+560893,pl,2027-05-15,36,Liverpool FC,Brentford FC,1.91,1.23,0.5253,0.2407,0.2341,1-1,H,0.5253
 560897,pl,2027-05-15,36,Manchester United FC,Leeds United FC,1.53,1.11,0.4585,0.2761,0.2653,1-1,H,0.4585
 560896,pl,2027-05-15,36,Hull City AFC,Fulham FC,1.21,0.87,0.4273,0.3189,0.2538,1-1,H,0.4273
 560899,pl,2027-05-15,36,Aston Villa FC,Newcastle United FC,1.77,1.33,0.4705,0.2511,0.2784,1-1,H,0.4705
@@ -290,7 +290,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 560907,pl,2027-05-23,37,Nottingham Forest FC,Ipswich Town FC,1.92,0.98,0.5858,0.2368,0.1774,1-1,H,0.5858
 560909,pl,2027-05-23,37,Fulham FC,Coventry City FC,1.5,0.81,0.5249,0.2828,0.1923,1-0,H,0.5249
 560903,pl,2027-05-23,37,Newcastle United FC,Crystal Palace FC,1.88,1.19,0.5241,0.244,0.2319,1-1,H,0.5241
-560904,pl,2027-05-23,37,Tottenham Hotspur FC,Manchester United FC,1.44,1.47,0.3598,0.2678,0.3723,1-1,A,0.3723
+560904,pl,2027-05-23,37,Tottenham Hotspur FC,Manchester United FC,1.44,1.47,0.3599,0.2678,0.3723,1-1,A,0.3723
 560902,pl,2027-05-23,37,Brentford FC,Hull City AFC,1.36,0.99,0.4421,0.2965,0.2614,1-1,H,0.4421
 560906,pl,2027-05-23,37,Brighton & Hove Albion FC,Liverpool FC,1.68,1.42,0.4294,0.2557,0.3149,1-1,H,0.4294
 560905,pl,2027-05-23,37,Leeds United FC,Sunderland AFC,1.41,0.88,0.4826,0.2946,0.2228,1-1,H,0.4826
@@ -298,9 +298,9 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 560916,pl,2027-05-30,38,Aston Villa FC,Tottenham Hotspur FC,1.78,1.14,0.5153,0.2524,0.2324,1-1,H,0.5153
 560918,pl,2027-05-30,38,Manchester United FC,Fulham FC,1.64,1.06,0.4981,0.2672,0.2347,1-1,H,0.4981
 560917,pl,2027-05-30,38,Hull City AFC,Newcastle United FC,1.35,1.11,0.411,0.293,0.296,1-1,H,0.411
-560915,pl,2027-05-30,38,Coventry City FC,Nottingham Forest FC,0.99,1.23,0.286,0.3107,0.4032,1-1,A,0.4032
+560915,pl,2027-05-30,38,Coventry City FC,Nottingham Forest FC,0.99,1.23,0.286,0.3107,0.4033,1-1,A,0.4033
 560919,pl,2027-05-30,38,Sunderland AFC,Manchester City FC,0.9,1.75,0.1813,0.2544,0.5643,1-1,A,0.5643
 560913,pl,2027-05-30,38,Arsenal FC,Brighton & Hove Albion FC,1.79,0.86,0.584,0.2483,0.1677,1-1,H,0.584
 560912,pl,2027-05-30,38,Ipswich Town FC,Everton FC,1.15,1.41,0.2941,0.2859,0.4201,1-1,A,0.4201
 560920,pl,2027-05-30,38,Chelsea FC,Brentford FC,1.82,1.39,0.4662,0.2469,0.2869,1-1,H,0.4662
-560921,pl,2027-05-30,38,Crystal Palace FC,Leeds United FC,1.25,1.24,0.3552,0.2935,0.3512,1-1,H,0.3552
+560921,pl,2027-05-30,38,Crystal Palace FC,Leeds United FC,1.25,1.24,0.3553,0.2935,0.3512,1-1,H,0.3553
