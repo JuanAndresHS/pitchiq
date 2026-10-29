@@ -27,7 +27,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558830,ded,2026-11-22,13,Sparta Rotterdam,AZ,1.2,1.62,0.2697,0.2731,0.4572,1-1,A,0.4572
 558828,ded,2026-11-22,13,FC Twente '65,Willem II Tilburg,2.77,0.67,0.8016,0.1404,0.058,2-0,H,0.8016
 558820,ded,2026-11-27,14,FC Groningen,Willem II Tilburg,2.52,0.86,0.7256,0.1765,0.0979,2-0,H,0.7256
-558825,ded,2026-11-28,14,SBV Excelsior,Telstar 1963,1.61,1.31,0.433,0.2705,0.2965,1-1,H,0.433
+558825,ded,2026-11-28,14,SBV Excelsior,Telstar 1963,1.61,1.31,0.433,0.2705,0.2966,1-1,H,0.433
 558826,ded,2026-11-28,14,PSV,Go Ahead Eagles,3.38,1.18,0.7848,0.1275,0.0877,3-1,H,0.7848
 558819,ded,2026-11-28,14,SC Cambuur-Leeuwarden,Sparta Rotterdam,2.01,1.42,0.5021,0.238,0.2599,1-1,H,0.5021
 558827,ded,2026-11-29,14,ADO Den Haag,FC Utrecht,1.38,1.64,0.3116,0.2661,0.4223,1-1,A,0.4223
@@ -38,7 +38,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558812,ded,2026-12-04,15,Telstar 1963,FC Groningen,1.49,1.47,0.3683,0.2715,0.3601,1-1,H,0.3683
 558813,ded,2026-12-05,15,Fortuna Sittard,PEC Zwolle,1.79,1.17,0.5066,0.258,0.2354,1-1,H,0.5066
 558814,ded,2026-12-05,15,AZ,PSV,1.51,2.08,0.27,0.2321,0.498,1-1,A,0.498
-558816,ded,2026-12-05,15,Willem II Tilburg,Feyenoord Rotterdam,0.82,2.86,0.0721,0.1435,0.7844,0-2,A,0.7844
+558816,ded,2026-12-05,15,Willem II Tilburg,Feyenoord Rotterdam,0.82,2.86,0.072,0.1435,0.7844,0-2,A,0.7844
 558817,ded,2026-12-05,15,Sparta Rotterdam,NEC,1.41,1.73,0.3017,0.2585,0.4398,1-1,A,0.4398
 558815,ded,2026-12-06,15,SC Heerenveen,SC Cambuur-Leeuwarden,2.13,1.43,0.5258,0.2284,0.2458,1-1,H,0.5258
 558818,ded,2026-12-06,15,Go Ahead Eagles,FC Twente '65,1.41,1.64,0.3178,0.2645,0.4177,1-1,A,0.4177
@@ -48,9 +48,9 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558809,ded,2026-12-12,16,SC Heerenveen,Go Ahead Eagles,1.85,1.44,0.4624,0.2492,0.2884,1-1,H,0.4624
 558802,ded,2026-12-12,16,PEC Zwolle,SBV Excelsior,1.5,1.45,0.3733,0.2722,0.3545,1-1,H,0.3733
 558801,ded,2026-12-13,16,AFC Ajax,SC Cambuur-Leeuwarden,2.75,1.18,0.6973,0.1726,0.1301,2-1,H,0.6973
-558803,ded,2026-12-13,16,FC Groningen,Feyenoord Rotterdam,1.3,1.94,0.2435,0.244,0.5126,1-1,A,0.5126
+558803,ded,2026-12-13,16,FC Groningen,Feyenoord Rotterdam,1.3,1.94,0.2434,0.244,0.5126,1-1,A,0.5126
 558807,ded,2026-12-13,16,AZ,NEC,1.84,1.33,0.4825,0.252,0.2655,1-1,H,0.4825
-558805,ded,2026-12-13,16,PSV,Telstar 1963,3.33,0.98,0.8133,0.1194,0.0673,3-0,H,0.8133
+558805,ded,2026-12-13,16,PSV,Telstar 1963,3.33,0.98,0.8132,0.1194,0.0673,3-0,H,0.8132
 558806,ded,2026-12-13,16,Willem II Tilburg,ADO Den Haag,1.29,1.62,0.2916,0.2707,0.4377,1-1,A,0.4377
 558794,ded,2026-12-18,17,Telstar 1963,Willem II Tilburg,2.2,0.93,0.6509,0.2122,0.1369,2-0,H,0.6509
 558800,ded,2026-12-19,17,SBV Excelsior,AZ,1.27,1.6,0.2899,0.2725,0.4375,1-1,A,0.4375
@@ -139,7 +139,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558715,ded,2027-03-13,26,Telstar 1963,PSV,1.23,2.64,0.1494,0.1843,0.6663,1-2,A,0.6663
 558716,ded,2027-03-13,26,AZ,Sparta Rotterdam,2.04,0.95,0.6143,0.2294,0.1562,1-1,H,0.6143
 558717,ded,2027-03-13,26,Willem II Tilburg,FC Twente '65,0.85,2.19,0.1216,0.2088,0.6696,0-2,A,0.6696
-558712,ded,2027-03-13,26,SC Cambuur-Leeuwarden,ADO Den Haag,2.14,1.4,0.5349,0.2278,0.2374,1-1,H,0.5349
+558712,ded,2027-03-13,26,SC Cambuur-Leeuwarden,ADO Den Haag,2.14,1.4,0.5349,0.2278,0.2373,1-1,H,0.5349
 558711,ded,2027-03-13,26,AFC Ajax,PEC Zwolle,2.67,0.89,0.7444,0.1639,0.0916,2-0,H,0.7444
 558713,ded,2027-03-13,26,SBV Excelsior,NEC,1.49,1.71,0.3243,0.257,0.4187,1-1,A,0.4187
 558714,ded,2027-03-13,26,Go Ahead Eagles,Feyenoord Rotterdam,1.37,2.15,0.2308,0.2272,0.542,1-1,A,0.542
@@ -168,14 +168,14 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558685,ded,2027-04-10,29,SC Cambuur-Leeuwarden,Fortuna Sittard,1.96,1.46,0.4806,0.2414,0.278,1-1,H,0.4806
 558691,ded,2027-04-10,29,PEC Zwolle,PSV,1.12,3.0,0.1035,0.1509,0.7456,1-2,A,0.7456
 558692,ded,2027-04-10,29,Sparta Rotterdam,Go Ahead Eagles,1.55,1.6,0.3593,0.2617,0.379,1-1,A,0.379
-558684,ded,2027-04-10,29,ADO Den Haag,Feyenoord Rotterdam,1.05,2.31,0.1485,0.2059,0.6456,1-2,A,0.6456
+558684,ded,2027-04-10,29,ADO Den Haag,Feyenoord Rotterdam,1.05,2.31,0.1484,0.2059,0.6456,1-2,A,0.6456
 558690,ded,2027-04-10,29,Telstar 1963,FC Twente '65,1.17,1.62,0.2622,0.2739,0.4639,1-1,A,0.4639
 558681,ded,2027-04-24,30,Fortuna Sittard,FC Groningen,1.45,1.47,0.3576,0.274,0.3684,1-1,A,0.3684
 558683,ded,2027-04-24,30,PSV,AFC Ajax,2.52,1.41,0.6073,0.1987,0.1939,2-1,H,0.6073
 558682,ded,2027-04-24,30,Feyenoord Rotterdam,Sparta Rotterdam,2.74,0.85,0.7621,0.1559,0.0821,2-0,H,0.7621
 558680,ded,2027-04-24,30,PEC Zwolle,Telstar 1963,1.47,1.46,0.3661,0.2731,0.3608,1-1,H,0.3661
 558679,ded,2027-04-24,30,AZ,SC Cambuur-Leeuwarden,2.33,1.22,0.6115,0.2098,0.1787,2-1,H,0.6115
-558675,ded,2027-04-24,30,FC Twente '65,NEC,1.89,1.22,0.5181,0.2489,0.2329,1-1,H,0.5181
+558675,ded,2027-04-24,30,FC Twente '65,NEC,1.89,1.22,0.5181,0.2489,0.233,1-1,H,0.5181
 558678,ded,2027-04-24,30,Go Ahead Eagles,FC Utrecht,1.8,1.52,0.4338,0.2505,0.3157,1-1,H,0.4338
 558676,ded,2027-04-24,30,SC Heerenveen,ADO Den Haag,1.99,1.1,0.5684,0.2381,0.1935,1-1,H,0.5684
 558677,ded,2027-04-24,30,SBV Excelsior,Willem II Tilburg,2.19,0.95,0.6452,0.214,0.1408,2-0,H,0.6452
@@ -200,10 +200,10 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558651,ded,2027-05-16,33,AFC Ajax,Sparta Rotterdam,2.41,0.92,0.6951,0.1898,0.1151,2-0,H,0.6951
 558649,ded,2027-05-16,33,Go Ahead Eagles,SC Heerenveen,1.81,1.47,0.4468,0.2513,0.302,1-1,H,0.4468
 558650,ded,2027-05-16,33,FC Twente '65,Feyenoord Rotterdam,1.43,1.52,0.3424,0.2719,0.3856,1-1,A,0.3856
-558654,ded,2027-05-16,33,Fortuna Sittard,Willem II Tilburg,2.13,0.93,0.6382,0.2189,0.143,2-0,H,0.6382
+558654,ded,2027-05-16,33,Fortuna Sittard,Willem II Tilburg,2.13,0.93,0.6382,0.2189,0.1429,2-0,H,0.6382
 558655,ded,2027-05-16,33,FC Utrecht,Telstar 1963,1.89,1.18,0.5259,0.249,0.2251,1-1,H,0.5259
 558653,ded,2027-05-16,33,PSV,NEC,3.08,1.28,0.7263,0.1531,0.1207,3-1,H,0.7263
-558656,ded,2027-05-16,33,FC Groningen,SC Cambuur-Leeuwarden,2.17,1.43,0.5363,0.2253,0.2384,1-1,H,0.5363
+558656,ded,2027-05-16,33,FC Groningen,SC Cambuur-Leeuwarden,2.17,1.43,0.5363,0.2253,0.2385,1-1,H,0.5363
 558648,ded,2027-05-16,33,AZ,PEC Zwolle,2.26,0.92,0.666,0.2052,0.1287,2-0,H,0.666
 558652,ded,2027-05-16,33,SBV Excelsior,ADO Den Haag,1.77,1.21,0.491,0.2597,0.2493,1-1,H,0.491
 558641,ded,2027-05-23,34,Sparta Rotterdam,Fortuna Sittard,1.52,1.28,0.4156,0.2784,0.306,1-1,H,0.4156
@@ -213,5 +213,5 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558645,ded,2027-05-23,34,ADO Den Haag,AZ,1.19,1.73,0.2491,0.2637,0.4872,1-1,A,0.4872
 558640,ded,2027-05-23,34,SC Heerenveen,PSV,1.38,2.44,0.1973,0.2045,0.5982,1-2,A,0.5982
 558639,ded,2027-05-23,34,NEC,FC Utrecht,1.96,1.38,0.4976,0.2422,0.2602,1-1,H,0.4976
-558646,ded,2027-05-23,34,Telstar 1963,SBV Excelsior,1.65,1.28,0.4471,0.2686,0.2843,1-1,H,0.4471
+558646,ded,2027-05-23,34,Telstar 1963,SBV Excelsior,1.65,1.28,0.4472,0.2686,0.2843,1-1,H,0.4472
 558647,ded,2027-05-23,34,Willem II Tilburg,Go Ahead Eagles,1.2,2.11,0.1996,0.229,0.5714,1-1,A,0.5714

@@ -1,7 +1,7 @@
 team,attack,defense,overall,matches
 Arsenal FC,0.3255,0.4146,0.7401,122
 Manchester City FC,0.4476,0.1655,0.6132,122
-Liverpool FC,0.3132,-0.0059,0.3074,122
+Liverpool FC,0.3132,-0.0059,0.3073,122
 Brighton & Hove Albion FC,0.2578,-0.0468,0.211,122
 Chelsea FC,0.2582,-0.1554,0.1028,122
 Brentford FC,0.1816,-0.1186,0.063,122
@@ -12,17 +12,17 @@ Newcastle United FC,0.2041,-0.1872,0.0168,122
 Leeds United FC,-0.0169,-0.0101,-0.027,46
 Hull City AFC,-0.1427,0.0949,-0.0479,8
 Nottingham Forest FC,-0.0263,-0.0733,-0.0996,122
-Everton FC,-0.1121,-0.0102,-0.1223,122
+Everton FC,-0.1121,-0.0103,-0.1223,122
 Fulham FC,-0.0454,-0.0972,-0.1426,122
 Tottenham Hotspur FC,0.0429,-0.2127,-0.1698,122
 Crystal Palace FC,-0.0488,-0.2205,-0.2693,122
 Sunderland AFC,-0.1853,-0.0941,-0.2794,46
 West Ham United FC,-0.0196,-0.2831,-0.3027,114
 Luton Town FC,-0.043,-0.3852,-0.4282,38
-Coventry City FC,-0.2983,-0.2358,-0.534,8
+Coventry City FC,-0.2983,-0.2357,-0.534,8
 Wolverhampton Wanderers FC,-0.2411,-0.311,-0.5521,114
 Ipswich Town FC,-0.0926,-0.4649,-0.5575,46
 Burnley FC,-0.2074,-0.4157,-0.6231,76
 Leicester City FC,-0.3369,-0.401,-0.7379,38
-Sheffield United FC,-0.2357,-0.5321,-0.7679,38
+Sheffield United FC,-0.2357,-0.5321,-0.7678,38
 Southampton FC,-0.4328,-0.4757,-0.9085,38
