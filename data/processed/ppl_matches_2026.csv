@@ -80,7 +80,7 @@ match_id,league,league_name,season,matchday,utc_date,status,stage,home_team,home
 567334,ppl,Primeira Liga,2026,9,2026-10-25 18:00:00+00:00,FINISHED,REGULAR_SEASON,CD Nacional,5529,Sporting Clube de Braga,5613,1.0,0.0,1.0,0.0,HOME_TEAM,,2026-10-25,H,1.0,1.0
 567332,ppl,Primeira Liga,2026,9,2026-10-25 20:30:00+00:00,FINISHED,REGULAR_SEASON,Sporting Clube de Portugal,498,Académico de Viseu FC,5527,1.0,2.0,0.0,1.0,AWAY_TEAM,,2026-10-25,A,3.0,-1.0
 567331,ppl,Primeira Liga,2026,9,2026-10-26 18:45:00+00:00,FINISHED,REGULAR_SEASON,CD Santa Clara,5530,Sport Lisboa e Benfica,1903,1.0,2.0,1.0,0.0,AWAY_TEAM,,2026-10-26,A,3.0,-1.0
-567344,ppl,Primeira Liga,2026,10,2026-10-30 20:15:00+00:00,TIMED,REGULAR_SEASON,Casa Pia AC,6618,Sporting Clube de Portugal,498,,,,,,,2026-10-30,,,
+567344,ppl,Primeira Liga,2026,10,2026-10-30 20:15:00+00:00,FINISHED,REGULAR_SEASON,Casa Pia AC,6618,Sporting Clube de Portugal,498,0.0,2.0,0.0,1.0,AWAY_TEAM,,2026-10-30,A,2.0,-2.0
 567343,ppl,Primeira Liga,2026,10,2026-10-31 15:30:00+00:00,TIMED,REGULAR_SEASON,Moreirense FC,583,CF Estrela da Amadora,9136,,,,,,,2026-10-31,,,
 567338,ppl,Primeira Liga,2026,10,2026-10-31 20:30:00+00:00,TIMED,REGULAR_SEASON,FC Porto,503,GD Estoril Praia,582,,,,,,,2026-10-31,,,
 567341,ppl,Primeira Liga,2026,10,2026-11-01 15:30:00+00:00,TIMED,REGULAR_SEASON,FC Arouca,712,CD Nacional,5529,,,,,,,2026-11-01,,,
