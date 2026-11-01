@@ -70,7 +70,7 @@ match_id,league,league_name,season,matchday,utc_date,status,stage,home_team,home
 565840,bl1,Bundesliga,2026,8,2026-10-31 14:30:00+00:00,FINISHED,REGULAR_SEASON,FC Schalke 04,6,RB Leipzig,721,0.0,2.0,0.0,1.0,AWAY_TEAM,,2026-10-31,A,2.0,-2.0
 565845,bl1,Bundesliga,2026,8,2026-10-31 17:30:00+00:00,FINISHED,REGULAR_SEASON,FC Bayern München,5,Borussia Dortmund,4,2.0,2.0,1.0,0.0,DRAW,,2026-10-31,D,4.0,0.0
 565841,bl1,Bundesliga,2026,8,2026-11-01 14:30:00+00:00,FINISHED,REGULAR_SEASON,1. FC Union Berlin,28,1. FC Köln,1,1.0,1.0,1.0,0.0,DRAW,,2026-11-01,D,2.0,0.0
-565844,bl1,Bundesliga,2026,8,2026-11-01 16:30:00+00:00,IN_PLAY,REGULAR_SEASON,Eintracht Frankfurt,19,Hamburger SV,7,1.0,1.0,,,DRAW,,2026-11-01,D,2.0,0.0
+565844,bl1,Bundesliga,2026,8,2026-11-01 16:30:00+00:00,FINISHED,REGULAR_SEASON,Eintracht Frankfurt,19,Hamburger SV,7,3.0,1.0,1.0,1.0,HOME_TEAM,,2026-11-01,H,4.0,2.0
 565852,bl1,Bundesliga,2026,9,2026-11-06 19:30:00+00:00,TIMED,REGULAR_SEASON,Hamburger SV,7,Borussia Mönchengladbach,18,,,,,,,2026-11-06,,,
 565853,bl1,Bundesliga,2026,9,2026-11-07 14:30:00+00:00,TIMED,REGULAR_SEASON,SC Paderborn 07,29,Eintracht Frankfurt,19,,,,,,,2026-11-07,,,
 565851,bl1,Bundesliga,2026,9,2026-11-07 14:30:00+00:00,TIMED,REGULAR_SEASON,1. FSV Mainz 05,15,FC Bayern München,5,,,,,,,2026-11-07,,,
