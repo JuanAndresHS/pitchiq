@@ -1,28 +1,28 @@
 team,attack,defense,overall,matches
-Arsenal FC,0.3166,0.4392,0.7558,123
-Manchester City FC,0.4203,0.1655,0.5858,123
-Liverpool FC,0.2957,-0.0026,0.293,123
-Brighton & Hove Albion FC,0.2516,-0.0136,0.238,123
-Chelsea FC,0.2566,-0.1391,0.1175,123
-Brentford FC,0.1809,-0.1053,0.0756,123
-Aston Villa FC,0.1391,-0.095,0.0441,123
-AFC Bournemouth,0.1504,-0.1067,0.0438,123
-Newcastle United FC,0.2002,-0.189,0.0112,122
-Manchester United FC,0.1346,-0.1357,-0.0011,123
-Leeds United FC,-0.0478,-0.0254,-0.0732,47
-Hull City AFC,-0.1279,0.0276,-0.1003,9
-Nottingham Forest FC,-0.0458,-0.0803,-0.126,123
-Everton FC,-0.1154,-0.0133,-0.1288,122
-Fulham FC,-0.051,-0.0892,-0.1403,123
-Tottenham Hotspur FC,0.0449,-0.199,-0.1541,123
-Crystal Palace FC,-0.0724,-0.228,-0.3003,123
-West Ham United FC,-0.0222,-0.2867,-0.3089,114
-Sunderland AFC,-0.1877,-0.1361,-0.3238,47
-Coventry City FC,-0.1618,-0.236,-0.3978,9
-Luton Town FC,-0.0448,-0.3859,-0.4307,38
-Ipswich Town FC,-0.0557,-0.4756,-0.5313,47
-Wolverhampton Wanderers FC,-0.2426,-0.3147,-0.5573,114
-Burnley FC,-0.2094,-0.4193,-0.6286,76
-Leicester City FC,-0.3373,-0.4016,-0.739,38
-Sheffield United FC,-0.2362,-0.5322,-0.7684,38
-Southampton FC,-0.4328,-0.476,-0.9088,38
+Arsenal FC,0.3178,0.4366,0.7544,123
+Manchester City FC,0.4211,0.164,0.5851,123
+Liverpool FC,0.2962,-0.0043,0.2919,123
+Brighton & Hove Albion FC,0.2524,-0.015,0.2374,123
+Chelsea FC,0.2578,-0.1403,0.1175,123
+Brentford FC,0.1813,-0.1062,0.0751,123
+AFC Bournemouth,0.1515,-0.1081,0.0435,123
+Aston Villa FC,0.1398,-0.0969,0.043,123
+Manchester United FC,0.1359,-0.1372,-0.0013,123
+Newcastle United FC,0.1791,-0.188,-0.0089,123
+Leeds United FC,-0.0481,-0.0267,-0.0748,47
+Hull City AFC,-0.1262,0.0255,-0.1007,9
+Everton FC,-0.1171,0.0119,-0.1051,123
+Nottingham Forest FC,-0.0447,-0.0815,-0.1262,123
+Fulham FC,-0.0502,-0.0906,-0.1408,123
+Tottenham Hotspur FC,0.0461,-0.2005,-0.1544,123
+Crystal Palace FC,-0.0718,-0.2294,-0.3012,123
+West Ham United FC,-0.0212,-0.2882,-0.3094,114
+Sunderland AFC,-0.1876,-0.1372,-0.3248,47
+Coventry City FC,-0.1607,-0.238,-0.3987,9
+Luton Town FC,-0.0443,-0.3865,-0.4308,38
+Ipswich Town FC,-0.054,-0.4765,-0.5305,47
+Wolverhampton Wanderers FC,-0.2416,-0.316,-0.5577,114
+Burnley FC,-0.2083,-0.4202,-0.6285,76
+Leicester City FC,-0.3363,-0.4025,-0.7387,38
+Sheffield United FC,-0.2352,-0.5328,-0.7679,38
+Southampton FC,-0.4319,-0.4765,-0.9084,38
