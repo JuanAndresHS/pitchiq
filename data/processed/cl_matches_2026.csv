@@ -53,15 +53,15 @@ match_id,league,league_name,season,matchday,utc_date,status,stage,home_team,home
 575371,cl,Champions League,2026,3,2026-10-21 19:00:00+00:00,FINISHED,LEAGUE_STAGE,FC Internazionale Milano,108,FK Shakhtar Donetsk,1887,1.0,0.0,0.0,0.0,HOME_TEAM,,2026-10-21,H,1.0,1.0
 575370,cl,Champions League,2026,3,2026-10-21 19:00:00+00:00,FINISHED,LEAGUE_STAGE,Real Madrid CF,86,RB Leipzig,721,4.0,1.0,1.0,0.0,HOME_TEAM,,2026-10-21,H,5.0,3.0
 575372,cl,Champions League,2026,3,2026-10-21 19:00:00+00:00,FINISHED,LEAGUE_STAGE,FC Bayern München,5,Arsenal FC,57,2.0,2.0,1.0,1.0,DRAW,,2026-10-21,D,4.0,0.0
-575377,cl,Champions League,2026,4,2026-11-03 17:45:00+00:00,TIMED,LEAGUE_STAGE,FK Shakhtar Donetsk,1887,Sporting Clube de Portugal,498,,,,,,,2026-11-03,,,
-575378,cl,Champions League,2026,4,2026-11-03 17:45:00+00:00,TIMED,LEAGUE_STAGE,Galatasaray SK,610,VfB Stuttgart,10,,,,,,,2026-11-03,,,
-575379,cl,Champions League,2026,4,2026-11-03 20:00:00+00:00,TIMED,LEAGUE_STAGE,Feyenoord Rotterdam,675,FC Internazionale Milano,108,,,,,,,2026-11-03,,,
-575380,cl,Champions League,2026,4,2026-11-03 20:00:00+00:00,TIMED,LEAGUE_STAGE,FC Barcelona,81,Aston Villa FC,58,,,,,,,2026-11-03,,,
-575381,cl,Champions League,2026,4,2026-11-03 20:00:00+00:00,TIMED,LEAGUE_STAGE,Club Atlético de Madrid,78,FC Bayern München,5,,,,,,,2026-11-03,,,
-575382,cl,Champions League,2026,4,2026-11-03 20:00:00+00:00,TIMED,LEAGUE_STAGE,Villarreal CF,94,Paris Saint-Germain FC,524,,,,,,,2026-11-03,,,
-575383,cl,Champions League,2026,4,2026-11-03 20:00:00+00:00,TIMED,LEAGUE_STAGE,Manchester United FC,66,AS Roma,100,,,,,,,2026-11-03,,,
-575384,cl,Champions League,2026,4,2026-11-03 20:00:00+00:00,TIMED,LEAGUE_STAGE,FK Bodø/Glimt,5721,Lille OSC,521,,,,,,,2026-11-03,,,
-575385,cl,Champions League,2026,4,2026-11-03 20:00:00+00:00,TIMED,LEAGUE_STAGE,LASK Linz,2016,ŠK Slovan Bratislava,7509,,,,,,,2026-11-03,,,
+575377,cl,Champions League,2026,4,2026-11-03 17:45:00+00:00,FINISHED,LEAGUE_STAGE,FK Shakhtar Donetsk,1887,Sporting Clube de Portugal,498,0.0,1.0,0.0,0.0,AWAY_TEAM,,2026-11-03,A,1.0,-1.0
+575378,cl,Champions League,2026,4,2026-11-03 17:45:00+00:00,FINISHED,LEAGUE_STAGE,Galatasaray SK,610,VfB Stuttgart,10,2.0,0.0,2.0,0.0,HOME_TEAM,,2026-11-03,H,2.0,2.0
+575379,cl,Champions League,2026,4,2026-11-03 20:00:00+00:00,FINISHED,LEAGUE_STAGE,Feyenoord Rotterdam,675,FC Internazionale Milano,108,0.0,3.0,0.0,2.0,AWAY_TEAM,,2026-11-03,A,3.0,-3.0
+575380,cl,Champions League,2026,4,2026-11-03 20:00:00+00:00,FINISHED,LEAGUE_STAGE,FC Barcelona,81,Aston Villa FC,58,3.0,0.0,1.0,0.0,HOME_TEAM,,2026-11-03,H,3.0,3.0
+575381,cl,Champions League,2026,4,2026-11-03 20:00:00+00:00,FINISHED,LEAGUE_STAGE,Club Atlético de Madrid,78,FC Bayern München,5,0.0,2.0,0.0,0.0,AWAY_TEAM,,2026-11-03,A,2.0,-2.0
+575382,cl,Champions League,2026,4,2026-11-03 20:00:00+00:00,FINISHED,LEAGUE_STAGE,Villarreal CF,94,Paris Saint-Germain FC,524,0.0,6.0,0.0,4.0,AWAY_TEAM,,2026-11-03,A,6.0,-6.0
+575383,cl,Champions League,2026,4,2026-11-03 20:00:00+00:00,FINISHED,LEAGUE_STAGE,Manchester United FC,66,AS Roma,100,3.0,2.0,0.0,2.0,HOME_TEAM,,2026-11-03,H,5.0,1.0
+575384,cl,Champions League,2026,4,2026-11-03 20:00:00+00:00,FINISHED,LEAGUE_STAGE,FK Bodø/Glimt,5721,Lille OSC,521,0.0,0.0,0.0,0.0,DRAW,,2026-11-03,D,0.0,0.0
+575385,cl,Champions League,2026,4,2026-11-03 20:00:00+00:00,FINISHED,LEAGUE_STAGE,LASK Linz,2016,ŠK Slovan Bratislava,7509,4.0,0.0,3.0,0.0,HOME_TEAM,,2026-11-03,H,4.0,4.0
 575386,cl,Champions League,2026,4,2026-11-04 17:45:00+00:00,TIMED,LEAGUE_STAGE,PAE AEK,1899,Real Madrid CF,86,,,,,,,2026-11-04,,,
 575387,cl,Champions League,2026,4,2026-11-04 17:45:00+00:00,TIMED,LEAGUE_STAGE,Fenerbahçe SK,613,Liverpool FC,64,,,,,,,2026-11-04,,,
 575392,cl,Champions League,2026,4,2026-11-04 20:00:00+00:00,TIMED,LEAGUE_STAGE,FC Porto,503,SSC Napoli,113,,,,,,,2026-11-04,,,
