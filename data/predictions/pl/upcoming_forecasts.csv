@@ -16,12 +16,12 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 560644,pl,2026-11-21,11,Aston Villa FC,Sunderland AFC,1.65,0.91,0.5379,0.2631,0.199,1-1,H,0.5379
 560643,pl,2026-11-21,11,Manchester City FC,Fulham FC,2.08,0.81,0.6624,0.2107,0.1269,2-0,H,0.6624
 560642,pl,2026-11-21,11,Chelsea FC,Leeds United FC,1.66,1.1,0.4965,0.2615,0.2421,1-1,H,0.4965
-560646,pl,2026-11-22,11,Hull City AFC,Brighton & Hove Albion FC,1.12,1.25,0.3178,0.2979,0.3842,1-1,A,0.3842
+560646,pl,2026-11-22,11,Hull City AFC,Brighton & Hove Albion FC,1.12,1.25,0.3178,0.2979,0.3843,1-1,A,0.3843
 560645,pl,2026-11-22,11,Liverpool FC,Manchester United FC,1.93,1.15,0.5468,0.2367,0.2166,1-1,H,0.5468
 560649,pl,2026-11-23,11,Brentford FC,Everton FC,1.48,0.99,0.4758,0.2812,0.2429,1-1,H,0.4758
 560658,pl,2026-11-27,12,Nottingham Forest FC,Chelsea FC,1.38,1.4,0.3572,0.2725,0.3703,1-1,A,0.3703
 560655,pl,2026-11-28,12,Manchester United FC,Brentford FC,1.59,1.38,0.4177,0.2604,0.3219,1-1,H,0.4177
-560653,pl,2026-11-28,12,Ipswich Town FC,Aston Villa FC,1.3,1.85,0.2622,0.2429,0.4949,1-1,A,0.4949
+560653,pl,2026-11-28,12,Ipswich Town FC,Aston Villa FC,1.3,1.85,0.2622,0.243,0.4949,1-1,A,0.4949
 560652,pl,2026-11-28,12,Leeds United FC,Coventry City FC,1.51,0.87,0.5125,0.2791,0.2084,1-1,H,0.5125
 560656,pl,2026-11-29,12,Everton FC,Liverpool FC,1.12,1.33,0.3032,0.2916,0.4051,1-1,A,0.4051
 560661,pl,2026-11-29,12,Crystal Palace FC,Hull City AFC,1.13,1.11,0.352,0.3087,0.3394,1-1,H,0.352
@@ -83,14 +83,14 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 560719,pl,2026-12-29,18,Tottenham Hotspur FC,Brighton & Hove Albion FC,1.33,1.57,0.3139,0.2634,0.4227,1-1,A,0.4227
 560720,pl,2026-12-29,18,Everton FC,Manchester City FC,0.94,1.51,0.2272,0.2792,0.4937,1-1,A,0.4937
 560714,pl,2026-12-30,18,Aston Villa FC,Liverpool FC,1.44,1.48,0.3594,0.2643,0.3763,1-1,A,0.3763
-560718,pl,2026-12-30,18,Ipswich Town FC,Chelsea FC,1.36,2.08,0.2413,0.2248,0.5339,1-1,A,0.5339
+560718,pl,2026-12-30,18,Ipswich Town FC,Chelsea FC,1.36,2.08,0.2413,0.2249,0.5339,1-1,A,0.5339
 560721,pl,2026-12-30,18,Crystal Palace FC,AFC Bournemouth,1.3,1.46,0.3255,0.2725,0.402,1-1,A,0.402
 560713,pl,2026-12-30,18,Coventry City FC,Brentford FC,1.18,1.52,0.2865,0.2724,0.4411,1-1,A,0.4411
 560717,pl,2026-12-30,18,Manchester United FC,Sunderland AFC,1.64,0.95,0.5269,0.264,0.2091,1-1,H,0.5269
 560712,pl,2026-12-30,18,Fulham FC,Arsenal FC,0.77,1.5,0.1818,0.2797,0.5385,0-1,A,0.5385
 560715,pl,2026-12-30,18,Newcastle United FC,Nottingham Forest FC,1.62,1.15,0.4734,0.2643,0.2623,1-1,H,0.4734
 560724,pl,2027-01-01,19,Leeds United FC,Everton FC,1.18,0.91,0.4088,0.3174,0.2738,1-1,H,0.4088
-560722,pl,2027-01-02,19,AFC Bournemouth,Aston Villa FC,1.6,1.28,0.4401,0.2628,0.2971,1-1,H,0.4401
+560722,pl,2027-01-02,19,AFC Bournemouth,Aston Villa FC,1.6,1.28,0.4401,0.2628,0.297,1-1,H,0.4401
 560729,pl,2027-01-02,19,Nottingham Forest FC,Fulham FC,1.31,1.03,0.4189,0.2975,0.2836,1-1,H,0.4189
 560725,pl,2027-01-02,19,Arsenal FC,Ipswich Town FC,2.77,0.61,0.8166,0.1304,0.053,2-0,H,0.8166
 560730,pl,2027-01-02,19,Brighton & Hove Albion FC,Manchester United FC,1.85,1.16,0.5251,0.2442,0.2307,1-1,H,0.5251

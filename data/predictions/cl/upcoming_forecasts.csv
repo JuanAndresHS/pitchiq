@@ -27,7 +27,7 @@ match_id,league,date,matchday,stage,home_team,away_team,home_league,away_league,
 575413,cl,2026-12-08,6.0,LEAGUE_STAGE,Villarreal CF,Sabah FK,pd,rest,2.66,0.8,0.7743,0.1332,0.0925,2-0,H,0.7743,True
 575416,cl,2026-12-08,6.0,LEAGUE_STAGE,Aston Villa FC,Paris Saint-Germain FC,pl,fl1,1.58,1.33,0.4431,0.2279,0.329,1-1,H,0.4431,False
 575317,cl,2026-12-09,6.0,LEAGUE_STAGE,LASK Linz,Fenerbahçe SK,rest,rest,1.64,1.0,0.5313,0.2288,0.2399,1-0,H,0.5313,True
-575322,cl,2026-12-09,6.0,LEAGUE_STAGE,VfB Stuttgart,Lille OSC,bl1,fl1,1.47,1.09,0.4673,0.2417,0.291,1-0,H,0.4673,False
+575322,cl,2026-12-09,6.0,LEAGUE_STAGE,VfB Stuttgart,Lille OSC,bl1,fl1,1.47,1.09,0.4674,0.2417,0.291,1-0,H,0.4674,False
 575315,cl,2026-12-09,6.0,LEAGUE_STAGE,Racing Club de Lens,FK Bodø/Glimt,fl1,rest,2.47,0.69,0.77,0.1411,0.0888,2-0,H,0.77,True
 575286,cl,2026-12-09,6.0,LEAGUE_STAGE,Borussia Dortmund,FC Internazionale Milano,bl1,sa,1.72,1.28,0.4874,0.2199,0.2927,1-1,H,0.4874,False
 575295,cl,2026-12-09,6.0,LEAGUE_STAGE,Liverpool FC,FC Porto,pl,ppl,2.03,0.8,0.6668,0.1874,0.1458,1-0,H,0.6668,False
@@ -37,7 +37,7 @@ match_id,league,date,matchday,stage,home_team,away_team,home_league,away_league,
 575280,cl,2026-12-09,6.0,LEAGUE_STAGE,Arsenal FC,Real Madrid CF,pl,pd,1.87,0.75,0.6488,0.2011,0.1501,1-0,H,0.6488,False
 575307,cl,2027-01-19,7.0,LEAGUE_STAGE,PAE AEK,AS Roma,rest,sa,1.08,1.62,0.2631,0.2296,0.5073,0-1,A,0.5073,True
 575321,cl,2027-01-19,7.0,LEAGUE_STAGE,Lille OSC,ŠK Slovan Bratislava,fl1,rest,2.13,0.59,0.7382,0.1663,0.0955,2-0,H,0.7382,True
-575308,cl,2027-01-19,7.0,LEAGUE_STAGE,FC Porto,SK Slavia Praha,ppl,rest,2.21,0.64,0.7396,0.1612,0.0992,2-0,H,0.7396,True
+575308,cl,2027-01-19,7.0,LEAGUE_STAGE,FC Porto,SK Slavia Praha,ppl,rest,2.21,0.64,0.7396,0.1612,0.0993,2-0,H,0.7396,True
 575302,cl,2027-01-19,7.0,LEAGUE_STAGE,VfB Stuttgart,Club Brugge KV,bl1,rest,2.51,0.84,0.7418,0.1477,0.1105,2-0,H,0.7418,True
 575303,cl,2027-01-19,7.0,LEAGUE_STAGE,Aston Villa FC,Borussia Dortmund,pl,bl1,1.71,0.97,0.5556,0.2221,0.2223,1-0,H,0.5556,False
 575285,cl,2027-01-19,7.0,LEAGUE_STAGE,FC Internazionale Milano,Liverpool FC,sa,pl,1.96,1.36,0.5217,0.2048,0.2735,2-1,H,0.5217,False
