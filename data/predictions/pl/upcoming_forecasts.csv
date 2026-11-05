@@ -60,12 +60,12 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 560683,pl,2026-12-13,15,Crystal Palace FC,Manchester United FC,1.33,1.44,0.3396,0.2723,0.3881,1-1,A,0.3881
 560684,pl,2026-12-14,15,Hull City AFC,Tottenham Hotspur FC,1.35,1.02,0.4319,0.2942,0.2739,1-1,H,0.4319
 560700,pl,2026-12-19,16,Liverpool FC,Tottenham Hotspur FC,2.05,1.05,0.5973,0.2232,0.1795,1-1,H,0.5973
-560694,pl,2026-12-19,16,Nottingham Forest FC,Everton FC,1.18,0.97,0.3978,0.314,0.2882,1-1,H,0.3978
 560692,pl,2026-12-19,16,Leeds United FC,Fulham FC,1.3,0.98,0.4306,0.3004,0.2691,1-1,H,0.4306
-560696,pl,2026-12-19,16,Manchester City FC,Hull City AFC,1.86,0.75,0.6292,0.2342,0.1366,1-0,H,0.6292
-560695,pl,2026-12-19,16,Brentford FC,Newcastle United FC,1.81,1.33,0.4791,0.246,0.2749,1-1,H,0.4791
 560698,pl,2026-12-19,16,AFC Bournemouth,Coventry City FC,1.85,0.95,0.576,0.242,0.1821,1-1,H,0.576
+560695,pl,2026-12-19,16,Brentford FC,Newcastle United FC,1.81,1.33,0.4791,0.246,0.2749,1-1,H,0.4791
+560696,pl,2026-12-19,16,Manchester City FC,Hull City AFC,1.86,0.75,0.6292,0.2342,0.1366,1-0,H,0.6292
 560693,pl,2026-12-20,16,Brighton & Hove Albion FC,Ipswich Town FC,2.59,0.96,0.718,0.1701,0.112,2-0,H,0.718
+560694,pl,2026-12-20,16,Nottingham Forest FC,Everton FC,1.18,0.97,0.3978,0.314,0.2882,1-1,H,0.3978
 560697,pl,2026-12-20,16,Sunderland AFC,Crystal Palace FC,1.3,1.07,0.4091,0.2963,0.2945,1-1,H,0.4091
 560699,pl,2026-12-20,16,Arsenal FC,Manchester United FC,1.97,0.74,0.6557,0.2202,0.1241,2-0,H,0.6557
 560701,pl,2026-12-21,16,Chelsea FC,Aston Villa FC,1.78,1.32,0.4744,0.2481,0.2774,1-1,H,0.4744
