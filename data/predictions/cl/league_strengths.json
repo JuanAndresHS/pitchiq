@@ -21,7 +21,7 @@
       "league": "fl1",
       "name": "Ligue 1",
       "strength": -0.1684,
-      "goal_ratio": 0.8451,
+      "goal_ratio": 0.845,
       "ci_low": -0.3328,
       "ci_high": -0.0414,
       "pooled": false
@@ -81,5 +81,5 @@
       "pooled": false
     }
   ],
-  "fitted_at": "2026-11-05T11:31:13+00:00"
+  "fitted_at": "2026-11-06T03:43:35+00:00"
 }
