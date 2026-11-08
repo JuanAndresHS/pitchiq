@@ -1,7 +1,7 @@
 {
   "league": "sa",
   "league_name": "Serie A",
-  "home_advantage": 1.1149,
+  "home_advantage": 1.115,
   "home_advantage_log": 0.1088,
   "rho": -0.0088,
   "xi": 0.002,
@@ -13,5 +13,5 @@
   "home_win_rate": 0.408,
   "draw_rate": 0.2699,
   "away_win_rate": 0.3221,
-  "fitted_at": "2026-11-08T02:45:48+00:00"
+  "fitted_at": "2026-11-08T10:46:51+00:00"
 }

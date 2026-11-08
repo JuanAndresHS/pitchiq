@@ -20,9 +20,9 @@
     {
       "league": "fl1",
       "name": "Ligue 1",
-      "strength": -0.1688,
-      "goal_ratio": 0.8447,
-      "ci_low": -0.3335,
+      "strength": -0.1689,
+      "goal_ratio": 0.8446,
+      "ci_low": -0.3336,
       "ci_high": -0.0417,
       "pooled": false
     },
@@ -30,7 +30,7 @@
       "league": "pd",
       "name": "LaLiga",
       "strength": -0.1887,
-      "goal_ratio": 0.8281,
+      "goal_ratio": 0.828,
       "ci_low": -0.2879,
       "ci_high": -0.0841,
       "pooled": false
@@ -38,7 +38,7 @@
     {
       "league": "bl1",
       "name": "Bundesliga",
-      "strength": -0.2631,
+      "strength": -0.263,
       "goal_ratio": 0.7687,
       "ci_low": -0.3866,
       "ci_high": -0.1525,
@@ -67,7 +67,7 @@
       "name": "Primeira Liga",
       "strength": -0.5111,
       "goal_ratio": 0.5998,
-      "ci_low": -0.6641,
+      "ci_low": -0.664,
       "ci_high": -0.3693,
       "pooled": false
     },
@@ -81,5 +81,5 @@
       "pooled": false
     }
   ],
-  "fitted_at": "2026-11-08T02:46:02+00:00"
+  "fitted_at": "2026-11-08T10:47:09+00:00"
 }
