@@ -98,7 +98,7 @@ match_id,league,league_name,season,matchday,utc_date,status,stage,home_team,home
 560636,pl,Premier League,2026,10,2026-11-08 14:00:00+00:00,FINISHED,REGULAR_SEASON,Sunderland AFC,71,Chelsea FC,61,1.0,0.0,1.0,0.0,HOME_TEAM,,2026-11-08,H,1.0,1.0
 560637,pl,Premier League,2026,10,2026-11-08 14:00:00+00:00,FINISHED,REGULAR_SEASON,Ipswich Town FC,349,AFC Bournemouth,1044,1.0,2.0,0.0,1.0,AWAY_TEAM,,2026-11-08,A,3.0,-1.0
 560638,pl,Premier League,2026,10,2026-11-08 14:00:00+00:00,FINISHED,REGULAR_SEASON,Brighton & Hove Albion FC,397,Brentford FC,402,2.0,0.0,2.0,0.0,HOME_TEAM,,2026-11-08,H,2.0,2.0
-560639,pl,Premier League,2026,10,2026-11-08 16:30:00+00:00,IN_PLAY,REGULAR_SEASON,Manchester United FC,66,Aston Villa FC,58,1.0,2.0,,,AWAY_TEAM,,2026-11-08,A,3.0,-1.0
+560639,pl,Premier League,2026,10,2026-11-08 16:30:00+00:00,FINISHED,REGULAR_SEASON,Manchester United FC,66,Aston Villa FC,58,4.0,4.0,2.0,2.0,DRAW,,2026-11-08,D,8.0,0.0
 560643,pl,Premier League,2026,11,2026-11-21 12:30:00+00:00,TIMED,REGULAR_SEASON,Manchester City FC,65,Fulham FC,63,,,,,,,2026-11-21,,,
 560648,pl,Premier League,2026,11,2026-11-21 15:00:00+00:00,TIMED,REGULAR_SEASON,Tottenham Hotspur FC,73,Ipswich Town FC,349,,,,,,,2026-11-21,,,
 560647,pl,Premier League,2026,11,2026-11-21 15:00:00+00:00,TIMED,REGULAR_SEASON,AFC Bournemouth,1044,Nottingham Forest FC,351,,,,,,,2026-11-21,,,
