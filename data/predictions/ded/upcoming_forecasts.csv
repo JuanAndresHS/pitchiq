@@ -1,6 +1,6 @@
 match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_draw,p_away_win,most_likely_score,prediction,confidence
 558833,ded,2026-11-21,13,NEC,PSV,1.58,2.47,0.2332,0.2007,0.5661,1-2,A,0.5661
-558835,ded,2026-11-21,13,FC Utrecht,SC Cambuur-Leeuwarden,2.22,1.64,0.5055,0.2165,0.278,2-1,H,0.5055
+558835,ded,2026-11-21,13,FC Utrecht,SC Cambuur-Leeuwarden,2.22,1.64,0.5054,0.2165,0.278,2-1,H,0.5054
 558831,ded,2026-11-21,13,Feyenoord Rotterdam,SBV Excelsior,2.93,0.9,0.7812,0.1394,0.0794,2-0,H,0.7812
 558834,ded,2026-11-21,13,FC Groningen,SC Heerenveen,1.74,1.45,0.4353,0.2504,0.3143,1-1,H,0.4353
 558832,ded,2026-11-21,13,Telstar 1963,PEC Zwolle,1.91,1.15,0.542,0.2404,0.2176,1-1,H,0.542
@@ -46,7 +46,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558791,ded,2027-01-08,18,FC Twente '65,Fortuna Sittard,2.18,0.89,0.6605,0.2064,0.1331,2-0,H,0.6605
 558788,ded,2027-01-09,18,AZ,SC Heerenveen,1.82,1.19,0.5133,0.2482,0.2385,1-1,H,0.5133
 558789,ded,2027-01-09,18,Willem II Tilburg,AFC Ajax,0.84,2.57,0.0934,0.1659,0.7407,0-2,A,0.7407
-558790,ded,2027-01-09,18,PEC Zwolle,FC Utrecht,1.38,1.66,0.3104,0.2576,0.432,1-1,A,0.432
+558790,ded,2027-01-09,18,PEC Zwolle,FC Utrecht,1.38,1.66,0.3103,0.2576,0.432,1-1,A,0.432
 558787,ded,2027-01-09,18,Sparta Rotterdam,SBV Excelsior,1.72,1.26,0.474,0.2559,0.2701,1-1,H,0.474
 558785,ded,2027-01-10,18,NEC,SC Cambuur-Leeuwarden,2.47,1.55,0.5708,0.2007,0.2285,2-1,H,0.5708
 558783,ded,2027-01-10,18,Feyenoord Rotterdam,PSV,1.99,2.01,0.3857,0.2201,0.3943,1-1,A,0.3943
@@ -170,7 +170,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558674,ded,2027-05-01,31,Feyenoord Rotterdam,Willem II Tilburg,3.68,0.67,0.8948,0.076,0.0292,3-0,H,0.8948
 558670,ded,2027-05-01,31,NEC,PEC Zwolle,2.32,1.04,0.6528,0.1994,0.1479,2-1,H,0.6528
 558672,ded,2027-05-01,31,SBV Excelsior,SC Cambuur-Leeuwarden,1.78,1.89,0.3633,0.2318,0.4049,1-1,A,0.4049
-558663,ded,2027-05-08,32,AZ,AFC Ajax,1.48,1.46,0.3704,0.2657,0.364,1-1,H,0.3704
+558663,ded,2027-05-08,32,AZ,AFC Ajax,1.48,1.46,0.3704,0.2657,0.3639,1-1,H,0.3704
 558664,ded,2027-05-08,32,ADO Den Haag,NEC,1.37,1.73,0.2957,0.2534,0.4509,1-1,A,0.4509
 558665,ded,2027-05-08,32,Willem II Tilburg,Telstar 1963,1.14,1.91,0.2156,0.2402,0.5442,1-1,A,0.5442
 558662,ded,2027-05-08,32,SC Cambuur-Leeuwarden,SC Heerenveen,1.95,1.75,0.4252,0.2295,0.3452,1-1,H,0.4252
