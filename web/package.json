@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "prebuild": "node scripts/sync-data.mjs",
+    "predev": "node scripts/sync-data.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

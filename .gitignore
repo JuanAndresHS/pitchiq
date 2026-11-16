@@ -227,3 +227,6 @@ __pycache__/
 
 # the Python template's lib/ rule also catches the Next.js data layer
 !web/lib/
+
+# Cualquier archivo de entorno, caiga donde caiga
+.env*
