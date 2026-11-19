@@ -124,7 +124,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 560770,pl,2027-01-30,23,Manchester City FC,Arsenal FC,1.21,1.19,0.3572,0.2935,0.3493,1-1,H,0.3572
 560769,pl,2027-01-30,23,Liverpool FC,Everton FC,1.7,0.91,0.5526,0.2543,0.1931,1-1,H,0.5526
 560767,pl,2027-01-30,23,AFC Bournemouth,Fulham FC,1.59,1.04,0.4935,0.266,0.2404,1-1,H,0.4935
-560766,pl,2027-01-30,23,Coventry City FC,Leeds United FC,1.09,1.29,0.3053,0.2932,0.4015,1-1,A,0.4015
+560766,pl,2027-01-30,23,Coventry City FC,Leeds United FC,1.09,1.29,0.3054,0.2932,0.4015,1-1,A,0.4015
 560763,pl,2027-01-30,23,Brentford FC,Manchester United FC,1.77,1.31,0.4744,0.2466,0.279,1-1,H,0.4744
 560762,pl,2027-01-30,23,Tottenham Hotspur FC,Sunderland AFC,1.43,0.99,0.4635,0.2831,0.2534,1-1,H,0.4635
 560765,pl,2027-01-30,23,Hull City AFC,Crystal Palace FC,1.35,0.87,0.4728,0.2953,0.2319,1-0,H,0.4728
