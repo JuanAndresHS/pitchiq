@@ -3,9 +3,9 @@
   "reference": "pl",
   "reference_name": "Premier League",
   "matches_fitted": 543,
-  "home_advantage": 1.6311,
+  "home_advantage": 1.6312,
   "home_advantage_log": 0.4893,
-  "rho": 0.0787,
+  "rho": 0.0788,
   "bootstrap_draws": 300,
   "strengths": [
     {
@@ -67,8 +67,8 @@
       "name": "Primeira Liga",
       "strength": -0.5146,
       "goal_ratio": 0.5977,
-      "ci_low": -0.6685,
-      "ci_high": -0.3753,
+      "ci_low": -0.6684,
+      "ci_high": -0.3752,
       "pooled": false
     },
     {
@@ -81,5 +81,5 @@
       "pooled": false
     }
   ],
-  "fitted_at": "2026-11-22T03:32:55+00:00"
+  "fitted_at": "2026-11-22T12:00:10+00:00"
 }
