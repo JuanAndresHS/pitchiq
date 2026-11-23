@@ -126,7 +126,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558394,sa,2027-02-21,25,US Sassuolo Calcio,AS Roma,0.95,2.35,0.1349,0.1798,0.6853,0-2,A,0.6853
 558398,sa,2027-02-21,25,SS Lazio,SSC Napoli,1.16,1.17,0.3575,0.2837,0.3588,1-1,A,0.3588
 558392,sa,2027-02-21,25,Juventus FC,Bologna FC 1909,1.47,0.93,0.4951,0.2662,0.2386,1-0,H,0.4951
-558391,sa,2027-02-21,25,Udinese Calcio,Parma Calcio 1913,1.26,0.96,0.4299,0.2877,0.2824,1-0,H,0.4299
+558391,sa,2027-02-21,25,Udinese Calcio,Parma Calcio 1913,1.26,0.96,0.43,0.2877,0.2824,1-0,H,0.43
 558390,sa,2027-02-21,25,Atalanta BC,AC Monza,2.45,0.98,0.697,0.1722,0.1308,2-0,H,0.697
 558389,sa,2027-02-21,25,Como 1907,Torino FC,1.81,0.75,0.6243,0.2259,0.1497,1-0,H,0.6243
 558393,sa,2027-02-21,25,ACF Fiorentina,FC Internazionale Milano,1.15,2.34,0.1734,0.189,0.6376,1-2,A,0.6376
@@ -228,7 +228,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 558292,sa,2027-05-09,35,SSC Napoli,AC Monza,2.29,0.79,0.7126,0.176,0.1113,2-0,H,0.7126
 558291,sa,2027-05-09,35,SS Lazio,US Sassuolo Calcio,2.05,0.96,0.6234,0.208,0.1687,2-0,H,0.6234
 558290,sa,2027-05-09,35,Genoa CFC,Cagliari Calcio,1.23,0.94,0.4292,0.2915,0.2792,1-0,H,0.4292
-558289,sa,2027-05-09,35,Parma Calcio 1913,AC Milan,0.79,1.67,0.1747,0.2427,0.5826,0-1,A,0.5826
+558289,sa,2027-05-09,35,Parma Calcio 1913,AC Milan,0.79,1.67,0.1746,0.2427,0.5826,0-1,A,0.5826
 558293,sa,2027-05-09,35,FC Internazionale Milano,US Lecce,2.82,0.62,0.8251,0.1192,0.0557,2-0,H,0.8251
 558286,sa,2027-05-16,36,AC Monza,Parma Calcio 1913,1.25,1.21,0.3722,0.2745,0.3533,1-1,H,0.3722
 558287,sa,2027-05-16,36,AC Milan,AS Roma,1.28,1.5,0.3225,0.2545,0.423,1-1,A,0.423
