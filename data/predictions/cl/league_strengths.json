@@ -3,9 +3,9 @@
   "reference": "pl",
   "reference_name": "Premier League",
   "matches_fitted": 543,
-  "home_advantage": 1.6312,
-  "home_advantage_log": 0.4893,
-  "rho": 0.0788,
+  "home_advantage": 1.625,
+  "home_advantage_log": 0.4855,
+  "rho": 0.0771,
   "bootstrap_draws": 300,
   "strengths": [
     {
@@ -20,66 +20,66 @@
     {
       "league": "fl1",
       "name": "Ligue 1",
-      "strength": -0.1692,
-      "goal_ratio": 0.8444,
-      "ci_low": -0.3321,
-      "ci_high": -0.0427,
+      "strength": -0.1668,
+      "goal_ratio": 0.8464,
+      "ci_low": -0.3292,
+      "ci_high": -0.0391,
       "pooled": false
     },
     {
       "league": "pd",
       "name": "LaLiga",
-      "strength": -0.1947,
-      "goal_ratio": 0.8231,
-      "ci_low": -0.2925,
-      "ci_high": -0.0905,
+      "strength": -0.1975,
+      "goal_ratio": 0.8208,
+      "ci_low": -0.2965,
+      "ci_high": -0.0931,
       "pooled": false
     },
     {
       "league": "bl1",
       "name": "Bundesliga",
-      "strength": -0.2715,
-      "goal_ratio": 0.7622,
-      "ci_low": -0.3952,
-      "ci_high": -0.1607,
+      "strength": -0.2727,
+      "goal_ratio": 0.7613,
+      "ci_low": -0.3966,
+      "ci_high": -0.1612,
       "pooled": false
     },
     {
       "league": "sa",
       "name": "Serie A",
-      "strength": -0.3104,
-      "goal_ratio": 0.7331,
-      "ci_low": -0.4337,
-      "ci_high": -0.1886,
+      "strength": -0.3155,
+      "goal_ratio": 0.7294,
+      "ci_low": -0.438,
+      "ci_high": -0.196,
       "pooled": false
     },
     {
       "league": "rest",
       "name": "Rest of Europe",
-      "strength": -0.3703,
-      "goal_ratio": 0.6905,
-      "ci_low": -0.4803,
-      "ci_high": -0.2769,
+      "strength": -0.3714,
+      "goal_ratio": 0.6898,
+      "ci_low": -0.4812,
+      "ci_high": -0.2775,
       "pooled": true
     },
     {
       "league": "ppl",
       "name": "Primeira Liga",
-      "strength": -0.5146,
-      "goal_ratio": 0.5977,
-      "ci_low": -0.6684,
-      "ci_high": -0.3752,
+      "strength": -0.5164,
+      "goal_ratio": 0.5967,
+      "ci_low": -0.6699,
+      "ci_high": -0.3775,
       "pooled": false
     },
     {
       "league": "ded",
       "name": "Eredivisie",
-      "strength": -0.5897,
-      "goal_ratio": 0.5545,
-      "ci_low": -0.7658,
-      "ci_high": -0.4371,
+      "strength": -0.5908,
+      "goal_ratio": 0.5539,
+      "ci_low": -0.7678,
+      "ci_high": -0.4386,
       "pooled": false
     }
   ],
-  "fitted_at": "2026-11-22T12:00:10+00:00"
+  "fitted_at": "2026-11-23T04:04:59+00:00"
 }
