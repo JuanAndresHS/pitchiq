@@ -3,12 +3,12 @@ match_id,league,date,matchday,stage,home_team,away_team,home_league,away_league,
 575405,cl,2026-11-25,5.0,LEAGUE_STAGE,SK Slavia Praha,Villarreal CF,rest,pd,1.29,1.66,0.3075,0.2218,0.4707,1-1,A,0.4707,True
 575406,cl,2026-11-25,5.0,LEAGUE_STAGE,FC Internazionale Milano,VfB Stuttgart,sa,bl1,2.7,1.1,0.7177,0.1466,0.1357,2-1,H,0.7177,False
 575407,cl,2026-11-25,5.0,LEAGUE_STAGE,Club Atlético de Madrid,Viking FK,pd,rest,2.69,0.63,0.8119,0.119,0.0691,2-0,H,0.8119,True
-575408,cl,2026-11-25,5.0,LEAGUE_STAGE,Paris Saint-Germain FC,AS Roma,fl1,sa,2.18,0.99,0.6513,0.18,0.1687,2-0,H,0.6513,False
+575408,cl,2026-11-25,5.0,LEAGUE_STAGE,Paris Saint-Germain FC,AS Roma,fl1,sa,2.18,0.99,0.6512,0.18,0.1687,2-0,H,0.6512,False
 575409,cl,2026-11-25,5.0,LEAGUE_STAGE,Club Brugge KV,Liverpool FC,rest,pl,0.94,1.99,0.1795,0.1937,0.6268,0-1,A,0.6268,True
-575411,cl,2026-11-25,5.0,LEAGUE_STAGE,Sporting Clube de Portugal,Manchester United FC,ppl,pl,2.0,1.33,0.5391,0.2003,0.2606,2-1,H,0.5391,False
+575411,cl,2026-11-25,5.0,LEAGUE_STAGE,Sporting Clube de Portugal,Manchester United FC,ppl,pl,2.0,1.33,0.5391,0.2003,0.2607,2-1,H,0.5391,False
 575412,cl,2026-11-25,5.0,LEAGUE_STAGE,FK Shakhtar Donetsk,Fenerbahçe SK,rest,rest,1.62,1.0,0.5289,0.2278,0.2433,1-0,H,0.5289,True
 575410,cl,2026-11-25,5.0,LEAGUE_STAGE,Lille OSC,FC Bayern München,fl1,bl1,1.38,1.4,0.3796,0.2332,0.3873,1-1,A,0.3873,False
-575419,cl,2026-12-08,6.0,LEAGUE_STAGE,AS Roma,Sporting Clube de Portugal,sa,ppl,2.16,1.13,0.6161,0.186,0.1979,2-1,H,0.6161,False
+575419,cl,2026-12-08,6.0,LEAGUE_STAGE,AS Roma,Sporting Clube de Portugal,sa,ppl,2.16,1.13,0.6162,0.186,0.1978,2-1,H,0.6162,False
 575421,cl,2026-12-08,6.0,LEAGUE_STAGE,PAE AEK,Galatasaray SK,rest,rest,1.62,1.0,0.5289,0.2278,0.2433,1-0,H,0.5289,True
 575417,cl,2026-12-08,6.0,LEAGUE_STAGE,FC Bayern München,SK Slavia Praha,bl1,rest,3.88,0.66,0.9139,0.0567,0.0293,3-0,H,0.9139,True
 575418,cl,2026-12-08,6.0,LEAGUE_STAGE,SSC Napoli,Club Brugge KV,sa,rest,2.16,0.68,0.7217,0.1668,0.1115,2-0,H,0.7217,True
@@ -17,7 +17,7 @@ match_id,league,date,matchday,stage,home_team,away_team,home_league,away_league,
 575414,cl,2026-12-08,6.0,LEAGUE_STAGE,Viking FK,Feyenoord Rotterdam,rest,ded,1.61,1.23,0.4715,0.2263,0.3023,1-1,H,0.4715,True
 575413,cl,2026-12-08,6.0,LEAGUE_STAGE,Villarreal CF,Sabah FK,pd,rest,2.69,0.79,0.7794,0.1296,0.091,2-0,H,0.7794,True
 575416,cl,2026-12-08,6.0,LEAGUE_STAGE,Aston Villa FC,Paris Saint-Germain FC,pl,fl1,1.61,1.35,0.4436,0.2236,0.3328,1-1,H,0.4436,False
-575295,cl,2026-12-09,6.0,LEAGUE_STAGE,Liverpool FC,FC Porto,pl,ppl,2.09,0.8,0.6808,0.1796,0.1397,1-0,H,0.6808,False
+575295,cl,2026-12-09,6.0,LEAGUE_STAGE,Liverpool FC,FC Porto,pl,ppl,2.09,0.8,0.6807,0.1796,0.1397,1-0,H,0.6807,False
 575322,cl,2026-12-09,6.0,LEAGUE_STAGE,VfB Stuttgart,Lille OSC,bl1,fl1,1.42,1.05,0.4666,0.2446,0.2888,1-0,H,0.4666,False
 575315,cl,2026-12-09,6.0,LEAGUE_STAGE,Racing Club de Lens,FK Bodø/Glimt,fl1,rest,2.42,0.69,0.7613,0.1445,0.0942,2-0,H,0.7613,True
 575317,cl,2026-12-09,6.0,LEAGUE_STAGE,LASK Linz,Fenerbahçe SK,rest,rest,1.62,1.0,0.5289,0.2278,0.2433,1-0,H,0.5289,True
@@ -26,8 +26,8 @@ match_id,league,date,matchday,stage,home_team,away_team,home_league,away_league,
 575423,cl,2026-12-09,6.0,LEAGUE_STAGE,ŠK Slovan Bratislava,FK Shakhtar Donetsk,rest,rest,1.62,1.0,0.5289,0.2278,0.2433,1-0,H,0.5289,True
 575422,cl,2026-12-09,6.0,LEAGUE_STAGE,Real Betis Balompié,Como 1907,pd,sa,1.54,1.06,0.4941,0.2341,0.2718,1-0,H,0.4941,False
 575280,cl,2026-12-09,6.0,LEAGUE_STAGE,Arsenal FC,Real Madrid CF,pl,pd,1.84,0.76,0.6374,0.2035,0.1591,1-0,H,0.6374,False
-575308,cl,2027-01-19,7.0,LEAGUE_STAGE,FC Porto,SK Slavia Praha,ppl,rest,2.23,0.65,0.7421,0.1584,0.0996,2-0,H,0.7421,True
-575307,cl,2027-01-19,7.0,LEAGUE_STAGE,PAE AEK,AS Roma,rest,sa,1.07,1.68,0.2517,0.2229,0.5255,0-1,A,0.5255,True
+575308,cl,2027-01-19,7.0,LEAGUE_STAGE,FC Porto,SK Slavia Praha,ppl,rest,2.23,0.65,0.7421,0.1583,0.0996,2-0,H,0.7421,True
+575307,cl,2027-01-19,7.0,LEAGUE_STAGE,PAE AEK,AS Roma,rest,sa,1.07,1.68,0.2516,0.2229,0.5255,0-1,A,0.5255,True
 575321,cl,2027-01-19,7.0,LEAGUE_STAGE,Lille OSC,ŠK Slovan Bratislava,fl1,rest,2.1,0.59,0.7339,0.1678,0.0983,1-0,H,0.7339,True
 575302,cl,2027-01-19,7.0,LEAGUE_STAGE,VfB Stuttgart,Club Brugge KV,bl1,rest,2.43,0.81,0.7373,0.1505,0.1122,2-0,H,0.7373,True
 575303,cl,2027-01-19,7.0,LEAGUE_STAGE,Aston Villa FC,Borussia Dortmund,pl,bl1,1.68,0.99,0.5461,0.2227,0.2312,1-0,H,0.5461,False
@@ -41,14 +41,14 @@ match_id,league,date,matchday,stage,home_team,away_team,home_league,away_league,
 575312,cl,2027-01-20,7.0,LEAGUE_STAGE,Viking FK,PSV,rest,ded,1.56,1.62,0.3785,0.2173,0.4042,1-1,A,0.4042,True
 575300,cl,2027-01-20,7.0,LEAGUE_STAGE,Manchester United FC,FC Bayern München,pl,bl1,1.79,1.73,0.4098,0.2064,0.3837,1-1,H,0.4098,False
 575294,cl,2027-01-20,7.0,LEAGUE_STAGE,Como 1907,Paris Saint-Germain FC,sa,fl1,1.34,1.32,0.3837,0.2396,0.3767,1-1,H,0.3837,False
-575320,cl,2027-01-20,7.0,LEAGUE_STAGE,Sabah FK,SSC Napoli,rest,sa,1.11,1.33,0.3216,0.2497,0.4287,0-1,A,0.4287,True
+575320,cl,2027-01-20,7.0,LEAGUE_STAGE,Sabah FK,SSC Napoli,rest,sa,1.11,1.33,0.3216,0.2497,0.4288,0-1,A,0.4288,True
 575314,cl,2027-01-20,7.0,LEAGUE_STAGE,Fenerbahçe SK,Villarreal CF,rest,pd,1.29,1.66,0.3075,0.2218,0.4707,1-1,A,0.4707,True
 575284,cl,2027-01-20,7.0,LEAGUE_STAGE,Racing Club de Lens,Manchester City FC,fl1,pl,1.26,1.48,0.3311,0.2337,0.4352,1-1,A,0.4352,False
 575301,cl,2027-01-27,8.0,LEAGUE_STAGE,Club Brugge KV,FK Bodø/Glimt,rest,rest,1.62,1.0,0.5289,0.2278,0.2433,1-0,H,0.5289,True
 575311,cl,2027-01-27,8.0,LEAGUE_STAGE,PSV,VfB Stuttgart,ded,bl1,2.13,1.44,0.5412,0.1936,0.2653,2-1,H,0.5412,False
 575310,cl,2027-01-27,8.0,LEAGUE_STAGE,Villarreal CF,Manchester United FC,pd,pl,1.94,1.33,0.5257,0.204,0.2703,2-1,H,0.5257,False
 575309,cl,2027-01-27,8.0,LEAGUE_STAGE,LASK Linz,FC Porto,rest,ppl,1.05,1.37,0.2973,0.2489,0.4538,0-1,A,0.4538,True
-575306,cl,2027-01-27,8.0,LEAGUE_STAGE,AS Roma,Lille OSC,sa,fl1,1.59,0.85,0.5581,0.2313,0.2106,1-0,H,0.5581,False
+575306,cl,2027-01-27,8.0,LEAGUE_STAGE,AS Roma,Lille OSC,sa,fl1,1.59,0.85,0.5581,0.2312,0.2106,1-0,H,0.5581,False
 575305,cl,2027-01-27,8.0,LEAGUE_STAGE,SK Slavia Praha,Aston Villa FC,rest,pl,1.08,1.67,0.2544,0.223,0.5226,0-1,A,0.5226,True
 575304,cl,2027-01-27,8.0,LEAGUE_STAGE,Borussia Dortmund,PAE AEK,bl1,rest,2.4,0.62,0.7764,0.1406,0.083,2-0,H,0.7764,True
 575296,cl,2027-01-27,8.0,LEAGUE_STAGE,Liverpool FC,Racing Club de Lens,pl,fl1,2.25,0.87,0.6936,0.1688,0.1376,2-0,H,0.6936,False
