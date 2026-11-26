@@ -15,8 +15,8 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 565881,bl1,2026-12-05,12,SC Freiburg,TSG 1899 Hoffenheim,1.96,1.35,0.5131,0.228,0.2588,1-1,H,0.5131
 565883,bl1,2026-12-05,12,FC Augsburg,1. FC Köln,1.77,1.16,0.5117,0.2442,0.2441,1-1,H,0.5117
 565879,bl1,2026-12-05,12,RB Leipzig,1. FSV Mainz 05,2.41,1.12,0.6548,0.1882,0.157,2-1,H,0.6548
-565876,bl1,2026-12-06,12,FC Schalke 04,Borussia Dortmund,0.61,1.16,0.1897,0.3252,0.4851,0-1,A,0.4851
-565880,bl1,2026-12-06,12,SV 07 Elversberg,VfB Stuttgart,1.64,1.72,0.3638,0.2369,0.3992,1-1,A,0.3992
+565876,bl1,2026-12-06,12,FC Schalke 04,Borussia Dortmund,0.61,1.16,0.1897,0.3252,0.485,0-1,A,0.485
+565880,bl1,2026-12-06,12,SV 07 Elversberg,VfB Stuttgart,1.64,1.72,0.3639,0.2369,0.3992,1-1,A,0.3992
 565888,bl1,2026-12-11,13,Hamburger SV,FC Schalke 04,0.96,0.74,0.3864,0.3488,0.2648,0-0,H,0.3864
 565890,bl1,2026-12-12,13,1. FC Köln,RB Leipzig,1.26,1.88,0.2515,0.2348,0.5137,1-1,A,0.5137
 565884,bl1,2026-12-12,13,SC Paderborn 07,SV 07 Elversberg,1.15,1.23,0.3356,0.2895,0.3749,1-1,A,0.3749
@@ -37,7 +37,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 565900,bl1,2026-12-20,14,1. FC Union Berlin,TSG 1899 Hoffenheim,1.43,1.6,0.3371,0.2512,0.4117,1-1,A,0.4117
 565908,bl1,2027-01-08,15,Borussia Dortmund,1. FSV Mainz 05,2.17,0.87,0.6684,0.1986,0.133,2-0,H,0.6684
 565907,bl1,2027-01-09,15,Borussia Mönchengladbach,FC Bayern München,1.14,2.94,0.114,0.1481,0.7379,1-2,A,0.7379
-565910,bl1,2027-01-09,15,SC Paderborn 07,RB Leipzig,0.96,1.62,0.2198,0.2595,0.5207,1-1,A,0.5207
+565910,bl1,2027-01-09,15,SC Paderborn 07,RB Leipzig,0.96,1.62,0.2198,0.2595,0.5206,1-1,A,0.5206
 565906,bl1,2027-01-09,15,TSG 1899 Hoffenheim,SV 07 Elversberg,2.03,1.49,0.4974,0.2226,0.2801,1-1,H,0.4974
 565904,bl1,2027-01-09,15,1. FC Köln,SC Freiburg,1.34,1.41,0.3503,0.2667,0.383,1-1,A,0.383
 565902,bl1,2027-01-09,15,VfB Stuttgart,FC Augsburg,2.36,1.13,0.6429,0.1927,0.1644,2-1,H,0.6429
@@ -51,7 +51,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 565916,bl1,2027-01-13,16,FC Bayern München,Bayer 04 Leverkusen,3.03,1.3,0.7192,0.1499,0.1309,3-1,H,0.7192
 565915,bl1,2027-01-13,16,1. FC Union Berlin,SC Paderborn 07,1.18,0.91,0.4147,0.3097,0.2756,1-0,H,0.4147
 565912,bl1,2027-01-13,16,SC Freiburg,Hamburger SV,1.98,0.94,0.6124,0.2208,0.1668,2-0,H,0.6124
-565918,bl1,2027-01-13,16,SV 07 Elversberg,Eintracht Frankfurt,1.98,1.52,0.4816,0.2257,0.2928,1-1,H,0.4816
+565918,bl1,2027-01-13,16,SV 07 Elversberg,Eintracht Frankfurt,1.98,1.52,0.4816,0.2256,0.2928,1-1,H,0.4816
 565913,bl1,2027-01-14,16,FC Schalke 04,SV Werder Bremen,0.9,0.88,0.3361,0.3433,0.3206,0-0,D,0.3433
 565925,bl1,2027-01-15,17,VfB Stuttgart,1. FSV Mainz 05,2.2,1.14,0.6103,0.2064,0.1832,2-1,H,0.6103
 565926,bl1,2027-01-16,17,Hamburger SV,FC Augsburg,1.45,1.4,0.3816,0.2611,0.3572,1-1,H,0.3816
@@ -65,7 +65,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 565929,bl1,2027-01-22,18,SV Werder Bremen,SC Freiburg,1.52,1.35,0.4093,0.2586,0.3321,1-1,H,0.4093
 565931,bl1,2027-01-23,18,SC Paderborn 07,1. FSV Mainz 05,1.1,1.15,0.3393,0.2997,0.361,1-1,A,0.361
 565932,bl1,2027-01-23,18,FC Schalke 04,FC Augsburg,0.97,0.9,0.3512,0.3329,0.3159,0-0,H,0.3512
-565934,bl1,2027-01-23,18,VfB Stuttgart,FC Bayern München,1.59,2.34,0.2556,0.203,0.5414,1-2,A,0.5414
+565934,bl1,2027-01-23,18,VfB Stuttgart,FC Bayern München,1.59,2.34,0.2556,0.203,0.5415,1-2,A,0.5415
 565935,bl1,2027-01-23,18,Borussia Mönchengladbach,RB Leipzig,1.37,2.01,0.2557,0.2244,0.5199,1-1,A,0.5199
 565930,bl1,2027-01-23,18,Hamburger SV,Borussia Dortmund,0.92,1.79,0.1852,0.2407,0.5741,1-1,A,0.5741
 565936,bl1,2027-01-24,18,Eintracht Frankfurt,1. FC Union Berlin,2.13,1.06,0.6136,0.2108,0.1757,2-1,H,0.6136
@@ -132,7 +132,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 565996,bl1,2027-03-06,25,VfB Stuttgart,Bayer 04 Leverkusen,1.89,1.6,0.4465,0.2293,0.3242,1-1,H,0.4465
 565994,bl1,2027-03-06,25,1. FSV Mainz 05,SV 07 Elversberg,1.78,1.38,0.4671,0.2405,0.2924,1-1,H,0.4671
 565993,bl1,2027-03-06,25,SC Freiburg,FC Augsburg,1.94,1.18,0.5457,0.2296,0.2246,1-1,H,0.5457
-565992,bl1,2027-03-06,25,Borussia Dortmund,FC Bayern München,1.58,1.78,0.3387,0.2357,0.4256,1-1,A,0.4256
+565992,bl1,2027-03-06,25,Borussia Dortmund,FC Bayern München,1.58,1.78,0.3386,0.2357,0.4256,1-1,A,0.4256
 565995,bl1,2027-03-06,25,Hamburger SV,Eintracht Frankfurt,1.46,1.59,0.345,0.2502,0.4048,1-1,A,0.4048
 566009,bl1,2027-03-13,26,Bayer 04 Leverkusen,1. FC Köln,2.49,0.93,0.7112,0.1721,0.1167,2-0,H,0.7112
 566008,bl1,2027-03-13,26,FC Bayern München,1. FSV Mainz 05,3.52,0.93,0.8439,0.0989,0.0572,3-0,H,0.8439
@@ -151,10 +151,10 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 566018,bl1,2027-03-20,27,Borussia Dortmund,Borussia Mönchengladbach,2.43,0.79,0.7305,0.1699,0.0996,2-0,H,0.7305
 566017,bl1,2027-03-20,27,TSG 1899 Hoffenheim,Eintracht Frankfurt,2.1,1.58,0.4941,0.218,0.2879,2-1,H,0.4941
 566016,bl1,2027-03-20,27,1. FC Köln,FC Bayern München,1.04,2.74,0.1155,0.158,0.7265,1-2,A,0.7265
-566010,bl1,2027-03-20,27,1. FSV Mainz 05,FC Augsburg,1.83,1.27,0.5011,0.2382,0.2608,1-1,H,0.5011
+566010,bl1,2027-03-20,27,1. FSV Mainz 05,FC Augsburg,1.83,1.27,0.5011,0.2382,0.2607,1-1,H,0.5011
 566025,bl1,2027-04-03,28,1. FC Union Berlin,1. FSV Mainz 05,1.31,1.4,0.3452,0.2683,0.3865,1-1,A,0.3865
-566027,bl1,2027-04-03,28,FC Schalke 04,SC Paderborn 07,0.81,0.59,0.3718,0.3903,0.2379,0-0,D,0.3903
-566024,bl1,2027-04-03,28,Eintracht Frankfurt,VfB Stuttgart,1.73,1.78,0.3744,0.2312,0.3944,1-1,A,0.3944
+566027,bl1,2027-04-03,28,FC Schalke 04,SC Paderborn 07,0.81,0.59,0.3718,0.3904,0.2379,0-0,D,0.3904
+566024,bl1,2027-04-03,28,Eintracht Frankfurt,VfB Stuttgart,1.73,1.78,0.3744,0.2312,0.3943,1-1,A,0.3943
 566023,bl1,2027-04-03,28,Borussia Mönchengladbach,SV Werder Bremen,1.57,1.37,0.4149,0.255,0.3301,1-1,H,0.4149
 566026,bl1,2027-04-03,28,Bayer 04 Leverkusen,Borussia Dortmund,1.62,1.4,0.4231,0.2505,0.3264,1-1,H,0.4231
 566021,bl1,2027-04-03,28,FC Bayern München,Hamburger SV,3.86,0.73,0.8997,0.0694,0.0309,3-0,H,0.8997
