@@ -150,7 +150,7 @@ match_id,league,league_name,season,matchday,utc_date,status,stage,home_team,home
 564774,pd,LaLiga,2026,15,2026-12-06 17:30:00+00:00,TIMED,REGULAR_SEASON,Getafe CF,82,Valencia CF,95,,,,,,,2026-12-06,,,
 564771,pd,LaLiga,2026,15,2026-12-06 20:00:00+00:00,TIMED,REGULAR_SEASON,Club Atlético de Madrid,78,Real Betis Balompié,90,,,,,,,2026-12-06,,,
 564769,pd,LaLiga,2026,15,2026-12-07 20:00:00+00:00,TIMED,REGULAR_SEASON,Sevilla FC,559,Málaga CF,84,,,,,,,2026-12-07,,,
-564698,pd,LaLiga,2026,8,2026-12-09 19:00:00+00:00,CANCELLED,REGULAR_SEASON,Rayo Vallecano de Madrid,87,Athletic Club,77,0.0,0.0,,,DRAW,,2026-12-09,D,0.0,0.0
+564698,pd,LaLiga,2026,8,2026-12-09 19:00:00+00:00,TIMED,REGULAR_SEASON,Rayo Vallecano de Madrid,87,Athletic Club,77,0.0,0.0,,,DRAW,,2026-12-09,D,0.0,0.0
 564783,pd,LaLiga,2026,16,2026-12-11 20:00:00+00:00,TIMED,REGULAR_SEASON,Elche CF,285,Sevilla FC,559,,,,,,,2026-12-11,,,
 564782,pd,LaLiga,2026,16,2026-12-12 13:00:00+00:00,TIMED,REGULAR_SEASON,Levante UD,88,Deportivo Alavés,263,,,,,,,2026-12-12,,,
 564784,pd,LaLiga,2026,16,2026-12-12 15:15:00+00:00,TIMED,REGULAR_SEASON,Villarreal CF,94,Rayo Vallecano de Madrid,87,,,,,,,2026-12-12,,,
