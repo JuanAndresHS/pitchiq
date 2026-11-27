@@ -65,8 +65,8 @@
     {
       "league": "ppl",
       "name": "Primeira Liga",
-      "strength": -0.5118,
-      "goal_ratio": 0.5994,
+      "strength": -0.5117,
+      "goal_ratio": 0.5995,
       "ci_low": -0.6762,
       "ci_high": -0.3769,
       "pooled": false
@@ -81,5 +81,5 @@
       "pooled": false
     }
   ],
-  "fitted_at": "2026-11-26T13:09:49+00:00"
+  "fitted_at": "2026-11-27T05:26:56+00:00"
 }
