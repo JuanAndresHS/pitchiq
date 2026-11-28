@@ -44,12 +44,12 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 565903,bl1,2027-01-10,15,Hamburger SV,Bayer 04 Leverkusen,1.16,1.96,0.2171,0.2273,0.5556,1-1,A,0.5556
 565909,bl1,2027-01-10,15,SV Werder Bremen,1. FC Union Berlin,1.83,1.01,0.5624,0.2376,0.2,1-1,H,0.5624
 565914,bl1,2027-01-12,16,RB Leipzig,VfB Stuttgart,2.14,1.43,0.5321,0.2159,0.252,2-1,H,0.5321
-565911,bl1,2027-01-12,16,1. FSV Mainz 05,TSG 1899 Hoffenheim,1.85,1.45,0.4657,0.235,0.2993,1-1,H,0.4657
+565911,bl1,2027-01-12,16,1. FSV Mainz 05,TSG 1899 Hoffenheim,1.85,1.45,0.4658,0.235,0.2993,1-1,H,0.4658
 565917,bl1,2027-01-12,16,FC Augsburg,Borussia Mönchengladbach,1.92,1.29,0.5158,0.2314,0.2527,1-1,H,0.5158
 565919,bl1,2027-01-12,16,1. FC Köln,Borussia Dortmund,0.97,1.69,0.2115,0.2519,0.5367,1-1,A,0.5367
 565918,bl1,2027-01-13,16,SV 07 Elversberg,Eintracht Frankfurt,1.97,1.51,0.4809,0.2262,0.2929,1-1,H,0.4809
 565912,bl1,2027-01-13,16,SC Freiburg,Hamburger SV,1.98,0.94,0.6113,0.2216,0.1671,2-0,H,0.6113
-565915,bl1,2027-01-13,16,1. FC Union Berlin,SC Paderborn 07,1.17,0.9,0.4135,0.3105,0.276,1-0,H,0.4135
+565915,bl1,2027-01-13,16,1. FC Union Berlin,SC Paderborn 07,1.17,0.9,0.4134,0.3105,0.276,1-0,H,0.4134
 565916,bl1,2027-01-13,16,FC Bayern München,Bayer 04 Leverkusen,3.02,1.3,0.7185,0.1503,0.1312,3-1,H,0.7185
 565913,bl1,2027-01-14,16,FC Schalke 04,SV Werder Bremen,0.93,0.89,0.3402,0.3389,0.3209,0-0,H,0.3402
 565925,bl1,2027-01-15,17,VfB Stuttgart,1. FSV Mainz 05,2.19,1.14,0.6089,0.2073,0.1837,2-1,H,0.6089
@@ -122,7 +122,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 565984,bl1,2027-03-03,24,FC Schalke 04,1. FC Köln,0.94,0.77,0.3738,0.3496,0.2766,0-0,H,0.3738
 565987,bl1,2027-03-03,24,SV Werder Bremen,1. FSV Mainz 05,1.67,1.31,0.4542,0.25,0.2958,1-1,H,0.4542
 565989,bl1,2027-03-03,24,SV 07 Elversberg,RB Leipzig,1.6,1.88,0.328,0.2303,0.4417,1-1,A,0.4417
-565990,bl1,2027-03-03,24,Borussia Mönchengladbach,VfB Stuttgart,1.43,1.86,0.2929,0.2344,0.4728,1-1,A,0.4728
+565990,bl1,2027-03-03,24,Borussia Mönchengladbach,VfB Stuttgart,1.43,1.86,0.2929,0.2344,0.4727,1-1,A,0.4727
 565988,bl1,2027-03-03,24,1. FC Union Berlin,FC Augsburg,1.4,1.39,0.3708,0.2642,0.365,1-1,H,0.3708
 565997,bl1,2027-03-06,25,RB Leipzig,FC Schalke 04,1.71,0.59,0.6412,0.2394,0.1194,1-0,H,0.6412
 566000,bl1,2027-03-06,25,TSG 1899 Hoffenheim,SV Werder Bremen,1.99,1.36,0.5167,0.2262,0.2571,1-1,H,0.5167
@@ -176,7 +176,7 @@ match_id,league,date,matchday,home_team,away_team,xg_home,xg_away,p_home_win,p_d
 566043,bl1,2027-04-17,30,FC Augsburg,Borussia Dortmund,1.15,1.74,0.2456,0.2467,0.5077,1-1,A,0.5077
 566037,bl1,2027-04-17,30,Bayer 04 Leverkusen,SV Werder Bremen,2.45,1.08,0.671,0.1832,0.1459,2-1,H,0.671
 566040,bl1,2027-04-17,30,FC Bayern München,TSG 1899 Hoffenheim,3.81,1.05,0.8517,0.091,0.0573,3-1,H,0.8517
-566038,bl1,2027-04-17,30,Eintracht Frankfurt,Borussia Mönchengladbach,2.19,1.3,0.573,0.2104,0.2165,2-1,H,0.573
+566038,bl1,2027-04-17,30,Eintracht Frankfurt,Borussia Mönchengladbach,2.19,1.3,0.573,0.2104,0.2166,2-1,H,0.573
 566039,bl1,2027-04-17,30,1. FC Union Berlin,VfB Stuttgart,1.17,1.8,0.2409,0.2415,0.5176,1-1,A,0.5176
 566046,bl1,2027-04-24,31,SV Werder Bremen,FC Bayern München,1.21,2.7,0.1457,0.1694,0.6849,1-2,A,0.6849
 566047,bl1,2027-04-24,31,1. FC Köln,1. FSV Mainz 05,1.44,1.33,0.3917,0.2655,0.3428,1-1,H,0.3917

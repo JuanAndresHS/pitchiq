@@ -31,7 +31,7 @@
       "name": "LaLiga",
       "strength": -0.1849,
       "goal_ratio": 0.8312,
-      "ci_low": -0.305,
+      "ci_low": -0.3049,
       "ci_high": -0.0804,
       "pooled": false
     },
@@ -40,14 +40,14 @@
       "name": "Bundesliga",
       "strength": -0.2674,
       "goal_ratio": 0.7654,
-      "ci_low": -0.3922,
+      "ci_low": -0.3921,
       "ci_high": -0.1587,
       "pooled": false
     },
     {
       "league": "sa",
       "name": "Serie A",
-      "strength": -0.3082,
+      "strength": -0.3081,
       "goal_ratio": 0.7348,
       "ci_low": -0.4286,
       "ci_high": -0.1956,
@@ -59,7 +59,7 @@
       "strength": -0.3747,
       "goal_ratio": 0.6875,
       "ci_low": -0.484,
-      "ci_high": -0.2679,
+      "ci_high": -0.2678,
       "pooled": true
     },
     {
@@ -81,5 +81,5 @@
       "pooled": false
     }
   ],
-  "fitted_at": "2026-11-28T05:01:27+00:00"
+  "fitted_at": "2026-11-28T12:22:26+00:00"
 }
