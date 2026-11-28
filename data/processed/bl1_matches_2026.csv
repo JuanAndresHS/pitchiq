@@ -89,7 +89,7 @@ match_id,league,league_name,season,matchday,utc_date,status,stage,home_team,home
 565861,bl1,Bundesliga,2026,10,2026-11-21 17:30:00+00:00,FINISHED,REGULAR_SEASON,FC Schalke 04,6,VfB Stuttgart,10,0.0,0.0,0.0,0.0,DRAW,,2026-11-21,D,0.0,0.0
 565864,bl1,Bundesliga,2026,10,2026-11-22 14:30:00+00:00,FINISHED,REGULAR_SEASON,FC Augsburg,16,1. FSV Mainz 05,15,3.0,1.0,2.0,0.0,HOME_TEAM,,2026-11-22,H,4.0,2.0
 565863,bl1,Bundesliga,2026,10,2026-11-22 16:30:00+00:00,FINISHED,REGULAR_SEASON,SV Werder Bremen,12,Hamburger SV,7,4.0,0.0,0.0,0.0,HOME_TEAM,,2026-11-22,H,4.0,4.0
-565869,bl1,Bundesliga,2026,11,2026-11-27 19:30:00+00:00,TIMED,REGULAR_SEASON,SV Werder Bremen,12,Borussia Mönchengladbach,18,,,,,,,2026-11-27,,,
+565869,bl1,Bundesliga,2026,11,2026-11-27 19:30:00+00:00,FINISHED,REGULAR_SEASON,SV Werder Bremen,12,Borussia Mönchengladbach,18,3.0,3.0,1.0,1.0,DRAW,,2026-11-27,D,6.0,0.0
 565874,bl1,Bundesliga,2026,11,2026-11-28 14:30:00+00:00,TIMED,REGULAR_SEASON,Hamburger SV,7,FC Bayern München,5,,,,,,,2026-11-28,,,
 565868,bl1,Bundesliga,2026,11,2026-11-28 14:30:00+00:00,TIMED,REGULAR_SEASON,SC Paderborn 07,29,FC Schalke 04,6,,,,,,,2026-11-28,,,
 565866,bl1,Bundesliga,2026,11,2026-11-28 14:30:00+00:00,TIMED,REGULAR_SEASON,1. FC Köln,1,SV 07 Elversberg,719,,,,,,,2026-11-28,,,
